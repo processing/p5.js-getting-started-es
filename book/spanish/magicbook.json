@@ -1,0 +1,102 @@
+{
+  "title" : "Getting Started with p5js: ES",
+  "destination" : "book/spanish/build/pdf/:build",
+  "files" : [ 
+          "book/spanish/content/cover.html",
+          "book/spanish/content/titlepage.html",
+          "book/spanish/content/copyright.html",
+          "book/spanish/content/toc.html",
+          "book/spanish/content/ch00-preface_opener.html",
+          "book/spanish/content/ch00-preface.html",
+          "book/spanish/content/ch01_opener.html",
+          "book/spanish/content/ch01-hello.html",
+          "book/spanish/content/ch02_opener.html",
+          "book/spanish/content/ch02-starting-to-code.html",
+          "book/spanish/content/ch03_opener.html",
+          "book/spanish/content/ch03-draw.html",
+          "book/spanish/content/ch04_opener.html",
+          "book/spanish/content/ch04-variables.html",
+          "book/spanish/content/ch05_opener.html",
+          "book/spanish/content/ch05-response.html",
+          "book/spanish/content/ch06_opener.html",
+          "book/spanish/content/ch06-translate.html",
+          "book/spanish/content/ch07_opener.html",
+          "book/spanish/content/ch07-media.html",
+          "book/spanish/content/ch08_opener.html",
+          "book/spanish/content/ch08-motion.html",
+          "book/spanish/content/ch09_opener.html",
+          "book/spanish/content/ch09-functions.html",
+          "book/spanish/content/ch10_opener.html",
+          "book/spanish/content/ch10-objects.html",
+          "book/spanish/content/ch11_opener.html",
+          "book/spanish/content/ch11-arrays.html",
+          "book/spanish/content/ch12_opener.html",
+          "book/spanish/content/ch12-data.html",
+          "book/spanish/content/ch13_opener.html",
+          "book/spanish/content/ch13-extend.html",
+          "book/spanish/content/ch13_closer.html",
+          "book/spanish/content/appa.html",
+          "book/spanish/content/appb.html",
+          "book/spanish/content/appc.html",
+          "book/spanish/content/appc_closing.html",
+          "book/spanish/content/ix.html",
+          "book/spanish/content/author_bio.html",
+          "book/spanish/content/colo.html",
+          "book/spanish/content/praise.html"
+          
+      
+  ],
+    
+  "builds" : [
+    {
+      "format" : "pdf",
+      "layout" : "book/layouts/pdf.html",
+      "files" : [
+          "book/spanish/content/ch00-preface_opener.html",
+          "book/spanish/content/ch00-preface.html",
+          "book/spanish/content/ch01_opener.html",
+          "book/spanish/content/ch01-hello.html",
+          "book/spanish/content/ch02_opener.html",
+          "book/spanish/content/ch02-starting-to-code.html",
+          "book/spanish/content/ch03_opener.html",
+          "book/spanish/content/ch03-draw.html",
+          "book/spanish/content/ch04_opener.html",
+          "book/spanish/content/ch04-variables.html",
+          "book/spanish/content/ch05_opener.html",
+          "book/spanish/content/ch05-response.html",
+          "book/spanish/content/ch06_opener.html",
+          "book/spanish/content/ch06-translate.html",
+          "book/spanish/content/ch07_opener.html",
+          "book/spanish/content/ch07-media.html",
+          "book/spanish/content/ch08_opener.html",
+          "book/spanish/content/ch08-motion.html",
+          "book/spanish/content/ch09_opener.html",
+          "book/spanish/content/ch09-functions.html",
+          "book/spanish/content/ch10_opener.html",
+          "book/spanish/content/ch10-objects.html",
+          "book/spanish/content/ch11_opener.html",
+          "book/spanish/content/ch11-arrays.html",
+          "book/spanish/content/ch12_opener.html",
+          "book/spanish/content/ch12-data.html",
+          "book/spanish/content/ch13_opener.html",
+          "book/spanish/content/ch13-extend.html",
+          "book/spanish/content/ch13_closer.html",
+          "book/spanish/content/appa.html",
+          "book/spanish/content/appb.html",
+          "book/spanish/content/appc.html",
+          "book/spanish/content/appc_closing.html",
+          "book/spanish/content/ix.html",
+          "book/spanish/content/author_bio.html",
+          "book/spanish/content/colo.html",
+          "book/spanish/content/praise.html"
+      ],
+      "stylesheets" : {
+        "files" : ["book/stylesheets/pdf.scss"]
+          },
+      "images" : {
+          "files" : "book/**/*.*"
+      }
+    }
+  ]
+}
+

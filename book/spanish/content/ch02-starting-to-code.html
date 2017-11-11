@@ -1,0 +1,164 @@
+<section data-type="chapter" id="starting_to_code">
+<h1 class="chapterhead">Empezando a programar</h1>
+
+<p class="lede">Para aprovechar <a contenteditable="false" data-primary="coding basics" data-type="indexterm" id="cb2">&nbsp;</a>al maximo este libro, no basta con solamente leerlo. Necesitas experimentar y practicar. No puedes aprender a programar solamente mediante la lectura - debes hacer. Para empezar, descarga p5.js y haz tu primer bosquejo.</p>
+
+<section data-type="sect1">
+<h1>Ambiente</h1>
+
+<p>Primero, necesitar&#xE1;s un &nbsp;<a contenteditable="false" data-primary="code editors" data-type="indexterm">&nbsp;</a>editor de c&#xF3;digo. Un editor de c&#xF3;digo es similar a un editor de texto (como Bloc de notas), excepto que posee una funcionalidad especial para editar c&#xF3;digo en vez de texto plano. Puedes usar cualquier editor que quieras; te recomendamos <a href="https://atom.io/">Atom</a> y <a href="http://brackets.io/">Brackets</a>, ambos disponibles para descarga.</p>
+
+<p>Tambi&#xE9;n existe un editor oficial de p5.js en desarrollo. Si lo quieres usar, lo puedes descargar visitando <a href="http://p5js.org/download"><em class="hyperlink">http://p5js.org/download</em></a> y seleccionando el bot&#xF3;n que dice "Editor." Si est&#xE1;s usando el editor de p5.js, puedes saltar a la secci&#xF3;n <a data-type="xref" href="#your-first-program">#tu-primer-programa</a>.</p>
+</section>
+
+<section data-type="sect1">
+<h1>Descarga y configuracion de archivos</h1>
+
+<p>Comienza visitando <a href="https://p5js.org/es/download/"><em class="hyperlink">https://p5js.org/es/download/</em></a> y selecciona "p5.js completo". Haz doble click en el archivo <em>.zip</em> descargado, y arrastra el directorio a una ubicaci&#xF3;n en tu disco duro. Puede ser <em>Archivos de programa</em> o <em>Documentos</em> o simplemente el escritorio, lo importante es que el directorio <em>p5</em> sea extraido del archivo <em>.zip</em>.</p>
+
+<p>El directorio <em>p5</em> contiene un proyecto de ejemplo con el que puedes empezar a trabajar. Abre tu editor de c&#xF3;digo. Luego abre el directorio llamado <em>empty-example</em> (ejemplo vacio) en tu editor de c&#xF3;digo. En la mayor&#xED;a de los editores de c&#xF3;digo, puedes hacer esto yendo al menu Archivo, usando la opci&#xf3;n Abrir y luego seleccionado el directorio <em>empty-example</em>. &#xA1;Ahora est&#xE1;s listo para empezar tu primer programa!</p>
+</section>
+
+<section data-type="sect1" id="your-first-program">
+<h1>Tu primer programa</h1>
+
+<p>Cuando abras el directorio <em>empty-example</em>, lo m&#xE1;s probable es que veas una barra lateral con el nombre del directorio en la parte superior y una lista con los archivos contenidos en este directorio. Si haces click en alguno de estos archivos, ver&#xE1;s los contenidos del archivo aparecer en el &#xE1;rea principal.</p>
+
+<p>Un bosquejo en p5.js est&#xE1; compuesto de varios lenguajes distintos usados en conjunto. <em>HTML</em> (HyperText Markup Language) brinda la columna vertebral, enlazando todos los otros elementos en la p&#xE1;gina. JavaScript (y la biblioteca p5.js) te permiten crear gr&#xE1;ficas interactivas que puedes mostrar en tu p&#xE1;gina HTML. A veces CSS (Cascading Style Sheets) es usado para definir elementos de estilo en la p&#xE1;gina HTML, pero no cubriremos esta materia en este libro.</p>
+
+<p>Si revisas el archivo <em>index.html</em>, te dar&#xE1;s cuenta que contiene un poco de c&#xF3;digo HTML. Este archivo brinda la estructura a tu proyecto, enlazando la biblioteca p5.js y otro archivo llamado <em>sketch.js</em>, <a contenteditable="false" data-primary="sketch.js file" data-type="indexterm">&nbsp;</a>donde t&#xFA; escribir&#xE1;s tu propio programa. El c&#xF3;digo que crea estos enlaces tiene la siguiente apariencia:</p>
+
+<pre data-code-language="html" data-type="programlisting">
+&lt;script language="javascript" type="text/javascript" src="../p5.js"&gt;&lt;/script&gt;
+&lt;script language="javascript" type="text/javascript" src="sketch.js"&gt;&lt;/script&gt;</pre>
+
+<p>No necesitas hacer nada en el c&#xF3;digo HTML por el momento — ya est&#xE1; configurado para ti. A continuacion,haz  click en <em>sketch.js</em> y revisa el c&#xF3;digo:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  // put setup code here
+}
+
+function draw() {
+  // put drawing code here
+}</pre>
+
+<p>El c&#xF3;digo plantilla contiene dos bloques, o funciones, <code>setup()</code> y <code>draw()</code>. <a contenteditable="false" data-primary="setup() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="draw() function" data-type="indexterm">&nbsp;</a>Puedes poner tu c&#xF3;digo en cualquiera de los dos lugares, y cada lugar tiene un prop&#xF3;sito espec&#xED;fico.</p>
+
+<p>Cualquier c&#xF3;digo que est&#xE9; involucrado en la definici&#xF3;n del estado incial de tu programa corresponde al bloque <code>setup()</code>. Por ahora, lo dejaremos vac&#xED;o, pero m&#xE1;s adelante en el libro, a&#xF1;adir&#xE1;s c&#xF3;digo aqu&#xED; para especificar el tama&#xF1;o de tu lienzo para tus gr&#xE1;ficas, el peso de tu trazado o la velocidad de tu programa.</p>
+
+<p>Cualquier c&#xF3;digo involucrado en realmente dibujar contenido en la pantalla (definir el color de fondo, dibujar figuras, texto o im&#xE1;genes) ser&#xE1; colocado en el bloque <code>draw()</code>. Es aqu&#xED; donde empezar&#xE1;s a escribir tus primeras l&#xED;neas de c&#xF3;digo.</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 2-1: dibuja una elipse</h2>
+
+<p>Entre las llaves del bloque <code>draw()</code>,  borra el texto <span class="keep-together"><em><code>// put drawing code here</code></em></span> y reempl&#xE1;zalo con lo siguiente:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+background(204);
+ellipse(50, 50, 80, 80);</pre>
+
+<p>Tu programa completo deber&#xE1; verse as&#xED;:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  // put setup code here
+}
+
+function draw() {
+  background(204);
+  ellipse(50, 50, 80, 80);
+}</pre>
+
+<p>Esta nueva l&#xED;nea de c&#xF3;digo significa "dibuja una elipse, con su centro 50 pixeles a la derecha desde el extremo izquierdo y 50 pixeles hacia abajo desde el extremo superior, con una altura y un ancho de 80 pixeles". Graba el c&#xF3;digo presionando Command-S, o escogiendo la opci&#xf3;n Archivo→Grabar del menu.</p>
+
+<p>Para ver el c&#xF3;digo en ejecuci&#xF3;n, puedes abrir el archivo <em>index.html</em> en cualquier navegador web (como Chrome, Firefox o Safari). Navega al directorio <em>empty-example</em> en tu explorador de archivos y haz doble click en <em>index.html</em> para abrirlo. Otra alternativa es hacerlo desde el navegador web, escoger Archivo→Abrir y seleccionar el archivo <em>index.html</em>.</p>
+
+<p>Si has escrito todo correctamente, deber&#xED;as ver un c&#xED;rculo en tu navegador. Si no lo ves, aseg&#xFA;rate de haber copiado correctamente el c&#xF3;digo de ejemplo. Los n&#xFA;meros tienen que estar entre par&#xE9;ntesis y tener comas entre ellos. La l&#xED;nea debe terminar con un punto y coma.
+</p>
+
+<p>Una de las cosas m&#xE1;s dif&#xED;ciles al empezar a programar es que tienes que ser muy espec&#xED;fico con la sintaxis. El software p5.js no es siempre suficientemente inteligente como para entender lo que quieres decir, y puede ser muy exigente con la puntuaci&#xF3;n. Te acostumbrar&#xE1;s a esto con un poco de pr&#xE1;ctica.</p>
+
+<p>A continuaci&#xF3;n, avanzaremos para hacer m&#xE1;s emocionante nuestro bosquejo.</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 2-2: hacer c&#xED;rculos</h2>
+
+<p>Borra <a contenteditable="false" data-primary="circles" data-secondary="drawing" data-type="indexterm" id="c2d">&nbsp;</a>el texto del ejemplo anterior, y prueba este. Graba tu c&#xF3;digo, y refresca (Command-R) <em>index.html</em> en tu navegador para verlo actualizado.</p>
+
+<figure><img alt="Ex 02 02" src="images/gspj_02in03.png" />
+ <figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+}
+
+function draw() {
+  if (mouseIsPressed) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+  ellipse(mouseX, mouseY, 80, 80);
+}</pre>
+
+<p class="pagebreak-before">Este programa crea un lienzo para gr&#xE1;ficas que tiene un ancho de 480 pixeles y una altura de 120 pixeles, y luego empieza a dibujar c&#xED;rculos blancos en la posici&#xF3;n del rat&#xF3;n. Cuando presionas un bot&#xF3;n del rat&#xF3;n, el color del c&#xED;rculo cambia a negro. Explicaremos despu&#xE9;s y en detalle m&#xE1;s de los elementos de este programa. Por ahora, ejecuta el c&#xF3;digo, mueve el rat&#xF3;n y haz click para&nbsp;<a contenteditable="false" data-primary="circles" data-secondary="drawing" data-startref="c2d" data-type="indexterm">&nbsp;</a>  experimentarlo.</p>
+</section>
+</section>
+
+<section data-type="sect1">
+<h1>La consola</h1>
+
+<p>El <a contenteditable="false" data-primary="console" data-type="indexterm" id="cons2">&nbsp;</a>navegador tiene incluido una <em>consola</em> que puede ser muy &#xFA;til para <a contenteditable="false" data-primary="debugging" data-type="indexterm">&nbsp;</a>corregir errores en los programas. Cada navegador tiene una manera distinta de abrir la consola. Aqu&#xED; est&#xE1;n las instrucciones sobre c&#xF3;mo hacerlo en los navegadores m&#xE1;s t&#xED;picos:</p>
+
+<ul>
+	<li>Para abrir la consola en Chrome, selecciona en el men&#xFA; superior View→Developer→JavaScript Console.</li>
+	<li>En Firefox, en el men&#xFA; superior selecciona Tools→Web Developer→Web Console.</li>
+	<li>Si usas Safari, necesitar&#xE1;s habilitar la funcionalidad antes de que puedas usarla. Desde el men&#xFA; superior, selecciona Preferencias, luego haz click en la pesta&#xF1;a Avanzado y activa la casilla con el texto "Show Develop menu in menu bar." Tras hacer esto, podr&#xE1;s seleccionar Develop→Show Error Console.</li>
+	<li>En Internet Explorer, abre F12 Developer Tools, luego selecciona la Console tool.</li>
+</ul>
+
+<p>Ahora deber&#xED;as ver un recuadro en la parte inferior o lateral de tu pantalla (<a data-type="xref" href="#Fig_02_01">Figura 2-1</a>). Si hay un error de tipeo u otro <a contenteditable="false" data-primary="error messages, in console" data-type="indexterm" id="em2ic">&nbsp;</a>error en tu programa, aparecer&#xE1; texto rojo explicando qu&#xE9; error es. Este texto puede a veces ser cr&#xED;ptico, pero si revisas al lado derecho de la l&#xED;nea, estar&#xE1; el nombre del archivo y el n&#xFA;mero de la l&#xED;nea de c&#xF3;digo donde fue detectado el error. Ese es un lugar adecuado donde empezar a buscar errores en tu programa.</p>
+
+<div data-nickname="akaziuna" data-type="comment">
+<div class="comment-identifier"><img src="https://secure.gravatar.com/avatar/e0080a854a5c1d5b8feb7567ee1b2eb2" />
+<div spellcheck="false">akaziuna</div>
+<i class="delete_comment glyphicons remove_2">&nbsp;</i></div>
+
+<p>Note to Production: whitespace around the SVG image is too large.&nbsp;</p>
+</div>
+
+<figure id="Fig_02_01"><img alt="Fig 02 01" src="images/gspj_0201.png" />
+<figcaption><b>Figura 2-1. </b>Vista de ejemplo de un error en la consola (la apariencia y disposicion varia segun el navegador usado)</figcaption>
+</figure>
+</section>
+
+<section data-type="sect1">
+<h1>Crear un nuevo proyecto</h1>
+
+<p>Has<a contenteditable="false" data-primary="error messages, in console" data-startref="em2ic" data-type="indexterm">&nbsp;</a> <a contenteditable="false" data-primary="console" data-startref="cons2" data-type="indexterm">&nbsp;</a>creado un bosquejo a partir de un ejemplo vac&#xED;o, &#xBF;pero c&#xF3;mo creas un nuevo proyecto? &nbsp;<a contenteditable="false" data-primary="new project" data-type="indexterm" id="np2">&nbsp;</a>La manera m&#xE1;s f&#xE1;cil de hacerlo es ubicando el directorio <em>empty-example</em> en tu explorador de archivos,&nbsp;luego copiar y pegarlo para crear un segundo <em>empty-example</em>. Puedes renombrar el directorio como quieras — por ejemplo, <em>Proyecto-2</em>.</p>
+
+<p>Ahora puedes abrir este directorio en tu editor de c&#xF3;digo y empezar a hacer un nuevo bosquejo. Cuando quieras verlo en el navegador, abre el archivo <em>index.html </em>ubicado en tu nuevo directorio <em>Proyecto-2</em> folder.</p>
+
+<p>Siempre es una buena idea grabar frecuentemente tus bosquejos. Mientras vas probando cosas nuevas, graba tu bosquejo con diferentes nombres, (Archivo→Guardar como), para que as&#xED; siempre puedas volver a versiones anteriores.  Esto es especialmente &#xFA;til si — o <em>cuando</em>algo &nbsp;<a contenteditable="false" data-primary="new project" data-startref="np2" data-type="indexterm">&nbsp;</a>falla.</p>
+
+<div data-type="note">
+<p>Un error com&#xFA;n es estar editando un proyecto pero estar viendo otro en el navegador, haciendo que no puedas ver los cambios que has realizado. Si te das cuenta que tu programa se ve igual a pesar de haber hecho cambios a tu c&#xF3;digo, revisa que est&#xE1;s viendo el archivo <em>index.html</em> correcto.</p>
+</div>
+</section>
+
+<section data-type="sect1">
+<h1>Ejemplos y referencia</h1>
+
+<p>Aprender &nbsp;<a contenteditable="false" data-primary="Reference page" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="Examples page" data-type="indexterm">&nbsp;</a>a programar con p5.js involucra explorar mucho c&#xF3;digo: ejecutarlo, alterarlo, romperlo y mejorarlo hasta que lo hayas reconfigurado en algo novedoso.  Con esto en mente, el sitio web de p5.js tiene docenas de ejemplos que demuestran diferentes caracter&#xED;sticas de la biblioteca. Visita la <a href="http://p5js.org/examples">pag&#xED;na de Ejemplos</a> para verlos. Puedes jugar con ellos editanto el c&#xF3;digo en la p&#xE1;gina y luego haciendo click en "Ejecutar." Los ejemplos est&#xE1;n agrupados en distintas categor&#xED;as seg&#xFA;n su funci&#xF3;n, como forma, color, e imagen. Encuentra un tema que te interese en la lista y prueba un ejemplo.</p>
+
+<p>Si ves una parte del programa con la que no est&#xE1;s familiarizado o sobre la que quieres aprender su funcionalidad, visita la<a href="http://p5js.org/reference/"><em>Referencia de p5.js</em></a>.</p>
+
+<p>La <em>Referencia de p5.js</em> explica cada elemento de c&#xF3;digo con una descripci&#xF3;n y ejemplos. Los programas de la <em>Referencia</em> son mucho m&#xE1;s cortos (usualmente cuatro o cinco l&#xED;neas) y m&#xE1;s f&#xE1;ciles de seguir que los ejemplos de la p&#xE1;gina Aprende. Ten en cuenta que estos ejemplos usualmente omiten <code>setup()</code> y <code>draw()</code> por simplicidad, pero estas l&#xED;neas de c&#xF3;digo que ves deber&#xE1;n ser puestas dentro de uno de estos bloques para poder ser ejecutadas. Recomendamos mantener la p&#xE1;gina de <em>Referencia</em> abierta mientras est&#xE9;s leyendo este libro y mientras est&#xE9;s programando. Puede ser navegada por tema o usando la barra de b&#xFA;squeda en la parte superior de la p&#xE1;gina.</p>
+
+<p>La <em>Referencia</em> fue escrita pensando en el principiante; esperamos que sea clara y facil de entender. Estamos muy agradecidos de las personas que han encontrado errores y los han se&#xF1;alado. Si crees que puedes mejorar una entrada en la referencia o que has encontrado alg&#xFA;n error, por favor haznos saber esto haciendo click en el enlace en la parte inferior de cada <a contenteditable="false" data-primary="coding basics" data-startref="cb2" data-type="indexterm">&nbsp;</a>p&#xE1;gina de referencia.</p>
+</section>
+</section>

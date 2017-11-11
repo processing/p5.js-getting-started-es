@@ -1,0 +1,102 @@
+<section data-type="appendix" id="coding_tips">
+<h1>Consejos de programacion</h1>
+
+<p class="lede">Programar <a contenteditable="false" data-primary="coding tips" data-type="indexterm" id="ctappa">&nbsp;</a>es un tipo de escritura. Como todos los tipos de escritura, programar tiene reglas espec&#xed;ficas. Para comparar, mencionaremos r&#xe1;pidamente algunas de las reglas del espa&#xf1;ol a las que probablemente no les has puesto atenci&#xf3;n porque te son naturales.</p>
+
+<p>Algunas de las reglas m&#xe1;s invisibles son escribir de izquierda a derecha y poner un espacio entre cada palabra. Otras reglas m&#xe1;s evidentes son las convenciones de ortograf&#xed;a, la may&#xfa;scula en los nombres de personas y lugares  y el uso de puntuaci&#xf3;n al final de las frases. Si rompes una o m&#xe1;s de estas reglas al escribir un correo a un amigo, el mensaje igualmente se puede entender. Por ejemplo, "hola ben. como estas oy?" se entiende casi tan bien como "Hola, Ben. &#xbf;C&#xf3;mo est&#xe1;s hoy?" Sin embargo, la flexibilidad de las reglas de escritura no se transfiere a la programaci&#xf3;n. Como est&#xe1;s escribiendo para comunicarte con un computador, en lugar de otra persona, necesitas ser m&#xe1;s preciso y cuidadoso. Un car&#xe1;cter fuera de lugar es a menudo la diferencia entre un programa que funciona y otro que no.</p>
+
+<p>Tu navegador trata de indicarte d&#xf3;nde has cometido errores y de adivinar cu&#xe1;l es el error. Cuando ejecutas tu programa, si hay problemas gramaticales (sintaxis) en tu c&#xf3;digo<a contenteditable="false" data-primary="bugs, minimizing" data-type="indexterm">&nbsp;</a> (los llamamos <em>bugs</em>), la consola muestra un mensaje de error con un n&#xfa;mero de l&#xed;nea que indica d&#xf3;nde puede estar el error. El texto en la consola trata de ser de ayuda y sugiere el problema, pero a veces el mensaje es demasiado dif&#xed;cil de entender. Para un principiante, estos mensajes de error pueden ser frustrantes. Ten en cuenta que tu navegador est&#xe1; tratando de ayudar, pero tiene un conocimiento limitado sobre lo que t&#xfa; est&#xe1;s tratando de lograr.</p>
+
+<p>Adicionalmente, tu navegavor solamente puede encontrar un error a la vez. Si tu programa tiene muchos errores, necesitar&#xe1;s continuar corriendo el programa y arreglar un error a la vez.</p>
+
+<p>Por favor lee y vuelve a leer las siguientes sugerencias detenidamente para ayudarte a escribir c&#xf3;digo limpio. Para un tutorial m&#xe1;s profundo sobre correci&#xf3;n de errores, revisa <em class="hyperlink"><a href="https://p5js.org/es/tutorials/debugging.html">https://p5js.org/es/tutorials/debugging.html</a></em>.</p>
+
+<section data-type="sect1" id="functions_and_parameters">
+<h1>Funciones y par&#xe1;metros</h1>
+
+<p>Los programas<a contenteditable="false" data-primary="coding tips" data-secondary="functions and parameters" data-type="indexterm" id="ctaafp">&nbsp;</a><a contenteditable="false" data-primary="parameters" data-type="indexterm" id="pappa">&nbsp;</a><a contenteditable="false" data-primary="functions" data-type="indexterm" id="fappa">&nbsp;</a>est&#xe1;n compuestos de muchas partes pequenas, las que se agrupan para formar estructuras mas grandes. En espa&#xf1;ol tenemos un sistema similar: las palabras son agrupadas en frases, las que son combinadas para formar oraciones, las que luego son combinadas para crear p&#xe1;rrafos. La misma idea existe en c&#xf3;digo, pero las peque&#xf1;as partes tienen nombres distintos y se comportan de forma diferente. Las <em>funciones</em> y los <em>par&#xe1;metros</em> son dos partes importantes. Las funciones son los bloques b&#xe1;sicos para construir un programa en p5.js. Los par&#xe1;metros son los valores que definen c&#xf3;mo se comporta una funci&#xf3;n.</p>
+
+<p>Considera una funci&#xf3;n <a contenteditable="false" data-primary="background() function" data-type="indexterm">&nbsp;</a>como <code>background()</code>. Como el nombre lo sugiere ("background" significa "fondo"), se usa para definir el color del fondo del lienzo. La funci&#xf3;n tiene tres par&#xe1;metros que definen el color. Estos n&#xfa;meros son los componentes rojo, verde y azul para definir el color. Por ejemplo, el c&#xf3;digo a continuaci&#xf3;n pinta azul el fondo:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+background(51, 102, 153);</pre>
+
+<p>Revisa cuidadosamente esta linea de c&#xf3;digo. Los detalles clave son los par&#xe9;ntesis despues del nombre de la funci&#xf3;n que rodean a los n&#xfa;meros, y las comas entre cada n&#xfa;mero. Todas estas partes necesitan estar presentes para que el c&#xf3;digo se ejecute. Compara la l&#xed;nea de ejemplo anterior a estas dos versiones de la misma l&#xed;nea, pero con errores:</p>
+
+<pre data-type="programlisting">
+background 51, 102, 153; // &#161;Error! Faltan los par&#xe9;ntesis
+background(51 102, 153); // &#161;Error! Falta una coma</pre>
+
+<p>Tambi&#xe9;n hay un punto y coma al final de cada l&#xed;nea. El punto y coma se usa como un punto. Se&#xf1;ala que se acab&#xf3; una instrucci&#xf3;n, para que el computador pueda buscar el inicio de la siguiente. Si omites el punto y coma, tu navegador lo averiguar&#xe1; de todos modos, pero se recomienda por consistencia que uses punto y coma. Sin embargo, la siguiente l&#xed;nea no tendr&#xed;a problemas:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+background(51, 102, 153) // Falta el punto y coma, no hay problema.</pre>
+
+<p>El computador no perdona ni la menor omisi&#xf3;n o desviaci&#xf3;n de lo esperado. Si recuerdas estos consejos, cometer&#xe1;s menos errores. Pero si te equivocas al escribir, como nos ocurre a todos, no es un problema. Tu navegador te alertar&#xe1; sobre el problema, y cuando est&#xe9; corregido, el programa se ejecutar&#xe1; <a contenteditable="false" data-primary="coding tips" data-secondary="functions and parameters" data-startref="ctaafp" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="parameters" data-startref="pappa" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="functions" data-startref="fappa" data-type="indexterm">&nbsp;</a>correctamente.</p>
+</section>
+
+<section data-type="sect1" id="comments-id1">
+<h1>Comentarios</h1>
+
+<p>Los comentarios<a contenteditable="false" data-primary="comments" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="coding tips" data-secondary="comments" data-type="indexterm">&nbsp;</a>son notas que te escribes a ti mismo (u otra gente) dentro del c&#xf3;digo. Debes usarlos para aclarar en palabras simples lo que el c&#xf3;digo est&#xe1; haciendo y para proveer informaci&#xf3;n adicional como el t&#xed;tulo y el autor del programa. Un comentario empieza con dos barras oblicuas (<code>//</code>) y contin&#xfa;a hasta el final de la l&#xed;nea:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+// Este es un comentario de una l&#xed;nea</pre>
+
+<p>Puedes hacer un comentario de varias l&#xed;neas con <code>/*</code> y terminarlo con <code>*/</code>. Por ejemplo:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+/* Este comentario
+   abarca m&#xe1;s de
+   una l&#xed;nea
+*/</pre>
+
+<p>Cuando escribes un comentario de forma correcta, el texto ser&#xe1; de color gris. El &#xe1;rea comentada completa se vuelve gris para que puedas ver claramente d&#xf3;nde empieza y termina.</p>
+</section>
+
+<section data-type="sect1" id="uppercase_and_lowercase">
+<h1>May&#xfa;sculas y min&#xfa;sculas</h1>
+
+<p>p5.js distingue<a contenteditable="false" data-primary="uppercase/lowercase letters in code" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="lowercase/uppercase letters in code" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="coding tips" data-secondary="upper/lowercase letters" data-type="indexterm">&nbsp;</a>entre letras may&#xfa;sculas y min&#xfa;sculas y por lo tanto lee "Hola" como una palabra distinta de "hola". Si est&#xe1;s tratando de dibujar un rect&#xe1;ngulo con la funci&#xf3;n <code>rect()</code> y escribes <code>Rect()</code>, el c&#xf3;digo no funcionar&#xe1;.</p>
+</section>
+
+<section data-type="sect1" id="style">
+<h1>Estilo</h1>
+
+<p>p5.js es flexible<a contenteditable="false" data-primary="coding tips" data-secondary="style and formatting" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="formatting/style of code" data-type="indexterm">&nbsp;</a>en cuanto a la cantidad de espacio usado para darle formato a tu c&#xf3;digo. A p5.js no le importa si escribes:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+rect(50, 20, 30, 40);</pre>
+
+<p>o:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+rect (50,20,30,40);</pre>
+
+<p>o:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+rect     (       50,20,
+ 30,   40)            ;</pre>
+
+<p>Sin embargo, es conveniente que tu c&#xf3;digo sea de f&#xe1;cil lectura. Esto se hace especialmente importante a medida que tu c&#xf3;digo aumenta en longitud. Un formato limpio hace que la estructura del c&#xf3;digo sea legible de inmediato, y un mal formato a menudo esconde los problemas. Toma el h&#xe1;bito de escribir c&#xf3;digo limpio. Existen muchas formas de formatear bien tu c&#xf3;digo, y la forma en que usas espacios es una preferencia personal.</p>
+</section>
+
+<section data-type="sect1" id="console">
+<h1>Consola</h1>
+
+<p>La consola<a contenteditable="false" data-primary="console" data-type="indexterm">&nbsp;</a>&nbsp;es un panel en tu navegador que puede ser usado para ayudar a corregir errores en tu programa. Puedes escribir mensajes en la consola con la funci&#xf3;n <code>print()</code>. Por ejemplo, el siguiente c&#xf3;digo imprime un mensaje y a continuaci&#xf3;n imprime la hora actual:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+print("Hola p5.js.");
+print("La hora es " + hour() + ":" + minute());</pre>
+
+<p>La consola es esencial para ver lo que est&#xe1; pasando dentro de tus programas mientras se ejecutan. Se usa para imprimir el valor de las variables y as&#xed; comprobarlas, para confirmar si est&#xe1;n ocurriendo eventos, y para determinar si un programa est&#xe1; teniendo un problema.</p>
+</section>
+
+<section data-type="sect1" id="one_step_at_a_time">
+<h1>Un paso a la vez</h1>
+
+<p>Te recomendamos escribir unas pocas l&#xed;neas de c&#xf3;digo a la vez y ejecutar el c&#xf3;digo frecuentemente para asegurarte que no se acumulen errores sin que te des cuenta. Todo programa ambicioso es escrito l&#xed;nea a l&#xed;nea. Divide tu proyecto en subproyectos m&#xe1;s simples y hazlos uno a la vez para que puedas lograr muchas peque&#xf1;as victorias, en vez de un grupo de errores. Si cometes un error, trata de aislar el &#xe1;rea del c&#xf3;digo donde crees que est&#xe1; el problema. Trata de imaginar que la correcci&#xf3;n de errores es como resolver un misterio o un rompecabezas. Si te quedas atascado o te frustras, toma una pausa para refrescar tu cabeza o p&#xed;dele ayuda a un amigo. A veces, la respuesta esta delante tuyo, pero necesitas una segunda opini&#xf3;n para lograr&nbsp;<a contenteditable="false" data-primary="coding tips" data-startref="ctappa" data-type="indexterm">&nbsp;</a>encontrarla.</p>
+</section>
+</section>

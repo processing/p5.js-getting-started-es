@@ -1,0 +1,782 @@
+<section data-type="chapter" id="response" xmlns="http://www.w3.org/1999/xhtml">
+<h1 class="chapterhead">Respuesta</h1>
+
+<p class="lede">El c&#xF3;digo que<a contenteditable="false" data-primary="response to input" data-type="indexterm" id="rti5">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="setup and draw" data-type="indexterm" id="rti5sad">&nbsp;</a>responde a acciones de entrada del rat&#xF3;n, teclado u otros dispositivos  depende de la ejecuci&#xF3;n continua del programa.  Ya nos enfrentamos a las funciones <code>setup()</code> y <code>draw()</code> en <a data-type="xref" href="#hello">#hola</a>. Ahora aprenderemos m&#xE1;s sobre qu&#xE9; hacen y c&#xF3;mo podemos usarlas para reaccionar a entradas al programa.</p>
+
+<section data-type="sect1">
+<h1>Una vez y para siempre</h1>
+
+<p>El c&#xF3;digo dentro del bloque <code>draw()</code> <a contenteditable="false" data-primary="draw() function" data-type="indexterm" id="df5">&nbsp;</a>se ejecuta desde el principio hasta el final, luego se repite hasta que cierras el programa cuando cierras la ventana. Cada iteraci&#xF3;n de <code>draw()</code> se <a contenteditable="false" data-primary="frames" data-type="indexterm">&nbsp;</a>llama <em>cuadro</em>. (La tasa de cuadros por defecto es de 60 cuadros por segundo, pero esto puede ser modificado).</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-1: la funci&#xF3;n draw()</h2>
+
+<p>Para ver c&#xF3;mo funciona el bloque <code>draw()</code> , ejecuta este ejemplo:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function draw() {
+  // Muestra en la consola la cuenta de cuadros
+  print("Estoy dibujando");
+  print(frameCount);
+}</pre>
+
+<p class="pagebreak-before">Ver&#xE1;s lo siguiente:</p>
+
+<pre data-type="programlisting">
+Estoy dibujando
+1
+Estoy dibujando
+2
+Estoy dibujando
+3
+...</pre>
+
+<p>En el programa de ejemplo anterior, las funciones <code>print()</code> escriben el texto "Estoy dibujando" seguido del contador actual de cuadros, tarea efectuada por la variable especial <code>frameCount</code> (1, 2, 3, …). El texto aparece en la consola de tu navegador.</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-2: la funci&#xF3;n setup()</h2>
+
+<p>Para <a contenteditable="false" data-primary="setup() function" data-type="indexterm" id="sf5">&nbsp;</a>complementar la funci&#xF3;n <code>draw()</code> en bucle, p5.js posee la funci&#xF3;n&nbsp;<code>setup()</code>&nbsp;que solo se ejecuta una vez cuando el programa empieza:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  print("Estoy empezando");
+}
+
+function draw() {
+  print("Estoy corriendo");
+}</pre>
+
+<p>Cuando corres este c&#xF3;digo, se escribe lo siguiente en la consola:</p>
+
+<pre data-type="programlisting">
+Estoy empezando
+Estoy corriendo
+Estoy corriendo
+Estoy corriendo
+...</pre>
+
+<p>El texto "Estoy corriendo" sigue escribi&#xE9;ndose en la consola hasta que el programa se detenga.</p>
+
+<p>En algunos navegadores, en vez de escribir una y otra vez "Estoy corriendo", lo imprimir&#xE1; solamente una vez, y despu&#xE9;s por cada vez adicional, incrementar&#xE1; un n&#xFA;mero junto a la l&#xED;nea, representando el n&#xFA;mero total de veces que la l&#xED;nea ha sido impresa sucesivamente.</p>
+
+<p>En un programa t&#xED;pico, el c&#xF3;digo dentro de <code>setup()</code> es usado para definir las condiciones iniciales. La primera l&#xED;nea es usualmente la funci&#xF3;n <code>createCanvas()</code>, a menudo seguida de c&#xF3;digo para definir los colores de relleno y trazado iniciales. (Si no incluyes la funci&#xF3;n <code>createCanvas()</code>,  createCanvas(), el lienzo para dibujar tendr&#xE1; por defecto una dimensi&#xF3;n de 100x100 pixeles).</p>
+
+<p>Ahora sabes c&#xF3;mo usar <code>setup()</code> y <code>draw()</code>  en mayor detalle, pero esto no es todo.</p>
+
+<p>Hay una ubicaci&#xF3;n adicional d&#xF3;nde has estado poniendo c&#xF3;digo — tambi&#xE9;n puedes poner variables globales fuera de <code>setup()</code> y <code>draw()</code>. Esto se hace m&#xE1;s claro cuando anotamos el orden en que el c&#xF3;digo es ejecutado:</p>
+
+<ol>
+	<li>
+	<p>Se crean las variables declaradas fuera de <code>setup()</code> y <code>draw()</code>.</p>
+	</li>
+	<li>
+	<p>Se ejecuta una vez el c&#xF3;digo dentro de <code>setup()</code>.</p>
+	</li>
+	<li>
+	<p>Se ejecuta continuamente el c&#xF3;digo dentro de <code>draw()</code>.</p>
+	</li>
+</ol>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-3: setup(), te presento a draw()</h2>
+
+<p>El siguiente ejemplo pone en pr&#xE1;ctica todos estos conceptos:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = 280;
+var y = -100;
+var diameter = 380;
+
+function setup() {
+  createCanvas(480, 120);
+  fill(102);
+}
+
+function draw() {
+  background(204);
+  ellipse(x, y, diameter, diameter);
+}</pre>
+<a contenteditable="false" data-primary="draw() function" data-startref="df5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="setup() function" data-startref="sf5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="setup and draw" data-startref="rti5sad" data-type="indexterm">&nbsp;</a></section>
+</section>
+
+<section data-type="sect1">
+<h1>Seguir</h1>
+
+<p>Como <a contenteditable="false" data-primary="response to input" data-secondary="mouse movement tracking" data-type="indexterm" id="rti5mmt">&nbsp;</a>el c&#xF3;digo est&#xE1; ejecut&#xE1;ndose continuamente, podemos seguir la posici&#xF3;n del rat&#xF3;n y usar estos n&#xFA;meros para mover elementos en la pantalla.</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-4: seguir al rat&#xF3;n</h2>
+
+<p>La variable <code>mouseX</code>&nbsp; almacena la coordenada <em>x</em>, y la variable <code>mouseY</code> almacena la coordenada <em>y</em>:</p>
+
+<figure><img alt="Ex 05 04" class="addBorder" src="images/gspj_05in02.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  fill(0, 102);
+  noStroke();
+}
+
+function draw() {
+  ellipse(mouseX, mouseY, 9, 9);
+}</pre>
+
+<p>En este ejemplo, cada vez que se ejecuta el c&#xF3;digo del bloque <code>draw()</code>, se a&#xF1;ade un nuevo c&#xED;rculo al lienzo. Esta imagen fue hecha moviendo el rat&#xF3;n para controlar la posici&#xF3;n del c&#xED;rculo. Como la funci&#xF3;n de relleno est&#xE1; configurada para ser parcialmente transparente, las &#xE1;reas negras m&#xE1;s densas muestran d&#xF3;nde el rat&#xF3;n estuvo m&#xE1;s tiempo o se movi&#xF3; m&#xE1;s lento. Los c&#xED;rculos que est&#xE1;n m&#xE1;s separados muestran d&#xF3;nde el rat&#xF3;n estuvo movi&#xE9;ndose m&#xE1;s r&#xE1;pido.</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-5:el punto te persigue</h2>
+
+<p>En este &nbsp;ejemplo, se a&#xF1;ade un nuevo c&#xED;rculo al lienzo cada vez que el c&#xF3;digo dentro de <code>draw()</code> se ejecuta. Para refrescar la pantalla y solamente  mostrar el c&#xED;rculo m&#xE1;s reciente, escribe la funci&#xF3;n <code>background()</code> <a contenteditable="false" data-primary="background() function" data-type="indexterm">&nbsp;</a>al principio del bloque <code>draw()</code>  antes de que la figura sea dibujada:</p>
+
+<figure><img alt="Ex 05 05" src="images/gspj_05in03.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  fill(0, 102);
+  noStroke();
+}
+
+function draw() {
+  background(204);
+  ellipse(mouseX, mouseY, 9, 9);
+}</pre>
+
+<p>La funci&#xF3;n <code>background()</code> pinta el lienzo completo, as&#xED; que aseg&#xFA;rate de ponerlo antes que las otras funciones dentro de <code>draw()</code>; si no haces esto, las figuras dibujadas previamente ser&#xE1;n borradas.</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-6: dibuja de forma continua</h2>
+
+<p>Las variables <code>pmouseX</code> y <code>pmouseY</code><a contenteditable="false" data-primary="pmouseX/pmouseY variables" data-type="indexterm">&nbsp;</a>variables <a contenteditable="false" data-primary="drawing" data-secondary="continuous" data-type="indexterm">&nbsp;</a>&nbsp;almacenan la posici&#xF3;n del rat&#xF3;n en el cuadro anterior. Al igual que <code>mouseX</code> y <code>mouseY</code>, estas variables especiales son actualizadas cada vez que se ejecuta <code>draw()</code>. Al combinarlas, pueden ser usadas para dibujar l&#xED;neas continuas al conectar las posiciones actual y m&#xE1;s reciente:</p>
+
+<figure><img alt="Ex 05 06" class="addBorder" src="images/gspj_05in04.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  strokeWeight(4);
+  stroke(0, 102);
+}
+
+function draw() {
+  line(mouseX, mouseY, pmouseX, pmouseY);
+}</pre>
+</section>
+
+<section data-type="sect2" id="ex-5-7">
+<h2>Ejemplo 5-7: define el grosor sobre la marcha</h2>
+
+<p>Las variables <code>pmouseX</code> y <code>pmouseY</code>&nbsp;<a contenteditable="false" data-primary="lines" data-secondary="setting thickness of" data-type="indexterm">&nbsp;</a>tambi&#xE9;n pueden ser usadas para calcular la velocidad del rat&#xF3;n. Esto se hace midiendo la distancia entre la posici&#xF3;n actual y la m&#xE1;s reciente del rat&#xF3;n. Si el rat&#xF3;n se mueve lentamente, la distancia es peque&#xF1;a, pero si se empieza a mover m&#xE1;s r&#xE1;pido, la distancia se incrementa. Una funci&#xF3;n llamada <a contenteditable="false" data-primary="dist() function" data-type="indexterm">&nbsp;</a>called <code>dist()</code> simplifica este c&#xE1;lculo, como se muestra en el siguiente ejemplo. Aqu&#xED;, la velocidad del rat&#xF3;n es usada para definir el grosor de la l&#xED;nea dibujada:</p>
+
+<figure><img alt="Ex 05 07" class="addBorder" src="images/gspj_05in05.png" />
+<figcaption/>
+</figure>
+
+<pre class="pre" data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  stroke(0, 102);
+}
+
+function draw() {
+  var weight = dist(mouseX, mouseY, pmouseX, pmouseY);
+  strokeWeight(weight);
+  line(mouseX, mouseY, pmouseX, pmouseY);
+}</pre>
+</section>
+
+<section data-type="sect2" id="ex-5-8" class="pagebreak-before">
+<h2>Ejemplo 5-8: suavizado</h2>
+
+<p>En <a data-type="xref" href="#ex-5-7">#ej-5-7</a>, los <a contenteditable="false" data-primary="easing" data-type="indexterm" id="e5">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="easing " data-type="indexterm" id="rti5e">&nbsp;</a>valores del rat&#xF3;n son convertidos directamente en posiciones en la pantalla. Pero a veces queremos que estos valores sigan al rat&#xF3;n m&#xE1;s libremente - que se queden atr&#xE1;s para crear un movimiento m&#xE1;s fluido. Esta t&#xE9;cnica se llama <em>suavizado</em>. En el suavizado, hay dos valores: el valor actual y el valor objetivo (ver <a data-type="xref" href="#Fig_05_01">Figura 5-1</a>). En cada paso del programa, el valor actual se acerca un poco m&#xE1;s h al valor objetivo:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = 0;
+var suavizado = 0.01;
+
+function setup() {
+  createCanvas(220, 120);
+}
+
+function draw() {
+  var objetivoX = mouseX;
+  x += (objetivoX - x) * suavizado;
+  ellipse(x, 40, 12, 12);
+  print(objetivoX + " : " + x);
+}</pre>
+
+<p>El valor de la variable <code>x</code> siempre se est&#xE1; acerc&#xE1;ndo a <code>targetX</code>. La velocidad con la que se acerca a <code>targetX</code> es definida por la variable de <span class="keep-together"><code>suavizado</code></span>, un n&#xFA;mero entre 0 y 1. Un valor peque&#xF1;o de suavizado causa m&#xE1;s retraso que un valor m&#xE1;s grande. Con un valor de suavizado de 1, no hay retraso. Cuando ejecutas el <a data-type="xref" href="#ex-5-8">#ej-5-8</a>, los valores son mostrados en la consola a trav&#xE9;s de la funci&#xF3;n<a contenteditable="false" data-primary="print() function" data-type="indexterm">&nbsp;</a> <code>print()</code>. Cuando mueves el rat&#xF3;n, observa c&#xF3;mo los n&#xFA;meros est&#xE1;n alejados, pero cuando dejas de moverlo, el valor de <code>x</code> se acerca al valor de <code>targetX</code>.</p>
+
+<figure id="Fig_05_01"><img alt="Fig 05 01" src="images/gspj_0501.png" />
+<figcaption><b>Figura 5-1. </b>El suavizado cambia el n&#xfa;mero de pasos necesarios para ir de un lugar a otro</figcaption>
+</figure>
+
+<p>Todo el trabajo en este ejemplo ocurre en la l&#xED;nea que empieza con <code>x +=</code>. Ah&#xED;, se calcula la diferencia entre el valor objetivo y el actual, y luego es multiplicada por la variable <code>suavizado</code> y sumada a <code>x</code> para acercarla m&#xE1;s al objetivo.</p>
+</section>
+
+<section data-type="sect2" class="pagebreak-before">
+<h2>Ejemplo 5-9: suaviza las l&#xED;neas</h2>
+
+<p>En este <a contenteditable="false" data-primary="lines" data-secondary="smoothing with easing" data-type="indexterm">&nbsp;</a>ejemplo, la t&#xE9;cnica de suavizado es aplicada a <a data-type="xref" href="#ex-5-7">#ej-5-7</a>. En comparaci&#xF3;n, las l&#xED;neas son m&#xE1;s fluidas:</p>
+
+<figure><img alt="Ex 05 09" class="addBorder" src="images/gspj_05in06.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = 0;
+var y = 0;
+var px = 0;
+var py = 0;
+var suavizado = 0.05;
+
+function setup() {
+  createCanvas(480, 120);
+  stroke(0, 102);
+}
+
+function draw() {
+  var objetivoX = mouseX;
+  x += (objetivoX - x) * suavizado;
+  var objetivoY = mouseY;
+  y += (objetivoX - y) * suavizado;
+  var peso = dist(x, y, px, py);
+  strokeWeight(peso);
+  line(x, y, px, py);
+  py = y;
+  px = x;
+}</pre>
+<a contenteditable="false" data-primary="easing" data-startref="e5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="easing" data-startref="rti5e" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="mouse movement tracking" data-startref="rti5mmt" data-type="indexterm">&nbsp;</a></section>
+</section>
+
+<section data-type="sect1" class="pagebreak-before">
+<h1>Click</h1>
+
+<p>Adem&#xE1;s<a contenteditable="false" data-primary="clicks, mouse" data-type="indexterm" id="cm5">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="mouse clicks" data-type="indexterm" id="rti3mc">&nbsp;</a><a contenteditable="false" data-primary="mouse clicks" data-type="indexterm" id="mc5">&nbsp;</a>de la ubicaci&#xF3;n del rat&#xF3;n, p5.js tambi&#xE9;n mantiene registro de si el bot&#xF3;n del rat&#xF3;n es presionado o no. La variable <code>mouseIsPressed</code><a contenteditable="false" data-primary="mouseIsPressed variable" data-type="indexterm">&nbsp;</a> tiene un valor distinto cuando el bot&#xF3;n del rat&#xF3;n est&#xE1; presionado. La variable <code>mouseIsPressed</code> es una variable booleana, <a contenteditable="false" data-primary="boolean variables" data-type="indexterm">&nbsp;</a>lo que significa que solo tiene dos valores posibles: <code>true</code> (verdadero) y <code>false</code> (falso). El valor de <code>mouseIsPressed</code> es <code>true</code> cuando un bot&#xF3;n est&#xe1; siendo presionado.</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-10: haz click con el rat&#xF3;n</h2>
+
+<p>La variable <code>mouseIsPressed</code> es usada en conjunto con la declaraci&#xF3;n <code>if</code> para determinar si una l&#xED;nea de c&#xF3;digo ser&#xE1; ejecutada o no. Prueba este ejemplo antes de que sigamos explicando:</p>
+
+<figure><img alt="Ex 05 10" src="images/gspj_05in07.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(240, 120);
+  strokeWeight(30);
+}
+
+function draw() {
+  background(204);
+  stroke(102);
+  line(40, 0, 70, height);
+  if (mouseIsPressed == true) {
+    stroke(0);
+  }
+  line(0, 70, width, 50);
+}</pre>
+
+<p class="pagebreak-before">En este programa, el c&#xF3;digo dentro del bloque <code>if</code> solamente se ejecuta cuando se presiona un bot&#xF3;n del rat&#xF3;n. Cuando no se presiona un bot&#xF3;n, el c&#xF3;digo es ignorado. Tal como el bucle <code>for</code> discutido en <a data-type="xref" href="#repetition">#repetici&#xf3;n</a>, el bloque <code>if</code> tambi&#xe9;n tiene una <code>prueba</code> que es evaluada a <code>true</code> o <code>false</code>:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+if (prueba) {
+  instrucciones
+}</pre>
+
+<p>Cuando la prueba es <code>true</code>, el c&#xF3;digo dentro del bloque se ejecuta; cuando es <code>false</code>, el c&#xF3;digo dentro del bloque no se ejecuta. El computador determina si la prueba es <code>true</code> o <code>false</code> al evaluar la expresi&#xF3;n dentro de los par&#xE9;ntesis. (Si quieres refrescar tu memoria, <a data-type="xref" href="#ex-4-6">#ej-4-6</a> discute en mayor detalle las expresiones relacionales).</p>
+
+<p>El s&#xED;mbolo <code>==</code><a contenteditable="false" data-primary="== (equal to) operator" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="= (assignment) operator" data-type="indexterm">&nbsp;</a>compara los valores a la izquierda y a la derecha para probar si son equivalentes o no. El s&#xED;mbolo <code>==</code> es distinto del operador de asignaci&#xF3;n, el s&#xED;mbolo unitario <code>=</code>. El s&#xED;mbolo <code> ==</code> pregunta, "&#xBF;son estas cosas iguales?" mientras que el s&#xED;mbolo <code>=</code> define el valor de una variable.</p>
+
+<div data-type="note">
+<p>Es un error com&#xFA;n, incluso de programadores avanzados, escribir <code>=</code> en el c&#xF3;digo en vez de <code>==</code>. p5.js no siempre te advertir&#xE1; cu&#xE1;ndo lo hagas, as&#xED; que s&#xE9; cuidadoso.</p>
+</div>
+
+<p>De forma alternativa, la prueba en <code>draw()</code> se puede escribir as&#xED;:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+if (mouseIsPressed) {</pre>
+
+<p>Las variables boolean, incluyendo a <code>mouseIsPressed</code>, no necesitan la comparaci&#xF3;n expl&#xED;cita con el operador <code>==</code>, porque su valor solamente puede ser <code>true</code> o <code>false</code>.</p>
+</section>
+
+<section class="pagebreak-before" data-type="sect2">
+<h2>Ejemplo 5-11: detecci&#xF3;n de no hacer click</h2>
+
+<p>Un bloque <code>if</code> te da la oportunidad de ejecutar una porci&#xF3;n de c&#xF3;digo o de ignorarla. Puedes extender la funcionalidad del bloque <code>if</code> con un bloque <code>else</code>, permitiendo que tu programa escoja entre dos opciones. El c&#xF3;digo dentro del bloque <code>else</code>  se ejecuta cuando el valor de la prueba del bloque <code>if</code> es <code>false</code>. Por ejemplo, el color de trazado de un programa puede ser blanco cuando el bot&#xF3;n del rat&#xF3;n no es presionado y puede cambiar a negro cuando s&#xED; es presionado:</p>
+
+<figure><img alt="Ex 05 11" src="images/gspj_05in08.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(240, 120);
+  strokeWeight(30);
+}
+
+function draw() {
+  background(204);
+  stroke(102);
+  line(40, 0, 70, height);
+  if (mouseIsPressed) {
+    stroke(0);
+  } else {
+    stroke(255);
+  }
+  line(0, 70, width, 50);
+}</pre>
+</section>
+
+<section class="pagebreak-before" data-type="sect2">
+<h2>Ejemplo 5-12: m&#xFA;ltiples botones del rat&#xF3;n</h2>
+
+<p>p5.js tambi&#xE9;n lleva registro de qu&#xe9; bot&#xF3;n del rat&#xF3;n es presionado, si es que tienes m&#xE1;s de uno en tu rat&#xF3;n. La variable <code>mouseButton</code> puede tener uno de estos tres valores: <code>LEFT</code> (izquierdo), <code>CENTER</code> (centro), o <code>RIGHT</code> (derecho). Para revisar cu&#xE1;l bot&#xF3;n es presionado, se necesita el operador <code>==</code>, como se muestra a continuaci&#xF3;n:</p>
+
+<figure><img alt="Ex 05 12" src="images/gspj_05in09.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(120, 120);
+  strokeWeight(30);
+}
+
+function draw() {
+  background(204);
+  stroke(102);
+  line(40, 0, 70, height);
+  if (mouseIsPressed) {
+    if (mouseButton == LEFT) {
+      stroke(255);
+    } else {
+      stroke(0);
+    }
+    line(0, 70, width, 50);
+  }
+}</pre>
+
+<p>Un programa puede tener muchos m&#xE1;s bloques <code>if</code> y <code>else</code> (ver <a data-type="xref" href="#Fig_05_02">Figura 5-2</a>) que los encontrados en estos ejemplos cortos. Pueden ser concatenadas en una larga serie con distintas pruebas, y los bloques <code>if</code> pueden estar anidados dentro de otros bloques <code>if</code> para tomar decisiones m&#xE1;s complejas.</p>
+
+<figure id="Fig_05_02"><img alt="Fig 05 02" src="images/gspj_0502.png" />
+<figcaption><b>Figura 5-2. </b>La estructura if y else toma decisiones sobre cu&#xe1;les bloques de c&#xf3;digo se ejecutar&#xe1;n.</figcaption>
+</figure>
+</section>
+</section>
+
+<section data-type="sect1">
+<h1>Ubicaci&#xF3;n</h1>
+
+<p>Una estructura <code>if</code><a contenteditable="false" data-primary="cursor location" data-type="indexterm" id="cl5">&nbsp;</a><a contenteditable="false" data-primary="clicks, mouse" data-startref="cm5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="mouse clicks" data-startref="mc5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="mouse clicks" data-startref="rti3mc" data-type="indexterm">&nbsp;</a>puede ser usada con los valores <code>mouseX</code> y <code>mouseY</code><a contenteditable="false" data-primary="response to input" data-secondary="cursor location" data-type="indexterm" id="rti3cl">&nbsp;</a>para determinar la ubicaci&#xF3;n del cursor dentro de la ventana.</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-13: encuentra el cursor</h2>
+
+<p>En este ejemplo, buscamos el cursor para revisar si est&#xE1; a la izquierda o a la derecha de una l&#xED;nea y luego movemos la l&#xED;nea hacia el cursor:</p>
+
+<figure><img alt="Ex 05 13" src="images/gspj_05in10.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x;
+var offset = 10;
+
+function setup() {
+  createCanvas(240, 120);
+  x = width/2;
+}
+
+function draw() {
+  background(204);
+  if (mouseX &gt; x) {
+    x += 0.5;
+    offset = -10;
+  }
+  if (mouseX &lt; x) {
+    x -= 0.5;
+    offset = 10;
+  }
+  // Dibuja flecha izquierda o derecha seg&#xfa;n el valor "offset"
+  line(x, 0, x, height);
+  line(mouseX, mouseY, mouseX + offset, mouseY - 10);
+  line(mouseX, mouseY, mouseX + offset, mouseY + 10);
+  line(mouseX, mouseY, mouseX + offset*3, mouseY);
+}</pre>
+
+<p>Para escribir programas que tengan interfaces gr&#xE1;ficas de usuario (botones, casillas, barras deslizadoras, etc.) necesitamos escribir c&#xF3;digo que sepa cuando el cursor est&#xE1; dentro de un &#xE1;rea de la pantalla. Los siguientes dos ejemplos muestran c&#xF3;mo verificar si el cursor est&#xE1; dentro de un c&#xED;rculo y de un rect&#xE1;ngulo. El c&#xF3;digo est&#xE1; escrito de forma modular y con variables, para que pueda ser usado para comprobar con <em>cualquier</em> c&#xED;rculo o rect&#xE1;ngulo mediante la modificaci&#xF3;n de los valores.</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-14: los bordes de un c&#xED;rculo</h2>
+
+<p>Para<a contenteditable="false" data-primary="circles" data-secondary="cursor position relative to" data-type="indexterm" id="c5cprt">&nbsp;</a>la prueba con el c&#xED;rculo, usamos la funci&#xF3;n <code>dist()</code>&nbsp;<a contenteditable="false" data-primary="dist() function" data-type="indexterm">&nbsp;</a>para obtener la distancia desde el centro del c&#xED;rculo al cursor, luego comprobamos si este valor es menor que el radio del c&#xED;rculo (ver <a data-type="xref" href="#Fig_05_03">Figura 5-3</a>). Si lo es, sabemos que estamos dentro del c&#xED;rculo. En este ejemplo, cuando el cursos est&#xE1; dentro del &#xE1;rea del c&#xED;rculo, su tama&#xF1;o aumenta:</p>
+
+<figure><img alt="Ex 05 14" src="images/gspj_05in11.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = 120;
+var y = 60;
+var radio = 12;
+
+function setup() {
+  createCanvas(240, 120);
+  ellipseMode(RADIUS);
+}
+
+function draw() {
+  background(204);
+  var d = dist(mouseX, mouseY, x, y);
+  if (d &lt; radio) {
+    radio++;
+    fill(0);
+  } else {
+    fill(255);
+  }
+  ellipse(x, y, radio, radio);
+}</pre>
+
+<figure id="Fig_05_03"><img alt="Fig 05 03" src="images/gspj_0503.png" />
+<figcaption><b>Figura 5-3. </b>Prueba del c&#xed;rculo. Cuando la distancia entre el rat&#xf3;n y el c&#xed;rculo es menor que el radio, el rat&#xf3;n esta dentro del c&#xed;rculo.</figcaption>
+</figure>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-15: los bordes de un rect&#xE1;ngulo</h2>
+
+<p>Usaremos&nbsp;<a contenteditable="false" data-primary="circles" data-secondary="cursor position relative to" data-startref="c5cprt" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="rectangles" data-secondary="cursor position relative to" data-type="indexterm" id="r5cprt">&nbsp;</a>otro enfoque para comprobar si el cursor est&#xE1; dentro de un rect&#xE1;ngulo. Hacemos cuatro pruebas separadas para comprobar si el cursor est&#xE1; en el lado correcto de cada uno de los lados del rect&#xE1;ngulo, luego comparamos cada resultado de las pruebas y si todas son <code>true</code>, entonces sabemos que el cursor est&#xE1; dentro. Esto es ilustrado en <a data-type="xref" href="#Fig_05_04">Figura 5-4</a>. Cada uno de los pasos es simple, pero se ven complicados al combinarlos:</p>
+
+<figure><img alt="Ex 05 15" src="images/gspj_05in12.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = 80;
+var y = 30;
+var w = 80;
+var h = 60;
+
+function setup() {
+  createCanvas(240, 120);
+}
+
+function draw() {
+  background(204);
+  if ((mouseX &gt; x) &amp;&amp; (mouseX &lt; x+w) &amp;&amp;
+      (mouseY &gt; y) &amp;&amp; (mouseY &lt; y+h)) {
+    fill(0);
+  }
+  else {
+    fill(255);
+  }
+  rect(x, y, w, h);
+}</pre>
+
+<p>La prueba en la declaraci&#xF3;n <code>if</code> es un poco m&#xE1;s complicada que lo visto hasta el momento. Cuatro pruebas individuales (como <code>mouseX &gt; x</code>) son combinadas con el operador l&#xF3;gico <code>AND</code>, el s&#xED;mbolo <code>&amp;&amp;</code> <a contenteditable="false" data-primary="&amp;&amp; (logical AND) operator" data-type="indexterm">&nbsp;</a>, para asegurar que cada expresi&#xF3;n relacional en la secuencia sea <code>true</code>. Si alguna de ellas es <code>false</code>, la prueba completa es <code>false</code> y el color de relleno no ser&#xE1; negro.</p>
+
+<figure id="Fig_05_04"><img alt="Fig 05 04" src="images/gspj_0504.png" />
+<figcaption><b>Figura 5-4. </b>Prueba del rect&#xe1;ngulo. Cuando se combinan las cuatro pruebas y resultan true, el cursor est&#xe1; dentro del rect&#xe1;ngulo.</figcaption>
+</figure>
+</section>
+</section>
+
+<section data-type="sect1">
+<h1>Tipo</h1>
+
+<p>p5.js mantiene<a contenteditable="false" data-primary="typing, responses to" data-type="indexterm" id="trt5">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="keystrokes" data-type="indexterm" id="rti5ks">&nbsp;</a>&nbsp;<a contenteditable="false" data-primary="rectangles" data-secondary="cursor position relative to" data-startref="r5cprt" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="cursor location" data-startref="cl5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="cursor location" data-startref="rti3cl" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="keystroke responses" data-type="indexterm" id="kr5">&nbsp;</a> el registro de cualquier tecla que sea presionada en el teclado, adem&#xE1;s de la &#xFA;ltima tecla presionada. Tal como la variable <code>mouseIsPressed</code>, la variable <code>keyIsPressed</code><a contenteditable="false" data-primary="keyIsPressed variable" data-type="indexterm">&nbsp;</a> es <code>true</code> cuando cualquier tecla es presionada, y es <code>false</code> cuando no hay teclas presionadas.</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-16: presiona una tecla</h2>
+
+<p>En este ejemplo, la segunda l&#xED;nea solamente es dibujada cuando hay una tecla presionada:</p>
+
+<figure><img alt="Ex 05 16" src="images/gspj_05in13.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(240, 120);
+}
+
+function draw() {
+  background(204);
+  line(20, 20, 220, 100);
+  if (keyIsPressed) {
+    line(220, 20, 20, 100);
+  }
+}</pre>
+
+<p>La variable <code>key</code> almacena la tecla presionada m&#xE1;s reciente. A diferencia de la variable boolean <code>keyIsPressed</code>, que se revierte a <code>false</code> cada vez que una tecla es soltada, la variable <code>key</code> <a contenteditable="false" data-primary="key variable" data-type="indexterm">&nbsp;</a>mantiene su valor hasta que la siguiente tecla es presionada. El siguiente ejemplo usa el valor de <code>key</code> para dibujar el car&#xe1;cter en la pantalla. Cada vez que se presiona una tecla, el valor se actualiza y se dibuja un nuevo car&#xe1;cter. Algunas teclas, como Shift y Alt, no tienen un car&#xe1;cter visible, as&#xED; que si las presionas, nada ser&#xE1; dibujado.</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-17: dibuja algunas letras</h2>
+
+<p>Este ejemplo presenta la funci&#xF3;n <code>textSize()</code> <a contenteditable="false" data-primary="textSize() function" data-type="indexterm">&nbsp;</a>para definir el tama&#xF1;o de las letras, la funci&#xF3;n <code>textAlign()</code><a contenteditable="false" data-primary="textAlign() function" data-type="indexterm">&nbsp;</a> para centrar el texto en su coordenada <em>x</em>, y la funci&#xF3;n <code>text()</code> <a contenteditable="false" data-primary="text() function" data-type="indexterm">&nbsp;</a>para dibujar la letra. Estas funciones ser&#xE1;n discutidas en mayor detalle en <a data-type="xref" href="#fonts">#tipos_de_letra</a>.</p>
+
+<figure><img alt="Ex 05 17" src="images/gspj_05in14.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(120, 120);
+  textSize(64);
+  textAlign(CENTER);
+  fill(255);
+}
+
+function draw() {
+  background(0);
+  text(key, 60, 80);
+}</pre>
+
+<p>Usando una estructura <code>if</code>, podemos revisar si una tecla espec&#xED;fica es presionada y elegir dibujar algo distinto en la pantalla a modo de respuesta.</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-18: comprobar teclas espec&#xed;ficas</h2>
+
+<p>En este ejemplo, revisamos si las teclas N o H son presionadas. Usamos el operador de comparaci&#xF3;n, el s&#xED;mbolo <code>==</code> <a contenteditable="false" data-primary="== (equal to) operator" data-type="indexterm">&nbsp;</a>, para revisar si el valor de la variable <code>key</code> es igual a los caracteres que estamos buscando:</p>
+
+<figure><img alt="Ex 05 18" src="images/gspj_05in15.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(120, 120);
+}
+
+function draw() {
+  background(204);
+  if (keyIsPressed) {
+    if ((key == 'h') || (key == 'H')) {
+      line(30, 60, 90, 60);
+    }
+    if ((key == 'n') || (key == 'N')) {
+      line(30, 20, 90, 100);
+    }
+  }
+  line(30, 20, 30, 100);
+  line(90, 20, 90, 100);
+}</pre>
+
+<p>Cuando revisamos si est&#xE1; siendo presionada la tecla H o la N, necesitamos revisar tanto para las letras en may&#xFA;scula como en min&#xFA;scula, en caso de que alguien presione la tecla Shift o tenga la funci&#xF3;n Caps Lock activada. Combinamos ambas pruebas con el operador l&#xF3;gico OR, <a contenteditable="false" data-primary="|| (logical OR) operator" data-type="indexterm">&nbsp;</a>el s&#xED;mbolo <code>||</code>. Si traducimos la segunda instrucci&#xF3;n <code>if</code> <a contenteditable="false" data-primary="if statements" data-type="indexterm">&nbsp;</a>de este ejemplo a lenguaje plano, dice, "Si se presiona la tecla 'h' OR la tecla 'H'." A diferencia del operador l&#xF3;gico AND (el s&#xED;mbolo <code>&amp;&amp;</code>), solamente una de estas expresiones necesita ser <code>true</code> para que la prueba completa sea <code>true</code>.</p>
+
+<p>Algunas teclas son m&#xE1;s dif&#xED;ciles de detectar, porque no est&#xE1;n asociadas a una letra en particular. Teclas como  Shift, Alt, y las <a contenteditable="false" data-primary="arrow keys, detecting" data-type="indexterm">&nbsp;</a>teclas de flecha est&#xE1;n codificadas. Tenemos que revisar el c&#xF3;digo con la variable <code>keyCode</code> <a contenteditable="false" data-primary="keyCode variable" data-type="indexterm">&nbsp;</a>para saber qu&#xE9; tecla es. Los valores m&#xE1;s frecuentes de <code>keyCode</code> son <code>ALT</code>, <code>CONTROL</code>, y <code>SHIFT</code>, adem&#xE1;s de las teclas de flechas, <code>UP_ARROW</code> (arriba), <code>DOWN_ARROW</code> (abajo), <code>LEFT_ARROW</code> (izquierda), y <code>RIGHT_ARROW</code> (derecha).</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-19: mover con las flechas</h2>
+
+<p>El siguiente ejemplo muestra c&#xF3;mo usar las flechas izquierda y derecha para mover un rect&#xE1;ngulo:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = 215;
+
+function setup() {
+  createCanvas(480, 120);
+}
+
+function draw() {
+  if (keyIsPressed) {
+    if (keyCode == LEFT_ARROW) {
+      x--;
+    }
+    else if (keyCode == RIGHT_ARROW) {
+      x++;
+    }
+  }
+  rect(x, 45, 50, 50);
+}</pre>
+<a contenteditable="false" data-primary="response to input" data-secondary="keystrokes" data-startref="rti5ks" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="keystroke responses" data-startref="kr5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="typing, responses to" data-startref="trt5" data-type="indexterm">&nbsp;</a></section>
+</section>
+
+<section data-type="sect1">
+<h1>Tacto</h1>
+
+<p>Para <a contenteditable="false" data-primary="response to input" data-secondary="touchscreens" data-type="indexterm">&nbsp;</a>dispositivos que lo soportan, p5.js mantiene registo de si la pantalla es tocada y su ubicaci&#xF3;n. Tal como la variable <code>mouseIsPressed</code>, la variable <code>touchIsDown</code> <a contenteditable="false" data-primary="touchIsDown variable" data-type="indexterm">&nbsp;</a>es <code>true</code> cuando la pantalla es tocada y <code>false</code> cuando no.</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-20: toca la pantalla</h2>
+
+<p>En este ejemplo, la segunda l&#xED;nea es dibujada solo si la pantalla es tocada:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(240, 120);
+}
+
+function draw() {
+  background(204);
+  line(20, 20, 220, 100);
+  if (touchIsDown) {
+    line(220, 20, 20, 100);
+  }
+}</pre>
+
+<p>Al igual que las variables <code>mouseX</code> y <code>mouseY</code>, las variables <code>touchX</code> y <code>touchY</code> <a contenteditable="false" data-primary="touchX/touchY variables" data-type="indexterm">&nbsp;</a>almacenan las coordenadas <em>x</em> e <em>y</em> del punto donde la pantalla est&#xE1; siendo tocada.</p>
+</section>
+
+<section class="pagebreak-before" data-type="sect2">
+<h2>Ejemplo 5-21: rastrea el dedo</h2>
+
+<p>En &nbsp;este ejemplo, un c&#xED;rculo nuevo es a&#xF1;adido al lienzo cada vez que se ejecuta el c&#xF3;digo en <code>draw()</code>. Para refrescar la pantalla y solamente mostrar el c&#xED;rculo m&#xE1;s reciente, escribe la funci&#xF3;n <code>background()</code><a contenteditable="false" data-primary="background() function" data-type="indexterm">&nbsp;</a>al inicio de <code>draw()</code> antes de dibujar la figura:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  fill(0, 102);
+  noStroke();
+}
+
+function draw() {
+  ellipse(touchX, touchY, 15, 15);
+}</pre>
+</section>
+</section>
+
+<section data-type="sect1">
+<h1>Mapeo</h1>
+
+<p>Los n&#xFA;meros <a contenteditable="false" data-primary="response to input" data-secondary="mapping" data-type="indexterm" id="rti5map">&nbsp;</a>que son creados por el rat&#xF3;n y por el teclado muchas veces necesitan ser modificados para ser &#xFA;tiles en un programa. Por ejemplo, si un bosquejo tiene un ancho de 1920 pixeles y los valores de <code>mouseX</code> son usados para definir el color del fondo, el rango de 0 a 1920 de <code>mouseX</code> necesitar&#xE1; ser escalado para moverse en un rango de 0 a 255 para controlar mejor el color. Esta transformaci&#xF3;n puede ser hecha con una ecuaci&#xF3;n o con una funci&#xF3;n <a contenteditable="false" data-primary="map() function" data-type="indexterm" id="mapf5">&nbsp;</a>llamada <code>map()</code>.</p>
+
+<section data-type="sect2" id="ex-5-22">
+<h2>Ejemplo 5-22: mapeo de valores a un rango</h2>
+
+<p>En este ejemplo, la ubicaci&#xF3;n de dos l&#xED;neas es controlada por la variable <code>mouseX</code> <a contenteditable="false" data-primary="mouseX/mouseY variables" data-type="indexterm" id="mxmyv5">&nbsp;</a>. La l&#xED;nea gris est&#xE1; sincronizada con la posici&#xF3;n del cursor, pero la l&#xED;nea negra se mantiene m&#xE1;s cerca del centro de la pantalla y se aleja de la l&#xED;nea blanca en los bordes izquierdos y derechos:</p>
+
+<figure><img alt="Ex 05 22" src="images/gspj_05in16.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(240, 120);
+  strokeWeight(12);
+}
+
+function draw() {
+  background(204);
+  stroke(102);
+  line(mouseX, 0, mouseX, height);  // L&#xED;nea gris
+  stroke(0);
+  var mx = mouseX/2 + 60;
+  line(mx, 0, mx, height);  // L&#xED;nea negra
+}</pre>
+
+<p>La funci&#xF3;n <code>map()</code> es una manera m&#xE1;s general de hacer este tipo de cambio. Convierte una variable desde un rango de valores a otro. El primer par&#xE1;metro es la variable a ser convertida, el segundo y tercer valor son los valores m&#xED;nimo y m&#xE1;ximo de esa variable, y el cuarto y quinto son los valores m&#xED;nimo y m&#xE1;ximo deseados. La funci&#xF3;n <code>map()</code> esconde la matem&#xE1;tica detr&#xE1;s de esta conversi&#xF3;n.</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 5-23: mapeo con la funci&#xF3;n <code>map()</code></h2>
+
+<p>Este ejemplo reescribe <a data-type="xref" href="#ex-5-22">#ej-5-22</a> usando <code>map()</code>:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(240, 120);
+  strokeWeight(12);
+}
+
+function draw() {
+  background(204);
+  stroke(255);
+  line(120, 60, mouseX, mouseY); // L&#xED;nea blanca
+  stroke(0);
+  var mx = map(mouseX, 0, width, 60, 180);
+  line(120, 60, mx, mouseY); // L&#xED;nea negra
+}</pre>
+
+<p>La funci&#xF3;n <code>map()</code> hace que el c&#xF3;digo sea f&#xE1;cil de leer, porque los valores m&#xE1;ximo y m&#xED;nimo est&#xE1;n claramente escritos como par&#xE1;metros. En este ejemplo, los valores de <code>mouseX</code> entre 0 y <code>width</code> son convertidos a n&#xFA;meros entre 60 (cuando <code>mouseX</code> es 0) y 180 (cuando <code>mouseX</code> es <code>width</code>). Encontrar&#xE1;s esta &#xFA;til funci&#xF3;n <code>map()</code> en muchos ejemplos a lo largo de este<a contenteditable="false" data-primary="mouseX/mouseY variables" data-startref="mxmyv5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="map() function" data-startref="mapf5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="mapping" data-startref="rti5map" data-type="indexterm">&nbsp;</a>libro.</p>
+</section>
+</section>
+
+<section data-type="sect1" id="robot3">
+<h1>Robot 3: respuesta</h1>
+
+<figure><img alt="Robot 3" src="images/gspj_05in17.png" />
+<figcaption/>
+</figure>
+
+<p>Este<a contenteditable="false" data-primary="robot programs (examples)" data-secondary="mouse-responding shapes" data-type="indexterm" id="rp5mrs">&nbsp;</a>programa usa las variables introducidas en Robot 2 (ver <a data-type="xref" href="#robot2">#robot2</a>) y hace posible cambiarlas mientras el programa es ejecutado de manera que las figuras respondan al rat&#xF3;n. El c&#xF3;digo dentro del bloque <code>draw()</code> es ejecutado muchas veces por segundo. En cada cuadro, las variables definidas en el programa cambian en respuesta a las variables <code>mouseX</code> y <code>mouseIsPressed</code>.</p>
+
+<p>El valor <code>mouseX</code> controla la posici&#xF3;n del robot con la t&#xE9;cnica de suavizado para que los movimientos sean menos instant&#xE1;neos y se vean m&#xE1;s naturales. Cuando se presiona un bot&#xF3;n del rat&#xF3;n, los valores de <code>neckHeight</code> y <code>bodyHeight</code> cambian para hacer m&#xE1;s corto el robot :</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = 60;          // Coordenada x
+var y = 440;         // Coordenada y
+var radius = 45;       // Radio de la cabeza
+var bodyHeight = 160;  // Altura del cuerpo
+var neckHeight = 70;   // Altura del cuello
+
+var suavizado = 0.04;
+
+function setup() {
+  createCanvas(360, 480);
+  strokeWeight(2);
+  ellipseMode(RADIUS);
+}
+
+function draw() {
+
+  var targetX = mouseX;
+  x += (targetX - x) * suavizado;
+
+  if (mouseIsPressed) {
+    neckHeight = 16;
+    bodyHeight = 90;
+  } else {
+    neckHeight = 70;
+    bodyHeight = 160;
+  }
+
+  var neckY = y - bodyHeight - neckHeight - radius;
+
+  background(204);
+
+  // Cuello
+  stroke(102);
+  line(x+12, y-bodyHeight, x+12, neckY);
+
+  // Antenas
+  line(x+12, neckY, x-18, neckY-43);
+  line(x+12, neckY, x+42, neckY-99);
+  line(x+12, neckY, x+78, neckY+15);
+
+  // Cuerpo
+  noStroke();
+  fill(102);
+  ellipse(x, y-33, 33, 33);
+  fill(0);
+  rect(x-45, y-bodyHeight, 90, bodyHeight-33);
+
+  // Cabeza
+  fill(0);
+  ellipse(x+12, neckY, radius, radius);
+  fill(255);
+  ellipse(x+24, neckY-6, 14, 14);
+  fill(0);
+  ellipse(x+24, neckY-6, 3, 3);
+}</pre>
+<a contenteditable="false" data-primary="response to input" data-startref="rti5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="robot programs (examples)" data-secondary="mouse-responding shapes" data-startref="rp5mrs" data-type="indexterm">&nbsp;</a></section>
+</section>

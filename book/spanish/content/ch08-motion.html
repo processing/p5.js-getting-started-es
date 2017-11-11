@@ -1,0 +1,511 @@
+<section data-type="chapter" id="motion" xmlns="http://www.w3.org/1999/xhtml">
+<h1 class="chapterhead">Movimiento</h1>
+
+<p class="lede">Al igual que en un<a contenteditable="false" data-primary="motion" data-see="animation" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="animation" data-type="indexterm" id="a8">&nbsp;</a>folioscopio, la animaci&#xF3;n en la pantalla es creada dibujando una imagen, luego otra, y as&#xED;. La ilusi&#xF3;n de movimiento fluido es creada por <a contenteditable="false" data-primary="persistence of vision" data-type="indexterm">&nbsp;</a><em> persistencia de visi&#xF3;n</em>. Cuando un conjunto de im&#xE1;genes similares es presentado a una tasa suficiente, nuestros cerebros interpretan estas im&#xE1;genes como movimiento.</p>
+
+<section data-type="sect1">
+<h1>Cuadros</h1>
+
+<p>Para<a contenteditable="false" data-primary="animation" data-secondary="frames/frame rates" data-type="indexterm" id="a8fr">&nbsp;</a><a contenteditable="false" data-primary="frames" data-type="indexterm">&nbsp;</a>crear un movimiento fluido, p5.js trata de ejecutar el c&#xF3;digo dentro de<a contenteditable="false" data-primary="draw() function" data-type="indexterm">&nbsp;</a> <code>draw()</code> a una tasa de 60 cuadros por segundo. Un <em>cuadro</em> es una ejecuci&#xF3;n de la funci&#xF3;n <code>draw()</code> y la <em>tasa de cuadros</em> equivale a cu&#xE1;ntos cuadros son dibujados por segundo. Entonces, un programa que dibuja 60 cuadros por segundo ejecuta todo el c&#xF3;digo dentro de la funci&#xF3;n <code>draw()</code> 60 veces por segundo.</p>
+
+<section data-type="sect2" id="ex-8-1">
+<h2>Ejemplo 8-1: ve la tasa de cuadros</h2>
+
+<p>Para confirmar la <a contenteditable="false" data-primary="frame rates" data-type="indexterm" id="fr8">&nbsp;</a>tasa de cuadros, podemos usar la consola del navegador que aprendimos a usar en <a data-type="xref" href="#hello">#hola</a>. La funci&#xF3;n&nbsp;<code>frameRate()</code>&nbsp;<a contenteditable="false" data-primary="frameRate() function" data-type="indexterm">&nbsp;</a>indica la velocidad actual de tu programa.&nbsp;Abre la consola,&nbsp;ejecuta este programa y revisa los valores que imprime:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function draw() {
+  var fr = frameRate();
+  print(fr);
+}</pre>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 8-2: define la tasa de cuadros</h2>
+
+<p>La funci&#xF3;n <code>frameRate()</code> tambi&#xE9;n puede cambiar la velocidad a la que el programa corre. Cuando es ejecutada sin par&#xE1;metro (como en <a data-type="xref" href="#ex-8-1">#ej-8-1</a>), retorna la tasa de cuadros actual. Sin embargo, cuando la funci&#xF3;n <code>frameRate()</code> es ejecutada con un par&#xE1;metro, define la tasa de cuadros a ese valor. Para ver el resultado, ejecuta las distintas versiones de <code>frameRate()</code> de este ejemplo, descoment&#xE1;ndolas:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  frameRate(30); // Treinta cuadros por segundo
+  //frameRate(12); // Doce cuadros por segundo
+  //frameRate(2); // Dos cuadros por segundo
+  //frameRate(0.5); // Un cuadros cada dos segundos
+}
+
+function draw() {
+  var fr = frameRate();
+  print(fr);
+}</pre>
+
+<div data-type="note">
+<p>p5.js <em>trata</em> de correr el c&#xF3;digo a una tasa de 60 cuadros por segundo, pero si tarda m&#xE1;s de de 1/60 segundos en ejecutar el m&#xE9;todo <code>draw()</code>, entonces la tasa decrecer&#xE1;. La funci&#xF3;n <code>frameRate()</code> solamente especifica la tasa m&#xE1;xima. La tasa de cualquier programa depende del computador ejecutando el<a contenteditable="false" data-primary="animation" data-secondary="frames/frame rates" data-startref="a8fr" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="frame rates" data-startref="fr8" data-type="indexterm">&nbsp;</a> c&#xF3;digo.</p>
+</div>
+</section>
+</section>
+
+<section data-type="sect1">
+<h1>Velocidad y direcci&#xF3;n</h1>
+
+<p class="pagebreak-after">Para <a contenteditable="false" data-primary="animation" data-secondary="speed and direction" data-type="indexterm" id="a8sd">&nbsp;</a>crear ejemplos de movimiento fluido, creamos variables que almacenan n&#xFA;meros y los modifican un poco en cada cuadro.</p>
+
+<section data-type="sect2" id="ex-8-3">
+<h2>Ejemplo 8-3: mueve una figura</h2>
+
+<p>El <a contenteditable="false" data-primary="shapes" data-secondary="moving" data-see="animation" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="animation" data-secondary="moving shapes" data-type="indexterm">&nbsp;</a>siguiente ejemplo mueve una figura de izquierda a derecha, actualizando la variable <em>x</em>:</p>
+
+<figure><img alt="Ex 08 03" src="images/gspj_08in02.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var radius = 40;
+var x = -radius;
+var speed = 0.5;
+
+function setup() {
+  createCanvas(240, 120);
+  ellipseMode(RADIUS);
+}
+
+function draw() {
+  background(0);
+  x += speed;  // Aumenta el valor de x
+  arc(x, 60, radius, radius, 0.52, 5.76);
+}</pre>
+
+<p class="pagebreak-after">Cuando ejecutas este c&#xF3;digo, observar&#xE1;s que la figura se mueve m&#xE1;s all&#xE1; del borde derecho de la pantalla cuando el valor de la variable <em>x</em> es mayor que el ancho de la ventana. El valor de <em>x</em> sigue aumentando, pero la figura ya no es visible.</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 8-4: dar la vuelta</h2>
+
+<p>Existen<a contenteditable="false" data-primary="shapes" data-secondary="wrapping around screen" data-type="indexterm" id="s8was">&nbsp;</a><a contenteditable="false" data-primary="animation" data-secondary="wrapping shapes around screen" data-type="indexterm" id="a8wsas">&nbsp;</a>muchas alternativas a este comportamiento, que puedes escoger de acuerdo a tu preferencia. Primero, extenderemos el c&#xF3;digo para mostrar c&#xF3;mo mover la figura de vuelta al borde izquierdo de la pantalla despu&#xE9;s de que desaparece del borde derecho. En este caso, imagina la pantalla como un cilindro aplanado, con la figura movi&#xE9;ndose por fuera para volver al borde izquierdo:</p>
+
+<figure><img alt="Ex 08 04" src="images/gspj_08in03.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var radius = 40;
+var x = -radius;
+var speed = 0.5;
+
+function setup() {
+  createCanvas(240, 120);
+  ellipseMode(RADIUS);
+}
+
+function draw() {
+  background(0);
+  x += speed;  // Aumenta el valor de x
+  if (x &gt; width+radius) {  // Si la figura está fuera de la pantalla
+    x = -radius;  // Mueve la figura al borde izquierdo
+  }
+  arc(x, 60, radius, radius, 0.52, 5.76);
+}</pre>
+
+<p>En cada viaje alrededor de <code>draw()</code>, el c&#xF3;digo prueba si el valor de <code>x</code> ha aumentado m&#xE1;s all&#xE1; del ancho de la pantalla (sumado al radio de la figura). Si lo ha hecho, hacemos que el valor de <code>x</code> sea negativo nuevamente, para que cuando siga aumentando, entre a la pantalla por la izquierda. Revisa <a data-type="xref" href="#Fig_08_01">Figura 8-1</a> para ver un diagrama de c&#xF3;mo<a contenteditable="false" data-primary="shapes" data-secondary="wrapping around screen" data-startref="s8was" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="animation" data-secondary="wrapping shapes around screen" data-startref="a8wsas" data-type="indexterm">&nbsp;</a>funciona.</p>
+
+<figure id="Fig_08_01"><img alt="Fig 08 01" src="images/gspj_0801.png" />
+<figcaption><b>Figura 8-1. </b>Probando los bordes de la ventana</figcaption>
+</figure>
+</section>
+
+<section data-type="sect2" id="ex-8-5">
+<h2>Ejemplo 8-5: rebota contra la pared</h2>
+
+<p>En este <a contenteditable="false" data-primary="animation" data-secondary="bouncing shapes off wall" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="shapes" data-secondary="bouncing off wall" data-type="indexterm">&nbsp;</a>ejemplo, extenderemos el <a data-type="xref" href="#ex-8-3">#ej-8-3</a> para que la figura cambie de direcci&#xF3;n cuando llegue a un borde, en vez de volver a aparecer por la izquierda. Para lograr esto, a&#xF1;adimos una nueva variable para almacenar la direcci&#xF3;n de la figura. Un valor de direcci&#xF3;n de 1 mueve la figura hacia la derecha, mientras que un valor de -1 la mueve hacia la izquierda:</p>
+
+<figure><img alt="Ex 08 05" src="images/gspj_08in04.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var radius = 40;
+var x = 110;
+var speed = 0.5;
+var direction = 1;
+
+function setup() {
+  createCanvas(240, 120);
+  ellipseMode(RADIUS);
+}
+
+function draw() {
+  background(0);
+  x += speed * direction;
+  if ((x &gt; width-radius) || (x &lt; radius)) {
+    direction = -direction; // Cambiar dirección
+  }
+  if (direction == 1) {
+    arc(x, 60, radius, radius, 0.52, 5.76); // Hacia la derecha
+  } else {
+    arc(x, 60, radius, radius, 3.67, 8.9); // Hacia la izquierda
+  }
+}</pre>
+
+<p>Cuando la figura llega a un borde, este c&#xF3;digo invierte la direcci&#xF3;n de la figura, cambiando el signo de la variable <code>direction</code>. Por ejemplo, si la variable <code>direction</code> es positiva cuando la figura llega a un borde, el c&#xF3;digo la invierte a <a contenteditable="false" data-primary="animation" data-secondary="speed and direction" data-startref="a8sd" data-type="indexterm">&nbsp;</a>negativa.</p>
+</section>
+</section>
+
+<section data-type="sect1">
+<h1>Posiciones intermedias (tweening)</h1>
+
+<p>A veces<a contenteditable="false" data-primary="animation" data-secondary="tween positions" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="tweening, in animation" data-type="indexterm">&nbsp;</a>quieres animar una figura para ir de un punto de la pantalla a otro. Con unas pocas l&#xED;neas de c&#xF3;digo, puedes configurar la posici&#xF3;n inicial y final, y luego calcular las posiciones intermedias (<em>tween</em>) en cada cuadro.</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 8-6: calcula las posiciones intermedias</h2>
+
+<p>Para hacer que el ejemplo de este c&#xF3;digo sea modular, hemos creado un grupo de variables en la parte superior. Ejecuta el c&#xF3;digo algunas veces y cambia los valores para revisar c&#xF3;mo este c&#xF3;digo puede mover a la figura desde cualquier ubicaci&#xF3;n a cualquier otra en cualquier rango de velocidades. Modifica la variable <code>step</code> <a contenteditable="false" data-primary="step variable" data-type="indexterm">&nbsp;</a>para alterar la velocidad:</p>
+
+<figure><img alt="Ex 08 06" src="images/gspj_08in05.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var startX = 20;   // Coordenada x inicial
+var stopX = 160;   // Coordenada x final
+var startY = 30;   // Coordenada y inicial
+var stopY = 80;    // Coordenada y final
+var x = startX;    // Coordenada x actual
+var y = startY;    // Coordenada y actual
+var step = 0.005;  // createCanvas para cada paso (0.0 a 1.0)
+var pct = 0.0;     // Porcentaje avanzado (0.0 a 1.0)
+
+function setup() {
+  createCanvas(240, 120);
+}
+
+function draw() {
+  background(0);
+  if (pct &lt; 1.0) {
+    x = startX + ((stopX-startX) * pct);
+    y = startY + ((stopY-startX) * pct);
+    pct += step;
+  }
+  ellipse(x, y, 20, 20);
+}</pre>
+</section>
+</section>
+
+<section data-type="sect1" id="random">
+<h1>Aleatoreidad</h1>
+
+<p>A diferencia<a contenteditable="false" data-primary="animation" data-secondary="random drawing/moving of shapes" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="shapes" data-secondary="random drawing/moving of" data-type="indexterm">&nbsp;</a>del movimiento linear y suave t&#xED;pico en las gr&#xE1;ficas por computadora, el movimiento en el mundo f&#xED;sico es usualmente idiosincr&#xE1;tico. Por ejemplo, una hoja cayendo hacia la tierra, o una hormiga caminando por un terreno rugoso. Podemos simular las cualidades impredecibles del mundo generando n&#xFA;meros aleatorios. La funci&#xF3;n <a contenteditable="false" data-primary="random() function" data-type="indexterm">&nbsp;</a> <code>random()</code> calcula estos valores; podemos definir un rango para afinar la cantidad de desorden en un programa.</p>
+
+<section data-type="sect2" id="ex-8-7">
+<h2>Ejemplo 8-7: genera valores aleatorios</h2>
+
+<p>El siguiente ejemplo corto imprime valores aleatorios en la consola, con el rango limitado por la posici&#xF3;n del rat&#xF3;n:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function draw() {
+  var r = random(0, mouseX);
+  print(r);
+}</pre>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 8-8: dibuja aleatoriamente</h2>
+
+<p>Construyendo a partir del <a data-type="xref" href="#ex-8-7">#ej-8-7</a>, this <a contenteditable="false" data-primary="drawing" data-secondary="randomly" data-type="indexterm">&nbsp;</a>este ejemplo usa valores de la funci&#xF3;n <code>random()</code> para modificar la posici&#xF3;n de l&#xED;neas en el lienzo. Cuando el rat&#xF3;n est&#xE1; en la izquierda del lienzo, el cambio es peque&#xF1;o; si se mueve a la derecha, los valores de <code>random()</code> aumentan y el movimiento se torna m&#xE1;s exagerado. Como la funci&#xF3;n <code>random()</code> est&#xE1; dentro del bucle <code>for</code>, se calcula un nuevo valor aleatorio para cada punto de cada l&#xED;nea:</p>
+
+<figure><img alt="Ex 08 08" src="images/gspj_08in06.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(240, 120);
+}
+
+function draw() {
+  background(204);
+  for (var x = 20; x &lt; width; x += 20) {
+    var mx = mouseX / 10;
+    var offsetA = random(-mx, mx);
+    var offsetB = random(-mx, mx);
+    line(x + offsetA, 20, x - offsetB, 100);
+  }
+}</pre>
+</section>
+
+<section data-type="sect2" id="ex-8-9">
+<h2>Ejemplo 8-9: mueve figuras aleatoriamente</h2>
+
+<p>Cuando se usa para  mover figuras alrededor de la pantalla, los valores aleatorios pueden generar im&#xE1;genes que son en apariencia m&#xE1;s naturales. En el siguiente ejemplo, la posici&#xF3;n del c&#xED;rculo es modificada por valores aleatorios en cada ejecuci&#xF3;n de<a contenteditable="false" data-primary="draw() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="background() function" data-type="indexterm">&nbsp;</a> <code>draw()</code>. Como no se usa la funci&#xF3;n <code>background()</code>, las posiciones anteriores permanecen dibujadas:</p>
+
+<figure><img alt="Ex 08 09" src="images/gspj_08in07.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var speed = 2.5;
+var diameter = 20;
+var x;
+var y;
+
+function setup() {
+  createCanvas(240, 120);
+  x = width/2;
+  y = height/2;
+  background(204);
+}
+
+function draw() {
+  x += random(-speed, speed);
+  y += random(-speed, speed);
+  ellipse(x, y, diameter, diameter);
+}</pre>
+
+<p>Si observas este ejemplo durante el tiempo suficiente, el c&#xED;rculo podr&#xED;a dejar la pantalla y volver. Esto depende del azar, pero podr&#xED;amos a&#xF1;adir unas estructuras <code>if</code> o usar la funci&#xF3;n <code>constrain()</code> <a contenteditable="false" data-primary="constrain() function" data-type="indexterm">&nbsp;</a>para evitar que el c&#xED;rculo deje la pantalla.</p>
+
+<p>La funci&#xF3;n <code>constrain()</code> limita el valor a un rango espec&#xED;fico, el que puede ser usado para mantener <code>x</code> e <code>y</code> dentro de los l&#xED;mites del lienzo. Al reemplazar la funci&#xF3;n <code>draw()</code> anterior con el siguiente c&#xF3;digo, te asegurar&#xE1;s que la elipse permanezca en la pantalla:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function draw() {
+  x += random(-speed, speed);
+  y += random(-speed, speed);
+  x = constrain(x, 0, width);
+  y = constrain(y, 0, height);
+  ellipse(x, y, diameter, diameter);
+}</pre>
+
+<div data-type="note">
+<p>La funci&#xF3;n <code>randomSeed()</code><a contenteditable="false" data-primary="randomSeed() function" data-type="indexterm">&nbsp;</a>&nbsp;puede ser usada para forzar a <span class="keep-together"><code>random()</code></span> a producir la misma secuencia de n&#xFA;meros cada vez que un programa es ejecutado. Esto es descrito con mayor detalle en la  <em>Referencia de p5.js</em>.</p>
+</div>
+</section>
+</section>
+
+<section data-type="sect1">
+<h1>Temporizadores</h1>
+
+<p>Cada programa de p5.js<a contenteditable="false" data-primary="timers, in animation" data-type="indexterm" id="t8ia">&nbsp;</a><a contenteditable="false" data-primary="animation" data-secondary="timers" data-type="indexterm" id="a8t">&nbsp;</a>cuenta la cantidad de tiempo que ha pasado desde que empez&#xF3;. Cuenta en milisegundos (mil&#xE9;simas de segundo), as&#xED; que despu&#xE9;s de 1 segundo el contador est&#xE1; en 1.000; despu&#xE9;s de 5 segundos est&#xE1; en 5.000 y despu&#xE9;s de un minuto en 60.000. Podemos usar este contador para gatillar animaciones en momentos espec&#xED;ficos. La funci&#xF3;n <a contenteditable="false" data-primary="millis() function" data-type="indexterm">&nbsp;</a> <span class="keep-together"><code>millis()</code></span> retorna el valor del contador.</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 8-10: el tiempo pasa</h2>
+
+<p>Puedes ver c&#xF3;mo el tiempo pasa cuando ejecutas este programa::</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function draw() {
+  var timer = millis();
+  print(timer);
+}</pre>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 8-11: gatillando eventos temporizados</h2>
+
+<p>Cuando se combinan con un bloque<a contenteditable="false" data-primary="if blocks" data-type="indexterm">&nbsp;</a> <code>if</code>, los valores de <code>millis()</code> pueden ser usados para secuenciar tanto animaciones como eventos en un programa. Por ejemplo, despu&#xE9;s de que han pasado dos segundos, el c&#xF3;digo dentro del bloque <code>if</code> puede gatillar un cambio. En este ejemplo, las variables llamadas <code>time1</code> y <code>time2</code> determinan cu&#xE1;ndo modificar el valor de la variable <code>x</code>:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var time1 = 2000;
+var time2 = 4000;
+var x = 0;
+
+function setup() {
+  createCanvas(480, 120);
+}
+
+function draw() {
+  var currentTime = millis();
+  background(204);
+  if (currentTime &gt; time2) {
+    x -= 0.5;
+  } else if (currentTime &gt; time1) {
+    x += 2;
+  }
+  ellipse(x, 60, 90, 90);
+}</pre>
+<a contenteditable="false" data-primary="animation" data-secondary="timers" data-startref="a8t" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="timers, in animation" data-startref="t8ia" data-type="indexterm">&nbsp;</a></section>
+</section>
+
+<section data-type="sect1">
+<h1>Circular</h1>
+
+<p>Si <a contenteditable="false" data-primary="animation" data-secondary="circular motion" data-type="indexterm" id="a8cm">&nbsp;</a><a contenteditable="false" data-primary="circular motion" data-type="indexterm" id="cm8">&nbsp;</a>eres un as de la trigonometr&#xED;a, ya sabes cu&#xE1;n incre&#xED;bles son las funciones <em>seno</em> y <em>coseno</em>. Si no lo eres, esperamos que los siguientes ejemplos pueden gatillar tu inter&#xE9;s. No discutiremos aqu&#xED; los detalles matem&#xE1;ticos, pero s&#xED; mostraremos unas pocas aplicaciones para generar movimiento fluido.</p>
+
+<p>La <a data-type="xref" href="#Fig_08_02">Figura 8-2</a> muestra una visualizaci&#xF3;n de valores de la onda sinusoidal y c&#xF3;mo se relacionan con &#xE1;ngulos. En la parte superior e inferior de la onda, observa c&#xF3;mo la tasa de cambio (el cambio en el eje vertical) desacelera, se detiene y luego cambia de direcci&#xF3;n. Es esta cualidad de la curva lo que genera un movimiento interesante.</p>
+
+<p>Las funciones <code>sin()</code> y <code>cos()</code> <a contenteditable="false" data-primary="cos() and sin() functions" data-type="indexterm" id="csf8">&nbsp;</a><a contenteditable="false" data-primary="sin() and cos() functions" data-type="indexterm" id="sc8f">&nbsp;</a>de p5.js retornan valores entre -1 y 1 para la funci&#xF3;n seno y coseno del &#xE1;ngulo especificado. Tal como <code>arc()</code>, los &#xE1;ngulos deben ser escritos en radianes (revisar <a data-type="xref" href="#ex-3-7">#ej-3-7</a> y <a data-type="xref" href="#ex-3-8">#ej-3-8</a> para un recordatorio de c&#xF3;mo funcionan los radianes). Para ser &#xFA;til para dibujar, los valores <code>float</code> <a contenteditable="false" data-primary="float values" data-type="indexterm">&nbsp;</a>retornados por <code>sin()</code> y <code>cos()</code> son usualmente multiplicados por un valor m&#xE1;s grande.</p>
+
+<figure id="Fig_08_02"><img alt="Fig 08 02" src="images/gspj_0802.png" />
+<figcaption><b>Figura 8-2. </b>El trazado de los valores de seno de un &#xe1;ngulo que se mueve alrededor de un c&#xed;rculo resulta en una onda sinusoidal</figcaption>
+</figure>
+
+<section data-type="sect2">
+<h2>Ejemplo 8-12: valores de la onda sinusoidal</h2>
+
+<p>Este <a contenteditable="false" data-primary="animation" data-secondary="sine wave values/movement" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="sine wave values/movement" data-type="indexterm">&nbsp;</a>ejemplo muestra c&#xF3;mo los valores de <code>sin()</code> oscilan entre -1 y 1 a medida que el &#xE1;ngulo aumenta. Con la funci&#xF3;n <code>map()</code> <a contenteditable="false" data-primary="map() function" data-type="indexterm">&nbsp;</a>, la variable <code>sinval</code> es convertida desde este rango a valores de 0 a 255. Este nuevo valor es usado para definir el color del fondo del lienzo:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var angle = 0.0;
+
+function draw() {
+  var sinval = sin(angle);
+  print(sinval);
+  var gray = map(sinval, -1, 1, 0, 255);
+  background(gray);
+  angle += 0.1;
+}</pre>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 8-13: movimiento de una onda sinusoidal</h2>
+
+<p>Este ejemplo muestra c&#xF3;mo estos valores pueden ser convertidos en movimiento:</p>
+
+<figure><img alt="Ex 08 13" src="images/gspj_08in08.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var angle = 0.0;
+var offset = 60;
+var scalar = 40;
+var speed = 0.05;
+
+function setup() {
+  createCanvas(240, 120);
+}
+
+function draw() {
+  background(0);
+  var y1 = offset + sin(angle) * scalar;
+  var y2 = offset + sin(angle + 0.4) * scalar;
+  var y3 = offset + sin(angle + 0.8) * scalar;
+  ellipse( 80, y1, 40, 40);
+  ellipse(120, y2, 40, 40);
+  ellipse(160, y3, 40, 40);
+  angle += speed;
+}</pre>
+</section>
+
+<section data-type="sect2">
+<h2>ejemplo 8-14: movimiento circular</h2>
+
+<p>Cuando las funciones&nbsp;<code>sin()</code> y <code>cos()</code> son usadas en conjunto, pueden producir movimiento circular. Los valores de la funci&#xF3;n <code>cos()</code> proveen los valores de la coordenada <em>x</em> y los valores de la funci&#xF3;ne <code>sin()</code> &nbsp;&nbsp;proveen la coordenada <em>y</em>. Ambas son multiplicados por una variable llamada <code>scalar</code> &nbsp;para modificar el radio del movimiento y son sumadas con un valor offset (desfase) para situar el centro de un movimiento circular:</p>
+
+<figure><img alt="Ex 08 14" src="images/gspj_08in09.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var angle = 0.0;
+var offset = 60;
+var scalar = 30;
+var speed = 0.05;
+
+function setup() {
+  createCanvas(120, 120);
+  background(204);
+}
+
+function draw() {
+  var x = offset + cos(angle) * scalar;
+  var y = offset + sin(angle) * scalar;
+  ellipse(x, y, 40, 40);
+  angle += speed;
+}</pre>
+</section>
+
+<section class="pagebreak-before" data-type="sect2">
+<h2>Ejemplo 8-15: espirales</h2>
+
+<p>Un <a contenteditable="false" data-primary="animation" data-secondary="spirals" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="spirals, creating" data-type="indexterm">&nbsp;</a>peque&#xF1;o cambio hecho para aumentar el valor <code>scalar</code> en cada cuadro produce una espiral en vez de un c&#xED;rculo:</p>
+
+<figure><img alt="Ex 08 15" src="images/gspj_08in10.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var angle = 0.0;
+var offset = 60;
+var scalar = 2;
+var speed = 0.05;
+
+function setup() {
+  createCanvas(120, 120);
+  fill(0);
+  background(204);
+}
+
+function draw() {
+  var x = offset + cos(angle) * scalar;
+  var y = offset + sin(angle) * scalar;
+  ellipse(x, y, 2, 2);
+  angle += speed;
+  scalar += speed;
+}</pre>
+<a contenteditable="false" data-primary="animation" data-secondary="circular motion" data-startref="a8cm" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="circular motion" data-startref="cm8" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="cos() and sin() functions" data-startref="csf8" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="sin() and cos() functions" data-startref="sc8f" data-type="indexterm">&nbsp;</a></section>
+</section>
+
+<section data-type="sect1">
+<h1>Robot 6: movimiento</h1>
+
+<figure><img alt="Robot 6" src="images/gspj_08in11.png" />
+<figcaption/>
+</figure>
+
+<p>En <a contenteditable="false" data-primary="robot programs (examples)" data-secondary="random and circular motion" data-type="indexterm" id="rp8racm">&nbsp;</a>este ejemplo, las t&#xE9;cnicas para movimiento aleatorio y circular son aplicadas al robot. La funci&#xF3;n <code>background()</code> fue removida para ver m&#xE1;s claramente c&#xF3;mo cambian las posiciones del robot y de su cuerpo.</p>
+
+<p>En cada cuadro, un n&#xFA;mero aleatorio entre -4 y 4 es sumado a la coordenada<em>x</em> y un n&#xFA;mero aleatorio entre -1 y 1 es sumado a la coordenada <em>y</em>. Esto causa que el robot se mueva m&#xE1;s de izquierda a derecha que de arriba a abajo. Los n&#xFA;meros calculados por la funci&#xF3;n <code>sin()</code> cambian la altura del cuello para que oscile entre 50 y 100 pixeles de altura:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = 180;           // Coordenada x
+var y = 400;           // Coordenada y
+var bodyHeight = 153;  // Altura del cuerpo
+var neckHeight = 56;   // Altura del cuello
+var radius = 45;       // Radio de la cabeza
+var angle = 0.0;       // Ángulo de movimiento
+
+function setup() {
+  createCanvas(360, 480);
+  ellipseMode(RADIUS);
+  background(204);
+}
+
+function draw() {
+  // Modifica la posición en un monto aleatorio pequeño
+  x += random(-4, 4);
+  y += random(-1, 1);
+
+  // Modifica la altura del cuello
+  neckHeight = 80 + sin(angle) * 30;
+  angle += 0.05;
+
+ // Ajusta la altura de la cabeza
+ var ny = y - bodyHeight - neckHeight - radius;
+
+ // Cuello
+ stroke(102);
+ line(x+2, y-bodyHeight, x+2, ny);
+ line(x+12, y-bodyHeight, x+12, ny);
+ line(x+22, y-bodyHeight, x+22, ny);
+
+ // Antenas
+ line(x+12, ny, x-18, ny-43);
+ line(x+12, ny, x+42, ny-99);
+ line(x+12, ny, x+78, ny+15);
+
+ // Cuerpo
+ noStroke();
+ fill(102);
+ ellipse(x, y-33, 33, 33);
+ fill(0);
+ rect(x-45, y-bodyHeight, 90, bodyHeight-33);
+ fill(102);
+ rect(x-45, y-bodyHeight+17, 90, 6);
+
+ // Cabeza
+ fill(0);
+ ellipse(x+12, ny, radius, radius);
+ fill(255);
+ ellipse(x+24, ny-6, 14, 14);
+ fill(0);
+ ellipse(x+24, ny-6, 3, 3);
+}</pre>
+<a contenteditable="false" data-primary="animation" data-startref="a8" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="robot programs (examples)" data-secondary="random and circular motion" data-startref="rp8racm" data-type="indexterm">&nbsp;</a></section>
+</section>
