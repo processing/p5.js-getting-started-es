@@ -1,0 +1,16 @@
+Fonts Needed: 
+
+TheSansMono-Black
+TheSansMono-ExtraLight
+TheSansMono-Light
+TheSansMono-LightItalic
+TheSansMono-Regular
+TheSansMono-SemiBold
+TheSansMonoCd-Regular
+TheSerif (classic) 1.0
+TheSerif_B4_Italic
+TheSerif_B4_Plain_Bold_
+Roboto-Bold.eot
+Robot-Bold.svg
+Roboto-Bold.ttf
+Roboto-Bold.woff
