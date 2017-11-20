@@ -103,7 +103,7 @@ function draw() {
 </section>
 
 <section data-type="sect1">
-<h1>Seguir</h1>
+<h1 class="pagebreak-before">Seguir</h1>
 
 <p>Como <a contenteditable="false" data-primary="response to input" data-secondary="mouse movement tracking" data-type="indexterm" id="rti5mmt">&nbsp;</a>el c&#xF3;digo est&#xE1; ejecut&#xE1;ndose continuamente, podemos seguir la posici&#xF3;n del rat&#xF3;n y usar estos n&#xFA;meros para mover elementos en la pantalla.</p>
 
@@ -497,7 +497,7 @@ function draw() {
 </section>
 </section>
 
-<section data-type="sect1">
+<section data-type="sect1" class="pagebreak-before">
 <h1>Tipo</h1>
 
 <p>p5.js mantiene<a contenteditable="false" data-primary="typing, responses to" data-type="indexterm" id="trt5">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="keystrokes" data-type="indexterm" id="rti5ks">&nbsp;</a>&nbsp;<a contenteditable="false" data-primary="rectangles" data-secondary="cursor position relative to" data-startref="r5cprt" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="cursor location" data-startref="cl5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="cursor location" data-startref="rti3cl" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="keystroke responses" data-type="indexterm" id="kr5">&nbsp;</a> el registro de cualquier tecla que sea presionada en el teclado, adem&#xE1;s de la &#xFA;ltima tecla presionada. Tal como la variable <code>mouseIsPressed</code>, la variable <code>keyIsPressed</code><a contenteditable="false" data-primary="keyIsPressed variable" data-type="indexterm">&nbsp;</a> es <code>true</code> cuando cualquier tecla es presionada, y es <code>false</code> cuando no hay teclas presionadas.</p>
@@ -608,7 +608,7 @@ function draw() {
   }
   rect(x, 45, 50, 50);
 }</pre>
-<a contenteditable="false" data-primary="response to input" data-secondary="keystrokes" data-startref="rti5ks" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="keystroke responses" data-startref="kr5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="typing, responses to" data-startref="trt5" data-type="indexterm">&nbsp;</a></section>
+<a contenteditable="false" data-primary="response to input" data-secondary="keystrokes" data-startref="rti5ks" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="keystroke responses" data-startref="kr5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="typing, responses to" data-startref="trt5" data-type="indexterm"></a></section>
 </section>
 
 <section data-type="sect1">
@@ -707,7 +707,7 @@ function draw() {
   line(120, 60, mx, mouseY); // L&#xED;nea negra
 }</pre>
 
-<p>La funci&#xF3;n <code>map()</code> hace que el c&#xF3;digo sea f&#xE1;cil de leer, porque los valores m&#xE1;ximo y m&#xED;nimo est&#xE1;n claramente escritos como par&#xE1;metros. En este ejemplo, los valores de <code>mouseX</code> entre 0 y <code>width</code> son convertidos a n&#xFA;meros entre 60 (cuando <code>mouseX</code> es 0) y 180 (cuando <code>mouseX</code> es <code>width</code>). Encontrar&#xE1;s esta &#xFA;til funci&#xF3;n <code>map()</code> en muchos ejemplos a lo largo de este<a contenteditable="false" data-primary="mouseX/mouseY variables" data-startref="mxmyv5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="map() function" data-startref="mapf5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="mapping" data-startref="rti5map" data-type="indexterm">&nbsp;</a>libro.</p>
+<p>La funci&#xF3;n <code>map()</code> hace que el c&#xF3;digo sea f&#xE1;cil de leer, porque los valores m&#xE1;ximo y m&#xED;nimo est&#xE1;n claramente escritos como par&#xE1;metros. En este ejemplo, los valores de <code>mouseX</code> entre 0 y <code>width</code> son convertidos a n&#xFA;meros entre 60 (cuando <code>mouseX</code> es 0) y 180 (cuando <code>mouseX</code> es <code>width</code>). Encontrar&#xE1;s esta &#xFA;til funci&#xF3;n <code>map()</code> en muchos ejemplos a lo largo de este<a contenteditable="false" data-primary="mouseX/mouseY variables" data-startref="mxmyv5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="map() function" data-startref="mapf5" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="mapping" data-startref="rti5map" data-type="indexterm"></a>libro.</p>
 </section>
 </section>
 
@@ -775,6 +775,7 @@ function draw() {
   ellipse(x+12, neckY, radius, radius);
   fill(255);
   ellipse(x+24, neckY-6, 14, 14);
+  <!--Page Break--><br class="page-break-after" />
   fill(0);
   ellipse(x+24, neckY-6, 3, 3);
 }</pre>

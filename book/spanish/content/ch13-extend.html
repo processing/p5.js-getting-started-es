@@ -8,15 +8,15 @@
 <p>El archivo <em>.zip</em> completo de p5.js incluye las bibliotecas p5.dom y p5.sound. Tambi&#xE9;n puedes descargar otras bibliotecas desde <a href="http://p5js.org/es/libraries/"><em class="hyperlink">http://p5js.org/es/libraries/</em></a>. Para usar una de estas bibliotecas, primero aseg&#xFA;rate de que est&#xE1; dentro del directorio que contiene tus archivos HTML y JavaScript. En segundo lugar, a&#xF1;ade una l&#xED;nea de c&#xF3;digo a tu archivo HTML para indicar que la biblioteca ser&#xE1; usada en el bosquejo actual. Esta l&#xED;nea deber&#xED;a verse as&#xED;:</p>
 
 <pre data-code-language="html" data-type="programlisting">
-&lt;script language="javascript" type="text/javascript" src="ruta/relativa/a/p5.nombreBiblioteca.js"&gt;&lt;/script&gt;</pre>
+&lt;script language="javascript" type="text/javascript" <br />src="ruta/relativa/a/p5.nombreBiblioteca.js"&gt;&lt;/script&gt;</pre>
 
 <p><em>ruta/relativa/a</em> deber&#xED;a ser reemplazado por la ubicaci&#xF3;n requerida para ubicar el archivo de biblioteca relativo al archivo HTML. Si necesitas subir un directorio, inserta "..". Por ejemplo, si est&#xE1;s trabajando con el ejemplo vac&#xED;o y con <em>p5.sound.js</em> de la descarga de p5.js completo, la l&#xED;nea ser&#xED;a as&#xED;.</p>
 
 <pre data-code-language="html" data-type="programlisting">
-&lt;script language="javascript" type="text/javascript" src="../p5.sound.js"&gt;&lt;/script&gt;</pre>
+&lt;script language="javascript" type="text/javascript" src="../<br />p5.sound.js"&gt;&lt;/script&gt;</pre>
 
 <section data-type="sect1">
-<h1>p5.sound</h1>
+<h1 class="pagebreak-before">p5.sound</h1>
 
 <p>La biblioteca de audio p5.sound<a contenteditable="false" data-primary="p5.sound audio library" data-type="indexterm" id="p5sal13">&nbsp;</a><a contenteditable="false" data-primary="sound" data-see="p5.sound audio library" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="libraries" data-secondary="p5.sound audio library" data-type="indexterm" id="lib13pdsal">&nbsp;</a>tiene la habilidad de reproducir, analizar y generar (sintetizar) sonido. A continuaci&#xF3;n se presentan unas pocas funciones clave; consulta la <em>Referencia de p5.js</em> para conocer m&#xE1;s objetos que pueden ser creados y funciones que pueden ser llamadas: <a href="http://p5js.org/es/reference/#/libraries/p5.sound"><em class="hyperlink">http://p5js.org/es/reference/#/libraries/p5.sound</em></a>.</p>
 
@@ -69,9 +69,9 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 13-2: escucha un micr&#xF3;fono</h2>
 
-<p>Adem&#xE1;s <a contenteditable="false" data-primary="p5.sound audio library" data-secondary="listening through microphone" data-type="indexterm" id="p5sal13ltm">&nbsp;</a>de reproducir sonidos, p5.js puede escuchar. Si tu computador posee un micr&#xF3;fono incorporado o conectado, la biblioteca p5.sound puede leer audio en vivo a trav&#xE9;s de &#xE9;l. Una vez que los datos del micr&#xF3;fono est&#xE1;n conectados al software, los puedes analizar, modificar o reproducir:</p>
+<p>Adem&#xE1;s <a contenteditable="false" data-primary="p5.sound audio library" data-secondary="listening through microphone" data-type="indexterm" id="p5sal13ltm"></a>de reproducir sonidos, p5.js puede escuchar. Si tu computador posee un micr&#xF3;fono incorporado o conectado, la biblioteca p5.sound puede leer audio en vivo a trav&#xE9;s de &#xE9;l. Una vez que los datos del micr&#xF3;fono est&#xE1;n conectados al software, los puedes analizar, modificar o reproducir:</p>
 
-<figure><img alt="Ex 1fvfvvfvfvfvfvfvfvfvfvfvffVC3 02" src="images/gspj_13in02.png" />
+<figure><img alt="Ex 13 02" src="images/gspj_13in02.png" />
 <figcaption/>
 </figure>
 
@@ -99,7 +99,8 @@ function draw() {
   fill(0, 10);
   rect(0, 0, width, height);
   // El m&#xE9;todo getLevel() retorna valores entre 0 y 1,
-  // as&#xED; que map() es usado para convertir los valores a n&#xFA;meros mayores
+  // as&#xED; que map() es usado para convertir los valores 
+  // a n&#xFA;meros mayores
   escala = map(amp.getLevel(), 0, 1.0, 10, width);
   // Dibuja el c&#xED;rculo basado en el volumen
   fill(255);
@@ -258,7 +259,7 @@ function dibujarNombre() {
 }
 </pre>
 
-<p>Los objetos input y button son definidos en la parte superior del c&#xF3;digo y creados dentro de <code>setup()</code>. <code>createButton()</code> acepta un argumento, la etiqueta a ser mostrada en el bot&#xF3;n. El m&#xE9;todo <code>mousePressed()</code> &nbsp; es usado para asignar una funci&#xF3;n a ejecutar cuando el bot&#xF3;n es presionado. Dentro de <code>drawName()</code>, &nbsp;los contenidos del recuadro de entrada son le&#xED;dos usando el m&#xE9;todo <code>value()</code> y usados para rellenar el fondo con el <a contenteditable="false" data-primary="input box, creating" data-startref="ibc13" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="p5.dom library" data-secondary="create an input box" data-startref="p5doml13cib" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="libraries" data-startref="lib13" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="p5.dom library" data-startref="p5doml13" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="libraries" data-secondary="p5.dom library" data-startref="l13p5doml" data-type="indexterm">&nbsp;</a>texto.</p>
+<p>Los objetos input y button son definidos en la parte superior del c&#xF3;digo y creados dentro de <code>setup()</code>. <code>createButton()</code> acepta un argumento, la etiqueta a ser mostrada en el bot&#xF3;n. El m&#xE9;todo <code>mousePressed()</code> &nbsp; es usado para asignar una funci&#xF3;n a ejecutar cuando el bot&#xF3;n es presionado. Dentro de <code>drawName()</code>, &nbsp;los contenidos del recuadro de entrada son le&#xED;dos usando el m&#xE9;todo <code>value()</code> y usados para rellenar el fondo con el <a contenteditable="false" data-primary="input box, creating" data-startref="ibc13" data-type="indexterm"></a><a contenteditable="false" data-primary="p5.dom library" data-secondary="create an input box" data-startref="p5doml13cib" data-type="indexterm"></a><a contenteditable="false" data-primary="libraries" data-startref="lib13" data-type="indexterm"></a><a contenteditable="false" data-primary="p5.dom library" data-startref="p5doml13" data-type="indexterm"></a><a contenteditable="false" data-primary="libraries" data-secondary="p5.dom library" data-startref="l13p5doml" data-type="indexterm"></a>texto.</p>
 </section>
 </section>
 </section>
