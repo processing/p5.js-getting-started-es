@@ -127,7 +127,7 @@ function draw() {
 <p>Cuando una imagen es mostrada m&#xE1;s grande o peque&#xF1;a que su tama&#xF1;o original, puede distorsionarse. Ten cuidado al preparar tus im&#xE1;genes en los tama&#xF1;os en que ser&#xE1;n usadas. Cuando el tama&#xF1;o de la imagen es modificado con la funci&#xF3;n <code>image()</code>, el archivo original en tu directorio del <em>bosquejo</em> no cambia.</p>
 </div>
 
-<p>p5.js puede cargar y mostrar im&#xE1;genes raster en los formatos <a contenteditable="false" data-primary="images" data-secondary="formats" data-type="indexterm">&nbsp;</a>the JPEG, PNG, <a contenteditable="false" data-primary="JPEG image format" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="PNG image format" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="GIF image format" data-type="indexterm">&nbsp;</a>y GIF, adem&#xE1;s de im&#xE1;genes vectoriales<a contenteditable="false" data-primary="SVG image format" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="vector images" data-type="indexterm">&nbsp;</a>formato SVG. Puedes convertir im&#xE1;genes a los formatos JPEG, PNG, GIF y SVG usando programas como GIMP, Photoshop e Illustrator. La mayor parte de las c&#xE1;maras digitales graban sus im&#xE1;genes en el formato JPEG, pero usualmente necesitan ser reducidas en tama&#xF1;o para ser usadas con p5.js. Una c&#xE1;mara digital t&#xED;pica crea una imagen que es varias veces m&#xE1;s grande que el &#xE1;rea de dibujo de gran parte de los bosquejos creados en p5.js.&nbsp;<a contenteditable="false" data-primary="images" data-secondary="resizing" data-type="indexterm">&nbsp;</a>Cambiar el tama&#xF1;o de estas im&#xE1;genes antes de que sean a&#xF1;adidas al directorio de <em>bosquejo</em> hace que los bosquejos carguen m&#xE1;s r&#xE1;pido,&nbsp;corran m&#xE1;s eficientemente y <a contenteditable="false" data-primary="sketch folder" data-type="indexterm">&nbsp;</a>ahorra espacio en el disco duro.</p>
+<p>p5.js puede cargar y mostrar im&#xE1;genes raster en los formatos <a contenteditable="false" data-primary="images" data-secondary="formats" data-type="indexterm">&nbsp;</a>the JPEG, PNG, <a contenteditable="false" data-primary="JPEG image format" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="PNG image format" data-type="indexterm"></a><a contenteditable="false" data-primary="GIF image format" data-type="indexterm"></a>y GIF, adem&#xE1;s de im&#xE1;genes vectoriales<a contenteditable="false" data-primary="SVG image format" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="vector images" data-type="indexterm">&nbsp;</a>formato SVG. Puedes convertir im&#xE1;genes a los formatos JPEG, PNG, GIF y SVG usando programas como GIMP, Photoshop e Illustrator. La mayor parte de las c&#xE1;maras digitales graban sus im&#xE1;genes en el formato JPEG, pero usualmente necesitan ser reducidas en tama&#xF1;o para ser usadas con p5.js. Una c&#xE1;mara digital t&#xED;pica crea una imagen que es varias veces m&#xE1;s grande que el &#xE1;rea de dibujo de gran parte de los bosquejos creados en p5.js.&nbsp;<a contenteditable="false" data-primary="images" data-secondary="resizing" data-type="indexterm">&nbsp;</a>Cambiar el tama&#xF1;o de estas im&#xE1;genes antes de que sean a&#xF1;adidas al directorio de <em>bosquejo</em> hace que los bosquejos carguen m&#xE1;s r&#xE1;pido,&nbsp;corran m&#xE1;s eficientemente y <a contenteditable="false" data-primary="sketch folder" data-type="indexterm">&nbsp;</a>ahorra espacio en el disco duro.</p>
 
 <p>Las im&#xE1;genes GIF, PNG y SVG soportan <a contenteditable="false" data-primary="images" data-secondary="transparency" data-type="indexterm" id="i7t">&nbsp;</a>transparencia, lo que significa que los pixeles pueden ser invisibles o parcialmente visibles (recuerda la discusi&#xF3;n de <code>color()</code> y valores alpha en <a data-type="xref" href="#ex-3-17">#ej-3-17</a>). Las im&#xE1;genes GIF tienen transparencia de 1 bit, lo que significa que los pixeles son totalmente opacos o totalmente transparentes. Las im&#xE1;genes PNG soportan transparencia de 8 bits, lo que significa que cada pixel tiene una variable de opacidad. Los siguientes ejemplos usan&nbsp;<em>clouds.gif</em> y <em>clouds.png</em>&nbsp;para mostrar las diferencias entre los formatos de archivo.&nbsp; Las im&#xE1;genes est&#xE1;n dentro del directorio <em>media</em> que has descargado anteriormente. Aseg&#xFA;rate de incluirlas al directorio de tu bosquejo antes de probar cada ejemplo.</p>
 </section>
@@ -320,7 +320,7 @@ function draw() {
 &lt;head&gt;
 &lt;script type="text/javascript" src="../lib/p5.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="sketch.js"&gt;&lt;/script&gt;
-&lt;link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"&gt;
+&lt;link href="http://fonts.googleapis.com/css?family=Source+Code<br />+Pro" rel="stylesheet" type="text/css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
 &lt;/body&gt;
@@ -367,6 +367,7 @@ function draw() {
 	<li>
 	<p>Usa la funci&#xf3;n <code>textFont()</code> para definir la tipograf&#xed;a actual:</p>
 
+
 	<pre data-code-language="p5js" data-type="programlisting">
 var font;
 
@@ -393,7 +394,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 7-12: define el trazo y el relleno del texto</h2>
 
-<p><a contenteditable="false" data-primary="fonts" data-secondary="setting test stroke and fill" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="text" data-see="fonts" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="noStroke() function" data-type="indexterm"></a>Tal como las figuras, el texto es afectado por las funciones<a contenteditable="false" data-primary="stroke() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="fill() function" data-type="indexterm"></a> <code>stroke()</code> y <code>fill()</code>. El siguiente ejemplo resulta en un texto negro con un trazo blanco:</p>
+<p><a contenteditable="false" data-primary="fonts" data-secondary="setting test stroke and fill" data-type="indexterm"></a><a contenteditable="false" data-primary="text" data-see="fonts" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="noStroke() function" data-type="indexterm"></a>Tal como las figuras, el texto es afectado por las funciones<a contenteditable="false" data-primary="stroke() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="fill() function" data-type="indexterm"></a> <code>stroke()</code> y <code>fill()</code>. El siguiente ejemplo resulta en un texto negro con un trazo blanco:</p>
 
 <figure><img alt="Ex 07 12" src="images/gspj_07in11.png" />
 <figcaption/>
@@ -476,7 +477,7 @@ function draw() {
 
 <p>Los archivos SVG y PNG usados en este ejemplo pueden ser descargados desde <a href="http://p5js.org/learn/books/media.zip"><em class="hyperlink">http://p5js.org/learn/books/media.zip</em></a>:</p>
 
-<pre data-code-language="p5js" data-type="programlisting">
+<pre data-code-language="p5js" data-type="programlisting" class="pagebreak-before">
 var bot1;
 var bot2;
 var bot3;

@@ -252,7 +252,7 @@ function setup() {
   var dir = film.director;
   var year = film.year;
   var rating = film.rating;
-  print(title + " por " + dir + ", " + year + ". Calificaci&#xf3;n: " + rating);
+  print(title + " por " + dir + ", " + year + <br />". Calificaci&#xf3;n: " + rating);
 }</pre>
 
 <p>Los datos del archivo son cargados en la variable. Los valores individuales pueden ser accesados usando el operador punto, de forma similar a como accedemos a las propiedades dentro de un objeto.</p>
@@ -269,6 +269,7 @@ function setup() {
 <figcaption/>
 </figure>
 
+<!--
 <div data-nickname="akaziuna" data-type="comment">
 <div class="comment-identifier" contenteditable="false"><img src="https://secure.gravatar.com/avatar/e0080a854a5c1d5b8feb7567ee1b2eb2" />
 <div spellcheck="false">akaziuna</div>
@@ -281,6 +282,7 @@ function Film "open parenthesis" "f"&nbsp;"close parenthesis" {</p>
 
 <p>It builds properly in the PDF, but this seems weird. Is this normal? &nbsp;</p>
 </div>
+-->
 
 <pre data-code-language="p5js" data-type="programlisting">
 var films = [];
@@ -356,12 +358,10 @@ function Film(f) {
 <p>Revisar estos datos de OpenWeatherMap es un ejemplo m&#xE1;s realista de trabajo con datos encontrados que los conjuntos anteriores de datos simplificados. Al momento de escribir, el archivo retornado por la URL es el siguiente:</p>
 
 <pre>
-{"message":"accurate","cod":"200","count":1,"list":[{"id":4508722,"name":"Cincinnati","coord":{"lon":-84.456886,"lat":39.161999},"main":{"temp":34.16,"temp_min":34.16,"temp_max":34.16,"pressure":999.98,"sea_level":1028.34,"grnd_level":999.98,"humidity":77},"dt":1423501526,"wind":{"speed":9.48,"deg":354.002},"sys":{"country":"US"},"clouds":{"all":80},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}]}]}
+{"message":"accurate","cod":"200","count":1,"list":[{"id":<br />4508722,"name":"Cincinnati","coord":{"lon":-84.456886,"lat":<br />39.161999},"main":{"temp":34.16,"temp_min":34.16,"temp_max":<br />34.16,"pressure":999.98,"sea_level":1028.34,"grnd_level":<br />999.98,"humidity":77},"dt":1423501526,"wind":{"speed":<br />9.48,"deg":354.002},"sys":{"country":"US"},"clouds":{"all":<br />80},"weather":[{"id":803,"main":"Clouds","description":<br />"broken clouds","icon":"04d"}]}]}
 </pre>
 
 <p>Este archivo es mucho m&#xE1;s f&#xE1;cil de leer cuando es retornado con saltos de l&#xED;nea, y cuando el objeto JSON y las estructuras del arreglo est&#xE1;n definidas con llaves y corchetes:</p>
-
-:
 
 <pre data-code-language="json" data-type="programlisting">
 {
@@ -491,12 +491,12 @@ function setup() {
 <p>Despu&#xE9;s que el programa es ejecutado, el archivo <em>botArmy.tsv</em> es creado dentro el directorio del <em>bosquejo</em>. &#xC1;brelo para revisar c&#xF3;mo se escribieron los datos. Las primeras cinco l&#xED;neas de c&#xF3;digo de este archivo ser&#xE1;n similares a esto:</p>
 
 <pre data-type="programlisting">
-type	x	y
-3	0	0
-1	20	0
-2	40	0
-1	60	0
-3	80	0
+type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x	 y
+3	 0	 0
+1	 20	0
+2	 40	0
+1	 60	0
+3	 80	0
 </pre>
 
 <p>La primera columna es usada para definir qu&#xe9; imagen de robot se va a usar, la segunda columna es la coordenada <em>x</em>, y la tercera columna es la coordenada <em>y</em>. El siguiente bosquejo carga este archivo <em>botArmy.tsv</em> y usa los datos para estos prop&#xF3;sitos:</p>
@@ -555,12 +555,11 @@ function setup() {
     var robotType = botArmy.getNum(i, "type");
     var x = botArmy.getNum(i, "x");
     var y = botArmy.getNum(i, "y");
-
     var bot = images[robotType - 1];
     image(bot, x, y, bot.width*scaling, bot.height*scaling);
   }
 }</pre>
-<a contenteditable="false" data-primary="data" data-startref="d12" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="robot programs (examples)" data-secondary="generating and reading data files" data-startref="rp12grdf" data-type="indexterm">&nbsp;</a>
+<a contenteditable="false" data-primary="data" data-startref="d12" data-type="indexterm"></a><a contenteditable="false" data-primary="robot programs (examples)" data-secondary="generating and reading data files" data-startref="rp12grdf" data-type="indexterm"></a>
 
 
 </section>

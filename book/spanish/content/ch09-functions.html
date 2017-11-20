@@ -1,7 +1,7 @@
 <section data-type="chapter" id="functions" xmlns="http://www.w3.org/1999/xhtml">
 <h1 class="chapterhead">Funciones</h1>
 
-<p class="lede">Las funciones <a contenteditable="false" data-primary="functions" data-type="indexterm" id="f9">&nbsp;</a>son los bloques fundamentales de los programas hechos en p5.js. Han aparecido en cada ejemplo que hemos presentado. Por ejemplo, hemos usado a menudo la funci&#xF3;n <span class="keep-together"><code>createCanvas()</code></span>, la funci&#xF3;n <code>line()</code>, y la funci&#xF3;n <code>fill()</code>. Este cap&#xED;tulo muestra c&#xF3;mo escribir nuevas funciones para extender las capacidades de p5.js m&#xE1;s all&#xE1; de sus caracter&#xED;sticas ya incorporadas.</p>
+<p class="lede">Las funciones <a contenteditable="false" data-primary="functions" data-type="indexterm" id="f9"></a>son los bloques fundamentales de los programas hechos en p5.js. Han aparecido en cada ejemplo que hemos presentado. Por ejemplo, hemos usado a menudo la funci&#xF3;n <span class="keep-together"><code class="codeLede">createCanvas()</code></span>, la funci&#xF3;n <code class="codeLede">line()</code>, y la funci&#xF3;n <code class="codeLede">fill()</code>. Este cap&#xED;tulo muestra c&#xF3;mo escribir nuevas funciones para extender las capacidades de p5.js m&#xE1;s all&#xE1; de sus caracter&#xED;sticas ya incorporadas.</p>
 
 <p>El poder de las funciones es su modularidad. Las funciones son unidades de software independientes que son usadas para construir programas complejos - como bloques de LEGO, donde cada tipo de ladrillo sirve para un prop&#xF3;sito espec&#xED;fico y hacer un modelo complejo requiere usar las diferentes partes en conjunto. Al igual que las funciones, el verdadero poder de estos ladrillos es la capacidad de construir muchas formas distintas usando el mismo conjunto de elementos. El mismo grupo de LEGOs que forma una nave espacial puede ser reusado para construir un cami&#xF3;n, un rascacielos y muchos otros objetos.</p>
 
@@ -279,12 +279,12 @@ function owl(x, y, g, s) {
 <section data-type="sect1">
 <h1>Valores de retorno</h1>
 
-<p>Las funciones <a contenteditable="false" data-primary="functions" data-secondary="return values" data-type="indexterm">&nbsp;</a>pueden hacer un c&#xE1;lculo y luego retornar un valor al programa principal. Ya hemos usado funciones de este tipo, incluyendo <code>random()</code> y <code>sin()</code>. Observa que cuando esta funci&#xF3;n aparece, el valor de retorno es usualmente asignado a una variable:</p>
+<p>Las funciones <a contenteditable="false" data-primary="functions" data-secondary="return values" data-type="indexterm"></a>pueden hacer un c&#xE1;lculo y luego retornar un valor al programa principal. Ya hemos usado funciones de este tipo, incluyendo <code>random()</code> y <code>sin()</code>. Observa que cuando esta funci&#xF3;n aparece, el valor de retorno es usualmente asignado a una variable:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 var r = random(1, 10);</pre>
 
-<p>En este caso, la funci&#xF3;n <code>random()</code> retorna un <a contenteditable="false" data-primary="random() function" data-type="indexterm">&nbsp;</a>valor entre 1 y 10, el que luego es asignado a la variable <code>r</code>.</p>
+<p>En este caso, la funci&#xF3;n <code>random()</code> retorna un <a contenteditable="false" data-primary="random() function" data-type="indexterm"></a>valor entre 1 y 10, el que luego es asignado a la variable <code>r</code>.</p>
 
 <p>Las funciones que retornan un valor son frecuentemente usadas como un par&#xE1;metro de otra funci&#xF3;n, como por ejemplo:</p>
 
@@ -294,7 +294,7 @@ point(random(width), random(height));</pre>
 <p>En este caso, los valores de <code>random()</code> no son asignados a una variable - son pasados como par&#xE1;metros a la funci&#xF3;n <code>point()</code> y <a contenteditable="false" data-primary="point() function" data-type="indexterm">&nbsp;</a> son usados para posicionar el punto dentro del lienzo.</p>
 
 <section data-type="sect2">
-<h2>ejemplo 9-8: retorna un valor</h2>
+<h2>Ejemplo 9-8: retorna un valor</h2>
 
 <p>Para hacer que una funci&#xF3;n retorne un valor, especifica el dato a ser pasado de vuelta con la palabra clave <code>return</code>. En este ejemplo se incluye una funci&#xF3;n llamada <code>pesoMarte()</code> que calcula el peso de una persona u objeto en nuestro planeta vecino Marte:</p>
 

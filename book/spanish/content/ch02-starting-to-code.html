@@ -29,8 +29,8 @@
 <p>Si revisas el archivo <em>index.html</em>, te dar&#xE1;s cuenta que contiene un poco de c&#xF3;digo HTML. Este archivo brinda la estructura a tu proyecto, enlazando la biblioteca p5.js y otro archivo llamado <em>sketch.js</em>, <a contenteditable="false" data-primary="sketch.js file" data-type="indexterm">&nbsp;</a>donde t&#xFA; escribir&#xE1;s tu propio programa. El c&#xF3;digo que crea estos enlaces tiene la siguiente apariencia:</p>
 
 <pre data-code-language="html" data-type="programlisting">
-&lt;script language="javascript" type="text/javascript" src="../p5.js"&gt;&lt;/script&gt;
-&lt;script language="javascript" type="text/javascript" src="sketch.js"&gt;&lt;/script&gt;</pre>
+&lt;script language="javascript" type="text/javascript" src="../<br />p5.js"&gt;&lt;/script&gt;
+&lt;script language="javascript" type="text/javascript" <br />src="sketch.js"&gt;&lt;/script&gt;</pre>
 
 <p>No necesitas hacer nada en el c&#xF3;digo HTML por el momento — ya est&#xE1; configurado para ti. A continuacion,haz  click en <em>sketch.js</em> y revisa el c&#xF3;digo:</p>
 
@@ -76,7 +76,8 @@ function draw() {
 
 <p>Si has escrito todo correctamente, deber&#xED;as ver un c&#xED;rculo en tu navegador. Si no lo ves, aseg&#xFA;rate de haber copiado correctamente el c&#xF3;digo de ejemplo. Los n&#xFA;meros tienen que estar entre par&#xE9;ntesis y tener comas entre ellos. La l&#xED;nea debe terminar con un punto y coma.
 </p>
-
+<!--Page Break--><br class="page-break-after" />
+    
 <p>Una de las cosas m&#xE1;s dif&#xED;ciles al empezar a programar es que tienes que ser muy espec&#xED;fico con la sintaxis. El software p5.js no es siempre suficientemente inteligente como para entender lo que quieres decir, y puede ser muy exigente con la puntuaci&#xF3;n. Te acostumbrar&#xE1;s a esto con un poco de pr&#xE1;ctica.</p>
 
 <p>A continuaci&#xF3;n, avanzaremos para hacer m&#xE1;s emocionante nuestro bosquejo.</p>
@@ -123,6 +124,7 @@ function draw() {
 
 <p>Ahora deber&#xED;as ver un recuadro en la parte inferior o lateral de tu pantalla (<a data-type="xref" href="#Fig_02_01">Figura 2-1</a>). Si hay un error de tipeo u otro <a contenteditable="false" data-primary="error messages, in console" data-type="indexterm" id="em2ic">&nbsp;</a>error en tu programa, aparecer&#xE1; texto rojo explicando qu&#xE9; error es. Este texto puede a veces ser cr&#xED;ptico, pero si revisas al lado derecho de la l&#xED;nea, estar&#xE1; el nombre del archivo y el n&#xFA;mero de la l&#xED;nea de c&#xF3;digo donde fue detectado el error. Ese es un lugar adecuado donde empezar a buscar errores en tu programa.</p>
 
+<!--
 <div data-nickname="akaziuna" data-type="comment">
 <div class="comment-identifier"><img src="https://secure.gravatar.com/avatar/e0080a854a5c1d5b8feb7567ee1b2eb2" />
 <div spellcheck="false">akaziuna</div>
@@ -130,7 +132,10 @@ function draw() {
 
 <p>Note to Production: whitespace around the SVG image is too large.&nbsp;</p>
 </div>
+-->
 
+<!--Page Break--><br class="page-break-after" />
+    
 <figure id="Fig_02_01"><img alt="Fig 02 01" src="images/gspj_0201.png" />
 <figcaption><b>Figura 2-1. </b>Vista de ejemplo de un error en la consola (la apariencia y disposicion varia segun el navegador usado)</figcaption>
 </figure>

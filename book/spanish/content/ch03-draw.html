@@ -193,7 +193,7 @@ function draw() {
   arc(290, 60, 80, 80, radians(180), radians(450));
   arc(390, 60, 80, 80, radians(45), radians(225));
 }</pre>
-&nbsp;&nbsp;&nbsp;</section>
+</section>
 
 <section data-type="sect2">
 <h2>Ejemplo 3-9: usa angleMode</h2>
@@ -269,7 +269,7 @@ function draw() {
 }</pre>
 
 <p>Puedes pensar esto como pintar con brocha o hacer un collage. El &#xFA;ltimo elemento que a&#xF1;ades es el que est&#xE1; visible encima del resto.</p>
-<a contenteditable="false" data-primary="drawing" data-secondary="drawing order" data-startref="d3sdo" data-type="indexterm">&nbsp;</a></section>
+<a contenteditable="false" data-primary="drawing" data-secondary="drawing order" data-startref="d3sdo" data-type="indexterm"></a></section>
 </section>
 
 <section data-type="sect1">
@@ -277,7 +277,7 @@ function draw() {
 
 <p>Puedes<a contenteditable="false" data-primary="shapes" data-secondary="properties" data-tertiary="stroke weight" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="drawing" data-secondary="shapes" data-tertiary="properties" data-type="indexterm" id="d3ssp">&nbsp;</a>querer tener m&#xE1;s control sobre las figuras que dibujas, m&#xE1;s all&#xE1; de su posici&#xF3;n y su tama&#xF1;o. Para lograr esto, existe un conjunto de funciones que definen las propiedades de las figuras.</p>
 
-<section class="pagebreak-before" data-type="sect2" id="ex-3-12">
+<section data-type="sect2" id="ex-3-12">
 <h2>Ejemplo 3-12: define el grosor del trazo</h2>
 
 <p>El valor por defecto del grosor del trazo es de un pixel, pero esto puede ser cambiado con la funci&#xF3;n <code>strokeWeight()</code>. El &#xfa;nico par&#xE1;metro<a contenteditable="false" data-primary="strokeWeight() function" data-type="indexterm" id="swf3">&nbsp;</a> de <code>strokeWeight()</code> define el ancho de las l&#xED;neas dibujadas:</p>
@@ -305,7 +305,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 3-13: define los atributos del trazo</h2>
 
-<p>La funci&#xF3;n <code>strokeJoin()</code><a contenteditable="false" data-primary="shapes" data-secondary="properties" data-tertiary="stroke attributes" data-type="indexterm" id="s3psa">&nbsp;</a><a contenteditable="false" data-primary="strokeJoin() function" data-type="indexterm" id="sjf3">&nbsp;</a> modifica la forma en que las l&#xED;neas se unen (y c&#xF3;mo se ven las esquinas), y la funci&#xF3;n <code>strokeCap()</code><a contenteditable="false" data-primary="strokeCap() function" data-type="indexterm">&nbsp;</a> cambia c&#xF3;mo las l&#xED;neas son dibujadas en su inicio y final:</p>
+<p>La funci&#xF3;n <code>strokeJoin()</code><a contenteditable="false" data-primary="shapes" data-secondary="properties" data-tertiary="stroke attributes" data-type="indexterm" id="s3psa"></a><a contenteditable="false" data-primary="strokeJoin() function" data-type="indexterm" id="sjf3"></a> modifica la forma en que las l&#xED;neas se unen (y c&#xF3;mo se ven las esquinas), y la funci&#xF3;n <code>strokeCap()</code><a contenteditable="false" data-primary="strokeCap() function" data-type="indexterm">&nbsp;</a> cambia c&#xF3;mo las l&#xED;neas son dibujadas en su inicio y final:</p>
 
 <figure><img alt="Ex 03 13" src="images/gspj_03in11.png" />
 <figcaption/>
@@ -330,7 +330,7 @@ function draw() {
 }</pre>
 
 <p>La posici&#xF3;n de figuras como <code>rect()</code> y <code>ellipse()</code>&nbsp;es controlada por las funciones <code>rectMode()</code> y <code>ellipseMode()</code><a contenteditable="false" data-primary="rectMode() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="ellipseMode() function" data-type="indexterm">&nbsp;</a>. Revisa la <em>Referencia de p5.js</em> para ver ejemplos de c&#xF3;mo posicionar rect&#xE1;ngulos seg&#xFA;n su centro (en vez de su esquina superior izquierda), o de c&#xF3;mo dibujar elipses desde su esquina superior izquierda como los rect&#xE1;ngulos.</p>
-
+    
 <p>Cuando se define cualquiera de estos atributos, todas las figuras dibujadas posteriormente son afectadas. Por ejemplo, en <a data-type="xref" href="#ex-3-12">#ej-3-12</a>, observa c&#xF3;mo el segundo y tercer c&#xED;rculo tienen el mismo grosor de trazo, a pesar de que el grosor es definido solo una vez antes de que ambos sean dibujados.</p>
 
 <p>Observa que la l&#xED;nea de c&#xF3;digo<a contenteditable="false" data-primary="strokeWeight() function" data-startref="swf3" data-type="indexterm">&nbsp;</a> <code>strokeWeight(12)</code> aparece dentro de <code>setup()</code> en vez de <code>draw()</code>. Esto ocurre porque no cambia durante la duraci&#xF3;n de nuestro programa, as&#xED; que basta con definirlo una &#xfa;nica una vez en <code>setup()</code>. Esto es mayormente por organizaci&#xF3;n; poner la l&#xED;nea en <code>draw()</code> tendr&#xED;a <a contenteditable="false" data-primary="strokeJoin() function" data-startref="sjf3" data-type="indexterm">&nbsp;</a>el mismo<a contenteditable="false" data-primary="shapes" data-secondary="properties" data-startref="s3p" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="drawing" data-secondary="shapes" data-startref="d3ssp" data-tertiary="properties" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="shapes" data-secondary="properties" data-startref="s3psa" data-tertiary="stroke attributes" data-type="indexterm">&nbsp;</a>efecto visual.</p>
@@ -484,7 +484,7 @@ function draw() {
   vertex(226, 109);
   endShape();
 }</pre>
-&nbsp;&nbsp;</section>
+</section>
 
 <section data-type="sect2">
 <h2>Example 3-19: cierra la brecha</h2>
@@ -562,7 +562,7 @@ function draw() {
   fill(0);
   ellipse(345, 50, 10, 10);
 }</pre>
-<a contenteditable="false" data-primary="drawing" data-secondary="shapes" data-startref="d3sc" data-tertiary="custom" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="shapes" data-secondary="drawing custom" data-startref="s3dc" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="drawing" data-secondary="creatures" data-startref="d3creat" data-type="indexterm">&nbsp;</a></section>
+<a contenteditable="false" data-primary="drawing" data-secondary="shapes" data-startref="d3sc" data-tertiary="custom" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="shapes" data-secondary="drawing custom" data-startref="s3dc" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="drawing" data-secondary="creatures" data-startref="d3creat" data-type="indexterm"></a></section>
 </section>
 
 <section data-type="sect1">
