@@ -48,6 +48,11 @@ body {
     line-height: 16pt;
 }
 
+.codeLede {
+    font-size: 11.5pt;
+    line-height: 16pt;
+}
+
 h1 {
 
     font-family: "TheSerif", serif;
@@ -83,6 +88,7 @@ pre {
     font-style: "w3Light";
     font-size: 8.5pt;
     line-height: 12.5pt;
+//    word-wrap: break-word;
 }
 
 img {
@@ -95,11 +101,42 @@ a {
     text-decoration: none;
 }
 
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    max-height: 1.5em;
+    padding: 0em 0.5em 0em 0.5em;
+    border: 0.5px solid black;
+}
+
+.largerTd {
+    max-height: 4.5em;
+}
+
+.largerTr {
+    height: 3em;
+}
+
+.smallerText {
+    font-size: 7pt;
+    line-height: 9pt;
+}
+
+.addBorder {
+    border: 1px solid;
+    border-color: #666666;
+}
+
 // ----------------------------------
 //PAGE NUMBERS
 div#frontmatter {
     page: frontmatter;
 }
+
 div#contents {
     counter-reset: page 1;
 }
@@ -137,6 +174,13 @@ section[data-type="toc"] {
     page-break-before: always;
 }
 
+.pagebreak-before {
+    page-break-before: always;
+}
+.page-break-after {
+    page-break-after: always;
+}
+
 // ----------------------------------
 // LINKS
 nav[data-type="toc"] a[href]::after {
@@ -151,3 +195,5 @@ nav[data-type="toc"] a[href]::after {
 //<!--
 //<h1 class="chapterhead">Esto es un encabezado</h1>
 //-->
+//
+//<!--Page Break--><br class="page-break-after" />
