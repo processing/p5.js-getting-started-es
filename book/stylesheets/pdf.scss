@@ -177,7 +177,7 @@ section[data-type="toc"] {
 .pagebreak-before {
     page-break-before: always;
 }
-.page-break-after {
+.pagebreak-after {
     page-break-after: always;
 }
 
@@ -192,8 +192,4 @@ nav[data-type="toc"] a[href]::after {
 //
 //ADD <h1 class="chapterhead">   
 //
-//<!--
-//<h1 class="chapterhead">Esto es un encabezado</h1>
-//-->
-//
-//<!--Page Break--><br class="page-break-after" />
+//<!--Page Break--><br class="pagebreak-after" />
