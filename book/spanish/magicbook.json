@@ -34,15 +34,13 @@
           "book/spanish/content/ch12-data.html",
           "book/spanish/content/ch13_opener.html",
           "book/spanish/content/ch13-extend.html",
-          "book/spanish/content/ch13_closer.html",
           "book/spanish/content/appa.html",
           "book/spanish/content/appb.html",
           "book/spanish/content/appc.html",
           "book/spanish/content/appc_closing.html",
           "book/spanish/content/ix.html",
           "book/spanish/content/author_bio.html",
-          "book/spanish/content/colo.html",
-          "book/spanish/content/praise.html"
+          "book/spanish/content/colo.html"
           
       
   ],
@@ -80,15 +78,13 @@
           "book/spanish/content/ch12-data.html",
           "book/spanish/content/ch13_opener.html",
           "book/spanish/content/ch13-extend.html",
-          "book/spanish/content/ch13_closer.html",
           "book/spanish/content/appa.html",
           "book/spanish/content/appb.html",
           "book/spanish/content/appc.html",
           "book/spanish/content/appc_closing.html",
           "book/spanish/content/ix.html",
           "book/spanish/content/author_bio.html",
-          "book/spanish/content/colo.html",
-          "book/spanish/content/praise.html"
+          "book/spanish/content/colo.html"
       ],
       "stylesheets" : {
         "files" : ["book/stylesheets/pdf.scss"]
