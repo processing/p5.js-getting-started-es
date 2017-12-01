@@ -50,6 +50,8 @@
       "format" : "pdf",
       "layout" : "book/layouts/pdf.html",
       "files" : [
+          "book/spanish/content/copyright.html",
+          "book/spanish/content/toc.html",
           "book/spanish/content/ch00-preface_opener.html",
           "book/spanish/content/ch00-preface.html",
           "book/spanish/content/ch01_opener.html",
