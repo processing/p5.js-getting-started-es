@@ -88,7 +88,6 @@ pre {
     font-style: "w3Light";
     font-size: 8.5pt;
     line-height: 12.5pt;
-//    word-wrap: break-word;
 }
 
 img {
@@ -99,6 +98,10 @@ img {
 a {
     color: darkblue;
     text-decoration: none;
+}
+
+.table-of-contents {
+    color: black;
 }
 
 table {
