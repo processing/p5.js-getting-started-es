@@ -1,7 +1,7 @@
 <section data-type="chapter" id="response" xmlns="http://www.w3.org/1999/xhtml">
 <h1 class="chapterhead">Respuesta</h1>
 
-<p class="lede">El c&#xF3;digo que<a contenteditable="false" data-primary="response to input" data-type="indexterm" id="rti5">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="setup and draw" data-type="indexterm" id="rti5sad">&nbsp;</a>responde a acciones de entrada del rat&#xF3;n, teclado u otros dispositivos  depende de la ejecuci&#xF3;n continua del programa.  Ya nos enfrentamos a las funciones <code>setup()</code> y <code>draw()</code> en <a data-type="xref" href="#hello">#hola</a>. Ahora aprenderemos m&#xE1;s sobre qu&#xE9; hacen y c&#xF3;mo podemos usarlas para reaccionar a entradas al programa.</p>
+<p class="lede">El c&#xF3;digo que<a contenteditable="false" data-primary="response to input" data-type="indexterm" id="rti5">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="setup and draw" data-type="indexterm" id="rti5sad">&nbsp;</a>responde a acciones de entrada del rat&#xF3;n, teclado u otros dispositivos  depende de la ejecuci&#xF3;n continua del programa.  Ya nos enfrentamos a las funciones <code class="codeLede">setup()</code> y <code class="codeLede">draw()</code> en <a data-type="xref" href="#hello">1/Hola</a>. Ahora aprenderemos m&#xE1;s sobre qu&#xE9; hacen y c&#xF3;mo podemos usarlas para reaccionar a entradas al programa.</p>
 
 <section data-type="sect1">
 <h1>Una vez y para siempre</h1>
@@ -200,7 +200,7 @@ function draw() {
 <section data-type="sect2" id="ex-5-8" class="pagebreak-before">
 <h2>Ejemplo 5-8: suavizado</h2>
 
-<p>En <a data-type="xref" href="#ex-5-7">#ej-5-7</a>, los <a contenteditable="false" data-primary="easing" data-type="indexterm" id="e5">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="easing " data-type="indexterm" id="rti5e">&nbsp;</a>valores del rat&#xF3;n son convertidos directamente en posiciones en la pantalla. Pero a veces queremos que estos valores sigan al rat&#xF3;n m&#xE1;s libremente - que se queden atr&#xE1;s para crear un movimiento m&#xE1;s fluido. Esta t&#xE9;cnica se llama <em>suavizado</em>. En el suavizado, hay dos valores: el valor actual y el valor objetivo (ver <a data-type="xref" href="#Fig_05_01">Figura 5-1</a>). En cada paso del programa, el valor actual se acerca un poco m&#xE1;s h al valor objetivo:</p>
+<p>En <a data-type="xref" href="#ex-5-7">Ejemplo 5-7</a>, los <a contenteditable="false" data-primary="easing" data-type="indexterm" id="e5">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="easing " data-type="indexterm" id="rti5e">&nbsp;</a>valores del rat&#xF3;n son convertidos directamente en posiciones en la pantalla. Pero a veces queremos que estos valores sigan al rat&#xF3;n m&#xE1;s libremente - que se queden atr&#xE1;s para crear un movimiento m&#xE1;s fluido. Esta t&#xE9;cnica se llama <em>suavizado</em>. En el suavizado, hay dos valores: el valor actual y el valor objetivo (ver <a data-type="xref" href="#Fig_05_01">Figura 5-1</a>). En cada paso del programa, el valor actual se acerca un poco m&#xE1;s h al valor objetivo:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 var x = 0;
@@ -217,7 +217,7 @@ function draw() {
   print(objetivoX + " : " + x);
 }</pre>
 
-<p>El valor de la variable <code>x</code> siempre se est&#xE1; acerc&#xE1;ndo a <code>targetX</code>. La velocidad con la que se acerca a <code>targetX</code> es definida por la variable de <span class="keep-together"><code>suavizado</code></span>, un n&#xFA;mero entre 0 y 1. Un valor peque&#xF1;o de suavizado causa m&#xE1;s retraso que un valor m&#xE1;s grande. Con un valor de suavizado de 1, no hay retraso. Cuando ejecutas el <a data-type="xref" href="#ex-5-8">#ej-5-8</a>, los valores son mostrados en la consola a trav&#xE9;s de la funci&#xF3;n<a contenteditable="false" data-primary="print() function" data-type="indexterm">&nbsp;</a> <code>print()</code>. Cuando mueves el rat&#xF3;n, observa c&#xF3;mo los n&#xFA;meros est&#xE1;n alejados, pero cuando dejas de moverlo, el valor de <code>x</code> se acerca al valor de <code>targetX</code>.</p>
+<p>El valor de la variable <code>x</code> siempre se est&#xE1; acerc&#xE1;ndo a <code>targetX</code>. La velocidad con la que se acerca a <code>targetX</code> es definida por la variable de <span class="keep-together"><code>suavizado</code></span>, un n&#xFA;mero entre 0 y 1. Un valor peque&#xF1;o de suavizado causa m&#xE1;s retraso que un valor m&#xE1;s grande. Con un valor de suavizado de 1, no hay retraso. Cuando ejecutas el <a data-type="xref" href="#ex-5-8">Ejemplo 5-8</a>, los valores son mostrados en la consola a trav&#xE9;s de la funci&#xF3;n<a contenteditable="false" data-primary="print() function" data-type="indexterm">&nbsp;</a> <code>print()</code>. Cuando mueves el rat&#xF3;n, observa c&#xF3;mo los n&#xFA;meros est&#xE1;n alejados, pero cuando dejas de moverlo, el valor de <code>x</code> se acerca al valor de <code>targetX</code>.</p>
 
 <figure id="Fig_05_01"><img alt="Fig 05 01" src="images/gspj_0501.png" />
 <figcaption><b>Figura 5-1. </b>El suavizado cambia el n&#xfa;mero de pasos necesarios para ir de un lugar a otro</figcaption>
@@ -229,7 +229,7 @@ function draw() {
 <section data-type="sect2" class="pagebreak-before">
 <h2>Ejemplo 5-9: suaviza las l&#xED;neas</h2>
 
-<p>En este <a contenteditable="false" data-primary="lines" data-secondary="smoothing with easing" data-type="indexterm">&nbsp;</a>ejemplo, la t&#xE9;cnica de suavizado es aplicada a <a data-type="xref" href="#ex-5-7">#ej-5-7</a>. En comparaci&#xF3;n, las l&#xED;neas son m&#xE1;s fluidas:</p>
+<p>En este <a contenteditable="false" data-primary="lines" data-secondary="smoothing with easing" data-type="indexterm">&nbsp;</a>ejemplo, la t&#xE9;cnica de suavizado es aplicada a <a data-type="xref" href="#ex-5-7">Ejemplo 5-7</a>. En comparaci&#xF3;n, las l&#xED;neas son m&#xE1;s fluidas:</p>
 
 <figure><img alt="Ex 05 09" class="addBorder" src="images/gspj_05in06.png" />
 <figcaption/>
@@ -291,14 +291,14 @@ function draw() {
   line(0, 70, width, 50);
 }</pre>
 
-<p class="pagebreak-before">En este programa, el c&#xF3;digo dentro del bloque <code>if</code> solamente se ejecuta cuando se presiona un bot&#xF3;n del rat&#xF3;n. Cuando no se presiona un bot&#xF3;n, el c&#xF3;digo es ignorado. Tal como el bucle <code>for</code> discutido en <a data-type="xref" href="#repetition">#repetici&#xf3;n</a>, el bloque <code>if</code> tambi&#xe9;n tiene una <code>prueba</code> que es evaluada a <code>true</code> o <code>false</code>:</p>
+<p class="pagebreak-before">En este programa, el c&#xF3;digo dentro del bloque <code>if</code> solamente se ejecuta cuando se presiona un bot&#xF3;n del rat&#xF3;n. Cuando no se presiona un bot&#xF3;n, el c&#xF3;digo es ignorado. Tal como el bucle <code>for</code> discutido en <a data-type="xref" href="#repetition">Repetici&#xf3;n</a>, el bloque <code>if</code> tambi&#xe9;n tiene una <code>prueba</code> que es evaluada a <code>true</code> o <code>false</code>:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 if (prueba) {
   instrucciones
 }</pre>
 
-<p>Cuando la prueba es <code>true</code>, el c&#xF3;digo dentro del bloque se ejecuta; cuando es <code>false</code>, el c&#xF3;digo dentro del bloque no se ejecuta. El computador determina si la prueba es <code>true</code> o <code>false</code> al evaluar la expresi&#xF3;n dentro de los par&#xE9;ntesis. (Si quieres refrescar tu memoria, <a data-type="xref" href="#ex-4-6">#ej-4-6</a> discute en mayor detalle las expresiones relacionales).</p>
+<p>Cuando la prueba es <code>true</code>, el c&#xF3;digo dentro del bloque se ejecuta; cuando es <code>false</code>, el c&#xF3;digo dentro del bloque no se ejecuta. El computador determina si la prueba es <code>true</code> o <code>false</code> al evaluar la expresi&#xF3;n dentro de los par&#xE9;ntesis. (Si quieres refrescar tu memoria, <a data-type="xref" href="#ex-4-6">Ejemplo 4-6</a> discute en mayor detalle las expresiones relacionales).</p>
 
 <p>El s&#xED;mbolo <code>==</code><a contenteditable="false" data-primary="== (equal to) operator" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="= (assignment) operator" data-type="indexterm">&nbsp;</a>compara los valores a la izquierda y a la derecha para probar si son equivalentes o no. El s&#xED;mbolo <code>==</code> es distinto del operador de asignaci&#xF3;n, el s&#xED;mbolo unitario <code>=</code>. El s&#xED;mbolo <code> ==</code> pregunta, "&#xBF;son estas cosas iguales?" mientras que el s&#xED;mbolo <code>=</code> define el valor de una variable.</p>
 
@@ -530,7 +530,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 5-17: dibuja algunas letras</h2>
 
-<p>Este ejemplo presenta la funci&#xF3;n <code>textSize()</code> <a contenteditable="false" data-primary="textSize() function" data-type="indexterm">&nbsp;</a>para definir el tama&#xF1;o de las letras, la funci&#xF3;n <code>textAlign()</code><a contenteditable="false" data-primary="textAlign() function" data-type="indexterm">&nbsp;</a> para centrar el texto en su coordenada <em>x</em>, y la funci&#xF3;n <code>text()</code> <a contenteditable="false" data-primary="text() function" data-type="indexterm">&nbsp;</a>para dibujar la letra. Estas funciones ser&#xE1;n discutidas en mayor detalle en <a data-type="xref" href="#fonts">#tipos_de_letra</a>.</p>
+<p>Este ejemplo presenta la funci&#xF3;n <code>textSize()</code> <a contenteditable="false" data-primary="textSize() function" data-type="indexterm">&nbsp;</a>para definir el tama&#xF1;o de las letras, la funci&#xF3;n <code>textAlign()</code><a contenteditable="false" data-primary="textAlign() function" data-type="indexterm">&nbsp;</a> para centrar el texto en su coordenada <em>x</em>, y la funci&#xF3;n <code>text()</code> <a contenteditable="false" data-primary="text() function" data-type="indexterm">&nbsp;</a>para dibujar la letra. Estas funciones ser&#xE1;n discutidas en mayor detalle en <a data-type="xref" href="#fonts">Tipos_de_letra</a>.</p>
 
 <figure><img alt="Ex 05 17" src="images/gspj_05in14.png" />
 <figcaption/>
@@ -690,7 +690,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 5-23: mapeo con la funci&#xF3;n <code>map()</code></h2>
 
-<p>Este ejemplo reescribe <a data-type="xref" href="#ex-5-22">#ej-5-22</a> usando <code>map()</code>:</p>
+<p>Este ejemplo reescribe <a data-type="xref" href="#ex-5-22">Ejemplo 5-22</a> usando <code>map()</code>:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 function setup() {
@@ -718,7 +718,7 @@ function draw() {
 <figcaption/>
 </figure>
 
-<p>Este<a contenteditable="false" data-primary="robot programs (examples)" data-secondary="mouse-responding shapes" data-type="indexterm" id="rp5mrs">&nbsp;</a>programa usa las variables introducidas en Robot 2 (ver <a data-type="xref" href="#robot2">#robot2</a>) y hace posible cambiarlas mientras el programa es ejecutado de manera que las figuras respondan al rat&#xF3;n. El c&#xF3;digo dentro del bloque <code>draw()</code> es ejecutado muchas veces por segundo. En cada cuadro, las variables definidas en el programa cambian en respuesta a las variables <code>mouseX</code> y <code>mouseIsPressed</code>.</p>
+<p>Este<a contenteditable="false" data-primary="robot programs (examples)" data-secondary="mouse-responding shapes" data-type="indexterm" id="rp5mrs">&nbsp;</a>programa usa las variables introducidas en Robot 2 (ver <a data-type="xref" href="#robot2">Robot 2: variables</a>) y hace posible cambiarlas mientras el programa es ejecutado de manera que las figuras respondan al rat&#xF3;n. El c&#xF3;digo dentro del bloque <code>draw()</code> es ejecutado muchas veces por segundo. En cada cuadro, las variables definidas en el programa cambian en respuesta a las variables <code>mouseX</code> y <code>mouseIsPressed</code>.</p>
 
 <p>El valor <code>mouseX</code> controla la posici&#xF3;n del robot con la t&#xE9;cnica de suavizado para que los movimientos sean menos instant&#xE1;neos y se vean m&#xE1;s naturales. Cuando se presiona un bot&#xF3;n del rat&#xF3;n, los valores de <code>neckHeight</code> y <code>bodyHeight</code> cambian para hacer m&#xE1;s corto el robot :</p>
 

@@ -11,7 +11,7 @@
 <section data-type="sect2" id="ex-11-1">
 <h2>Ejemplo 11-1: Muchas variables</h2>
 
-<p>Para entender lo que esto significa, revisa el <a data-type="xref" href="#ex-8-3">#ej-8-3</a>. Este c&#xF3;digo funciona bien si estamos moviendo una sola figura, &#xBF;pero qu&#xE9; pasa si queremos tener dos? Necesitamos crear una nueva variable <code>x</code> y actualizarla dentro de <code>draw()</code>:</p>
+<p>Para entender lo que esto significa, revisa el <a data-type="xref" href="#ex-8-3">Ejemplo 8-3</a>. Este c&#xF3;digo funciona bien si estamos moviendo una sola figura, &#xBF;pero qu&#xE9; pasa si queremos tener dos? Necesitamos crear una nueva variable <code>x</code> y actualizarla dentro de <code>draw()</code>:</p>
 
 <figure><img alt="Ex 11 01" src="images/gspj_11in02.png" />
 <figcaption/>
@@ -180,7 +180,7 @@ function setup() {
 <section data-type="sect2">
 <h2>Ejemplo 11-6: revisitando el primer ejemplo</h2>
 
-<p>Como un ejemplo completo de c&#xF3;mo usar arreglos, hemos reescrito el <a data-type="xref" href="#ex-11-1">#ej-11-1</a> aqu&#xED;. A pesar de que no vemos todav&#xED;a todos los beneficios revelados en el <a data-type="xref" href="#ex-11-3">#ej-11-3</a>, s&#xED; vemos algunos detalles importantes de c&#xF3;mo funcionan los arreglos:</p>
+<p>Como un ejemplo completo de c&#xF3;mo usar arreglos, hemos reescrito el <a data-type="xref" href="#ex-11-1">Ejemplo 11-1</a> aqu&#xED;. A pesar de que no vemos todav&#xED;a todos los beneficios revelados en el <a data-type="xref" href="#ex-11-3">Ejemplo 11-3</a>, s&#xED; vemos algunos detalles importantes de c&#xF3;mo funcionan los arreglos:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 var x = [-20, 20];
@@ -203,7 +203,7 @@ function draw() {
 <section data-type="sect1">
 <h1>Repetici&#xF3;n y arreglos</h1>
 
-<p>El bucle<a contenteditable="false" data-primary="for loops" data-type="indexterm">&nbsp;</a> <code>for</code>, <a contenteditable="false" data-primary="arrays" data-secondary="repetition and" data-type="indexterm" id="a11ra">&nbsp;</a>introducido en <a data-type="xref" href="#repetition">#repetition</a>, har&#xE1; m&#xE1;s f&#xE1;cil trabajar con arreglos grandes mientras el c&#xF3;digo se mantiene conciso. La idea es escribir un bucle para recorrer cada elemento del arreglo, uno a uno. Para hacerlo, necesitar&#xE1;s saber el largo del arreglo. La propiedad <code>length</code> <a contenteditable="false" data-primary="length property" data-type="indexterm">&nbsp;</a>asociada con cada arreglo almacena el n&#xFA;mero de elementos. Usamos el nombre del arreglo con el operador punto (un punto) para acceder a este valor. Por ejemplo:</p>
+<p>El bucle<a contenteditable="false" data-primary="for loops" data-type="indexterm">&nbsp;</a> <code>for</code>, <a contenteditable="false" data-primary="arrays" data-secondary="repetition and" data-type="indexterm" id="a11ra">&nbsp;</a>introducido en <a data-type="xref" href="#repetition">Repetición</a>, har&#xE1; m&#xE1;s f&#xE1;cil trabajar con arreglos grandes mientras el c&#xF3;digo se mantiene conciso. La idea es escribir un bucle para recorrer cada elemento del arreglo, uno a uno. Para hacerlo, necesitar&#xE1;s saber el largo del arreglo. La propiedad <code>length</code> <a contenteditable="false" data-primary="length property" data-type="indexterm">&nbsp;</a>asociada con cada arreglo almacena el n&#xFA;mero de elementos. Usamos el nombre del arreglo con el operador punto (un punto) para acceder a este valor. Por ejemplo:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 var x = [12, 20];         // Declara y asigna valores al arreglo
@@ -298,7 +298,7 @@ function draw() {
 <section data-type="sect1">
 <h1>Arreglos de objetos</h1>
 
-<p>Los<a contenteditable="false" data-primary="objects" data-secondary="arrays of" data-type="indexterm" id="o11ao">&nbsp;</a><a contenteditable="false" data-primary="arrays" data-secondary="of objects" data-type="indexterm" id="a11oo">&nbsp;</a><a contenteditable="false" data-primary="mouse movement tracking, with arrays" data-startref="m11tmwa" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="arrays" data-secondary="tracking mouse movements with" data-startref="a11tmmw" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="arrays" data-secondary="repetition and" data-startref="a11ra" data-type="indexterm">&nbsp;</a>dos ejemplos cortos de esta secci&#xF3;n juntan cada gran concepto de programaci&#xF3;n en este libro: iteraci&#xF3;n, condicionales, funciones, objetos y arreglos. Hacer un arreglo de objetos es casi lo mismo que construir los arreglos que introducimos en las p&#xE1;ginas anteriores, pero existe una consideraci&#xF3;n inicial: como cada elemento es un objeto, primero debe ser creado con la palabra reservada <code>new</code> (tal como cualquier otro objeto) antes de ser asignado a un arreglo. Con un objeto construido por el usuario como <code>JitterBug</code> (revisar <a data-type="xref" href="#objects">#objetos</a>), esto significa que <code>new</code> definir&#xE1; cada elemento antes de ser asignado al arreglo.</p>
+<p>Los<a contenteditable="false" data-primary="objects" data-secondary="arrays of" data-type="indexterm" id="o11ao">&nbsp;</a><a contenteditable="false" data-primary="arrays" data-secondary="of objects" data-type="indexterm" id="a11oo">&nbsp;</a><a contenteditable="false" data-primary="mouse movement tracking, with arrays" data-startref="m11tmwa" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="arrays" data-secondary="tracking mouse movements with" data-startref="a11tmmw" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="arrays" data-secondary="repetition and" data-startref="a11ra" data-type="indexterm">&nbsp;</a>dos ejemplos cortos de esta secci&#xF3;n juntan cada gran concepto de programaci&#xF3;n en este libro: iteraci&#xF3;n, condicionales, funciones, objetos y arreglos. Hacer un arreglo de objetos es casi lo mismo que construir los arreglos que introducimos en las p&#xE1;ginas anteriores, pero existe una consideraci&#xF3;n inicial: como cada elemento es un objeto, primero debe ser creado con la palabra reservada <code>new</code> (tal como cualquier otro objeto) antes de ser asignado a un arreglo. Con un objeto construido por el usuario como <code>JitterBug</code> (revisar <a data-type="xref" href="#objects">10/Objetos</a>), esto significa que <code>new</code> definir&#xE1; cada elemento antes de ser asignado al arreglo.</p>
 
 <section data-type="sect2" id="ex-11-9">
 <h2>Ejemplo 11-9: administrando varios objetos</h2>
@@ -338,7 +338,7 @@ function draw() {
 <section class="pagebreak-before" data-type="sect2">
 <h2>Ejemplo 11-10: secuencias de im&#xE1;genes</h2>
 
-<p>Para ejecutar <a contenteditable="false" data-primary="images" data-secondary="sequences of" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="arrays" data-secondary="sequences of images stored in" data-type="indexterm" id="a11soi">&nbsp;</a>este ejemplo, obt&#xE9;n las im&#xE1;genes del archivo <em>media.zip</em> tal como fue descrito en el <a data-type="xref" href="#media">#media</a>. Las im&#xE1;genes tienen nombres secuenciales (<em>frame-0000.png</em>, <em>frame-0001.png</em>, etc.), lo que hace posible crear el nombre de cada archivo dentro de un bucle <code>for</code>, tal como vemos en la s&#xE9;ptima l&#xED;nea del programa:</p>
+<p>Para ejecutar <a contenteditable="false" data-primary="images" data-secondary="sequences of" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="arrays" data-secondary="sequences of images stored in" data-type="indexterm" id="a11soi">&nbsp;</a>este ejemplo, obt&#xE9;n las im&#xE1;genes del archivo <em>media.zip</em> tal como fue descrito en el <a data-type="xref" href="#media">7/Medios</a>. Las im&#xE1;genes tienen nombres secuenciales (<em>frame-0000.png</em>, <em>frame-0001.png</em>, etc.), lo que hace posible crear el nombre de cada archivo dentro de un bucle <code>for</code>, tal como vemos en la s&#xE9;ptima l&#xED;nea del programa:</p>
 
 <figure><img alt="Ex 11 10" src="images/gspj_11in08.png" />
 <figcaption/>
@@ -382,7 +382,7 @@ function draw() {
 
 <p>Los arreglos <a contenteditable="false" data-primary="robot programs (examples)" data-secondary="arrays of objects" data-type="indexterm" id="rp11aoo">&nbsp;</a>hacen m&#xE1;s f&#xE1;cil que un programa trabaje con muchos elementos. En este ejemplo, un arreglo de objetos <code>Robot</code> es declarado al principio. El arreglo es luego posicionado dentro de <code>setup()</code>, y cada objeto <code>Robot</code> es creado dentro del bucle <code>for</code>. Dentro de <code>draw()</code>, otro bucle <code>for</code> es usado para actualizar y mostrar cada elemento del arreglo <code>bots</code>.</p>
 
-<p>El bucle <code>for</code> y un arreglo son una combinaci&#xF3;n poderosa. Observa las diferencias sutiles entre el c&#xF3;digo de este ejemplo y Robot 8 (revisa <a data-type="xref" href="#robot8">#robot8</a>) en contraste con los cambios extremos en el resultado visual. Una vez que el arreglo es creado y se incluye un bucle <code>for</code>, es igualmente f&#xE1;cil trabajar con 3 elementos que con 3.000.</p>
+<p>El bucle <code>for</code> y un arreglo son una combinaci&#xF3;n poderosa. Observa las diferencias sutiles entre el c&#xF3;digo de este ejemplo y Robot 8 (revisa <a data-type="xref" href="#robot8">Robot 8: objetos</a>) en contraste con los cambios extremos en el resultado visual. Una vez que el arreglo es creado y se incluye un bucle <code>for</code>, es igualmente f&#xE1;cil trabajar con 3 elementos que con 3.000.</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 var robotImage;

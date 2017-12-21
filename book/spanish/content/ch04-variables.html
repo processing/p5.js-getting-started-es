@@ -77,7 +77,7 @@ x = 12; // Asigna un valor a x</pre>
 <pre data-code-language="p5js" data-type="programlisting">
 var x = 12; // Declara la variable x y le asigna un valor</pre>
 
-<p>Los caracteres <code>var</code>&nbsp;en la l&#xED;nea de c&#xF3;digo que declara la variable, pero no son escritos de nuevo. Cada vez que se escribe <code>var</code>&nbsp; antes del nombre de una variable, el computador piensa que est&#xE1;s tratando de declarar una nueva variable. No puedes tener dos variables con el mismo nombre en la misma secci&#xF3;n del programa (<a data-type="xref" href="#variable_scope">#variable_scope</a>), ya que el programa podr&#xED;a comportarse extra&#xF1;amente:</p>
+<p>Los caracteres <code>var</code>&nbsp;en la l&#xED;nea de c&#xF3;digo que declara la variable, pero no son escritos de nuevo. Cada vez que se escribe <code>var</code>&nbsp; antes del nombre de una variable, el computador piensa que est&#xE1;s tratando de declarar una nueva variable. No puedes tener dos variables con el mismo nombre en la misma secci&#xF3;n del programa (<a data-type="xref" href="#variable_scope">Apéndice C</a>), ya que el programa podr&#xED;a comportarse extra&#xF1;amente:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 var x;       // Declara la variable x
@@ -112,7 +112,7 @@ function draw() {
   ellipse(width/2, height/2, 60, 60);
 }</pre>
 
-<p>Existen tambi&#xE9;n variables especiales que mantienen registro del estado del rat&#xF3;n y de los valores del teclado, entre otras. Ser&#xE1;n discutidas<a contenteditable="false" data-primary="variables" data-secondary="p5.js" data-startref="v4p5js" data-type="indexterm">&nbsp;</a>en <a data-type="xref" href="#response">#respuesta</a>.</p>
+<p>Existen tambi&#xE9;n variables especiales que mantienen registro del estado del rat&#xF3;n y de los valores del teclado, entre otras. Ser&#xE1;n discutidas<a contenteditable="false" data-primary="variables" data-secondary="p5.js" data-startref="v4p5js" data-type="indexterm">&nbsp;</a>en <a data-type="xref" href="#response">5/Respuesta</a>.</p>
 </section>
 </section>
 
@@ -209,7 +209,7 @@ var x = 4 + (4 * 5); // Se le asigna el valor 24 a x</pre>
 <pre data-code-language="p5js" data-type="programlisting">
 var x = (4 + 4) * 5; // Se le asigna el valor 40 a x</pre>
 
-<p>En clases de matem&#xE1;ticas se ense&#xF1;a un acr&#xF3;nimo para este orden: PEMDAS, <a contenteditable="false" data-primary="PEMDAS acronym" data-type="indexterm">&nbsp;</a>que significa Par&#xE9;ntesis, Exponentes, Multiplicaci&#xF3;n, Divisi&#xF3;n, Adici&#xF3;n, Substracci&#xF3;n, donde los par&#xE9;ntesis tienen la mayor prioridad y la substracci&#xF3;n la menor.<a contenteditable="false" data-primary="order of operations" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="arithmetic operations" data-secondary="order of" data-type="indexterm">&nbsp;</a>El orden completo de operaciones se encuentra en <a data-type="xref" href="#order_of_operations">#orden_de_operaciones</a>.</p>
+<p>En clases de matem&#xE1;ticas se ense&#xF1;a un acr&#xF3;nimo para este orden: PEMDAS, <a contenteditable="false" data-primary="PEMDAS acronym" data-type="indexterm">&nbsp;</a>que significa Par&#xE9;ntesis, Exponentes, Multiplicaci&#xF3;n, Divisi&#xF3;n, Adici&#xF3;n, Substracci&#xF3;n, donde los par&#xE9;ntesis tienen la mayor prioridad y la substracci&#xF3;n la menor.<a contenteditable="false" data-primary="order of operations" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="arithmetic operations" data-secondary="order of" data-type="indexterm">&nbsp;</a>El orden completo de operaciones se encuentra en <a data-type="xref" href="#order_of_operations">Apéndice B</a>.</p>
 
 <p>Algunos c&#xE1;lculos son usados tan frecuentemente en programaci&#xF3;n que se han elaborado atajos, lo que es &#xFA;til para ahorrar tiempo al escribir. Por ejemplo, puedes sumar a o restar  una variable con un solo operador:</p>
 
@@ -351,7 +351,7 @@ for (inic; prueba; refresco) {
 <section data-type="sect2">
 <h2>Ejemplo 4-7: entrenamiento de bucles for</h2>
 
-<p>El poder definitivo que entregan los bucles <code>for</code> la habilidad de hacer cambios r&#xE1;pidos a tu c&#xF3;digo. Como el c&#xF3;digo dentro del bloque es ejecutado t&#xED;picamente m&#xFA;ltiples veces, un cambio al bloque es magnificado cuando el c&#xF3;digo es ejecutado. Al modificar <a data-type="xref" href="#ex-4-6">#ej-4-6</a> ligeramente, podemos crear una variedad de patrones distintos:</p>
+<p>El poder definitivo que entregan los bucles <code>for</code> la habilidad de hacer cambios r&#xE1;pidos a tu c&#xF3;digo. Como el c&#xF3;digo dentro del bloque es ejecutado t&#xED;picamente m&#xFA;ltiples veces, un cambio al bloque es magnificado cuando el c&#xF3;digo es ejecutado. Al modificar <a data-type="xref" href="#ex-4-6">Ejemplo 4-6</a> ligeramente, podemos crear una variedad de patrones distintos:</p>
 
 <figure><img alt="Ex 04 07" src="images/gspj_04in07.png" />
 <figcaption/>
@@ -421,7 +421,7 @@ function draw() {
 <section data-type="sect2" id="ex-4-10">
 <h2>Ejemplo 4-10: anidando un bucle for dentro de otro</h2>
 
-<p>Cuando<a contenteditable="false" data-primary="embedded for loops" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="for loops" data-secondary="embedding within each other" data-type="indexterm">&nbsp;</a>un bucle <code>for</code> es anidado dentro de otro, el n&#xFA;mero de repeticiones se multiplica. Primero veamos un ejemplo corto y luego revisaremos sus partes en <a data-type="xref" href="#ex-4-11">#ej-4-11</a>:</p>
+<p>Cuando<a contenteditable="false" data-primary="embedded for loops" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="for loops" data-secondary="embedding within each other" data-type="indexterm">&nbsp;</a>un bucle <code>for</code> es anidado dentro de otro, el n&#xFA;mero de repeticiones se multiplica. Primero veamos un ejemplo corto y luego revisaremos sus partes en <a data-type="xref" href="#ex-4-11">Ejemplo 4-11</a>:</p>
 
 <figure><img alt="Ex 04 10" src="images/gspj_04in10.png" />
 <figcaption/>
@@ -471,9 +471,9 @@ function draw() {
   }
 }</pre>
 
-<p>Cuando uno de estos bucles <code>for</code> es puesto dentro del otro, como en <a data-type="xref" href="#ex-4-10">#ej-4-10</a>, las 4 repeticiones del primer loop son combinadas con las 13 del segundo, para as&#xED; ejecutar 52 veces (4×13 = 52) el c&#xF3;digo dentro del bloque combinado.</p>
+<p>Cuando uno de estos bucles <code>for</code> es puesto dentro del otro, como en <a data-type="xref" href="#ex-4-10">Ejemplo 4-10</a>, las 4 repeticiones del primer loop son combinadas con las 13 del segundo, para as&#xED; ejecutar 52 veces (4×13 = 52) el c&#xF3;digo dentro del bloque combinado.</p>
 
-<p><a data-type="xref" href="#ex-4-10">#ej-4-10</a> es una buena base para explorar muchos tipos de patrones visuales repetitivos. Los siguientes ejemplos muestran un par de maneras en que esto puede ser extendido, aunque esto es solo una peque&#xF1;a muestra de lo que es <a contenteditable="false" data-primary="for loops" data-secondary="creating rows and columns with" data-startref="fl4cracw" data-type="indexterm">&nbsp;</a>posible.</p>
+<p><a data-type="xref" href="#ex-4-10">Ejemplo 4-10</a> es una buena base para explorar muchos tipos de patrones visuales repetitivos. Los siguientes ejemplos muestran un par de maneras en que esto puede ser extendido, aunque esto es solo una peque&#xF1;a muestra de lo que es <a contenteditable="false" data-primary="for loops" data-secondary="creating rows and columns with" data-startref="fl4cracw" data-type="indexterm">&nbsp;</a>posible.</p>
 </section>
 
 <section data-type="sect2" id="ex-4-12">
@@ -537,7 +537,7 @@ function draw() {
 <figcaption/>
 </figure>
 
-<p>Las <a contenteditable="false" data-primary="robot programs (examples)" data-secondary="modifying code with variables" data-type="indexterm" id="rp4mcwv">&nbsp;</a>variables introducidas en este programa hacen que el c&#xF3;digo se vea m&#xE1;s dif&#xED;cil que el de la Robot 1 (ver <a data-type="xref" href="#robot1">#robot1</a>), pero ahora es mucho m&#xE1;s simple hacer modificaciones, porque los n&#xFA;meros que dependen uno de otro est&#xE1;n en una misma ubicaci&#xF3;n. Por ejemplo, el dibujo del cuello est&#xE1; basado en la variable <code>neckHeight</code>. El grupo de variables al principio del c&#xF3;digo controla los aspectos del robot que queremos cambiar: ubicaci&#xF3;n, altura del cuerpo y altura del cuello. Puedes observar algunas de las posibles variaciones posibles en la figura; de izquierda a derecha, aqu&#xed;; est&#xE1;n los valores correspondientes:</p>
+<p>Las <a contenteditable="false" data-primary="robot programs (examples)" data-secondary="modifying code with variables" data-type="indexterm" id="rp4mcwv">&nbsp;</a>variables introducidas en este programa hacen que el c&#xF3;digo se vea m&#xE1;s dif&#xED;cil que el de la Robot 1 (ver <a data-type="xref" href="#robot1">Robot 1: dibuja</a>), pero ahora es mucho m&#xE1;s simple hacer modificaciones, porque los n&#xFA;meros que dependen uno de otro est&#xE1;n en una misma ubicaci&#xF3;n. Por ejemplo, el dibujo del cuello est&#xE1; basado en la variable <code>neckHeight</code>. El grupo de variables al principio del c&#xF3;digo controla los aspectos del robot que queremos cambiar: ubicaci&#xF3;n, altura del cuerpo y altura del cuello. Puedes observar algunas de las posibles variaciones posibles en la figura; de izquierda a derecha, aqu&#xed;; est&#xE1;n los valores correspondientes:</p>
 
 <table class="smallerText">
 	<tbody>

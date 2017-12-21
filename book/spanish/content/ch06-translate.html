@@ -146,7 +146,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 6-6: rotaci&#xF3;n, despu&#xE9;s traslaci&#xF3;n</h2>
 
-<p>El siguiente ejemplo es id&#xE9;ntico a <a data-type="xref" href="#ex-6-5">#ej-6-5</a>, excepto que <code>translate()</code> y <code>rotate()</code> ocurren en el orden inverso. La figura ahora rota alrededor de la esquina superior izquierda, con la distancia desde la esquina definida por <code>translate()</code>:</p>
+<p>El siguiente ejemplo es id&#xE9;ntico a <a data-type="xref" href="#ex-6-5">Ejemplo 6-5</a>, excepto que <code>translate()</code> y <code>rotate()</code> ocurren en el orden inverso. La figura ahora rota alrededor de la esquina superior izquierda, con la distancia desde la esquina definida por <code>translate()</code>:</p>
 
 <figure><img alt="Ex 06 06" src="images/gspj_06in07.png" />
 <figcaption/>
@@ -249,7 +249,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 6-9: manteniendo consistentes los trazos</h2>
 
-<p>De las l&#xED;neas gruesas de <a data-type="xref" href="#ex-6-8">#ej-6-8</a>, puedes ver c&#xF3;mo la funci&#xF3;n <code>scale()</code> afecta el grosor del trazado. Para mantener un grosor consistente &nbsp;de trazado a medida que la figura se escala, divide el trazado deseado por el valor escalar:</p>
+<p>De las l&#xED;neas gruesas de <a data-type="xref" href="#ex-6-8">Ejemplo 6-8</a>, puedes ver c&#xF3;mo la funci&#xF3;n <code>scale()</code> afecta el grosor del trazado. Para mantener un grosor consistente &nbsp;de trazado a medida que la figura se escala, divide el trazado deseado por el valor escalar:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 function setup() {
@@ -309,7 +309,7 @@ function draw() {
 <figcaption/>
 </figure>
 
-<p>Las funciones <code>translate()</code>, <code>rotate()</code>, y <code>scale()</code> <a contenteditable="false" data-primary="robot programs (examples)" data-secondary="translate, rotate, and scale in" data-type="indexterm" id="rp6trs">&nbsp;</a>son utilizadas para modificar el bosquejo del robot. En relaci&#xF3;n a <a data-type="xref" href="#robot3">#robot3</a>, <code>translate()</code> es usado para hacer el c&#xF3;digo m&#xE1;s f&#xE1;cil de leer. Aqu&#xED;, observa c&#xF3;mo ya no es necesario sumar el valor de <code>x</code> a cada funci&#xF3;n de dibujo porque la funci&#xF3;n <code>translate()</code> mueve todo. Similarmente, la funci&#xF3;n <code>scale()</code> es usada para definir las dimensiones del robot completo. Cuando el rat&#xF3;n no est&#xE1; presionado, el tama&#xF1;o es de un 60% y cuando s&#xED; est&#xE1; presionado, es de un 100% en relaci&#xF3;n a las coordenadas originales. La funci&#xF3;n <code>rotate()</code> es usada dentro del bucle para dibujar una l&#xED;nea, rotarla un poco, luego dibujar una segunda l&#xED;nea, luego rotarla un poco m&#xE1;s, y as&#xED; hasta que el bucle ha dibujado 30 l&#xED;neas en forma de c&#xED;rculo para darle estilo al pelo de la cabeza del robot:</p>
+<p>Las funciones <code>translate()</code>, <code>rotate()</code>, y <code>scale()</code> <a contenteditable="false" data-primary="robot programs (examples)" data-secondary="translate, rotate, and scale in" data-type="indexterm" id="rp6trs">&nbsp;</a>son utilizadas para modificar el bosquejo del robot. En relaci&#xF3;n a <a data-type="xref" href="#robot3">Robot 3: respuesta</a>, <code>translate()</code> es usado para hacer el c&#xF3;digo m&#xE1;s f&#xE1;cil de leer. Aqu&#xED;, observa c&#xF3;mo ya no es necesario sumar el valor de <code>x</code> a cada funci&#xF3;n de dibujo porque la funci&#xF3;n <code>translate()</code> mueve todo. Similarmente, la funci&#xF3;n <code>scale()</code> es usada para definir las dimensiones del robot completo. Cuando el rat&#xF3;n no est&#xE1; presionado, el tama&#xF1;o es de un 60% y cuando s&#xED; est&#xE1; presionado, es de un 100% en relaci&#xF3;n a las coordenadas originales. La funci&#xF3;n <code>rotate()</code> es usada dentro del bucle para dibujar una l&#xED;nea, rotarla un poco, luego dibujar una segunda l&#xED;nea, luego rotarla un poco m&#xE1;s, y as&#xED; hasta que el bucle ha dibujado 30 l&#xED;neas en forma de c&#xED;rculo para darle estilo al pelo de la cabeza del robot:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 var x = 60;          // Coordenada x

@@ -11,7 +11,7 @@
 <section data-type="sect2" id="ex-8-1">
 <h2>Ejemplo 8-1: ve la tasa de cuadros</h2>
 
-<p>Para confirmar la <a contenteditable="false" data-primary="frame rates" data-type="indexterm" id="fr8">&nbsp;</a>tasa de cuadros, podemos usar la consola del navegador que aprendimos a usar en <a data-type="xref" href="#hello">#hola</a>. La funci&#xF3;n&nbsp;<code>frameRate()</code>&nbsp;<a contenteditable="false" data-primary="frameRate() function" data-type="indexterm">&nbsp;</a>indica la velocidad actual de tu programa.&nbsp;Abre la consola,&nbsp;ejecuta este programa y revisa los valores que imprime:</p>
+<p>Para confirmar la <a contenteditable="false" data-primary="frame rates" data-type="indexterm" id="fr8">&nbsp;</a>tasa de cuadros, podemos usar la consola del navegador que aprendimos a usar en <a data-type="xref" href="#hello">1/Hola</a>. La funci&#xF3;n&nbsp;<code>frameRate()</code>&nbsp;<a contenteditable="false" data-primary="frameRate() function" data-type="indexterm">&nbsp;</a>indica la velocidad actual de tu programa.&nbsp;Abre la consola,&nbsp;ejecuta este programa y revisa los valores que imprime:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 function draw() {
@@ -23,7 +23,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 8-2: define la tasa de cuadros</h2>
 
-<p>La funci&#xF3;n <code>frameRate()</code> tambi&#xE9;n puede cambiar la velocidad a la que el programa corre. Cuando es ejecutada sin par&#xE1;metro (como en <a data-type="xref" href="#ex-8-1">#ej-8-1</a>), retorna la tasa de cuadros actual. Sin embargo, cuando la funci&#xF3;n <code>frameRate()</code> es ejecutada con un par&#xE1;metro, define la tasa de cuadros a ese valor. Para ver el resultado, ejecuta las distintas versiones de <code>frameRate()</code> de este ejemplo, descoment&#xE1;ndolas:</p>
+<p>La funci&#xF3;n <code>frameRate()</code> tambi&#xE9;n puede cambiar la velocidad a la que el programa corre. Cuando es ejecutada sin par&#xE1;metro (como en <a data-type="xref" href="#ex-8-1">Ejemplo 8-1</a>), retorna la tasa de cuadros actual. Sin embargo, cuando la funci&#xF3;n <code>frameRate()</code> es ejecutada con un par&#xE1;metro, define la tasa de cuadros a ese valor. Para ver el resultado, ejecuta las distintas versiones de <code>frameRate()</code> de este ejemplo, descoment&#xE1;ndolas:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 function setup() {
@@ -115,7 +115,7 @@ function draw() {
 <section data-type="sect2" id="ex-8-5">
 <h2>Ejemplo 8-5: rebota contra la pared</h2>
 
-<p>En este <a contenteditable="false" data-primary="animation" data-secondary="bouncing shapes off wall" data-type="indexterm"></a><a contenteditable="false" data-primary="shapes" data-secondary="bouncing off wall" data-type="indexterm"></a>ejemplo, extenderemos el <a data-type="xref" href="#ex-8-3">#ej-8-3</a> para que la figura cambie de direcci&#xF3;n cuando llegue a un borde, en vez de volver a aparecer por la izquierda. Para lograr esto, a&#xF1;adimos una nueva variable para almacenar la direcci&#xF3;n de la figura. Un valor de direcci&#xF3;n de 1 mueve la figura hacia la derecha, mientras que un valor de -1 la mueve hacia la izquierda:</p>
+<p>En este <a contenteditable="false" data-primary="animation" data-secondary="bouncing shapes off wall" data-type="indexterm"></a><a contenteditable="false" data-primary="shapes" data-secondary="bouncing off wall" data-type="indexterm"></a>ejemplo, extenderemos el <a data-type="xref" href="#ex-8-3">Ejemplo 8-3</a> para que la figura cambie de direcci&#xF3;n cuando llegue a un borde, en vez de volver a aparecer por la izquierda. Para lograr esto, a&#xF1;adimos una nueva variable para almacenar la direcci&#xF3;n de la figura. Un valor de direcci&#xF3;n de 1 mueve la figura hacia la derecha, mientras que un valor de -1 la mueve hacia la izquierda:</p>
 
 <figure><img alt="Ex 08 05" src="images/gspj_08in04.png" />
 <figcaption/>
@@ -209,7 +209,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 8-8: dibuja aleatoriamente</h2>
 
-<p>Construyendo a partir del <a data-type="xref" href="#ex-8-7">#ej-8-7</a>, this <a contenteditable="false" data-primary="drawing" data-secondary="randomly" data-type="indexterm">&nbsp;</a>este ejemplo usa valores de la funci&#xF3;n <code>random()</code> para modificar la posici&#xF3;n de l&#xED;neas en el lienzo. Cuando el rat&#xF3;n est&#xE1; en la izquierda del lienzo, el cambio es peque&#xF1;o; si se mueve a la derecha, los valores de <code>random()</code> aumentan y el movimiento se torna m&#xE1;s exagerado. Como la funci&#xF3;n <code>random()</code> est&#xE1; dentro del bucle <code>for</code>, se calcula un nuevo valor aleatorio para cada punto de cada l&#xED;nea:</p>
+<p>Construyendo a partir del <a data-type="xref" href="#ex-8-7">Ejemplo 8-7</a>, this <a contenteditable="false" data-primary="drawing" data-secondary="randomly" data-type="indexterm">&nbsp;</a>este ejemplo usa valores de la funci&#xF3;n <code>random()</code> para modificar la posici&#xF3;n de l&#xED;neas en el lienzo. Cuando el rat&#xF3;n est&#xE1; en la izquierda del lienzo, el cambio es peque&#xF1;o; si se mueve a la derecha, los valores de <code>random()</code> aumentan y el movimiento se torna m&#xE1;s exagerado. Como la funci&#xF3;n <code>random()</code> est&#xE1; dentro del bucle <code>for</code>, se calcula un nuevo valor aleatorio para cada punto de cada l&#xED;nea:</p>
 
 <figure><img alt="Ex 08 08" src="images/gspj_08in06.png" />
 <figcaption/>
@@ -329,7 +329,7 @@ function draw() {
 
 <p>La <a data-type="xref" href="#Fig_08_02">Figura 8-2</a> muestra una visualizaci&#xF3;n de valores de la onda sinusoidal y c&#xF3;mo se relacionan con &#xE1;ngulos. En la parte superior e inferior de la onda, observa c&#xF3;mo la tasa de cambio (el cambio en el eje vertical) desacelera, se detiene y luego cambia de direcci&#xF3;n. Es esta cualidad de la curva lo que genera un movimiento interesante.</p>
 
-<p>Las funciones <code>sin()</code> y <code>cos()</code> <a contenteditable="false" data-primary="cos() and sin() functions" data-type="indexterm" id="csf8">&nbsp;</a><a contenteditable="false" data-primary="sin() and cos() functions" data-type="indexterm" id="sc8f">&nbsp;</a>de p5.js retornan valores entre -1 y 1 para la funci&#xF3;n seno y coseno del &#xE1;ngulo especificado. Tal como <code>arc()</code>, los &#xE1;ngulos deben ser escritos en radianes (revisar <a data-type="xref" href="#ex-3-7">#ej-3-7</a> y <a data-type="xref" href="#ex-3-8">#ej-3-8</a> para un recordatorio de c&#xF3;mo funcionan los radianes). Para ser &#xFA;til para dibujar, los valores <code>float</code> <a contenteditable="false" data-primary="float values" data-type="indexterm">&nbsp;</a>retornados por <code>sin()</code> y <code>cos()</code> son usualmente multiplicados por un valor m&#xE1;s grande.</p>
+<p>Las funciones <code>sin()</code> y <code>cos()</code> <a contenteditable="false" data-primary="cos() and sin() functions" data-type="indexterm" id="csf8">&nbsp;</a><a contenteditable="false" data-primary="sin() and cos() functions" data-type="indexterm" id="sc8f">&nbsp;</a>de p5.js retornan valores entre -1 y 1 para la funci&#xF3;n seno y coseno del &#xE1;ngulo especificado. Tal como <code>arc()</code>, los &#xE1;ngulos deben ser escritos en radianes (revisar <a data-type="xref" href="#ex-3-7">Ejemplo 3-7</a> y <a data-type="xref" href="#ex-3-8">Ejemplo 3-8</a> para un recordatorio de c&#xF3;mo funcionan los radianes). Para ser &#xFA;til para dibujar, los valores <code>float</code> <a contenteditable="false" data-primary="float values" data-type="indexterm">&nbsp;</a>retornados por <code>sin()</code> y <code>cos()</code> son usualmente multiplicados por un valor m&#xE1;s grande.</p>
 
 <figure id="Fig_08_02"><img alt="Fig 08 02" src="images/gspj_0802.png" />
 <figcaption><b>Figura 8-2. </b>El trazado de los valores de seno de un &#xe1;ngulo que se mueve alrededor de un c&#xed;rculo resulta en una onda sinusoidal</figcaption>
