@@ -59,9 +59,9 @@ function draw() {
 </figure>
 
 <pre data-code-language="p5js" data-type="programlisting">
-var radius = 40;
-var x = -radius;
-var speed = 0.5;
+var radio = 40;
+var x = -radio;
+var velocidad = 0.5;
 
 function setup() {
   createCanvas(240, 120);
@@ -70,8 +70,8 @@ function setup() {
 
 function draw() {
   background(0);
-  x += speed;  // Aumenta el valor de x
-  arc(x, 60, radius, radius, 0.52, 5.76);
+  x += velocidad;  // Aumenta el valor de x
+  arc(x, 60, radio, radio, 0.52, 5.76);
 }</pre>
 
 <p class="pagebreak-after">Cuando ejecutas este c&#xF3;digo, observar&#xE1;s que la figura se mueve m&#xE1;s all&#xE1; del borde derecho de la pantalla cuando el valor de la variable <em>x</em> es mayor que el ancho de la ventana. El valor de <em>x</em> sigue aumentando, pero la figura ya no es visible.</p>
@@ -87,9 +87,9 @@ function draw() {
 </figure>
 
 <pre data-code-language="p5js" data-type="programlisting">
-var radius = 40;
-var x = -radius;
-var speed = 0.5;
+var radio = 40;
+var x = -radio;
+var velocidad = 0.5;
 
 function setup() {
   createCanvas(240, 120);
@@ -98,11 +98,11 @@ function setup() {
 
 function draw() {
   background(0);
-  x += speed;  // Aumenta el valor de x
-  if (x &gt; width+radius) {  // Si la figura está fuera de la pantalla
-    x = -radius;  // Mueve la figura al borde izquierdo
+  x += velocidad;  // Aumenta el valor de x
+  if (x &gt; width + radio) {  // Si la figura está fuera de la pantalla
+    x = -radio;  // Mueve la figura al borde izquierdo
   }
-  arc(x, 60, radius, radius, 0.52, 5.76);
+  arc(x, 60, radio, radio, 0.52, 5.76);
 }</pre>
 
 <p>En cada viaje alrededor de <code>draw()</code>, el c&#xF3;digo prueba si el valor de <code>x</code> ha aumentado m&#xE1;s all&#xE1; del ancho de la pantalla (sumado al radio de la figura). Si lo ha hecho, hacemos que el valor de <code>x</code> sea negativo nuevamente, para que cuando siga aumentando, entre a la pantalla por la izquierda. Revisa la <a data-type="xref" href="#Fig_08_01">Figura 8-1</a> para ver un diagrama de c&#xF3;mo<a contenteditable="false" data-primary="shapes" data-secondary="wrapping around screen" data-startref="s8was" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="animation" data-secondary="wrapping shapes around screen" data-startref="a8wsas" data-type="indexterm">&nbsp;</a>funciona.</p>
@@ -122,10 +122,10 @@ function draw() {
 </figure>
 
 <pre data-code-language="p5js" data-type="programlisting">
-var radius = 40;
+var radio = 40;
 var x = 110;
-var speed = 0.5;
-var direction = 1;
+var velocidad = 0.5;
+var direccion = 1;
 
 function setup() {
   createCanvas(240, 120);
@@ -134,14 +134,14 @@ function setup() {
 
 function draw() {
   background(0);
-  x += speed * direction;
-  if ((x &gt; width-radius) || (x &lt; radius)) {
-    direction = -direction; // Cambiar dirección
+  x += velocidad * direccion;
+  if ((x &gt; width - radio) || (x &lt; radius)) {
+    direccion = -direccion; // Cambiar dirección
   }
   if (direction == 1) {
-    arc(x, 60, radius, radius, 0.52, 5.76); // Hacia la derecha
+    arc(x, 60, radio, radio, 0.52, 5.76); // Hacia la derecha
   } else {
-    arc(x, 60, radius, radius, 3.67, 8.9); // Hacia la izquierda
+    arc(x, 60, radio, radio, 3.67, 8.9); // Hacia la izquierda
   }
 }</pre>
 
@@ -157,21 +157,21 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 8-6: calcula las posiciones intermedias</h2>
 
-<p>Para hacer que el ejemplo de este c&#xF3;digo sea modular, hemos creado un grupo de variables en la parte superior. Ejecuta el c&#xF3;digo varias veces y cambia los valores para revisar c&#xF3;mo este c&#xF3;digo puede mover la figura desde cualquier ubicaci&#xF3;n a cualquier otra y en cualquier rango de velocidades. Modifica la variable <code>step</code><a contenteditable="false" data-primary="step variable" data-type="indexterm">&nbsp;</a>para alterar la velocidad:</p>
+<p>Para hacer que el ejemplo de este c&#xF3;digo sea modular, hemos creado un grupo de variables en la parte superior. Ejecuta el c&#xF3;digo varias veces y cambia los valores para revisar c&#xF3;mo este c&#xF3;digo puede mover la figura desde cualquier ubicaci&#xF3;n a cualquier otra y en cualquier rango de velocidades. Modifica la variable <code>paso</code><a contenteditable="false" data-primary="step variable" data-type="indexterm">&nbsp;</a>para alterar la velocidad:</p>
 
 <figure><img alt="Ex 08 06" src="images/gspj_08in05.png" />
 <figcaption/>
 </figure>
 
 <pre data-code-language="p5js" data-type="programlisting">
-var startX = 20;   // Coordenada x inicial
-var stopX = 160;   // Coordenada x final
-var startY = 30;   // Coordenada y inicial
-var stopY = 80;    // Coordenada y final
-var x = startX;    // Coordenada x actual
-var y = startY;    // Coordenada y actual
-var step = 0.005;  // createCanvas para cada paso (0.0 a 1.0)
-var pct = 0.0;     // Porcentaje avanzado (0.0 a 1.0)
+var inicioX = 20; // Coordenada x inicial
+var finX = 160;   // Coordenada x final
+var inicioY = 30; // Coordenada y inicial
+var finY = 80;    // Coordenada y final
+var x = inicioX;  // Coordenada x actual
+var y = inicioY;  // Coordenada y actual
+var paso = 0.005; // createCanvas para cada paso (0.0 a 1.0)
+var pct = 0.0;    // Porcentaje avanzado (0.0 a 1.0)
 
 function setup() {
   createCanvas(240, 120);
@@ -180,9 +180,9 @@ function setup() {
 function draw() {
   background(0);
   if (pct &lt; 1.0) {
-    x = startX + ((stopX-startX) * pct);
-    y = startY + ((stopY-startX) * pct);
-    pct += step;
+    x = inicioX + ((finX - inicioX) * pct);
+    y = inicioY + ((finY - inicioY) * pct);
+    pct += paso;
   }
   ellipse(x, y, 20, 20);
 }</pre>
@@ -224,9 +224,9 @@ function draw() {
   background(204);
   for (var x = 20; x &lt; width; x += 20) {
     var mx = mouseX / 10;
-    var offsetA = random(-mx, mx);
-    var offsetB = random(-mx, mx);
-    line(x + offsetA, 20, x - offsetB, 100);
+    var desplazamientoA = random(-mx, mx);
+    var desplazamientoB = random(-mx, mx);
+    line(x + desplazamientoA, 20, x - desplazamientoB, 100);
   }
 }</pre>
 </section>
@@ -241,8 +241,8 @@ function draw() {
 </figure>
 
 <pre data-code-language="p5js" data-type="programlisting">
-var speed = 2.5;
-var diameter = 20;
+var velocidad = 2.5;
+var diametro = 20;
 var x;
 var y;
 
@@ -254,9 +254,9 @@ function setup() {
 }
 
 function draw() {
-  x += random(-speed, speed);
-  y += random(-speed, speed);
-  ellipse(x, y, diameter, diameter);
+  x += random(-velocidad, velocidad);
+  y += random(-velocidad, velocidad);
+  ellipse(x, y, diametro, diametro);
 }</pre>
 
 <p>Si observas este ejemplo durante el tiempo suficiente, el c&#xED;rculo podr&#xED;a dejar la pantalla y volver. Esto depende del azar, pero podr&#xED;amos a&#xF1;adir unas estructuras <code>if</code> o usar la funci&#xF3;n <code>constrain()</code> <a contenteditable="false" data-primary="constrain() function" data-type="indexterm">&nbsp;</a>para evitar que el c&#xED;rculo deje la pantalla.</p>
@@ -265,11 +265,11 @@ function draw() {
 
 <pre data-code-language="p5js" data-type="programlisting">
 function draw() {
-  x += random(-speed, speed);
-  y += random(-speed, speed);
+  x += random(-velocidad, velocidad);
+  y += random(-velocidad, velocidad);
   x = constrain(x, 0, width);
   y = constrain(y, 0, height);
-  ellipse(x, y, diameter, diameter);
+  ellipse(x, y, diametro, diametro);
 }</pre>
 
 <div data-type="note">
@@ -298,11 +298,11 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 8-11: gatillando eventos temporizados</h2>
 
-<p>Cuando se combinan con un bloque<a contenteditable="false" data-primary="if blocks" data-type="indexterm">&nbsp;</a> <code>if</code>, los valores de <code>millis()</code> pueden ser usados para secuenciar tanto animaciones como eventos en un programa. Por ejemplo, despu&#xE9;s de que han pasado dos segundos, el c&#xF3;digo dentro del bloque <code>if</code> puede gatillar un cambio. En este ejemplo, las variables llamadas <code>time1</code> y <code>time2</code> determinan cu&#xE1;ndo modificar el valor de la variable <code>x</code>:</p>
+<p>Cuando se combinan con un bloque<a contenteditable="false" data-primary="if blocks" data-type="indexterm">&nbsp;</a> <code>if</code>, los valores de <code>millis()</code> pueden ser usados para secuenciar tanto animaciones como eventos en un programa. Por ejemplo, despu&#xE9;s de que han pasado dos segundos, el c&#xF3;digo dentro del bloque <code>if</code> puede gatillar un cambio. En este ejemplo, las variables llamadas <code>momento1</code> y <code>momento2</code> determinan cu&#xE1;ndo modificar el valor de la variable <code>x</code>:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
-var time1 = 2000;
-var time2 = 4000;
+var momento1 = 2000;
+var momento2 = 4000;
 var x = 0;
 
 function setup() {
@@ -310,11 +310,11 @@ function setup() {
 }
 
 function draw() {
-  var currentTime = millis();
+  var momentoActual = millis();
   background(204);
-  if (currentTime &gt; time2) {
+  if (momentoActual &gt; momento2) {
     x -= 0.5;
-  } else if (currentTime &gt; time1) {
+  } else if (momentoActual &gt; momento1) {
     x += 2;
   }
   ellipse(x, 60, 90, 90);
@@ -338,7 +338,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 8-12: valores de la onda sinusoidal</h2>
 
-<p>Este<a contenteditable="false" data-primary="animation" data-secondary="sine wave values/movement" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="sine wave values/movement" data-type="indexterm">&nbsp;</a>ejemplo muestra c&#xF3;mo los valores de <code>sin()</code> oscilan entre -1 y 1 a medida que el &#xE1;ngulo aumenta. Con la funci&#xF3;n <code>map()</code><a contenteditable="false" data-primary="map() function" data-type="indexterm">&nbsp;</a>, la variable <code>sinval</code> es convertida desde este rango a valores de 0 a 255. Este nuevo valor es usado para definir el color del fondo del lienzo:</p>
+<p>Este<a contenteditable="false" data-primary="animation" data-secondary="sine wave values/movement" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="sine wave values/movement" data-type="indexterm">&nbsp;</a>ejemplo muestra c&#xF3;mo los valores de <code>sin()</code> oscilan entre -1 y 1 a medida que el &#xE1;ngulo aumenta. Con la funci&#xF3;n <code>map()</code><a contenteditable="false" data-primary="map() function" data-type="indexterm">&nbsp;</a>, la variable <code>valorSeno</code> es convertida desde este rango a valores de 0 a 255. Este nuevo valor es usado para definir el color del fondo del lienzo:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 var angulo = 0.0;
@@ -386,7 +386,7 @@ function draw() {
 <section data-type="sect2">
 <h2>ejemplo 8-14: movimiento circular</h2>
 
-<p>Cuando las funciones&nbsp;<code>sin()</code> y <code>cos()</code> son usadas en conjunto, pueden producir movimiento circular. Los valores de la funci&#xF3;n <code>cos()</code> proveen los valores de la coordenada <em>x</em> y los valores de la funci&#xF3;ne <code>sin()</code> &nbsp;&nbsp;proveen la coordenada <em>y</em>. Ambas son multiplicados por una variable llamada <code>scalar</code> &nbsp;para modificar el radio del movimiento y son sumadas con un valor offset (desfase) para situar el centro de un movimiento circular:</p>
+<p>Cuando las funciones&nbsp;<code>sin()</code> y <code>cos()</code> son usadas en conjunto, pueden producir movimiento circular. Los valores de la funci&#xF3;n <code>cos()</code> proveen los valores de la coordenada <em>x</em> y los valores de la funci&#xF3;ne <code>sin()</code> &nbsp;&nbsp;proveen la coordenada <em>y</em>. Ambas son multiplicados por una variable llamada <code>escalar</code> &nbsp;para modificar el radio del movimiento y son sumadas con un valor offset (desfase) para situar el centro de un movimiento circular:</p>
 
 <figure><img alt="Ex 08 14" src="images/gspj_08in09.png" />
 <figcaption/>
