@@ -11,7 +11,7 @@
 <section data-type="sect2" id="ex-8-1">
 <h2>Ejemplo 8-1: ve la tasa de cuadros</h2>
 
-<p>Para confirmar la <a contenteditable="false" data-primary="frame rates" data-type="indexterm" id="fr8">&nbsp;</a>tasa de cuadros, podemos usar la consola del navegador que aprendimos a usar en <a data-type="xref" href="#hello">1/Hola</a>. La funci&#xF3;n&nbsp;<code>frameRate()</code>&nbsp;<a contenteditable="false" data-primary="frameRate() function" data-type="indexterm">&nbsp;</a>indica la velocidad actual de tu programa.&nbsp;Abre la consola,&nbsp;ejecuta este programa y revisa los valores que imprime:</p>
+<p>Para confirmar la<a contenteditable="false" data-primary="frame rates" data-type="indexterm" id="fr8">&nbsp;</a>tasa de cuadros, podemos usar la consola del navegador que aprendimos a usar en <a data-type="xref" href="#hello">1/Hola</a>. La funci&#xF3;n&nbsp;<code>frameRate()</code>&nbsp;<a contenteditable="false" data-primary="frameRate() function" data-type="indexterm">&nbsp;</a>indica la velocidad actual de tu programa.&nbsp;Abre la consola,&nbsp;ejecuta este programa y revisa los valores que imprime:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 function draw() {
@@ -39,7 +39,7 @@ function draw() {
 }</pre>
 
 <div data-type="note">
-<p>p5.js <em>trata</em> de correr el c&#xF3;digo a una tasa de 60 cuadros por segundo, pero si tarda m&#xE1;s de de 1/60 segundos en ejecutar el m&#xE9;todo <code>draw()</code>, entonces la tasa decrecer&#xE1;. La funci&#xF3;n <code>frameRate()</code> solamente especifica la tasa m&#xE1;xima. La tasa de cualquier programa depende del computador ejecutando el<a contenteditable="false" data-primary="animation" data-secondary="frames/frame rates" data-startref="a8fr" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="frame rates" data-startref="fr8" data-type="indexterm">&nbsp;</a> c&#xF3;digo.</p>
+<p>p5.js <em>trata</em> de correr el c&#xF3;digo a una tasa de 60 cuadros por segundo, pero si tarda m&#xE1;s de de 1/60 segundos en ejecutar el m&#xE9;todo <code>draw()</code>, entonces la tasa decrecer&#xE1;. La funci&#xF3;n <code>frameRate()</code> solamente especifica la tasa m&#xE1;xima. La tasa de cualquier programa depende del computador ejecutando el<a contenteditable="false" data-primary="animation" data-secondary="frames/frame rates" data-startref="a8fr" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="frame rates" data-startref="fr8" data-type="indexterm">&nbsp;</a>c&#xF3;digo.</p>
 </div>
 </section>
 </section>
@@ -105,7 +105,7 @@ function draw() {
   arc(x, 60, radius, radius, 0.52, 5.76);
 }</pre>
 
-<p>En cada viaje alrededor de <code>draw()</code>, el c&#xF3;digo prueba si el valor de <code>x</code> ha aumentado m&#xE1;s all&#xE1; del ancho de la pantalla (sumado al radio de la figura). Si lo ha hecho, hacemos que el valor de <code>x</code> sea negativo nuevamente, para que cuando siga aumentando, entre a la pantalla por la izquierda. Revisa <a data-type="xref" href="#Fig_08_01">Figura 8-1</a> para ver un diagrama de c&#xF3;mo<a contenteditable="false" data-primary="shapes" data-secondary="wrapping around screen" data-startref="s8was" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="animation" data-secondary="wrapping shapes around screen" data-startref="a8wsas" data-type="indexterm">&nbsp;</a>funciona.</p>
+<p>En cada viaje alrededor de <code>draw()</code>, el c&#xF3;digo prueba si el valor de <code>x</code> ha aumentado m&#xE1;s all&#xE1; del ancho de la pantalla (sumado al radio de la figura). Si lo ha hecho, hacemos que el valor de <code>x</code> sea negativo nuevamente, para que cuando siga aumentando, entre a la pantalla por la izquierda. Revisa la <a data-type="xref" href="#Fig_08_01">Figura 8-1</a> para ver un diagrama de c&#xF3;mo<a contenteditable="false" data-primary="shapes" data-secondary="wrapping around screen" data-startref="s8was" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="animation" data-secondary="wrapping shapes around screen" data-startref="a8wsas" data-type="indexterm">&nbsp;</a>funciona.</p>
 
 <figure id="Fig_08_01"><img alt="Fig 08 01" src="images/gspj_0801.png" />
 <figcaption><b>Figura 8-1. </b>Probando los bordes de la ventana</figcaption>
@@ -157,7 +157,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 8-6: calcula las posiciones intermedias</h2>
 
-<p>Para hacer que el ejemplo de este c&#xF3;digo sea modular, hemos creado un grupo de variables en la parte superior. Ejecuta el c&#xF3;digo algunas veces y cambia los valores para revisar c&#xF3;mo este c&#xF3;digo puede mover a la figura desde cualquier ubicaci&#xF3;n a cualquier otra en cualquier rango de velocidades. Modifica la variable <code>step</code> <a contenteditable="false" data-primary="step variable" data-type="indexterm">&nbsp;</a>para alterar la velocidad:</p>
+<p>Para hacer que el ejemplo de este c&#xF3;digo sea modular, hemos creado un grupo de variables en la parte superior. Ejecuta el c&#xF3;digo varias veces y cambia los valores para revisar c&#xF3;mo este c&#xF3;digo puede mover la figura desde cualquier ubicaci&#xF3;n a cualquier otra y en cualquier rango de velocidades. Modifica la variable <code>step</code><a contenteditable="false" data-primary="step variable" data-type="indexterm">&nbsp;</a>para alterar la velocidad:</p>
 
 <figure><img alt="Ex 08 06" src="images/gspj_08in05.png" />
 <figcaption/>
@@ -209,7 +209,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 8-8: dibuja aleatoriamente</h2>
 
-<p>Construyendo a partir del <a data-type="xref" href="#ex-8-7">Ejemplo 8-7</a>, this <a contenteditable="false" data-primary="drawing" data-secondary="randomly" data-type="indexterm">&nbsp;</a>este ejemplo usa valores de la funci&#xF3;n <code>random()</code> para modificar la posici&#xF3;n de l&#xED;neas en el lienzo. Cuando el rat&#xF3;n est&#xE1; en la izquierda del lienzo, el cambio es peque&#xF1;o; si se mueve a la derecha, los valores de <code>random()</code> aumentan y el movimiento se torna m&#xE1;s exagerado. Como la funci&#xF3;n <code>random()</code> est&#xE1; dentro del bucle <code>for</code>, se calcula un nuevo valor aleatorio para cada punto de cada l&#xED;nea:</p>
+<p>Construyendo a partir del <a data-type="xref" href="#ex-8-7">Ejemplo 8-7</a>,<a contenteditable="false" data-primary="drawing" data-secondary="randomly" data-type="indexterm">&nbsp;</a>este ejemplo usa valores de la funci&#xF3;n <code>random()</code> para modificar la posici&#xF3;n de l&#xED;neas en el lienzo. Cuando el rat&#xF3;n est&#xE1; en la izquierda del lienzo, el cambio es peque&#xF1;o; si se mueve a la derecha, los valores de <code>random()</code> aumentan y el movimiento se torna m&#xE1;s exagerado. Como la funci&#xF3;n <code>random()</code> est&#xE1; dentro del bucle <code>for</code>, se calcula un nuevo valor aleatorio para cada punto de cada l&#xED;nea:</p>
 
 <figure><img alt="Ex 08 08" src="images/gspj_08in06.png" />
 <figcaption/>
@@ -281,7 +281,7 @@ function draw() {
 <section data-type="sect1">
 <h1>Temporizadores</h1>
 
-<p>Cada programa de p5.js<a contenteditable="false" data-primary="timers, in animation" data-type="indexterm" id="t8ia">&nbsp;</a><a contenteditable="false" data-primary="animation" data-secondary="timers" data-type="indexterm" id="a8t">&nbsp;</a>cuenta la cantidad de tiempo que ha pasado desde que empez&#xF3;. Cuenta en milisegundos (mil&#xE9;simas de segundo), as&#xED; que despu&#xE9;s de 1 segundo el contador est&#xE1; en 1.000; despu&#xE9;s de 5 segundos est&#xE1; en 5.000 y despu&#xE9;s de un minuto en 60.000. Podemos usar este contador para gatillar animaciones en momentos espec&#xED;ficos. La funci&#xF3;n <a contenteditable="false" data-primary="millis() function" data-type="indexterm">&nbsp;</a> <span class="keep-together"><code>millis()</code></span> retorna el valor del contador.</p>
+<p>Cada programa de p5.js<a contenteditable="false" data-primary="timers, in animation" data-type="indexterm" id="t8ia">&nbsp;</a><a contenteditable="false" data-primary="animation" data-secondary="timers" data-type="indexterm" id="a8t">&nbsp;</a>cuenta la cantidad de tiempo que ha pasado desde que empez&#xF3;. Cuenta en milisegundos (mil&#xE9;simas de segundo), as&#xED; que despu&#xE9;s de 1 segundo el contador est&#xE1; en 1.000; despu&#xE9;s de 5 segundos est&#xE1; en 5.000 y despu&#xE9;s de un minuto en 60.000. Podemos usar este contador para gatillar animaciones en momentos espec&#xED;ficos. La funci&#xF3;n <a contenteditable="false" data-primary="millis() function" data-type="indexterm">&nbsp;</a><span class="keep-together"><code>millis()</code></span> retorna el valor del contador.</p>
 
 <section data-type="sect2">
 <h2>Ejemplo 8-10: el tiempo pasa</h2>
@@ -329,7 +329,7 @@ function draw() {
 
 <p>La <a data-type="xref" href="#Fig_08_02">Figura 8-2</a> muestra una visualizaci&#xF3;n de valores de la onda sinusoidal y c&#xF3;mo se relacionan con &#xE1;ngulos. En la parte superior e inferior de la onda, observa c&#xF3;mo la tasa de cambio (el cambio en el eje vertical) desacelera, se detiene y luego cambia de direcci&#xF3;n. Es esta cualidad de la curva lo que genera un movimiento interesante.</p>
 
-<p>Las funciones <code>sin()</code> y <code>cos()</code> <a contenteditable="false" data-primary="cos() and sin() functions" data-type="indexterm" id="csf8">&nbsp;</a><a contenteditable="false" data-primary="sin() and cos() functions" data-type="indexterm" id="sc8f">&nbsp;</a>de p5.js retornan valores entre -1 y 1 para la funci&#xF3;n seno y coseno del &#xE1;ngulo especificado. Tal como <code>arc()</code>, los &#xE1;ngulos deben ser escritos en radianes (revisar <a data-type="xref" href="#ex-3-7">Ejemplo 3-7</a> y <a data-type="xref" href="#ex-3-8">Ejemplo 3-8</a> para un recordatorio de c&#xF3;mo funcionan los radianes). Para ser &#xFA;til para dibujar, los valores <code>float</code> <a contenteditable="false" data-primary="float values" data-type="indexterm">&nbsp;</a>retornados por <code>sin()</code> y <code>cos()</code> son usualmente multiplicados por un valor m&#xE1;s grande.</p>
+<p>Las funciones <code>sin()</code> y <code>cos()</code><a contenteditable="false" data-primary="cos() and sin() functions" data-type="indexterm" id="csf8">&nbsp;</a><a contenteditable="false" data-primary="sin() and cos() functions" data-type="indexterm" id="sc8f">&nbsp;</a>de p5.js retornan valores entre -1 y 1 para la funci&#xF3;n seno y coseno del &#xE1;ngulo especificado. Tal como <code>arc()</code>, los &#xE1;ngulos deben ser escritos en radianes (revisar <a data-type="xref" href="#ex-3-7">Ejemplo 3-7</a> y <a data-type="xref" href="#ex-3-8">Ejemplo 3-8</a> para un recordatorio de c&#xF3;mo funcionan los radianes). Para ser &#xFA;til para dibujar, los valores <code>float</code> <a contenteditable="false" data-primary="float values" data-type="indexterm">&nbsp;</a>retornados por <code>sin()</code> y <code>cos()</code> son usualmente multiplicados por un valor m&#xE1;s grande.</p>
 
 <figure id="Fig_08_02"><img alt="Fig 08 02" src="images/gspj_0802.png" />
 <figcaption><b>Figura 8-2. </b>El trazado de los valores de seno de un &#xe1;ngulo que se mueve alrededor de un c&#xed;rculo resulta en una onda sinusoidal</figcaption>
@@ -338,17 +338,17 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 8-12: valores de la onda sinusoidal</h2>
 
-<p>Este <a contenteditable="false" data-primary="animation" data-secondary="sine wave values/movement" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="sine wave values/movement" data-type="indexterm">&nbsp;</a>ejemplo muestra c&#xF3;mo los valores de <code>sin()</code> oscilan entre -1 y 1 a medida que el &#xE1;ngulo aumenta. Con la funci&#xF3;n <code>map()</code> <a contenteditable="false" data-primary="map() function" data-type="indexterm">&nbsp;</a>, la variable <code>sinval</code> es convertida desde este rango a valores de 0 a 255. Este nuevo valor es usado para definir el color del fondo del lienzo:</p>
+<p>Este<a contenteditable="false" data-primary="animation" data-secondary="sine wave values/movement" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="sine wave values/movement" data-type="indexterm">&nbsp;</a>ejemplo muestra c&#xF3;mo los valores de <code>sin()</code> oscilan entre -1 y 1 a medida que el &#xE1;ngulo aumenta. Con la funci&#xF3;n <code>map()</code><a contenteditable="false" data-primary="map() function" data-type="indexterm">&nbsp;</a>, la variable <code>sinval</code> es convertida desde este rango a valores de 0 a 255. Este nuevo valor es usado para definir el color del fondo del lienzo:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
-var angle = 0.0;
+var angulo = 0.0;
 
 function draw() {
-  var sinval = sin(angle);
-  print(sinval);
-  var gray = map(sinval, -1, 1, 0, 255);
-  background(gray);
-  angle += 0.1;
+  var valorSeno = sin(angulo);
+  print(valorSeno);
+  var gris = map(valorSeno, -1, 1, 0, 255);
+  background(gris);
+  angulo += 0.1;
 }</pre>
 </section>
 
@@ -362,10 +362,10 @@ function draw() {
 </figure>
 
 <pre data-code-language="p5js" data-type="programlisting">
-var angle = 0.0;
-var offset = 60;
-var scalar = 40;
-var speed = 0.05;
+var angulo = 0.0;
+var desplazamiento = 60;
+var escalar = 40;
+var velocidad = 0.05;
 
 function setup() {
   createCanvas(240, 120);
@@ -373,13 +373,13 @@ function setup() {
 
 function draw() {
   background(0);
-  var y1 = offset + sin(angle) * scalar;
-  var y2 = offset + sin(angle + 0.4) * scalar;
-  var y3 = offset + sin(angle + 0.8) * scalar;
+  var y1 = desplazamiento + sin(angulo) * escalar;
+  var y2 = desplazamiento + sin(angulo + 0.4) * escalar;
+  var y3 = desplazamiento + sin(angulo + 0.8) * escalar;
   ellipse( 80, y1, 40, 40);
   ellipse(120, y2, 40, 40);
   ellipse(160, y3, 40, 40);
-  angle += speed;
+  angulo += velocidad;
 }</pre>
 </section>
 
@@ -393,10 +393,10 @@ function draw() {
 </figure>
 
 <pre data-code-language="p5js" data-type="programlisting">
-var angle = 0.0;
-var offset = 60;
-var scalar = 30;
-var speed = 0.05;
+var angulo = 0.0;
+var desplazamiento = 60;
+var escalar = 30;
+var velocidad = 0.05;
 
 function setup() {
   createCanvas(120, 120);
@@ -404,27 +404,27 @@ function setup() {
 }
 
 function draw() {
-  var x = offset + cos(angle) * scalar;
-  var y = offset + sin(angle) * scalar;
+  var x = desplazamiento + cos(angulo) * escalar;
+  var y = desplazamiento + sin(angulo) * escalar;
   ellipse(x, y, 40, 40);
-  angle += speed;
+  angulo += velocidad;
 }</pre>
 </section>
 
 <section class="pagebreak-before" data-type="sect2">
 <h2>Ejemplo 8-15: espirales</h2>
 
-<p>Un <a contenteditable="false" data-primary="animation" data-secondary="spirals" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="spirals, creating" data-type="indexterm">&nbsp;</a>peque&#xF1;o cambio hecho para aumentar el valor <code>scalar</code> en cada cuadro produce una espiral en vez de un c&#xED;rculo:</p>
+<p>Un <a contenteditable="false" data-primary="animation" data-secondary="spirals" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="spirals, creating" data-type="indexterm">&nbsp;</a>peque&#xF1;o cambio hecho para aumentar el valor <code>escalar</code> en cada cuadro produce una espiral en vez de un c&#xED;rculo:</p>
 
 <figure><img alt="Ex 08 15" src="images/gspj_08in10.png" />
 <figcaption/>
 </figure>
 
 <pre data-code-language="p5js" data-type="programlisting">
-var angle = 0.0;
-var offset = 60;
-var scalar = 2;
-var speed = 0.05;
+var angulo = 0.0;
+var desplazamiento = 60;
+var escalar = 2;
+var velocidad = 0.05;
 
 function setup() {
   createCanvas(120, 120);
@@ -433,11 +433,11 @@ function setup() {
 }
 
 function draw() {
-  var x = offset + cos(angle) * scalar;
-  var y = offset + sin(angle) * scalar;
+  var x = desplazamiento + cos(angulo) * escalar;
+  var y = desplazamiento + sin(angulo) * escalar;
   ellipse(x, y, 2, 2);
-  angle += speed;
-  scalar += speed;
+  angulo += velocidad;
+  escalar += velocidad;
 }</pre>
 <a contenteditable="false" data-primary="animation" data-secondary="circular motion" data-startref="a8cm" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="circular motion" data-startref="cm8" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="cos() and sin() functions" data-startref="csf8" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="sin() and cos() functions" data-startref="sc8f" data-type="indexterm">&nbsp;</a></section>
 </section>
