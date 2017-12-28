@@ -36,7 +36,7 @@ function draw() {
 <section data-type="sect2" id="ex-4-2">
 <h2>Ejemplo 4-2: modifica los valores</h2>
 
-<p>Simplemente <a contenteditable="false" data-primary="variables" data-secondary="changing values" data-type="indexterm">&nbsp;</a>modificando las variables <em>y</em> y <em>d</em> altera las tres elipses:</p>
+<p>Simplemente<a contenteditable="false" data-primary="variables" data-secondary="changing values" data-type="indexterm">&nbsp;</a>modificando las variables <em>y</em> y <em>d</em> altera las tres elipses:</p>
 
 <figure><img alt="Ex 04 02" src="images/gspj_04in03.png" />
 <figcaption/>
@@ -57,14 +57,14 @@ function draw() {
   ellipse(275, y, d, d);  // Derecha
 }</pre>
 
-<p>Si no tuvieras variables, tendr&#xED;as que cambiar tres veces la coordenada <em>y</em> usada en el c&#xF3;digo y seis veces el di&#xE1;metro. Comparando los ejemplos <a href="#ex-4-1">4-1</a> y <a href="#ex-4-2">4-2</a>, observa c&#xF3;mo todas las l&#xED;neas son iguales, excepto las dos primeras l&#xED;neas con variables. Las variables te permiten separar las l&#xED;neas de c&#xF3;digo que cambian de las que no cambian, lo que hace que los programas sean f&#xE1;ciles de modificar. Por ejemplo, si pones las variables que controlan colores y tama&#xF1;os en un lugar, puedes explorar diferentes opciones visuales enfoc&#xE1;ndote en s&#xF3;lo unas pocas l&#xED;neas de &nbsp;c&#xF3;digo.</p>
+<p>Si no tuvieras variables, tendr&#xED;as que cambiar tres veces la coordenada <em>y</em> usada en el c&#xF3;digo y seis veces el di&#xE1;metro. Comparando los ejemplos <a href="#ex-4-1">4-1</a> y <a href="#ex-4-2">4-2</a>, observa c&#xF3;mo todas las l&#xED;neas son iguales, excepto las dos primeras l&#xED;neas con variables. Las variables te permiten separar las l&#xED;neas de c&#xF3;digo que cambian de las que no cambian, lo que hace que los programas sean f&#xE1;ciles de modificar. Por ejemplo, si pones las variables que controlan colores y tama&#xF1;os en un lugar, puedes explorar diferentes opciones visuales enfoc&#xE1;ndote en s&#xF3;lo unas pocas l&#xED;neas de c&#xF3;digo.</p>
 </section>
 </section>
 
 <section data-type="sect1">
 <h1>Hacer variables</h1>
 
-<p>Cuando <a contenteditable="false" data-primary="variables" data-secondary="creating" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="naming variables" data-type="indexterm">&nbsp;</a>haces tus propias variables, puedes determinar el <em>nombre&nbsp;</em>y el <em>valor</em>. T&#xFA; decides c&#xF3;mo se llama la variable. Escoge un nombre que sea indicativo de lo que est&#xE1; almacenado en la variable, pero hazlo consistente y no muy largo. Por ejemplo, el nombre de variable “radio” ser&#xE1; mucho m&#xE1;s claro que “r” cuando leas tu c&#xF3;digo.</p>
+<p>Cuando<a contenteditable="false" data-primary="variables" data-secondary="creating" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="naming variables" data-type="indexterm">&nbsp;</a>haces tus propias variables, puedes determinar el <em>nombre&nbsp;</em>y el <em>valor</em>. T&#xFA; decides c&#xF3;mo se llama la variable. Escoge un nombre que sea indicativo de lo que est&#xE1; almacenado en la variable, pero hazlo consistente y no muy largo. Por ejemplo, el nombre de variable “radio” ser&#xE1; mucho m&#xE1;s claro que “r” cuando leas tu c&#xF3;digo.</p>
 
 <p>Las variables primero deben ser <em>declaradas</em>, <a contenteditable="false" data-primary="variables" data-secondary="declared" data-type="indexterm">&nbsp;</a>lo que reserva espacio en la memoria del computador para almacenar la informaci&#xF3;n. Cuando declaras una variable, usas la palabra <code>var</code>, para indicar que est&#xE1;s creando una nueva variable, seguida del nombre.&nbsp;Despu&#xE9;s de que el nombre es fijado, se le puede asignar un valor a la variable:</p>
 
@@ -77,11 +77,11 @@ x = 12; // Asigna un valor a x</pre>
 <pre data-code-language="p5js" data-type="programlisting">
 var x = 12; // Declara la variable x y le asigna un valor</pre>
 
-<p>Los caracteres <code>var</code>&nbsp;en la l&#xED;nea de c&#xF3;digo que declara la variable, pero no son escritos de nuevo. Cada vez que se escribe <code>var</code>&nbsp; antes del nombre de una variable, el computador piensa que est&#xE1;s tratando de declarar una nueva variable. No puedes tener dos variables con el mismo nombre en la misma secci&#xF3;n del programa (<a data-type="xref" href="#variable_scope">Apéndice C</a>), ya que el programa podr&#xED;a comportarse extra&#xF1;amente:</p>
+<p>Los caracteres <code>var</code>&nbsp;en la l&#xED;nea de c&#xF3;digo que declara la variable, pero no son escritos de nuevo. Cada vez que se escribe <code>var</code>&nbsp;antes del nombre de una variable, el computador piensa que est&#xE1;s tratando de declarar una nueva variable. No puedes tener dos variables con el mismo nombre en la misma secci&#xF3;n del programa (<a data-type="xref" href="#variable_scope">Apéndice C</a>), ya que el programa podr&#xED;a comportarse extra&#xF1;amente:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 var x;       // Declara la variable x
-var x = 12;  // ¡ERROR! No puede haber dos variables x</pre>
+var x = 12;  // ¡ERROR! Ya existe una variable x</pre>
 
 <p>Puedes situar tus variables fuera<a contenteditable="false" data-primary="setup() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="draw() function" data-type="indexterm">&nbsp;</a>de <code>setup()</code> y <code>draw()</code>. Si creas una variable dentro de <code>setup()</code>, no puedes usarla dentro de <code>draw()</code>, as&#xED; que necesitas situar estas variables en otro lugar. Estas variables reciben el nombre de<a contenteditable="false" data-primary="global variables" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="variables" data-secondary="global" data-type="indexterm">&nbsp;</a><em>variables globales</em>, porque pueden ser usadas en cualquier parte ("globalmente") del programa.</p>
 </section>
@@ -89,7 +89,7 @@ var x = 12;  // ¡ERROR! No puede haber dos variables x</pre>
 <section data-type="sect1">
 <h1>Variables de p5.js</h1>
 
-<p>p5.js posee una <a contenteditable="false" data-primary="variables" data-secondary="p5.js" data-type="indexterm" id="v4p5js">&nbsp;</a>serie de variables especiales para almacenar informaci&#xF3;n sobre el programa mientras se ejecuta. Por ejemplo, el ancho y la altura del lienzo se almacenan en las variables <code>width</code> y <code>height</code>. Estos valores son definidos por la funci&#xF3;n <code>createCanvas()</code>. Pueden ser usados para dibujar elementos relativos al tama&#xF1;o del lienzo, incluso si la l&#xED;nea de c&#xF3;digo <code>createCanvas()</code> es modificada.</p>
+<p>p5.js posee una<a contenteditable="false" data-primary="variables" data-secondary="p5.js" data-type="indexterm" id="v4p5js">&nbsp;</a>serie de variables especiales para almacenar informaci&#xF3;n sobre el programa mientras se ejecuta. Por ejemplo, el ancho y la altura del lienzo se almacenan en las variables <code>width</code> y <code>height</code>. Estos valores son definidos por la funci&#xF3;n <code>createCanvas()</code>. Pueden ser usados para dibujar elementos relativos al tama&#xF1;o del lienzo, incluso si la l&#xED;nea de c&#xF3;digo <code>createCanvas()</code> es modificada.</p>
 
 <section data-type="sect2">
 <h2>Ejemplo 4-3: ajusta el lienzo, observa lo que sucedes</h2>

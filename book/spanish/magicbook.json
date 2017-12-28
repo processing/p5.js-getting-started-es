@@ -1,7 +1,7 @@
 {
   "title" : "Getting Started with p5js: ES",
   "destination" : "book/spanish/build/pdf/:build",
-  "files" : [ 
+  "files" : [
           "book/spanish/content/cover.html",
           "book/spanish/content/titlepage.html",
           "book/spanish/content/copyright.html",
@@ -41,10 +41,10 @@
           "book/spanish/content/ix.html",
           "book/spanish/content/author_bio.html",
           "book/spanish/content/colo.html"
-          
-      
+
+
   ],
-    
+
   "builds" : [
     {
       "format" : "pdf",
@@ -89,7 +89,7 @@
           "book/spanish/content/colo.html"
       ],
       "stylesheets" : {
-        "files" : ["book/stylesheets/pdf.scss"]
+        "files" : ["book/stylesheets/pdf-es.scss"]
           },
       "images" : {
           "files" : "book/**/*.*"
@@ -97,4 +97,3 @@
     }
   ]
 }
-
