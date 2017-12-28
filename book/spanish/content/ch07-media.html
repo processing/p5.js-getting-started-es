@@ -3,7 +3,7 @@
 
 <p class="lede">p5.js es <a contenteditable="false" data-primary="media" data-type="indexterm" id="m7">&nbsp;</a>capaz de dibujar m&#xE1;s que simplemente l&#xED;neas y figuras. Es tiempo de aprender c&#xF3;mo crear im&#xE1;genes y texto en nuestros programas para extender las posibilidades visuales a fotograf&#xED;a, diagramas detallados y diversos tipos de letra.</p>
 
-<p>Antes de que hagamos esto, primero tenemos que hablar un poco sobre servidores. Hasta este punto, hemos estado viendo el archivo <em>index.html</em> directamente en el navegador. Esto funciona bien para ejecutar animaciones simples. Sin embargo, si quieres hacer cosas como cargar una imagen externa en tu bosquejo, tu navegador no lo va a permitir. Si revisas la consola, te encontrar&#xE1;s con un error que contiene el t&#xe9;rmino <a contenteditable="false" data-primary="cross-origin error" data-type="indexterm">&nbsp;</a><em>cross-origin</em> (origen cruzado). Para cargar archivos externos, tienes que correr <em>servidor</em>. Un <a contenteditable="false" data-primary="servers, running" data-type="indexterm">&nbsp;</a><em>servidor</em> es un programa que funciona como un manejador de capas. Responde cuando escribes una URL en la barra de direcciones, y te <em>sirve</em>&nbsp;los archivos correspondientes para que los puedas visualizar.</p>
+<p>Antes de que hagamos esto, primero tenemos que hablar un poco sobre servidores. Hasta este punto, hemos estado viendo el archivo <em>index.html</em> directamente en el navegador. Esto funciona bien para ejecutar animaciones simples. Sin embargo, si quieres hacer cosas como cargar una imagen externa en tu bosquejo, tu navegador no lo va a permitir. Si revisas la consola, te encontrar&#xE1;s con un error que contiene el t&#xe9;rmino<a contenteditable="false" data-primary="cross-origin error" data-type="indexterm">&nbsp;</a><em>cross-origin</em> (origen cruzado). Para cargar archivos externos, tienes que correr un <em>servidor</em>. Un<a contenteditable="false" data-primary="servers, running" data-type="indexterm">&nbsp;</a><em>servidor</em> responde cuando escribes una URL en la barra de direcciones, y te <em>sirve</em>&nbsp;los archivos correspondientes para que los puedas visualizar.</p>
 
 <p>Existen diferentes maneras de correr servidores. Visita <em class="hyperlink"><a href="https://github.com/processing/p5.js/wiki/Servidor-local">https://github.com/processing/p5.js/wiki/Servidor-local</a></em>&nbsp;para ver las instrucciones de c&#xF3;mo correr un servidor en sistemas Mac OS X, Windows y Linux. Una vez que lo tengas configurado, &#xA1;est&#xE1;s listo para cargar medios!</p>
 
@@ -43,7 +43,7 @@
 
 <p>Para<a contenteditable="false" data-primary="images" data-secondary="loading" data-type="indexterm" id="i7l">&nbsp;</a>cargar una imagen, introduciremos una nueva funci&#xF3;n llamada<a contenteditable="false" data-primary="preload() function" data-type="indexterm">&nbsp;</a> <code>preload()</code>. La funci&#xF3;n <code>preload()</code> se ejecuta una vez y antes de que la funci&#xF3;n <code>setup()</code> se ejecute. Generalmente deber&#xED;as cargar tus imagenes y otros archivos en <code>preload()</code> para asegurarte que est&#xE9;n completamente cargadas antes de que tu programa empiece a correr. Discutiremos esto en mayor profundidad m&#xE1;s adelante en el cap&#xED;tulo.</p>
 
-<p>Despu&#xE9;s de que los tres pasos son completados, puedes dibujar la imagen en la pantalla con la funci&#xF3;n <a contenteditable="false" data-primary="image() function" data-type="indexterm">&nbsp;</a>the <code>image()</code>. El primer par&#xE1;metro de <code>image()</code> especifica la imagen a dibujar, el segundo y tercero son las coordenadas <em>x</em> e <em>y</em>:</p>
+<p>Despu&#xE9;s de que los tres pasos son completados, puedes dibujar la imagen en la pantalla con la funci&#xF3;n <a contenteditable="false" data-primary="image() function" data-type="indexterm">&nbsp;</a><code>image()</code>. El primer par&#xE1;metro de <code>image()</code> especifica la imagen a dibujar, el segundo y tercero son las coordenadas <em>x</em> e <em>y</em>:</p>
 
 <figure><img alt="Ex 07 01" src="images/gspj_07in02.png" />
 <figcaption/>
@@ -127,7 +127,7 @@ function draw() {
 <p>Cuando una imagen es mostrada m&#xE1;s grande o peque&#xF1;a que su tama&#xF1;o original, puede distorsionarse. Ten cuidado al preparar tus im&#xE1;genes en los tama&#xF1;os en que ser&#xE1;n usadas. Cuando el tama&#xF1;o de la imagen es modificado con la funci&#xF3;n <code>image()</code>, el archivo original en tu directorio del <em>bosquejo</em> no cambia.</p>
 </div>
 
-<p>p5.js puede cargar y mostrar im&#xE1;genes raster en los formatos <a contenteditable="false" data-primary="images" data-secondary="formats" data-type="indexterm">&nbsp;</a>the JPEG, PNG, <a contenteditable="false" data-primary="JPEG image format" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="PNG image format" data-type="indexterm"></a><a contenteditable="false" data-primary="GIF image format" data-type="indexterm"></a>y GIF, adem&#xE1;s de im&#xE1;genes vectoriales<a contenteditable="false" data-primary="SVG image format" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="vector images" data-type="indexterm">&nbsp;</a>formato SVG. Puedes convertir im&#xE1;genes a los formatos JPEG, PNG, GIF y SVG usando programas como GIMP, Photoshop e Illustrator. La mayor parte de las c&#xE1;maras digitales graban sus im&#xE1;genes en el formato JPEG, pero usualmente necesitan ser reducidas en tama&#xF1;o para ser usadas con p5.js. Una c&#xE1;mara digital t&#xED;pica crea una imagen que es varias veces m&#xE1;s grande que el &#xE1;rea de dibujo de gran parte de los bosquejos creados en p5.js.&nbsp;<a contenteditable="false" data-primary="images" data-secondary="resizing" data-type="indexterm">&nbsp;</a>Cambiar el tama&#xF1;o de estas im&#xE1;genes antes de que sean a&#xF1;adidas al directorio de <em>bosquejo</em> hace que los bosquejos carguen m&#xE1;s r&#xE1;pido,&nbsp;corran m&#xE1;s eficientemente y <a contenteditable="false" data-primary="sketch folder" data-type="indexterm">&nbsp;</a>ahorra espacio en el disco duro.</p>
+<p>p5.js puede cargar y mostrar im&#xE1;genes raster en los formatos<a contenteditable="false" data-primary="images" data-secondary="formats" data-type="indexterm">&nbsp;</a>JPEG, PNG, <a contenteditable="false" data-primary="JPEG image format" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="PNG image format" data-type="indexterm"></a><a contenteditable="false" data-primary="GIF image format" data-type="indexterm"></a>y GIF, adem&#xE1;s de im&#xE1;genes vectoriales<a contenteditable="false" data-primary="SVG image format" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="vector images" data-type="indexterm">&nbsp;</a>formato SVG. Puedes convertir im&#xE1;genes a los formatos JPEG, PNG, GIF y SVG usando programas como GIMP, Photoshop e Illustrator. La mayor parte de las c&#xE1;maras digitales graban sus im&#xE1;genes en el formato JPEG, pero usualmente necesitan ser reducidas en tama&#xF1;o para ser usadas con p5.js. Una c&#xE1;mara digital t&#xED;pica crea una imagen que es varias veces m&#xE1;s grande que el &#xE1;rea de dibujo de gran parte de los bosquejos creados en p5.js.&nbsp;<a contenteditable="false" data-primary="images" data-secondary="resizing" data-type="indexterm">&nbsp;</a>Cambiar el tama&#xF1;o de estas im&#xE1;genes antes de que sean a&#xF1;adidas al directorio de <em>bosquejo</em> hace que los bosquejos carguen m&#xE1;s r&#xE1;pido,&nbsp;corran m&#xE1;s eficientemente y<a contenteditable="false" data-primary="sketch folder" data-type="indexterm">&nbsp;</a>ahorra espacio en el disco duro.</p>
 
 <p>Las im&#xE1;genes GIF, PNG y SVG soportan <a contenteditable="false" data-primary="images" data-secondary="transparency" data-type="indexterm" id="i7t">&nbsp;</a>transparencia, lo que significa que los pixeles pueden ser invisibles o parcialmente visibles (recuerda la discusi&#xF3;n de <code>color()</code> y valores alpha en <a data-type="xref" href="#ex-3-17">Ejemplo 3-17</a>). Las im&#xE1;genes GIF tienen transparencia de 1 bit, lo que significa que los pixeles son totalmente opacos o totalmente transparentes. Las im&#xE1;genes PNG soportan transparencia de 8 bits, lo que significa que cada pixel tiene una variable de opacidad. Los siguientes ejemplos usan&nbsp;<em>clouds.gif</em> y <em>clouds.png</em>&nbsp;para mostrar las diferencias entre los formatos de archivo.&nbsp; Las im&#xE1;genes est&#xE1;n dentro del directorio <em>media</em> que has descargado anteriormente. Aseg&#xFA;rate de incluirlas al directorio de tu bosquejo antes de probar cada ejemplo.</p>
 </section>
@@ -208,7 +208,7 @@ function draw() {
 }</pre>
 
 <div data-type="note">
-<p>Recuerda incluir la extensi&#xF3;n apropiada del archivo (<em>.gif</em>, <em>.jpg</em>, <em>.png</em>, o <em>.svg</em>) cuando cargas la imagen. Tambi&#xE9;n aseg&#xFA;rate de que el nombre de la imagen est&#xE9; escrito exactamente como aparece en el archivo, incluyendo <a contenteditable="false" data-primary="media" data-secondary="images" data-seealso="images" data-startref="m7i" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="images" data-startref="i7" data-type="indexterm">&nbsp;</a><span class="keep-together">may&#xFA;sculas y min&#xFA;sculas</span>.</p>
+<p>Recuerda incluir la extensi&#xF3;n apropiada del archivo (<em>.gif</em>, <em>.jpg</em>, <em>.png</em>, o <em>.svg</em>) cuando cargas la imagen. Tambi&#xE9;n aseg&#xFA;rate de que el nombre de la imagen est&#xE9; escrito exactamente como aparece en el archivo, incluyendo<a contenteditable="false" data-primary="media" data-secondary="images" data-seealso="images" data-startref="m7i" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="images" data-startref="i7" data-type="indexterm">&nbsp;</a><span class="keep-together">may&#xFA;sculas y min&#xFA;sculas</span>.</p>
 </div>
 </section>
 </section>
@@ -269,7 +269,7 @@ function drawImage(img) {
 
 <p>En este ejemplo, a&#xF1;adimos un segundo argumento a <code>loadImage()</code>, que es la funci&#xF3;n que queremos que se ejecute despu&#xE9;s de que la carga finaliza. Una vez que la imagen ha cargado, la funci&#xF3;n <code>drawImage()</code> es llamada autom&#xE1;ticamente, con un argumento, la imagen que ha sido reci&#xe9;n cargada.</p>
 
-<p>No hay necesidad de crear una variable global para guardar la imagen. La imagen es pasada directamente a la funci&#xF3;n callback, con el nombre del par&#xE1;metro escogido en la<a contenteditable="false" data-primary="media" data-secondary="and asynchronicity" data-secondary-sortas="asynchronicity" data-startref="m7a" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="asynchronicity" data-startref="async7" data-type="indexterm">&nbsp;</a> definici&#xF3;n de la funci&#xF3;n.</p>
+<p>No hay necesidad de crear una variable global para guardar la imagen. La imagen es pasada directamente a la funci&#xF3;n callback, con el nombre del par&#xE1;metro escogido en la<a contenteditable="false" data-primary="media" data-secondary="and asynchronicity" data-secondary-sortas="asynchronicity" data-startref="m7a" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="asynchronicity" data-startref="async7" data-type="indexterm">&nbsp;</a>definici&#xF3;n de la funci&#xF3;n.</p>
 </section>
 </section>
 
@@ -281,7 +281,7 @@ function drawImage(img) {
 <section data-type="sect2">
 <h2>Ejemplo 7-9: dibujando con tipos de letras</h2>
 
-<p>Puedes usar la funci&#xF3;n<a contenteditable="false" data-primary="textFont() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="fonts" data-secondary="drawing with" data-type="indexterm">&nbsp;</a> <code>textFont()</code> para configurar la fuente actual. Puedes dibujar letras en la pantalla con la funci&#xF3;n<a contenteditable="false" data-primary="text() function" data-type="indexterm">&nbsp;</a> <code>text()</code> y puedes cambiar el tama&#xF1;o <a contenteditable="false" data-primary="textSize() function" data-type="indexterm">&nbsp;</a>con la funci&#xF3;n <code>textSize()</code>:</p>
+<p>Puedes usar la funci&#xF3;n<a contenteditable="false" data-primary="textFont() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="fonts" data-secondary="drawing with" data-type="indexterm">&nbsp;</a><code>textFont()</code> para configurar la fuente actual. Puedes dibujar letras en la pantalla con la funci&#xF3;n<a contenteditable="false" data-primary="text() function" data-type="indexterm">&nbsp;</a> <code>text()</code> y puedes cambiar el tama&#xF1;o<a contenteditable="false" data-primary="textSize() function" data-type="indexterm">&nbsp;</a>con la funci&#xF3;n <code>textSize()</code>:</p>
 
 <figure><img alt="Ex 07 09" src="images/gspj_07in09.png" />
 <figcaption/>
@@ -311,7 +311,7 @@ function draw() {
 <section data-type="sect2" id="example-7-10-use-a-w">
 <h2>Ejemplo 7-10: usar una fuente de la web</h2>
 
-<p>Si <a contenteditable="false" data-primary="webfonts" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="fonts" data-secondary="webfonts" data-type="indexterm">&nbsp;</a>no quieres estar limitado a esta peque&#xF1;a lista de fuentes, puedes usar una de la web. Dos sitios web que son buenos recursos para encontrar fuentes web con licencias abiertas para usar con p5.js son <a href="http://www.google.com/fonts">GoogleFonts</a>&nbsp;y la&nbsp;<a href="http://openfontlibrary.org">Open Font Library</a>.</p>
+<p>Si<a contenteditable="false" data-primary="webfonts" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="fonts" data-secondary="webfonts" data-type="indexterm">&nbsp;</a>no quieres estar limitado a esta peque&#xF1;a lista de fuentes, puedes usar una de la web. Dos sitios web que son buenos recursos para encontrar fuentes web con licencias abiertas para usar con p5.js son <a href="http://www.google.com/fonts">GoogleFonts</a>&nbsp;y la&nbsp;<a href="http://openfontlibrary.org">Open Font Library</a>.</p>
 
 <p>Para usar una webfont en tu programa, deber&#xE1;s referenciarla en tu archivo <em>index.html</em>. Cuando escoges una fuente de cualquiera de estas bibliotecas mencionadas, te mostar&#xE1; una l&#xED;nea de c&#xF3;digo para a&#xF1;adir a tu archivo HTML. Cuando copias y pegas este c&#xF3;digo en cualquier parte dentro de la secci&#xF3;n <code>&lt;head&gt;</code> de tu HTML, tu archivo se ver&#xE1; parecido a esto:</p>
 
@@ -352,7 +352,7 @@ function draw() {
 
 <p>p5.js tambi&#xe9;n puede<a contenteditable="false" data-primary="fonts" data-secondary="loading custom" data-type="indexterm">&nbsp;</a>mostrar texto usando tipograf&#xed;as<a contenteditable="false" data-primary="TrueType (.ttf) fonts" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="OpenType (.otf) fonts" data-type="indexterm">&nbsp;</a>TrueType (<em>.ttf</em>) y OpenType (<em>.otf</em>). En esta introducci&#xf3;n, cargaremos la fuente &nbsp;<em>SourceCodePro-Regular.ttf</em>&nbsp;TrueType (incluida en la carpeta <em>media</em> que descargaste) desde la carpeta <em>sketch</em>.</p>
 
-<p>Estamos usando el mismo tipo de letra que usamos en&nbsp;<a data-type="xref" href="#example-7-10-use-a-w">Ejemplo 7-10</a>, pero ahora el archivo est&#xe1; ubicado en la carpeta <em>sketch</em> en vez de ser cargado desde la web. El resultado del siguiente programa deber&#xed;a verse igual que el <a data-type="xref" href="#example-7-10-use-a-w">Ejemplo 7-10</a>. Aqu&#xed; est&#xe1;n los pasos que debes seguir para incluir una tipograf&#xed;a personalizada en tu programa:</p>
+<p>Estamos usando el mismo tipo de letra que usamos en el&nbsp;<a data-type="xref" href="#example-7-10-use-a-w">Ejemplo 7-10</a>, pero ahora el archivo est&#xe1; ubicado en la carpeta <em>sketch</em> en vez de ser cargado desde la web. El resultado del siguiente programa deber&#xed;a verse igual que el <a data-type="xref" href="#example-7-10-use-a-w">Ejemplo 7-10</a>. Aqu&#xed; est&#xe1;n los pasos que debes seguir para incluir una tipograf&#xed;a personalizada en tu programa:</p>
 
 <ol>
 	<li>
@@ -457,7 +457,7 @@ function draw() {
   text(quote, 26, 24, 240, 100);
 }</pre>
 
-<p>Existe un conjunto de funciones adicionales que afectan la forma en que las letras son mostradas en la pantalla. Son explicadas, con ejemplos, en la categor&#xed;a Tipograf&#xed;a <a contenteditable="false" data-primary="media" data-secondary="fonts" data-seealso="fonts" data-startref="m7f" data-type="indexterm">&nbsp;</a>de <a contenteditable="false" data-primary="fonts" data-startref="f7" data-type="indexterm">&nbsp;</a>la <em>Referencia de p5.js</em>.</p>
+<p>Existe un conjunto de funciones adicionales que afectan la forma en que las letras son mostradas en la pantalla. Son explicadas, con ejemplos, en la categor&#xed;a Tipograf&#xed;a <a contenteditable="false" data-primary="media" data-secondary="fonts" data-seealso="fonts" data-startref="m7f" data-type="indexterm">&nbsp;</a>de<a contenteditable="false" data-primary="fonts" data-startref="f7" data-type="indexterm">&nbsp;</a>la <em>Referencia de p5.js</em>.</p>
 </section>
 </section>
 
@@ -499,11 +499,11 @@ function setup() {
 
 function draw() {
   // Define la imagen "landscape" como fondo; esta imagen
-  // debe tener el mismo ancho y la misma altura que el programa
+  // debe tener los mismos ancho y altura que el programa
   background(landscape);
 
-  // Define el desfase izquierdo/derecho y aplica suavizado para hacer
-  // una transici&#xf3;n suave
+  // Define el desfase izquierdo/derecho y aplica suavizado
+	// para hacer una transici&#xf3;n suave
   var targetOffset = map(mouseY, 0, height, -40, 40);
   offset += (targetOffset - offset) * easing;
 
