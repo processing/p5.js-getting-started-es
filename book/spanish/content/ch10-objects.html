@@ -45,14 +45,14 @@
 <pre data-code-language="p5js" data-type="programlisting">
 var x
 var y
-var diameter
-var speed</pre>
+var diametro
+var velocidad</pre>
 
 <p>El siguiente paso es resolver cu&#xe1;les m&#xE9;todos pueden ser &#xFA;tiles para el objeto. Revisando la funci&#xF3;n <code>draw()</code> del ejemplo que estamos adaptando, vemos dos componentes principales. La posici&#xF3;n de la figura es actualizada y dibujada en la pantalla. Creamos dos m&#xE9;todos para nuestro objeto, uno para cada tarea:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
-function move()
-function display()</pre>
+function mover()
+function mostrar()</pre>
 
 <p>Ninguno de nuestros m&#xE9;todos retorna un valor. Una vez que hemos determinado las propiedades y m&#xE9;todos que el objeto deber&#xED;a tener, escribiremos nuestra funci&#xF3;n constructor para asignarlos a cada instancia del objeto que crearemos (<a data-type="xref" href="#Fig_10_01">Figura 10-1</a>).</p>
 
@@ -84,56 +84,56 @@ function JitterBug() {
 
 <p>Observa que el nombre <code>JitterBug</code> empieza con may&#xFA;scula. No es necesario nombrar la funci&#xF3;n constructor con letra may&#xFA;scula, pero es una convenci&#xF3;n (que recomendamos encarecidamente) usada para denotar que es un constructor. (La palabra clave <code>function</code>, sin embargo, debe ser <span class="keep-together">min&#xFA;scula</span> porque es una regla del lenguaje de programaci&#xF3;n.)</p>
 
-<p>En segundo lugar, a&#xF1;adimos las propiedades. JavaScript posee una palabra reservada especial, <code>this</code>, <a contenteditable="false" data-primary="this keyword" data-type="indexterm">&nbsp;</a>que puedes usar dentro la funci&#xF3;n constructor para referirte al objeto actual. Cuando declaras una propiedad de un objeto, dejamos fuera el s&#xED;mbolo <code>var</code>, y en vez de eso anteponemos el nombre de la variable con <code>this.</code> para indicar que estamos asignando una propiedad, una variable del objeto. Podemos declarar y asignar la propiedad <code>speed</code> de la siguiente manera:</p>
+<p>En segundo lugar, a&#xF1;adimos las propiedades. JavaScript posee una palabra reservada especial, <code>this</code>, <a contenteditable="false" data-primary="this keyword" data-type="indexterm">&nbsp;</a>que puedes usar dentro la funci&#xF3;n constructor para referirte al objeto actual. Cuando declaras una propiedad de un objeto, dejamos fuera el s&#xED;mbolo <code>var</code>, y en vez de eso anteponemos el nombre de la variable con <code>this.</code> para indicar que estamos asignando una propiedad, una variable del objeto. Podemos declarar y asignar la propiedad <code>velocidad</code> de la siguiente manera:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 function JitterBug() {
-  this.speed = 0.5;
+  this.velocidad = 0.5;
 }</pre>
 
-<p>Mientras estamos haciendo esto, tenemos que decidir qu&#xe9; propiedades tendr&#xE1;n sus valores pasados a trav&#xE9;s del <em>constructor</em>. Como regla general, los valores de las propiedades que quieres que sean diferentes para cada instancia son pasados a trav&#xE9;s del constructor, y los otros valores de propiedades pueden ser definidos dentro del constructor, como <code>speed</code> en este caso. Para el objeto <code>JitterBug</code>, hemos decidido que los valores de <code>x</code>, <code>y</code>, y <code>diameter</code> ser&#xE1;n ingresados. Cada uno de los valores pasados es asignado a una variable temporal que existe solo mientras el c&#xF3;digo es ejecutado. Para aclarar esto, hemos a&#xF1;adido el nombre <code>temp</code> a cada una de estas variables, pero pueden ser nombradas con cualquier nombre que prefieras. Ser&#xE1;n usadas solo para asignar los valores de las propiedades que son parte del objeto. As&#xED; que a&#xF1;adimos <code>tempX</code>, <code>tempY</code>, y <code>tempDiameter</code> como par&#xE1;metros de la funci&#xF3;n, y las propiedades son declaradas y asignadas as&#xED;:</p>
+<p>Mientras estamos haciendo esto, tenemos que decidir qu&#xe9; propiedades tendr&#xE1;n sus valores pasados a trav&#xE9;s del <em>constructor</em>. Como regla general, los valores de las propiedades que quieres que sean diferentes para cada instancia son pasados a trav&#xE9;s del constructor, y los otros valores de propiedades pueden ser definidos dentro del constructor, como <code>velocidad</code> en este caso. Para el objeto <code>JitterBug</code>, hemos decidido que los valores de <code>x</code>, <code>y</code>, y <code>diametro</code> ser&#xE1;n ingresados. Cada uno de los valores pasados es asignado a una variable temporal que existe solo mientras el c&#xF3;digo es ejecutado. Para aclarar esto, hemos a&#xF1;adido el nombre <code>temp</code> a cada una de estas variables, pero pueden ser nombradas con cualquier nombre que prefieras. Ser&#xE1;n usadas solo para asignar los valores de las propiedades que son parte del objeto. As&#xED; que a&#xF1;adimos <code>tempX</code>, <code>tempY</code>, y <code>tempDiametro</code> como par&#xE1;metros de la funci&#xF3;n, y las propiedades son declaradas y asignadas as&#xED;:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
-function JitterBug(tempX, tempY, tempDiameter) {
+function JitterBug(tempX, tempY, tempDiametro) {
   this.x = tempX;
   this.y = tempY;
-  this.diameter = tempDiameter;
-  this.speed = 0.5; // El mismo valor para cada instancia
+  this.diametro = tempDiametro;
+  this.velocidad = 0.5; // El mismo valor para cada instancia
 }</pre>
 
 <p>El &#xFA;ltimo paso es a&#xF1;adir los <a contenteditable="false" data-primary="methods" data-type="indexterm">&nbsp;</a>m&#xE9;todos. Esto es igual que escribir funciones, pero aqu&#xED; est&#xE1;n contenidas dentro de la funci&#xF3;n constructor, y la primera l&#xED;nea es escrita un poco distinta. Normalmente, una funci&#xF3;n para actualizar variables se escribe as&#xED;:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
-function move() {
-  x += random(-speed, speed);
-  y += random(-speed, speed);
+function mover() {
+  x += random(-velocidad, velocidad);
+  y += random(-velocidad, velocidad);
 }</pre>
 
 <p>Como queremos hacer que esta funci&#xF3;n sea un m&#xE9;todo del objeto, nuevamente necesitamos usar la palabra reservada <code>this</code>. La funci&#xF3;n anterior puede ser convertida en un m&#xE9;todo as&#xED;:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
-this.move = function() {
-  this.x += random(-this.speed, this.speed);
-  this.y += random(-this.speed, this.speed);
+this.mover = function() {
+  this.x += random(-this.velocidad, this.velocidad);
+  this.y += random(-this.velocidad, this.velocidad);
 };</pre>
 
 <p>La primera l&#xED;nea se ve un poco extra&#xF1;a, pero la manera de interpretarla es "crea una variable de instancia (propiedad) llamada <code>move</code>, y luego as&#xed;gnale como valor esta funci&#xF3;n." Luego, cada vez que nos referimos a las propiedades del objeto, podemos nuevamente usar <code>this.</code>, tal como lo hacemos cuando est&#xE1;n inicialmente declaradas. Juntando todo en el constructor el resultado es este:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
-function JitterBug(tempX, tempY, tempDiameter) {
+function JitterBug(tempX, tempY, tempDiametro) {
 
   this.x = tempX;
   this.y = tempY;
-  this.diameter = tempDiameter;
-  this.speed = 2.5;
+  this.diametro = tempDiametro;
+  this.velocidad = 2.5;
 
-  this.move = function() {
-    this.x += random(-this.speed, this.speed);
-    this.y += random(-this.speed, this.speed);
+  this.mover = function() {
+    this.x += random(-this.velocidad, this.velocidad);
+    this.y += random(-this.velocidad, this.velocidad);
   };
 
-  this.display = function() {
-    ellipse(this.x, this.y, this.diameter, this.diameter);
+  this.mostrar = function() {
+    ellipse(this.x, this.y, this.diametro, this.diametro);
   };
 
 }</pre>
@@ -175,8 +175,8 @@ function setup() {
 }
 
 function draw() {
-  bug.move();
-  bug.display();
+  bug.mover();
+  bug.mostrar();
 }
 
 // Copia aqu&#xED; el c&#xF3;digo del constructor de Jitterbug</pre>
@@ -198,9 +198,9 @@ Los tres n&#xFA;meros dentro de los par&#xE9;ntesis son los par&#xE1;metros pasa
 <section data-type="sect2">
 <h2>Ejemplo 10-2: crea m&#xFA;ltiples objetos</h2>
 
-<p>En el <a data-type="xref" href="#ex-10-1">Ejemplo 10-1</a>, <a contenteditable="false" data-primary="objects" data-secondary="multiple" data-type="indexterm" id="o10m">&nbsp;</a>vimos algo nuevo: el punto que es usado para acceder a los m&#xE9;todos del objeto dentro de <code>draw()</code>. El operador punto es usado para unir el nombre del objeto con sus propiedades y m&#xE9;todos. Es an&#xE1;logo a la manera en que usamos<a contenteditable="false" data-primary="this keyword" data-type="indexterm">&nbsp;</a> <code>this.</code> dentro de la funci&#xF3;n constructor, pero cuando nos referimos a esto fuera del constructor, <code>this</code> es reemplazado por el nombre de la variable.</p>
+<p>En el <a data-type="xref" href="#ex-10-1">Ejemplo 10-1</a>,<a contenteditable="false" data-primary="objects" data-secondary="multiple" data-type="indexterm" id="o10m">&nbsp;</a>vimos algo nuevo: el punto que es usado para acceder a los m&#xE9;todos del objeto dentro de <code>draw()</code>. El operador punto es usado para unir el nombre del objeto con sus propiedades y m&#xE9;todos. Es an&#xE1;logo a la manera en que usamos<a contenteditable="false" data-primary="this keyword" data-type="indexterm">&nbsp;</a><code>this.</code> dentro de la funci&#xF3;n constructor, pero cuando nos referimos a esto fuera del constructor, <code>this</code> es reemplazado por el nombre de la variable.</p>
 
-<p>Esto se vuelve m&#xE1;s claro en este ejemplo, donde se hacen dos objetos a partir del mismo constructor. La funci&#xF3;n <code>jit.move()</code> se refiere al m&#xE9;todo <code>move()</code> que pertenece al objeto <code>jit</code>, y <code>bug.move()</code> se refiere al m&#xE9;todo <code>move()</code> que pertenece al objeto llamado <code>bug</code>:</p>
+<p>Esto se vuelve m&#xE1;s claro en este ejemplo, donde se hacen dos objetos a partir del mismo constructor. La funci&#xF3;n <code>jit.mover()</code> se refiere al m&#xE9;todo <code>mover()</code> que pertenece al objeto <code>jit</code>, y <code>bug.mover()</code> se refiere al m&#xE9;todo <code>mover()</code> que pertenece al objeto llamado <code>bug</code>:</p>
 
 <figure><img alt="Ex 10 02" src="images/gspj_10in03.png" />
 <figcaption/>
@@ -218,10 +218,10 @@ function setup() {
 }
 
 function draw() {
-  jit.move();
-  jit.display();
-  bug.move();
-  bug.display();
+  jit.mover();
+  jit.mostrar();
+  bug.mover();
+  bug.mostrar();
 }
 
 // Copia aqu&#xED; el c&#xF3;digo del constructor de JitterBug</pre>
@@ -271,12 +271,12 @@ function draw() {
   background(204);
 
   // Actualiza y muestra el primer robot
-  bot1.update();
-  bot1.display();
+  bot1.actualizar();
+  bot1.mostrar();
 
   // Actualiza y muestra el segundo robot
-  bot2.update();
-  bot2.display();
+  bot2.actualizar();
+  bot2.mostrar();
 }
 
 function Robot(img, tempX, tempY) {
@@ -285,17 +285,17 @@ function Robot(img, tempX, tempY) {
   this.ypos = tempY;
   this.angle = random(0, TWO_PI);
   this.botImage = img;
-  this.yoffset = 0.0;
+  this.ydesplazo = 0.0;
 
   // Actualiza las propiedades
-  this.update = function() {
+  this.actualizar = function() {
     this.angle += 0.05;
-    this.yoffset = sin(this.angle) * 20;
+    this.ydesplazamiento = sin(this.angle) * 20;
   }
 
   // Dibuja el robot en la pantallla
-  this.display = function() {
-    image(this.botImage, this.xpos, this.ypos + this.yoffset);
+  this.mostrar = function() {
+    image(this.botImage, this.xpos, this.ypos + this.ydesplazamiento);
   }
 }</pre>
 <a contenteditable="false" data-primary="objects" data-startref="o10" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="robot programs (examples)" data-secondary="objects" data-startref="rp10o" data-type="indexterm">&nbsp;</a></section>
