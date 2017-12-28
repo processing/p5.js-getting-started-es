@@ -61,7 +61,7 @@ Estoy corriendo
 
 <p>En algunos navegadores, en vez de escribir una y otra vez "Estoy corriendo", lo imprimir&#xE1; solamente una vez, y despu&#xE9;s por cada vez adicional, incrementar&#xE1; un n&#xFA;mero junto a la l&#xED;nea, representando el n&#xFA;mero total de veces que la l&#xED;nea ha sido impresa sucesivamente.</p>
 
-<p>En un programa t&#xED;pico, el c&#xF3;digo dentro de <code>setup()</code> es usado para definir las condiciones iniciales. La primera l&#xED;nea es usualmente la funci&#xF3;n <code>createCanvas()</code>, a menudo seguida de c&#xF3;digo para definir los colores de relleno y trazado iniciales. (Si no incluyes la funci&#xF3;n <code>createCanvas()</code>,  createCanvas(), el lienzo para dibujar tendr&#xE1; por defecto una dimensi&#xF3;n de 100x100 pixeles).</p>
+<p>En un programa t&#xED;pico, el c&#xF3;digo dentro de <code>setup()</code> es usado para definir las condiciones iniciales. La primera l&#xED;nea es usualmente la funci&#xF3;n <code>createCanvas()</code>, a menudo seguida de c&#xF3;digo para definir los colores de relleno y trazado iniciales. (Si no incluyes la funci&#xF3;n <code>createCanvas()</code>, el lienzo para dibujar tendr&#xE1; por defecto una dimensi&#xF3;n de 100x100 pixeles).</p>
 
 <p>Ahora sabes c&#xF3;mo usar <code>setup()</code> y <code>draw()</code>  en mayor detalle, pero esto no es todo.</p>
 
@@ -131,9 +131,9 @@ function draw() {
 </section>
 
 <section data-type="sect2">
-<h2>Ejemplo 5-5:el punto te persigue</h2>
+<h2>Ejemplo 5-5: el punto te persigue</h2>
 
-<p>En este &nbsp;ejemplo, se a&#xF1;ade un nuevo c&#xED;rculo al lienzo cada vez que el c&#xF3;digo dentro de <code>draw()</code> se ejecuta. Para refrescar la pantalla y solamente  mostrar el c&#xED;rculo m&#xE1;s reciente, escribe la funci&#xF3;n <code>background()</code> <a contenteditable="false" data-primary="background() function" data-type="indexterm">&nbsp;</a>al principio del bloque <code>draw()</code>  antes de que la figura sea dibujada:</p>
+<p>En este &nbsp;ejemplo, se a&#xF1;ade un nuevo c&#xED;rculo al lienzo cada vez que el c&#xF3;digo dentro de <code>draw()</code> se ejecuta. Para refrescar la pantalla y solamente  mostrar el c&#xED;rculo m&#xE1;s reciente, escribe la funci&#xF3;n <code>background()</code><a contenteditable="false" data-primary="background() function" data-type="indexterm">&nbsp;</a>al principio del bloque <code>draw()</code>  antes de que la figura sea dibujada:</p>
 
 <figure><img alt="Ex 05 05" src="images/gspj_05in03.png" />
 <figcaption/>
@@ -157,7 +157,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 5-6: dibuja de forma continua</h2>
 
-<p>Las variables <code>pmouseX</code> y <code>pmouseY</code><a contenteditable="false" data-primary="pmouseX/pmouseY variables" data-type="indexterm">&nbsp;</a>variables <a contenteditable="false" data-primary="drawing" data-secondary="continuous" data-type="indexterm">&nbsp;</a>&nbsp;almacenan la posici&#xF3;n del rat&#xF3;n en el cuadro anterior. Al igual que <code>mouseX</code> y <code>mouseY</code>, estas variables especiales son actualizadas cada vez que se ejecuta <code>draw()</code>. Al combinarlas, pueden ser usadas para dibujar l&#xED;neas continuas al conectar las posiciones actual y m&#xE1;s reciente:</p>
+<p>Las variables <code>pmouseX</code> y <code>pmouseY</code><a contenteditable="false" data-primary="pmouseX/pmouseY variables" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="drawing" data-secondary="continuous" data-type="indexterm">&nbsp;</a>&nbsp;almacenan la posici&#xF3;n del rat&#xF3;n en el cuadro anterior. Al igual que <code>mouseX</code> y <code>mouseY</code>, estas variables especiales son actualizadas cada vez que se ejecuta <code>draw()</code>. Al combinarlas, pueden ser usadas para dibujar l&#xED;neas continuas al conectar las posiciones actual y m&#xE1;s reciente:</p>
 
 <figure><img alt="Ex 05 06" class="addBorder" src="images/gspj_05in04.png" />
 <figcaption/>
@@ -178,7 +178,7 @@ function draw() {
 <section data-type="sect2" id="ex-5-7">
 <h2>Ejemplo 5-7: define el grosor sobre la marcha</h2>
 
-<p>Las variables <code>pmouseX</code> y <code>pmouseY</code>&nbsp;<a contenteditable="false" data-primary="lines" data-secondary="setting thickness of" data-type="indexterm">&nbsp;</a>tambi&#xE9;n pueden ser usadas para calcular la velocidad del rat&#xF3;n. Esto se hace midiendo la distancia entre la posici&#xF3;n actual y la m&#xE1;s reciente del rat&#xF3;n. Si el rat&#xF3;n se mueve lentamente, la distancia es peque&#xF1;a, pero si se empieza a mover m&#xE1;s r&#xE1;pido, la distancia se incrementa. Una funci&#xF3;n llamada <a contenteditable="false" data-primary="dist() function" data-type="indexterm">&nbsp;</a>called <code>dist()</code> simplifica este c&#xE1;lculo, como se muestra en el siguiente ejemplo. Aqu&#xED;, la velocidad del rat&#xF3;n es usada para definir el grosor de la l&#xED;nea dibujada:</p>
+<p>Las variables <code>pmouseX</code> y <code>pmouseY</code>&nbsp;<a contenteditable="false" data-primary="lines" data-secondary="setting thickness of" data-type="indexterm">&nbsp;</a>tambi&#xE9;n pueden ser usadas para calcular la velocidad del rat&#xF3;n. Esto se hace midiendo la distancia entre la posici&#xF3;n actual y la m&#xE1;s reciente del rat&#xF3;n. Si el rat&#xF3;n se mueve lentamente, la distancia es peque&#xF1;a, pero si se empieza a mover m&#xE1;s r&#xE1;pido, la distancia se incrementa. Una funci&#xF3;n llamada <a contenteditable="false" data-primary="dist() function" data-type="indexterm">&nbsp;</a><code>dist()</code> simplifica este c&#xE1;lculo, como se muestra en el siguiente ejemplo. Aqu&#xED;, la velocidad del rat&#xF3;n es usada para definir el grosor de la l&#xED;nea dibujada:</p>
 
 <figure><img alt="Ex 05 07" class="addBorder" src="images/gspj_05in05.png" />
 <figcaption/>
@@ -200,7 +200,7 @@ function draw() {
 <section data-type="sect2" id="ex-5-8" class="pagebreak-before">
 <h2>Ejemplo 5-8: suavizado</h2>
 
-<p>En <a data-type="xref" href="#ex-5-7">Ejemplo 5-7</a>, los <a contenteditable="false" data-primary="easing" data-type="indexterm" id="e5">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="easing " data-type="indexterm" id="rti5e">&nbsp;</a>valores del rat&#xF3;n son convertidos directamente en posiciones en la pantalla. Pero a veces queremos que estos valores sigan al rat&#xF3;n m&#xE1;s libremente - que se queden atr&#xE1;s para crear un movimiento m&#xE1;s fluido. Esta t&#xE9;cnica se llama <em>suavizado</em>. En el suavizado, hay dos valores: el valor actual y el valor objetivo (ver <a data-type="xref" href="#Fig_05_01">Figura 5-1</a>). En cada paso del programa, el valor actual se acerca un poco m&#xE1;s h al valor objetivo:</p>
+<p>En el <a data-type="xref" href="#ex-5-7">Ejemplo 5-7</a>, los<a contenteditable="false" data-primary="easing" data-type="indexterm" id="e5">&nbsp;</a><a contenteditable="false" data-primary="response to input" data-secondary="easing " data-type="indexterm" id="rti5e">&nbsp;</a>valores del rat&#xF3;n son convertidos directamente en posiciones en la pantalla. Pero a veces queremos que estos valores sigan al rat&#xF3;n m&#xE1;s libremente - que se queden atr&#xE1;s para crear un movimiento m&#xE1;s fluido. Esta t&#xE9;cnica se llama <em>suavizado</em>. En el suavizado, hay dos valores: el valor actual y el valor objetivo (ver <a data-type="xref" href="#Fig_05_01">Figura 5-1</a>). En cada paso del programa, el valor actual se acerca un poco m&#xE1;s al valor objetivo:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 var x = 0;
@@ -217,7 +217,7 @@ function draw() {
   print(objetivoX + " : " + x);
 }</pre>
 
-<p>El valor de la variable <code>x</code> siempre se est&#xE1; acerc&#xE1;ndo a <code>targetX</code>. La velocidad con la que se acerca a <code>targetX</code> es definida por la variable de <span class="keep-together"><code>suavizado</code></span>, un n&#xFA;mero entre 0 y 1. Un valor peque&#xF1;o de suavizado causa m&#xE1;s retraso que un valor m&#xE1;s grande. Con un valor de suavizado de 1, no hay retraso. Cuando ejecutas el <a data-type="xref" href="#ex-5-8">Ejemplo 5-8</a>, los valores son mostrados en la consola a trav&#xE9;s de la funci&#xF3;n<a contenteditable="false" data-primary="print() function" data-type="indexterm">&nbsp;</a> <code>print()</code>. Cuando mueves el rat&#xF3;n, observa c&#xF3;mo los n&#xFA;meros est&#xE1;n alejados, pero cuando dejas de moverlo, el valor de <code>x</code> se acerca al valor de <code>targetX</code>.</p>
+<p>El valor de la variable <code>x</code> siempre se est&#xE1; acerc&#xE1;ndo a <code>objetivoX</code>. La velocidad con la que se acerca a <code>objetivoX</code> es definida por la variable de <span class="keep-together"><code>suavizado</code></span>, un n&#xFA;mero entre 0 y 1. Un valor peque&#xF1;o de suavizado causa m&#xE1;s retraso que un valor m&#xE1;s grande. Con un valor de suavizado de 1, no hay retraso. Cuando ejecutas el <a data-type="xref" href="#ex-5-8">Ejemplo 5-8</a>, los valores son mostrados en la consola a trav&#xE9;s de la funci&#xF3;n<a contenteditable="false" data-primary="print() function" data-type="indexterm">&nbsp;</a> <code>print()</code>. Cuando mueves el rat&#xF3;n, observa c&#xF3;mo los n&#xFA;meros est&#xE1;n alejados, pero cuando dejas de moverlo, el valor de <code>x</code> se acerca al valor de <code>objetivoX</code>.</p>
 
 <figure id="Fig_05_01"><img alt="Fig 05 01" src="images/gspj_0501.png" />
 <figcaption><b>Figura 5-1. </b>El suavizado cambia el n&#xfa;mero de pasos necesarios para ir de un lugar a otro</figcaption>
@@ -229,7 +229,7 @@ function draw() {
 <section data-type="sect2" class="pagebreak-before">
 <h2>Ejemplo 5-9: suaviza las l&#xED;neas</h2>
 
-<p>En este <a contenteditable="false" data-primary="lines" data-secondary="smoothing with easing" data-type="indexterm">&nbsp;</a>ejemplo, la t&#xE9;cnica de suavizado es aplicada a <a data-type="xref" href="#ex-5-7">Ejemplo 5-7</a>. En comparaci&#xF3;n, las l&#xED;neas son m&#xE1;s fluidas:</p>
+<p>En este <a contenteditable="false" data-primary="lines" data-secondary="smoothing with easing" data-type="indexterm">&nbsp;</a>ejemplo, la t&#xE9;cnica de suavizado es aplicada al <a data-type="xref" href="#ex-5-7">Ejemplo 5-7</a>. En comparaci&#xF3;n, las l&#xED;neas son m&#xE1;s fluidas:</p>
 
 <figure><img alt="Ex 05 09" class="addBorder" src="images/gspj_05in06.png" />
 <figcaption/>
@@ -298,12 +298,12 @@ if (prueba) {
   instrucciones
 }</pre>
 
-<p>Cuando la prueba es <code>true</code>, el c&#xF3;digo dentro del bloque se ejecuta; cuando es <code>false</code>, el c&#xF3;digo dentro del bloque no se ejecuta. El computador determina si la prueba es <code>true</code> o <code>false</code> al evaluar la expresi&#xF3;n dentro de los par&#xE9;ntesis. (Si quieres refrescar tu memoria, <a data-type="xref" href="#ex-4-6">Ejemplo 4-6</a> discute en mayor detalle las expresiones relacionales).</p>
+<p>Cuando la prueba es <code>true</code>, el c&#xF3;digo dentro del bloque se ejecuta; cuando es <code>false</code>, el c&#xF3;digo dentro del bloque no se ejecuta. El computador determina si la prueba es <code>true</code> o <code>false</code> al evaluar la expresi&#xF3;n dentro de los par&#xE9;ntesis. (Si quieres refrescar tu memoria, el <a data-type="xref" href="#ex-4-6">Ejemplo 4-6</a> discute en mayor detalle las expresiones relacionales).</p>
 
-<p>El s&#xED;mbolo <code>==</code><a contenteditable="false" data-primary="== (equal to) operator" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="= (assignment) operator" data-type="indexterm">&nbsp;</a>compara los valores a la izquierda y a la derecha para probar si son equivalentes o no. El s&#xED;mbolo <code>==</code> es distinto del operador de asignaci&#xF3;n, el s&#xED;mbolo unitario <code>=</code>. El s&#xED;mbolo <code> ==</code> pregunta, "&#xBF;son estas cosas iguales?" mientras que el s&#xED;mbolo <code>=</code> define el valor de una variable.</p>
+<p>El s&#xED;mbolo <code>==</code><a contenteditable="false" data-primary="== (equal to) operator" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="= (assignment) operator" data-type="indexterm">&nbsp;</a>compara los valores a la izquierda y a la derecha para probar si son equivalentes o no. El s&#xED;mbolo <code>==</code> es distinto del operador de asignaci&#xF3;n, el s&#xED;mbolo unitario <code>=</code>. El s&#xED;mbolo <code> ==</code> pregunta, "&#xBF;son estos elementos iguales?" mientras que el s&#xED;mbolo <code>=</code> define el valor de una variable.</p>
 
 <div data-type="note">
-<p>Es un error com&#xFA;n, incluso de programadores avanzados, escribir <code>=</code> en el c&#xF3;digo en vez de <code>==</code>. p5.js no siempre te advertir&#xE1; cu&#xE1;ndo lo hagas, as&#xED; que s&#xE9; cuidadoso.</p>
+<p>Es un error com&#xFA;n, incluso de programadores avanzados, escribir <code>=</code> en el c&#xF3;digo en lugar de <code>==</code>. p5.js no siempre te advertir&#xE1; cu&#xE1;ndo lo hagas, as&#xED; que s&#xE9; cuidadoso.</p>
 </div>
 
 <p>De forma alternativa, la prueba en <code>draw()</code> se puede escribir as&#xED;:</p>
@@ -425,7 +425,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 5-14: los bordes de un c&#xED;rculo</h2>
 
-<p>Para<a contenteditable="false" data-primary="circles" data-secondary="cursor position relative to" data-type="indexterm" id="c5cprt">&nbsp;</a>la prueba con el c&#xED;rculo, usamos la funci&#xF3;n <code>dist()</code>&nbsp;<a contenteditable="false" data-primary="dist() function" data-type="indexterm">&nbsp;</a>para obtener la distancia desde el centro del c&#xED;rculo al cursor, luego comprobamos si este valor es menor que el radio del c&#xED;rculo (ver <a data-type="xref" href="#Fig_05_03">Figura 5-3</a>). Si lo es, sabemos que estamos dentro del c&#xED;rculo. En este ejemplo, cuando el cursos est&#xE1; dentro del &#xE1;rea del c&#xED;rculo, su tama&#xF1;o aumenta:</p>
+<p>Para<a contenteditable="false" data-primary="circles" data-secondary="cursor position relative to" data-type="indexterm" id="c5cprt">&nbsp;</a>la prueba con el c&#xED;rculo, usamos la funci&#xF3;n <code>dist()</code>&nbsp;<a contenteditable="false" data-primary="dist() function" data-type="indexterm">&nbsp;</a>para obtener la distancia desde el centro del c&#xED;rculo al cursor, luego comprobamos si este valor es menor que el radio del c&#xED;rculo (ver <a data-type="xref" href="#Fig_05_03">Figura 5-3</a>). Si lo es, sabemos que estamos dentro del c&#xED;rculo. En este ejemplo, cuando el cursor est&#xE1; dentro del &#xE1;rea del c&#xED;rculo, su tama&#xF1;o aumenta:</p>
 
 <figure><img alt="Ex 05 14" src="images/gspj_05in11.png" />
 <figcaption/>
@@ -524,13 +524,13 @@ function draw() {
   }
 }</pre>
 
-<p>La variable <code>key</code> almacena la tecla presionada m&#xE1;s reciente. A diferencia de la variable boolean <code>keyIsPressed</code>, que se revierte a <code>false</code> cada vez que una tecla es soltada, la variable <code>key</code> <a contenteditable="false" data-primary="key variable" data-type="indexterm">&nbsp;</a>mantiene su valor hasta que la siguiente tecla es presionada. El siguiente ejemplo usa el valor de <code>key</code> para dibujar el car&#xe1;cter en la pantalla. Cada vez que se presiona una tecla, el valor se actualiza y se dibuja un nuevo car&#xe1;cter. Algunas teclas, como Shift y Alt, no tienen un car&#xe1;cter visible, as&#xED; que si las presionas, nada ser&#xE1; dibujado.</p>
+<p>La variable <code>key</code> almacena la tecla presionada m&#xE1;s reciente. A diferencia de la variable boolean <code>keyIsPressed</code>, que se revierte a <code>false</code> cada vez que una tecla es soltada, la variable <code>key</code><a contenteditable="false" data-primary="key variable" data-type="indexterm">&nbsp;</a>mantiene su valor hasta que la siguiente tecla es presionada. El siguiente ejemplo usa el valor de <code>key</code> para dibujar el car&#xe1;cter en la pantalla. Cada vez que se presiona una tecla, el valor se actualiza y se dibuja un nuevo car&#xe1;cter. Algunas teclas, como Shift y Alt, no poseen un car&#xe1;cter visible, as&#xED; que si las presionas, nada ser&#xE1; dibujado.</p>
 </section>
 
 <section data-type="sect2">
 <h2>Ejemplo 5-17: dibuja algunas letras</h2>
 
-<p>Este ejemplo presenta la funci&#xF3;n <code>textSize()</code> <a contenteditable="false" data-primary="textSize() function" data-type="indexterm">&nbsp;</a>para definir el tama&#xF1;o de las letras, la funci&#xF3;n <code>textAlign()</code><a contenteditable="false" data-primary="textAlign() function" data-type="indexterm">&nbsp;</a> para centrar el texto en su coordenada <em>x</em>, y la funci&#xF3;n <code>text()</code> <a contenteditable="false" data-primary="text() function" data-type="indexterm">&nbsp;</a>para dibujar la letra. Estas funciones ser&#xE1;n discutidas en mayor detalle en <a data-type="xref" href="#fonts">Tipos_de_letra</a>.</p>
+<p>Este ejemplo presenta la funci&#xF3;n <code>textSize()</code> <a contenteditable="false" data-primary="textSize() function" data-type="indexterm">&nbsp;</a>para definir el tama&#xF1;o de las letras, la funci&#xF3;n <code>textAlign()</code><a contenteditable="false" data-primary="textAlign() function" data-type="indexterm">&nbsp;</a> para centrar el texto en su coordenada <em>x</em>, y la funci&#xF3;n <code>text()</code> <a contenteditable="false" data-primary="text() function" data-type="indexterm">&nbsp;</a>para dibujar las letras. Estas funciones ser&#xE1;n discutidas en mayor detalle en <a data-type="xref" href="#fonts">Tipos de letra</a>.</p>
 
 <figure><img alt="Ex 05 17" src="images/gspj_05in14.png" />
 <figcaption/>
@@ -614,7 +614,7 @@ function draw() {
 <section data-type="sect1">
 <h1>Tacto</h1>
 
-<p>Para <a contenteditable="false" data-primary="response to input" data-secondary="touchscreens" data-type="indexterm">&nbsp;</a>dispositivos que lo soportan, p5.js mantiene registo de si la pantalla es tocada y su ubicaci&#xF3;n. Tal como la variable <code>mouseIsPressed</code>, la variable <code>touchIsDown</code> <a contenteditable="false" data-primary="touchIsDown variable" data-type="indexterm">&nbsp;</a>es <code>true</code> cuando la pantalla es tocada y <code>false</code> cuando no.</p>
+<p>Para <a contenteditable="false" data-primary="response to input" data-secondary="touchscreens" data-type="indexterm">&nbsp;</a>dispositivos que lo soportan, p5.js mantiene registo de si la pantalla es tocada y su ubicaci&#xF3;n. Usa la variable <code>mouseIsPressed</code>, que es <code>true</code> cuando la pantalla es tocada y <code>false</code> cuando no.</p>
 
 <section data-type="sect2">
 <h2>Ejemplo 5-20: toca la pantalla</h2>
@@ -629,12 +629,12 @@ function setup() {
 function draw() {
   background(204);
   line(20, 20, 220, 100);
-  if (touchIsDown) {
+  if (mouseIsPressed) {
     line(220, 20, 20, 100);
   }
 }</pre>
 
-<p>Al igual que las variables <code>mouseX</code> y <code>mouseY</code>, las variables <code>touchX</code> y <code>touchY</code> <a contenteditable="false" data-primary="touchX/touchY variables" data-type="indexterm">&nbsp;</a>almacenan las coordenadas <em>x</em> e <em>y</em> del punto donde la pantalla est&#xE1; siendo tocada.</p>
+<p>Las variables <code>mouseX</code> y <code>mouseY</code> almacenan las coordenadas <em>x</em> e <em>y</em> del punto donde la pantalla est&#xE1; siendo tocada.</p>
 </section>
 
 <section class="pagebreak-before" data-type="sect2">
@@ -650,7 +650,7 @@ function setup() {
 }
 
 function draw() {
-  ellipse(touchX, touchY, 15, 15);
+  ellipse(mouseX, mouseY, 15, 15);
 }</pre>
 </section>
 </section>
@@ -658,12 +658,12 @@ function draw() {
 <section data-type="sect1">
 <h1>Mapeo</h1>
 
-<p>Los n&#xFA;meros <a contenteditable="false" data-primary="response to input" data-secondary="mapping" data-type="indexterm" id="rti5map">&nbsp;</a>que son creados por el rat&#xF3;n y por el teclado muchas veces necesitan ser modificados para ser &#xFA;tiles en un programa. Por ejemplo, si un bosquejo tiene un ancho de 1920 pixeles y los valores de <code>mouseX</code> son usados para definir el color del fondo, el rango de 0 a 1920 de <code>mouseX</code> necesitar&#xE1; ser escalado para moverse en un rango de 0 a 255 para controlar mejor el color. Esta transformaci&#xF3;n puede ser hecha con una ecuaci&#xF3;n o con una funci&#xF3;n <a contenteditable="false" data-primary="map() function" data-type="indexterm" id="mapf5">&nbsp;</a>llamada <code>map()</code>.</p>
+<p>Los n&#xFA;meros<a contenteditable="false" data-primary="response to input" data-secondary="mapping" data-type="indexterm" id="rti5map">&nbsp;</a>que son creados por el rat&#xF3;n y por el teclado muchas veces necesitan ser modificados para ser &#xFA;tiles en un programa. Por ejemplo, si un bosquejo tiene un ancho de 1920 pixeles y los valores de <code>mouseX</code> son usados para definir el color del fondo, el rango de 0 a 1920 de <code>mouseX</code> necesitar&#xE1; ser escalado para moverse en un rango de 0 a 255 para controlar mejor el color. Esta transformaci&#xF3;n puede ser hecha con una ecuaci&#xF3;n o con una funci&#xF3;n <a contenteditable="false" data-primary="map() function" data-type="indexterm" id="mapf5">&nbsp;</a>llamada <code>map()</code>.</p>
 
 <section data-type="sect2" id="ex-5-22">
 <h2>Ejemplo 5-22: mapeo de valores a un rango</h2>
 
-<p>En este ejemplo, la ubicaci&#xF3;n de dos l&#xED;neas es controlada por la variable <code>mouseX</code> <a contenteditable="false" data-primary="mouseX/mouseY variables" data-type="indexterm" id="mxmyv5">&nbsp;</a>. La l&#xED;nea gris est&#xE1; sincronizada con la posici&#xF3;n del cursor, pero la l&#xED;nea negra se mantiene m&#xE1;s cerca del centro de la pantalla y se aleja de la l&#xED;nea blanca en los bordes izquierdos y derechos:</p>
+<p>En este ejemplo, la ubicaci&#xF3;n de dos l&#xED;neas es controlada por la variable <code>mouseX</code><a contenteditable="false" data-primary="mouseX/mouseY variables" data-type="indexterm" id="mxmyv5">&nbsp;</a>. La l&#xED;nea gris est&#xE1; sincronizada con la posici&#xF3;n del cursor, pero la l&#xED;nea negra se mantiene m&#xE1;s cerca del centro de la pantalla y se aleja de la l&#xED;nea blanca en los bordes izquierdos y derechos:</p>
 
 <figure><img alt="Ex 05 22" src="images/gspj_05in16.png" />
 <figcaption/>
@@ -690,7 +690,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 5-23: mapeo con la funci&#xF3;n <code>map()</code></h2>
 
-<p>Este ejemplo reescribe <a data-type="xref" href="#ex-5-22">Ejemplo 5-22</a> usando <code>map()</code>:</p>
+<p>Este ejemplo reescribe el <a data-type="xref" href="#ex-5-22">Ejemplo 5-22</a> usando <code>map()</code>:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 function setup() {

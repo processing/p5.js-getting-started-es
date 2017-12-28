@@ -119,7 +119,7 @@ function draw() {
 <section data-type="sect1">
 <h1>Un poco de matem&#xE1;ticas</h1>
 
-<p>La gente<a contenteditable="false" data-primary="arithmetic operations" data-type="indexterm" id="ao4">&nbsp;</a><a contenteditable="false" data-primary="math, and programming" data-type="indexterm" id="map4">&nbsp;</a>a menudo asume que las matem&#xE1;ticas y la programaci&#xF3;n son lo mismo. Aunque un poco de conocimiento de matem&#xE1;ticas puede ser &#xFA;til para ciertos tipos de programaci&#xF3;n, la aritm&#xE9;tica b&#xE1;sica cubre lo m&#xE1;s importante.</p>
+<p>La gente<a contenteditable="false" data-primary="arithmetic operations" data-type="indexterm" id="ao4">&nbsp;</a><a contenteditable="false" data-primary="math, and programming" data-type="indexterm" id="map4">&nbsp;</a>a menudo asume que las matem&#xE1;ticas y la programaci&#xF3;n son lo mismo. Aunque un poco de conocimiento de matem&#xE1;ticas puede ser &#xFA;til para ciertos tipos de programaci&#xF3;n, la aritm&#xE9;tica b&#xE1;sica alcanza para cubrir lo m&#xE1;s importante.</p>
 
 <section data-type="sect2">
 <h2>Ejemplo 4-4: aritm&#xE9;tica b&#xE1;sica</h2>
@@ -147,7 +147,7 @@ function draw() {
   rect(x, y + h*2, 300, h);  // Inferior
 }</pre>
 
-<p>En el c&#xF3;digo, s&#xED;mbolos como <code>+</code>, <code>−</code> y <code>*</code> son llamados <a contenteditable="false" data-primary="arithmetic operations" data-secondary="operators" data-type="indexterm" id="ao4o">&nbsp;</a><a contenteditable="false" data-primary="operators" data-type="indexterm" id="op4">&nbsp;</a><em>operadores</em>. Cuando se encuentran entre dos valores, crean una <em>expresi&#xF3;n</em>. For instance, 5 + 9 and 1024 − 512 are both expressions. Por ejemplo, 5 + 9 y 1024 - 512 son expresiones. Los operadores para operaciones matem&#xE1;ticas b&#xE1;sicas son:</p>
+<p>En el c&#xF3;digo, s&#xED;mbolos como <code>+</code>, <code>−</code> y <code>*</code> son llamados<a contenteditable="false" data-primary="arithmetic operations" data-secondary="operators" data-type="indexterm" id="ao4o">&nbsp;</a><a contenteditable="false" data-primary="operators" data-type="indexterm" id="op4">&nbsp;</a><em>operadores</em>. Cuando se encuentran entre dos valores, crean una <em>expresi&#xF3;n</em>. Por ejemplo, 5 + 9 y 1024 - 512 son expresiones. Los operadores para operaciones matem&#xE1;ticas b&#xE1;sicas son:</p>
 
 <table>
 	<tbody>
@@ -194,7 +194,7 @@ function draw() {
 	</tbody>
 </table>
 
-<p>JavaScript posee un conjunto de reglas para definir el orden de precedencia que los operadores tienen entre s&#xED;, lo que significa, cu&#xE1;les c&#xE1;lculos son efectuados en primer, segundo y tercer lugar, etc. Estas reglas definen el orden en el que el c&#xF3;digo se ejecuta. Un poco de conocimiento sobre esto es un gran avance hacia el entendimiendo de c&#xF3;mo funciona una l&#xED;nea de c&#xF3;digo corta como esta:</p>
+<p>JavaScript posee un conjunto de reglas para definir el orden de precedencia que los operadores tienen entre s&#xED;, lo que significa, cu&#xE1;les c&#xE1;lculos son efectuados en primer, segundo y tercer lugar, etc. Estas reglas definen el orden en el que el c&#xF3;digo se ejecuta. Un poco de conocimiento sobre esto es un gran avance hacia el entendimiento de c&#xF3;mo funciona una l&#xED;nea de c&#xF3;digo corta como esta:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 var x = 4 + 4 * 5; // Se le asigna el valor 24 a x</pre>
@@ -228,7 +228,7 @@ y−−; // Es equivalente a y = y - 1</pre>
 <section data-type="sect1" id="repetition">
 <h1>Repetici&#xF3;n</h1>
 
-<p>A medida<a contenteditable="false" data-primary="repetition" data-seealso="for loops" data-type="indexterm" id="rep4">&nbsp;</a><a contenteditable="false" data-primary="variables" data-secondary="and repetition" data-secondary-sortas="repetition" data-type="indexterm" id="v4rep">&nbsp;</a>que escribas m&#xE1;s programas, te dar&#xE1;s cuenta de que ocurren patrones al repetir l&#xED;neas de c&#xF3;digo con peque&#xF1;as modificaciones. Una estructura de c&#xF3;digo llamada bucle<a contenteditable="false" data-primary="for loops" data-type="indexterm" id="fl4">&nbsp;</a> <code>for</code> hace posible que una l&#xED;nea de c&#xF3;digo se ejecute m&#xE1;s de una vez, condensando el tipo de repetici&#xF3;n a unas pocas l&#xED;neas de c&#xF3;digo. Esto hace que tus programas sean  m&#xE1;s modulares y f&#xE1;ciles de modificar.</p>
+<p>A medida<a contenteditable="false" data-primary="repetition" data-seealso="for loops" data-type="indexterm" id="rep4">&nbsp;</a><a contenteditable="false" data-primary="variables" data-secondary="and repetition" data-secondary-sortas="repetition" data-type="indexterm" id="v4rep">&nbsp;</a>que escribas m&#xE1;s programas, te dar&#xE1;s cuenta de que ocurren patrones al repetir l&#xED;neas de c&#xF3;digo con peque&#xF1;as modificaciones. Una estructura de c&#xF3;digo llamada bucle<a contenteditable="false" data-primary="for loops" data-type="indexterm" id="fl4">&nbsp;</a><code>for</code> hace posible que una l&#xED;nea de c&#xF3;digo se ejecute m&#xE1;s de una vez, condensando el tipo de repetici&#xF3;n a unas pocas l&#xED;neas de c&#xF3;digo. Esto hace que tus programas sean  m&#xE1;s modulares y f&#xE1;ciles de modificar.</p>
 
 <section data-type="sect2">
 <h2>Ejemplo 4-5: haz lo mismo una y otra vez</h2>
@@ -277,14 +277,14 @@ function draw() {
 
 <p>El bucle <code>for</code> es distinto en muchas maneras del c&#xF3;digo que hemos escrito hasta ahora. F&#xED;jate en las llaves, los caracteres <code>{</code> y <code>}</code>. El c&#xF3;digo entre las llaves se llama<a contenteditable="false" data-primary="block" data-type="indexterm">&nbsp;</a> <em>bloque</em>. Este es el c&#xF3;digo que ser&#xE1; repetido en cada iteraci&#xF3;n del bucle <code>for</code>.</p>
 
-<p>Dentro de los par&#xE9;ntesis hay tres declaraciones, separadas por punto y coma, que funcionan en conjunto para controlar cu&#xE1;ntas veces se ejecuta el c&#xF3;digo dentro del bloque. De izquierda a derecha, estas declaraciones son llamadas<a contenteditable="false" data-primary="initialization statement (init)" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="test statement" data-type="indexterm" id="ts4">&nbsp;</a>&nbsp;la <em>inicializaci&#xF3;n</em> (<code>init</code>), la <em>prueba</em> (test), y el <em>refresco</em> (update):</p>
+<p>Dentro de los par&#xE9;ntesis hay tres declaraciones, separadas por punto y coma, que funcionan en conjunto para controlar cu&#xE1;ntas veces se ejecuta el c&#xF3;digo dentro del bloque. De izquierda a derecha, estas declaraciones son llamadas<a contenteditable="false" data-primary="initialization statement (init)" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="test statement" data-type="indexterm" id="ts4">&nbsp;</a>&nbsp;la <em>inicializaci&#xF3;n</em> (<code>inic</code>), la <em>prueba</em> (test), y el <em>refresco</em> (update):</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 for (inic; prueba; refresco) {
-  instrucciones
+  //instrucciones
 }</pre>
 
-<p><code>inic</code> t&#xED;picamente declara una variable nueva a ser usada en el bucle for y le asigna un valor. El nombre de variable <code>i</code> se usa frecuentemente, pero no tiene nada de especial. La <em>prueba</em>eval&#xFA;a el valor de esta variable, y <em>refresco</em> cambia el valor de la variable.  <a data-type="xref" href="#Fig_04_01">Figura 4-1</a> muestra el orden en el que el c&#xF3;digo se ejecuta y c&#xF3;mo se controla el c&#xF3;digo dentro del bloque.</p>
+<p><code>inic</code> t&#xED;picamente declara una variable nueva a ser usada en el bucle for y le asigna un valor. El nombre de variable <code>i</code> se usa frecuentemente, pero no tiene nada de especial. La <em>prueba</em> eval&#xFA;a el valor de esta variable, y el <em>refresco</em> cambia el valor de la variable. <a data-type="xref" href="#Fig_04_01">Figura 4-1</a> muestra el orden en el que el c&#xF3;digo se ejecuta y c&#xF3;mo se controla el c&#xF3;digo dentro del bloque.</p>
 
 <figure id="Fig_04_01"><img alt="Fig 04 01" src="images/gspj_0401.png" />
 <figcaption><b>Figura 4-1. </b>Diagrama de flujo de un bucle for</figcaption>
@@ -345,13 +345,13 @@ for (inic; prueba; refresco) {
 	</tbody>
 </table>
 
-<p>Una expresi&#xF3;n relacional siempre evalua a <code>true</code> (verdadero) o <code>false</code> (falso). Por ejemplo, la expresi&#xF3;n 5 &gt; 3 es <code>true</code>. Preguntamos,  "&#xBF;es cinco mayor que tres?" Como la respuesta es "s&#xed;," decimos que la expresi&#xF3;n es <code>true</code>. Para la expresi&#xF3;n 5 &lt; 3, preguntamos, "&#xBF;es cinco menor que tres?" Como la respuesta es "no," decimos que la expresi&#xF3;n es <code>false</code>. Cuando la evaluaci&#xF3;n es <code>true</code>, se ejecuta el c&#xF3;digo dentro del bloque, y cuando es <code>false</code>, el c&#xF3;digo dentro del bloque no se ejecuta y el bucle <code>for</code> <a contenteditable="false" data-primary="test statement" data-startref="ts4" data-type="indexterm">&nbsp;</a>termina.</p>
+<p>Una expresi&#xF3;n relacional siempre evalua a <code>true</code> (verdadero) o <code>false</code> (falso). Por ejemplo, la expresi&#xF3;n 5 &gt; 3 es <code>true</code>. Preguntamos,  "&#xBF;es cinco mayor que tres?" Como la respuesta es "s&#xed;," decimos que la expresi&#xF3;n es <code>true</code>. Para la expresi&#xF3;n 5 &lt; 3, preguntamos, "&#xBF;es cinco menor que tres?" Como la respuesta es "no," decimos que la expresi&#xF3;n es <code>false</code>. Cuando la evaluaci&#xF3;n es <code>true</code>, se ejecuta el c&#xF3;digo dentro del bloque, y cuando es <code>false</code>, el c&#xF3;digo dentro del bloque no se ejecuta y el bucle <code>for</code><a contenteditable="false" data-primary="test statement" data-startref="ts4" data-type="indexterm">&nbsp;</a>termina.</p>
 </section>
 
 <section data-type="sect2">
 <h2>Ejemplo 4-7: entrenamiento de bucles for</h2>
 
-<p>El poder definitivo que entregan los bucles <code>for</code> la habilidad de hacer cambios r&#xE1;pidos a tu c&#xF3;digo. Como el c&#xF3;digo dentro del bloque es ejecutado t&#xED;picamente m&#xFA;ltiples veces, un cambio al bloque es magnificado cuando el c&#xF3;digo es ejecutado. Al modificar <a data-type="xref" href="#ex-4-6">Ejemplo 4-6</a> ligeramente, podemos crear una variedad de patrones distintos:</p>
+<p>El poder definitivo que entregan los bucles <code>for</code> es la habilidad de hacer cambios r&#xE1;pidos a tu c&#xF3;digo. Como el c&#xF3;digo dentro del bloque es ejecutado t&#xED;picamente m&#xFA;ltiples veces, un cambio al bloque es magnificado cuando el c&#xF3;digo es ejecutado. Al modificar <a data-type="xref" href="#ex-4-6">Ejemplo 4-6</a> ligeramente, podemos crear una variedad de patrones distintos:</p>
 
 <figure><img alt="Ex 04 07" src="images/gspj_04in07.png" />
 <figcaption/>
@@ -471,9 +471,9 @@ function draw() {
   }
 }</pre>
 
-<p>Cuando uno de estos bucles <code>for</code> es puesto dentro del otro, como en <a data-type="xref" href="#ex-4-10">Ejemplo 4-10</a>, las 4 repeticiones del primer loop son combinadas con las 13 del segundo, para as&#xED; ejecutar 52 veces (4×13 = 52) el c&#xF3;digo dentro del bloque combinado.</p>
+<p>Cuando uno de estos bucles <code>for</code> es puesto dentro del otro, como en el <a data-type="xref" href="#ex-4-10">Ejemplo 4-10</a>, las 4 repeticiones del primer bucle son combinadas con las 13 del segundo, para as&#xED; ejecutar 52 veces (4×13 = 52) el c&#xF3;digo dentro del bloque combinado.</p>
 
-<p><a data-type="xref" href="#ex-4-10">Ejemplo 4-10</a> es una buena base para explorar muchos tipos de patrones visuales repetitivos. Los siguientes ejemplos muestran un par de maneras en que esto puede ser extendido, aunque esto es solo una peque&#xF1;a muestra de lo que es <a contenteditable="false" data-primary="for loops" data-secondary="creating rows and columns with" data-startref="fl4cracw" data-type="indexterm">&nbsp;</a>posible.</p>
+<p>El <a data-type="xref" href="#ex-4-10">Ejemplo 4-10</a> es una buena base para explorar muchos tipos de patrones visuales repetitivos. Los siguientes ejemplos muestran un par de maneras en que esto puede ser extendido, aunque esto es solamente una peque&#xF1;a muestra de lo que es<a contenteditable="false" data-primary="for loops" data-secondary="creating rows and columns with" data-startref="fl4cracw" data-type="indexterm">&nbsp;</a>posible.</p>
 </section>
 
 <section data-type="sect2" id="ex-4-12">
