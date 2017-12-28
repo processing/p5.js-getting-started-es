@@ -1,16 +1,16 @@
 <section data-type="chapter" id="draw">
 <h1 class="chapterhead">Dibujar</h1>
 
-<p class="lede">Al principio, <a contenteditable="false" data-primary="drawing" data-type="indexterm" id="d3">&nbsp;</a>dibujar en una pantalla de computador es como trabajar en papel cuadriculado. Parte como un procedimiento t&#xE9;cnico cuidadoso, pero a medida que se introducen nuevos conceptos, el dibujo de formas simples con software se transforma en trabajo de animaci&#xF3;n e interacci&#xF3;n. Antes de que hagamos este salto, tenemos que empezar por el principio.</p>
+<p class="lede">Al principio, <a contenteditable="false" data-primary="drawing" data-type="indexterm" id="d3">&nbsp;</a>dibujar en una pantalla de computador es como trabajar en papel cuadriculado. Parte como un procedimiento t&#xE9;cnico cuidadoso, pero a medida que se introducen nuevos conceptos, el dibujo de formas simples con software se transforma en un trabajo de animaci&#xF3;n e interacci&#xF3;n. Antes de que hagamos este salto, tenemos que empezar por el principio.</p>
 
-<p>Una pantalla de computador es una matriz de elementos de luz llamados <a contenteditable="false" data-primary="pixels" data-type="indexterm">&nbsp;</a><em>pixeles</em>. Cada pixel tiene una posici&#xF3;n dentro de la matriz definida por sus coordenadas. Cuando creas un bosquejo en p5.js, lo puedes visualizar con un navegador.  Dentro de la ventana del navegador, p5.js crea un<a contenteditable="false" data-primary="drawing" data-secondary="canvas" data-type="indexterm" id="d3cx">&nbsp;</a><a contenteditable="false" data-primary="canvas" data-type="indexterm" id="c3">&nbsp;</a><em> lienzo para dibujar</em>,un &#xE1;rea en la que se dibujan las gr&#xE1;ficas. El lienzo puede ser del mismo tama&#xF1;o que la ventana, o puede tener dimensiones distintas. El lienzo est&#xE1; usualmente ubicado en la esquina superior izquierda de tu ventana, pero lo puedes posicionar en otros lugares.</p>
+<p>Una pantalla de computador es una matriz de elementos de luz llamados <a contenteditable="false" data-primary="pixels" data-type="indexterm">&nbsp;</a><em>pixeles</em>. Cada pixel tiene una posici&#xF3;n dentro de la matriz definida por sus coordenadas. Cuando creas un bosquejo en p5.js, lo puedes visualizar con un navegador. Dentro de la ventana del navegador, p5.js crea un<a contenteditable="false" data-primary="drawing" data-secondary="canvas" data-type="indexterm" id="d3cx">&nbsp;</a><a contenteditable="false" data-primary="canvas" data-type="indexterm" id="c3">&nbsp;</a><em>lienzo para dibujar</em>, un &#xE1;rea en la que se dibujan las gr&#xE1;ficas. El lienzo puede ser del mismo tama&#xF1;o que la ventana, o puede tener dimensiones distintas. El lienzo est&#xE1; usualmente ubicado en la esquina superior izquierda de tu ventana, pero lo puedes posicionar en otros lugares.</p>
 
-<p>Cuando dibujas en el lienzo, la coordenada <em>x</em> es la distancia desde el borde izquierdo del lienzo y la coordenada <em>y</em> es la distancia desde el borde superior. Escribimos las coordenadas de un pixel as&#xED; : <a contenteditable="false" data-primary="x and y coordinates" data-type="indexterm">&nbsp;</a>(x, y). As&#xED; que, si el lienzo es de 200×200 pixeles, la esquina superior izquierda es (0, 0), el centro est&#xE1; en (100, 100) y la esquina inferior derecha es (199, 199). Estos n&#xFA;meros pueden ser confusos; &#xBF;por qu&#xE9; contamos de 0 a 199 en vez de 1 a 200? La respuesta es que en programaci&#xF3;n, usualmente contamos partiendo en 0 porque as&#xED; es m&#xE1;s f&#xE1;cil hacer c&#xE1;lculos que veremos m&#xE1;s adelante.</p>
+<p>Cuando dibujas en el lienzo, la coordenada <em>x</em> es la distancia desde el borde izquierdo del lienzo y la coordenada <em>y</em> es la distancia desde el borde superior. Escribimos las coordenadas de un pixel as&#xED;: <a contenteditable="false" data-primary="x and y coordinates" data-type="indexterm">&nbsp;</a>(x, y). As&#xED; que, si el lienzo es de 200×200 pixeles, la esquina superior izquierda es (0, 0), el centro est&#xE1; en (100, 100) y la esquina inferior derecha es (199, 199). Estos n&#xFA;meros pueden ser confusos; &#xBF;por qu&#xE9; contamos de 0 a 199 en vez de 1 a 200? La respuesta es que en programaci&#xF3;n, usualmente contamos partiendo en 0 porque as&#xED; es m&#xE1;s f&#xE1;cil hacer c&#xE1;lculos que veremos m&#xE1;s adelante.</p>
 
 <section class="pagebreak-before" data-type="sect1">
 <h1>El lienzo</h1>
 
-<p>El lienzo es creado y las im&#xE1;genes son dibujadas dentro de &#xE9;l a trav&#xE9;s de elementos de c&#xF3;digo llamados <em>funciones</em>.<a contenteditable="false" data-primary="functions" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="parameters" data-type="indexterm">&nbsp;</a>Las funciones son el bloque fundamental de un programa en p5.js. El comportamiento de una funci&#xF3;n est&#xE1; definido por sus <em> par&#xE1;metros</em>. Por ejemplo, casi todos los programas en p5.js tienen una funci&#xF3;n <code>createCanvas()</code> <a contenteditable="false" data-primary="createCanvas() function" data-type="indexterm">&nbsp;</a>que crea un lienzo para dibujar con un ancho y una altura espec&#xED;ficos. Si tu programa no tiene una funci&#xF3;n <code>createCanvas()</code>,  el lienzo creado por defecto tiene dimensiones de 100×100 pixeles.</p>
+<p>El lienzo es creado y las im&#xE1;genes son dibujadas dentro de &#xE9;l a trav&#xE9;s de elementos de c&#xF3;digo llamados <em>funciones</em>.<a contenteditable="false" data-primary="functions" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="parameters" data-type="indexterm">&nbsp;</a>Las funciones son el bloque fundamental de un programa en p5.js. El comportamiento de una funci&#xF3;n est&#xE1; definido por sus <em> par&#xE1;metros</em>. Por ejemplo, casi todos los programas en p5.js tienen una funci&#xF3;n <code>createCanvas()</code> <a contenteditable="false" data-primary="createCanvas() function" data-type="indexterm">&nbsp;</a>que crea un lienzo para dibujar con un ancho y una altura espec&#xED;ficos. Si tu programa no tiene una funci&#xF3;n <code>createCanvas()</code>, el lienzo creado por defecto es de 100×100 pixeles.</p>
 
 <section data-type="sect2">
 <h2>Example 3-1: crea un lienzo</h2>
@@ -22,13 +22,13 @@ function setup() {
   createCanvas(800, 600);
 }</pre>
 
-<p>Ejecuta esta l&#xED;nea de c&#xF3;digo para ver el resultado. Prueba con valores distintos para explorar las posibilidades. Prueba con n&#xFA;meros muy peque&#xF1;os y con n&#xFA;meros m&#xE1;s grandes que las dimensiones de tu pantalla.</p>
+<p>Ejecuta este c&#xF3;digo para observar el resultado. Prueba con valores distintos para explorar las posibilidades. Prueba con n&#xFA;meros muy peque&#xF1;os y con n&#xFA;meros m&#xE1;s grandes que las dimensiones de tu pantalla.</p>
 </section>
 
 <section class="pagebreak-before" data-type="sect2">
 <h2>Ejemplo 3-2: dibuja un punto</h2>
 
-<p>Para definir <a contenteditable="false" data-primary="drawing" data-secondary="points" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="point() function" data-type="indexterm">&nbsp;</a>el color de un solo pixel dentro del lienzo, usamos la funci&#xF3;n <code>point()</code>. Tiene dos par&#xE1;metros que definen la posici&#xF3;n: la coordenada <em>x</em> seguida de la coordenada <em>y</em>. Para crear un peque&#xF1;o lienzo y un punto en el centro de &#xE9;l, la coordenada (240, 60), escribe:</p>
+<p>Para definir<a contenteditable="false" data-primary="drawing" data-secondary="points" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="point() function" data-type="indexterm">&nbsp;</a>el color de un solo pixel dentro del lienzo, usamos la funci&#xF3;n <code>point()</code>. Posee dos par&#xE1;metros que definen la posici&#xF3;n: la coordenada <em>x</em> seguida de la coordenada <em>y</em>. Para crear un peque&#xF1;o lienzo y un punto en el centro de &#xE9;l, la coordenada (240, 60), escribe:</p>
 
 <figure><img alt="Ex 03 02" src="images/gspj_03in02.png" />
 <figcaption/>
@@ -144,7 +144,7 @@ function draw() {
 }
 </pre>
 
-<p>p5.js no posee funciones separadas para dibujar cuadrados y c&#xED;rculos. Para hacer estas figuras, usa el mismo valor para los par&#xE1;metros de <em>ancho</em> and the <em>altura</em> en las funciones&nbsp;<code>ellipse()</code> y <code>rect()</code>.</p>
+<p>p5.js no posee funciones separadas para dibujar cuadrados y c&#xED;rculos. Para hacer estas figuras, usa el mismo valor para los par&#xE1;metros de <em>ancho</em> y <em>altura</em> en las funciones&nbsp;<code>ellipse()</code> y <code>rect()</code>.</p>
 </section>
 
 <section data-type="sect2" id="ex-3-7">
@@ -169,7 +169,7 @@ function draw() {
   arc(390, 60, 80, 80, QUARTER_PI, PI+QUARTER_PI);
 }</pre>
 
-<p>El primer y el segundo par&#xE1;metro definen la ubicaci&#xF3;n, mientras que el tercero y el cuarto definen el ancho y la altura. El quinto par&#xE1;metro define el &#xE1;ngulo inicial del arco y el sexto el &#xE1;ngulo final. Los &#xE1;ngulos est&#xE1;n definidos en radianes, en vez de grados. Los <em>radianes</em> son medidas de &#xE1;ngulo basadas en el valor de pi (3.14159). La <a data-type="xref" href="#Fig_03_02">Figura 3-2</a> muestra c&#xF3;mo ambos est&#xE1;n relacionados. Como se ve en este ejemplo, cuatro valores de radianes son usados tan frecuentemente que fueron agregados con nombres especiales como parte de p5.js. Los valores <code>PI</code>, <code>QUARTER_PI</code>, <code>HALF_PI</code> y <code>TWO_PI</code> pueden ser usados para reemplazar los valores en radianes de 180°, 45°, 90°, and 360°.</p>
+<p>El primer y el segundo par&#xE1;metro definen la ubicaci&#xF3;n, mientras que el tercero y el cuarto definen el ancho y la altura. El quinto par&#xE1;metro define el &#xE1;ngulo inicial del arco y el sexto el &#xE1;ngulo final. Los &#xE1;ngulos est&#xE1;n definidos en radianes, en vez de grados. Los <em>radianes</em> son medidas de &#xE1;ngulo basadas en el valor de pi (3.14159). La <a data-type="xref" href="#Fig_03_02">Figura 3-2</a> muestra c&#xF3;mo ambos est&#xE1;n relacionados. Como se ve en este ejemplo, cuatro valores de radianes son usados tan frecuentemente que fueron agregados con nombres especiales como parte de p5.js. Los valores <code>PI</code>, <code>QUARTER_PI</code>, <code>HALF_PI</code> y <code>TWO_PI</code> (por PI, un cuarto de PI, un medio de PI, y dos PI) pueden ser usados para reemplazar los valores en radianes de 180°, 45°, 90°, y 360°.</p>
 
 <figure id="Fig_03_02"><img alt="Fig 03 02" src="images/gspj_0302.png" />
 <figcaption><b>Figura 3-2. </b>Radianes y grados son dos formas distintas de medir un &#xE1;ngulo. Los grados en una circunferencia van entre 0 y 360, mientas que los radianes est&#xE1;n relacionados con pi, y van desde 0 a aproximadamente 6.28.</figcaption>
@@ -196,9 +196,9 @@ function draw() {
 </section>
 
 <section data-type="sect2">
-<h2>Ejemplo 3-9: usa angleMode</h2>
+<h2>Ejemplo 3-9: usa angleMode()</h2>
 
-<p>De forma alternativa,<a contenteditable="false" data-primary="angleMode() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="drawing" data-secondary="angleMode" data-type="indexterm">&nbsp;</a>puedes convertir tu bosquejo completo para que use grados en vez de radianes usando la funci&#xF3;n <code>angleMode()</code>. Esto hace que todas las funciones que aceptan o retornan &#xE1;ngulos usen grados o radianes seg&#xfa;n en el par&#xE1;metro de la funci&#xF3;n, en vez de que t&#xFA; tengas que convertirlos. El siguiente ejemplo es el mismo que <a data-type="xref" href="#ex-3-8">Ejemplo 3-8</a>, pero usa la funci&#xF3;n <code>angleMode(DEGREES)</code> para definir los valores en grados de inicio y final:</p>
+<p>De forma alternativa,<a contenteditable="false" data-primary="angleMode() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="drawing" data-secondary="angleMode" data-type="indexterm">&nbsp;</a>puedes convertir tu bosquejo completo para que use grados en vez de radianes usando la funci&#xF3;n <code>angleMode()</code>. Esto hace que todas las funciones que aceptan o retornan &#xE1;ngulos usen grados o radianes seg&#xfa;n en el par&#xE1;metro de la funci&#xF3;n, en vez de que t&#xFA; tengas que convertirlos. El siguiente ejemplo es el mismo que <a data-type="xref" href="#ex-3-8">Ejemplo 3-8</a>, pero usa la funci&#xF3;n <code>angleMode(DEGREES)</code> para definir los valores en grados de inicio y final (DEGREES significa grados):</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 function setup() {
@@ -280,7 +280,7 @@ function draw() {
 <section data-type="sect2" id="ex-3-12">
 <h2>Ejemplo 3-12: define el grosor del trazo</h2>
 
-<p>El valor por defecto del grosor del trazo es de un pixel, pero esto puede ser cambiado con la funci&#xF3;n <code>strokeWeight()</code>. El &#xfa;nico par&#xE1;metro<a contenteditable="false" data-primary="strokeWeight() function" data-type="indexterm" id="swf3">&nbsp;</a> de <code>strokeWeight()</code> define el ancho de las l&#xED;neas dibujadas:</p>
+<p>El valor por defecto del grosor del trazo es de un pixel, pero esto puede ser cambiado con la funci&#xF3;n <code>strokeWeight()</code>. El &#xfa;nico par&#xE1;metro<a contenteditable="false" data-primary="strokeWeight() function" data-type="indexterm" id="swf3">&nbsp;</a> de <code>strokeWeight()</code> define el grosor de las l&#xED;neas dibujadas:</p>
 
 <figure><img alt="Ex 03 12" src="images/gspj_03in10.png" />
 <figcaption/>
@@ -305,7 +305,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 3-13: define los atributos del trazo</h2>
 
-<p>La funci&#xF3;n <code>strokeJoin()</code><a contenteditable="false" data-primary="shapes" data-secondary="properties" data-tertiary="stroke attributes" data-type="indexterm" id="s3psa"></a><a contenteditable="false" data-primary="strokeJoin() function" data-type="indexterm" id="sjf3"></a> modifica la forma en que las l&#xED;neas se unen (y c&#xF3;mo se ven las esquinas), y la funci&#xF3;n <code>strokeCap()</code><a contenteditable="false" data-primary="strokeCap() function" data-type="indexterm">&nbsp;</a> cambia c&#xF3;mo las l&#xED;neas son dibujadas en su inicio y final:</p>
+<p>La funci&#xF3;n <code>strokeJoin()</code><a contenteditable="false" data-primary="shapes" data-secondary="properties" data-tertiary="stroke attributes" data-type="indexterm" id="s3psa"></a><a contenteditable="false" data-primary="strokeJoin() function" data-type="indexterm" id="sjf3"></a> modifica la forma en que las l&#xED;neas se unen (y c&#xF3;mo se ven las esquinas), y la funci&#xF3;n <code>strokeCap()</code><a contenteditable="false" data-primary="strokeCap() function" data-type="indexterm">&nbsp;</a>cambia c&#xF3;mo las l&#xED;neas son dibujadas en su inicio y final:</p>
 
 <figure><img alt="Ex 03 13" src="images/gspj_03in11.png" />
 <figcaption/>
@@ -330,7 +330,7 @@ function draw() {
 }</pre>
 
 <p>La posici&#xF3;n de figuras como <code>rect()</code> y <code>ellipse()</code>&nbsp;es controlada por las funciones <code>rectMode()</code> y <code>ellipseMode()</code><a contenteditable="false" data-primary="rectMode() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="ellipseMode() function" data-type="indexterm">&nbsp;</a>. Revisa la <em>Referencia de p5.js</em> para ver ejemplos de c&#xF3;mo posicionar rect&#xE1;ngulos seg&#xFA;n su centro (en vez de su esquina superior izquierda), o de c&#xF3;mo dibujar elipses desde su esquina superior izquierda como los rect&#xE1;ngulos.</p>
-    
+
 <p>Cuando se define cualquiera de estos atributos, todas las figuras dibujadas posteriormente son afectadas. Por ejemplo, en <a data-type="xref" href="#ex-3-12">Ejemplo 3-12</a>, observa c&#xF3;mo el segundo y tercer c&#xED;rculo tienen el mismo grosor de trazo, a pesar de que el grosor es definido solo una vez antes de que ambos sean dibujados.</p>
 
 <p>Observa que la l&#xED;nea de c&#xF3;digo<a contenteditable="false" data-primary="strokeWeight() function" data-startref="swf3" data-type="indexterm">&nbsp;</a> <code>strokeWeight(12)</code> aparece dentro de <code>setup()</code> en vez de <code>draw()</code>. Esto ocurre porque no cambia durante la duraci&#xF3;n de nuestro programa, as&#xED; que basta con definirlo una &#xfa;nica una vez en <code>setup()</code>. Esto es mayormente por organizaci&#xF3;n; poner la l&#xED;nea en <code>draw()</code> tendr&#xED;a <a contenteditable="false" data-primary="strokeJoin() function" data-startref="sjf3" data-type="indexterm">&nbsp;</a>el mismo<a contenteditable="false" data-primary="shapes" data-secondary="properties" data-startref="s3p" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="drawing" data-secondary="shapes" data-startref="d3ssp" data-tertiary="properties" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="shapes" data-secondary="properties" data-startref="s3psa" data-tertiary="stroke attributes" data-type="indexterm">&nbsp;</a>efecto visual.</p>
@@ -487,9 +487,9 @@ function draw() {
 </section>
 
 <section data-type="sect2">
-<h2>Example 3-19: cierra la brecha</h2>
+<h2>Example 3-19: cierra la flecha</h2>
 
-<p>Cuando ejecutas <a data-type="xref" href="#ex-3-18">Ejemplo 3-18</a>, ver&#xE1;s <a contenteditable="false" data-primary="shapes" data-secondary="closing gap" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="drawing" data-secondary="closing gaps" data-type="indexterm">&nbsp;</a>que el primer y el &#xFA;ltimo punto no est&#xE1;n conectados. Para hacer esto, a&#xF1;ade la palabra <code>CLOSE</code> como par&#xE1;metro a la funci&#xF3;n <code>endShape()</code>, &nbsp;as&#xED;:</p>
+<p>Cuando ejecutas el <a data-type="xref" href="#ex-3-18">Ejemplo 3-18</a>, ver&#xE1;s<a contenteditable="false" data-primary="shapes" data-secondary="closing gap" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="drawing" data-secondary="closing gaps" data-type="indexterm">&nbsp;</a>que el primer y el &#xFA;ltimo punto no est&#xE1;n conectados. Para hacer esto, a&#xF1;ade la palabra <code>CLOSE</code> como par&#xE1;metro a la funci&#xF3;n <code>endShape()</code>, &nbsp;as&#xED;:</p>
 
 <figure><img alt="Ex 03 19" src="images/gspj_03in17.png" />
 <figcaption/>
@@ -517,7 +517,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 3-20: crea criaturas</h2>
 
-<p>El poder <a contenteditable="false" data-primary="creatures, drawing" data-type="indexterm">&nbsp;</a>de definir figuras<a contenteditable="false" data-primary="vertex() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="drawing" data-secondary="creatures" data-type="indexterm" id="d3creat">&nbsp;</a>con <code>vertex()</code> es la posibilidad de construir figuras con bordes complejos. p5.js puede dibujar miles y miles de l&#xED;neas al mismo tiempo para llenar la pantalla con figuras fant&#xE1;sticas que provienen de tu imaginaci&#xF3;n. Un ejemplo modesto pero m&#xE1;s complejo es presentado a continuaci&#xF3;n:</p>
+<p>El poder<a contenteditable="false" data-primary="creatures, drawing" data-type="indexterm">&nbsp;</a>de definir figuras<a contenteditable="false" data-primary="vertex() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="drawing" data-secondary="creatures" data-type="indexterm" id="d3creat">&nbsp;</a>con <code>vertex()</code> es la posibilidad de construir figuras con bordes complejos. p5.js puede dibujar miles y miles de l&#xED;neas al mismo tiempo para llenar la pantalla con figuras fant&#xE1;sticas que provienen de tu imaginaci&#xF3;n. Un ejemplo modesto pero m&#xE1;s complejo es presentado a continuaci&#xF3;n:</p>
 
 <figure><img alt="Ex 03 20" src="images/gspj_03in18.png" />
 <figcaption/>
@@ -568,7 +568,7 @@ function draw() {
 <section data-type="sect1">
 <h1>Comentarios</h1>
 
-<p>Los <a contenteditable="false" data-primary="// (double slashes) for code comments" data-type="indexterm" id="ds4fcc">&nbsp;</a>ejemplos en este cap&#xED;tulo usan doble barra (//) al final de una l&#xED;nea para a&#xF1;adir comentarios al c&#xF3;digo. <a contenteditable="false" data-primary="comments" data-type="indexterm" id="ca3">&nbsp;</a>Los <em>comentarios</em> son secciones de los programas que son ignoradas cuando el programa se ejecuta. Son &#xFA;tiles para hacerte notas a ti mismo que expliquen lo que est&#xE1; pasando en el c&#xF3;digo. Si otras personas est&#xE1;n leyendo tu c&#xF3;digo, los comentarios son especialmente importantes para ayudarles a entender tu proceso mental.</p>
+<p>Los <a contenteditable="false" data-primary="// (double slashes) for code comments" data-type="indexterm" id="ds4fcc">&nbsp;</a>ejemplos en este cap&#xED;tulo usan doble barra (//) al comienzo de una l&#xED;nea para a&#xF1;adir comentarios al c&#xF3;digo. <a contenteditable="false" data-primary="comments" data-type="indexterm" id="ca3">&nbsp;</a>Los <em>comentarios</em> son secciones de los programas que son ignoradas cuando el programa se ejecuta. Son &#xFA;tiles para hacerte notas a ti mismo que expliquen lo que est&#xE1; pasando en el c&#xF3;digo. Si otras personas est&#xE1;n leyendo tu c&#xF3;digo, los comentarios son especialmente importantes para ayudarles a entender tu proceso mental.</p>
 
 <p>Los comentarios son tambi&#xE9;n especialmente &#xFA;tiles para un n&#xFA;mero de opciones distintas, como tratar de escoger el color correcto. Por ejemplo, podr&#xED;amos estar tratando de encontrar el rojo preciso que queremos para una elipse:</p>
 
@@ -597,7 +597,7 @@ function draw() {
   ellipse(100, 100, 80, 80);
 }</pre>
 
-<p>Poner <code>//</code> al principio de una l&#xED;nea la anula temporalmente. Tambi&#xE9;n puedes quitar <code>//</code> y escribirlo al inicio de otra l&#xED;nea si quieres probarlo de nuevo:</p>
+<p>Poner <code>//</code> al principio de una l&#xED;nea la anula temporalmente. Tambi&#xE9;n puedes quitar <code>//</code> y escribirlo al inicio de otra l&#xED;nea si quieres probarla de nuevo:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 function setup() {
@@ -621,7 +621,7 @@ function draw() {
 <figcaption/>
 </figure>
 
-<p>Este es <a contenteditable="false" data-primary="robot programs (examples)" data-secondary="draw" data-type="indexterm" id="rp3draw">&nbsp;</a>P5, el robot de p5.js. En este libro existen 10 diferentes programas para dibujarlo y animarlo  - cada uno explora una idea de programaci&#xF3;n diferente. El dise&#xF1;o de P5 est&#xE1; inspirado en Sputnik I (1957), Shakey del Stanford Research Institute (1966–1972), el dron luchador en <em>Dune</em> (1984) de  David Lynch y en HAL 9000 de <em>2001: A Space Odyssey</em> (1968), entre otros robots favoritos.
+<p>Este es<a contenteditable="false" data-primary="robot programs (examples)" data-secondary="draw" data-type="indexterm" id="rp3draw">&nbsp;</a>P5, el robot de p5.js. En este libro existen 10 diferentes programas para dibujarlo y animarlo  - cada uno explora una idea de programaci&#xF3;n diferente. El dise&#xF1;o de P5 est&#xE1; inspirado en Sputnik I (1957), Shakey del Stanford Research Institute (1966–1972), el dron luchador en <em>Dune</em> (1984) de  David Lynch y en HAL 9000 de <em>2001: A Space Odyssey</em> (1968), entre otros robots favoritos.
 
 <p>El primer programa de robot usa las funciones de dibujo introducidas anteriormente en este cap&#xED;tulo. Los par&#xE1;metros de las funciones <code>fill()</code> y <code>stroke()</code> definen los valores de la escala de grises. Las funciones <code>line()</code>, <code>ellipse()</code> y <code>rect()</code> definen las figuras que crean el cuello, las antenas, el cuerpo y la cabeza del robot. Para familiarizarte mejor con las funciones, ejecuta el programa y cambia los valores para redise&#xF1;ar el robot:</p>
 
