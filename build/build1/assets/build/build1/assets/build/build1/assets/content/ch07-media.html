@@ -1,0 +1,522 @@
+<section data-type="chapter" id="media" xmlns="http://www.w3.org/1999/xhtml">
+<h1 class="chapterhead">Medios</h1>
+
+<p class="lede">p5.js es <a contenteditable="false" data-primary="media" data-type="indexterm" id="m7">&nbsp;</a>capaz de dibujar m&#xE1;s que simplemente l&#xED;neas y figuras. Es tiempo de aprender c&#xF3;mo crear im&#xE1;genes y texto en nuestros programas para extender las posibilidades visuales a fotograf&#xED;a, diagramas detallados y diversos tipos de letra.</p>
+
+<p>Antes de que hagamos esto, primero tenemos que hablar un poco sobre servidores. Hasta este punto, hemos estado viendo el archivo <em>index.html</em> directamente en el navegador. Esto funciona bien para ejecutar animaciones simples. Sin embargo, si quieres hacer cosas como cargar una imagen externa en tu bosquejo, tu navegador no lo va a permitir. Si revisas la consola, te encontrar&#xE1;s con un error que contiene el t&#xe9;rmino<a contenteditable="false" data-primary="cross-origin error" data-type="indexterm">&nbsp;</a><em>cross-origin</em> (origen cruzado). Para cargar archivos externos, tienes que correr un <em>servidor</em>. Un<a contenteditable="false" data-primary="servers, running" data-type="indexterm">&nbsp;</a><em>servidor</em> responde cuando escribes una URL en la barra de direcciones, y te <em>sirve</em>&nbsp;los archivos correspondientes para que los puedas visualizar.</p>
+
+<p>Existen diferentes maneras de correr servidores. Visita <em class="hyperlink"><a href="https://github.com/processing/p5.js/wiki/Servidor-local">https://github.com/processing/p5.js/wiki/Servidor-local</a></em>&nbsp;para ver las instrucciones de c&#xF3;mo correr un servidor en sistemas Mac OS X, Windows y Linux. Una vez que lo tengas configurado, &#xA1;est&#xE1;s listo para cargar medios!</p>
+
+<p>Hemos <a contenteditable="false" data-primary="media" data-secondary="downloading online example files" data-type="indexterm" id="m7doef">&nbsp;</a>subido algunos archivos para que los uses en los ejemplos de este cap&#xED;tulo: <em class="hyperlink"><a href="http://p5js.org/learn/books/media.zip">http://p5js.org/learn/books/media.zip</a></em>.</p>
+
+<p>Descarga este archivo, descompr&#xED;melo en tu escritorio (o en otro lugar conveniente) y anota su ubicaci&#xF3;n.</p>
+
+<div data-type="note">
+<p>Para &nbsp;descomprimir en Mac OS X, basta con hacer doble click en el archivo y se crear&#xE1; un directorio llamado <em>media</em>. En Windows, haz doble click en el archivo <em>media.zip</em>, lo que abrir&#xE1; una nueva ventana. En esa ventana, arrastra el directorio <em>media</em> al escritorio.</p>
+</div>
+
+<p>Crea un nuevo bosquejo, y copia el archivo <em>lunar.jpg</em> del directorio <em>media</em> que acabas de descomprimir, en el directorio de tu <em>bosquejo</em>.</p>
+
+<div data-type="note">
+<p>En Windows y Mac OS X, &nbsp;las extensiones de los archivos est&#xE1;n escondidas por defecto. Es una buena idea cambiar esta opci&#xF3;n para que siempre veas el nombre completo de tus archivos. En Mac OS X, selecciona Preferencias en el  men&#xFA; principal (Finder), y luego aseg&#xFA;rate que "Mostrar la extensi&#xF3;n completa" est&#xE9; activada en la pesta&#xF1;a de opciones avanzadas. En Windows, busca las Opciones de Directorio, y selecciona la opci&#xF3;n ah&#xED;.<a contenteditable="false" data-primary="media" data-secondary="downloading online example files" data-startref="m7doef" data-type="indexterm">&nbsp;</a></p>
+</div>
+
+<section data-type="sect1">
+<h1>Im&#xE1;genes</h1>
+
+<p>Existen<a contenteditable="false" data-primary="images" data-type="indexterm" id="i7">&nbsp;</a><a contenteditable="false" data-primary="media" data-secondary="images" data-seealso="images" data-type="indexterm" id="m7i">&nbsp;</a>tres pasos que tienes que realizar antes de que puedas dibujar una imagen en la pantalla:</p>
+
+<ol>
+	<li>
+	<p>A&#xF1;ade la imagen al directorio del bosquejo.</p>
+	</li>
+	<li>
+	<p>Crea una variable para almacenar la imagen.</p>
+	</li>
+	<li>
+	<p>Carga la imagen en la variable con <code>loadImage()</code>.</p>
+	</li>
+</ol>
+
+<section data-type="sect2" id="ex7-1_loadimage">
+<h2>Ejemplo 7-1: carga una imagen</h2>
+
+<p>Para<a contenteditable="false" data-primary="images" data-secondary="loading" data-type="indexterm" id="i7l">&nbsp;</a>cargar una imagen, introduciremos una nueva funci&#xF3;n llamada<a contenteditable="false" data-primary="preload() function" data-type="indexterm">&nbsp;</a> <code>preload()</code>. La funci&#xF3;n <code>preload()</code> se ejecuta una vez y antes de que la funci&#xF3;n <code>setup()</code> se ejecute. Generalmente deber&#xED;as cargar tus imagenes y otros archivos en <code>preload()</code> para asegurarte que est&#xE9;n completamente cargadas antes de que tu programa empiece a correr. Discutiremos esto en mayor profundidad m&#xE1;s adelante en el cap&#xED;tulo.</p>
+
+<p>Despu&#xE9;s de que los tres pasos son completados, puedes dibujar la imagen en la pantalla con la funci&#xF3;n <a contenteditable="false" data-primary="image() function" data-type="indexterm">&nbsp;</a><code>image()</code>. El primer par&#xE1;metro de <code>image()</code> especifica la imagen a dibujar, el segundo y tercero son las coordenadas <em>x</em> e <em>y</em>:</p>
+
+<figure><img alt="Ex 07 01" src="images/gspj_07in02.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting" id="ex-7-1">
+var img;
+
+function preload() {
+  img = loadImage("lunar.jpg");
+}
+
+function setup() {
+  createCanvas(480, 120);
+}
+
+function draw() {
+  image(img, 0, 0);
+}</pre>
+
+<p>Los par&#xE1;metros opcionales cuarto y quinto determinan el ancho y altura de la imagen a dibujar. Si no se usan los par&#xE1;metros cuarto y quinto, la imagen es dibujada en su tama&#xF1;o original.</p>
+
+<p>Los siguientes ejemplos muestran c&#xF3;mo trabajar con m&#xE1;s de una imagen en el mismo programa y c&#xF3;mo escalar una imagen.</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 7-2: cargar m&#xE1;s im&#xE1;genes</h2>
+
+<p>Para este ejemplo, necesitar&#xE1;s agregar &nbsp;el archivo <em>capsule.jpg</em> (que est&#xE1; dentro del directorio <em>media</em> descargaste) al directorio de tu<a contenteditable="false" data-primary="sketch folder" data-type="indexterm" id="sf7">&nbsp;</a><em>bosquejo</em>:</p>
+
+<figure><img alt="Ex 07 02" src="images/gspj_07in03.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var img1;
+var img2;
+
+function preload() {
+  img1 = loadImage("lunar.jpg");
+  img2 = loadImage("capsule.jpg");
+}
+
+function setup() {
+  createCanvas(480, 120);
+}
+
+function draw() {
+  image(img1, -120, 0);
+  image(img1, 130, 0, 240, 120);
+  image(img2, 300, 0, 240, 120);
+}</pre>
+<a contenteditable="false" data-primary="images" data-secondary="loading" data-startref="i7l" data-type="indexterm">&nbsp;</a></section>
+
+<section data-type="sect2">
+<h2>Ejemplo 7-3: mover las im&#xE1;genes con el rat&#xF3;n</h2>
+
+<p>Cuando los valores <code>mouseX</code> y <code>mouseY</code> son usados como los par&#xE1;metros cuarto y quinto de la funci&#xF3;n <code>image()</code>, el tama&#xF1;o de la imagen cambia con el movimiento del rat&#xF3;n:</p>
+
+<figure><img alt="Ex 07 03" src="images/gspj_07in04.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var img;
+
+function preload() {
+  img = loadImage("lunar.jpg");
+}
+
+function setup() {
+  createCanvas(480, 120);
+}
+
+function draw() {
+  background(0);
+  image(img, 0, 0, mouseX * 2, mouseY * 2);
+}</pre>
+
+<div data-type="note">
+<p>Cuando una imagen es mostrada m&#xE1;s grande o peque&#xF1;a que su tama&#xF1;o original, puede distorsionarse. Ten cuidado al preparar tus im&#xE1;genes en los tama&#xF1;os en que ser&#xE1;n usadas. Cuando el tama&#xF1;o de la imagen es modificado con la funci&#xF3;n <code>image()</code>, el archivo original en tu directorio del <em>bosquejo</em> no cambia.</p>
+</div>
+
+<p>p5.js puede cargar y mostrar im&#xE1;genes raster en los formatos<a contenteditable="false" data-primary="images" data-secondary="formats" data-type="indexterm">&nbsp;</a>JPEG, PNG, <a contenteditable="false" data-primary="JPEG image format" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="PNG image format" data-type="indexterm"></a><a contenteditable="false" data-primary="GIF image format" data-type="indexterm"></a>y GIF, adem&#xE1;s de im&#xE1;genes vectoriales<a contenteditable="false" data-primary="SVG image format" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="vector images" data-type="indexterm">&nbsp;</a>formato SVG. Puedes convertir im&#xE1;genes a los formatos JPEG, PNG, GIF y SVG usando programas como GIMP, Photoshop e Illustrator. La mayor parte de las c&#xE1;maras digitales graban sus im&#xE1;genes en el formato JPEG, pero usualmente necesitan ser reducidas en tama&#xF1;o para ser usadas con p5.js. Una c&#xE1;mara digital t&#xED;pica crea una imagen que es varias veces m&#xE1;s grande que el &#xE1;rea de dibujo de gran parte de los bosquejos creados en p5.js.&nbsp;<a contenteditable="false" data-primary="images" data-secondary="resizing" data-type="indexterm">&nbsp;</a>Cambiar el tama&#xF1;o de estas im&#xE1;genes antes de que sean a&#xF1;adidas al directorio de <em>bosquejo</em> hace que los bosquejos carguen m&#xE1;s r&#xE1;pido,&nbsp;corran m&#xE1;s eficientemente y<a contenteditable="false" data-primary="sketch folder" data-type="indexterm">&nbsp;</a>ahorra espacio en el disco duro.</p>
+
+<p>Las im&#xE1;genes GIF, PNG y SVG soportan <a contenteditable="false" data-primary="images" data-secondary="transparency" data-type="indexterm" id="i7t">&nbsp;</a>transparencia, lo que significa que los pixeles pueden ser invisibles o parcialmente visibles (recuerda la discusi&#xF3;n de <code>color()</code> y valores alpha en <a data-type="xref" href="#ex-3-17">Ejemplo 3-17</a>). Las im&#xE1;genes GIF tienen transparencia de 1 bit, lo que significa que los pixeles son totalmente opacos o totalmente transparentes. Las im&#xE1;genes PNG soportan transparencia de 8 bits, lo que significa que cada pixel tiene una variable de opacidad. Los siguientes ejemplos usan&nbsp;<em>clouds.gif</em> y <em>clouds.png</em>&nbsp;para mostrar las diferencias entre los formatos de archivo.&nbsp; Las im&#xE1;genes est&#xE1;n dentro del directorio <em>media</em> que has descargado anteriormente. Aseg&#xFA;rate de incluirlas al directorio de tu bosquejo antes de probar cada ejemplo.</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 7-4: transparencia con GIF</h2>
+
+<figure><img alt="Ex 07 04" src="images/gspj_07in05.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var img;
+
+function preload() {
+  img = loadImage("clouds.gif");
+}
+
+function setup() {
+  createCanvas(480, 120);
+}
+function draw() {
+  background(204);
+  image(img, 0, 0);
+  image(img, 0, mouseY * -1);
+}</pre>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 7-5: transparencia con PNG</h2>
+<a contenteditable="false" data-primary="PNG image format" data-type="indexterm">&nbsp;</a>
+
+<figure><img alt="Ex 07 05" src="images/gspj_07in06.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var img;
+
+function preload() {
+  img = loadImage("clouds.png");
+}
+
+function setup() {
+  createCanvas(480, 120);
+}
+
+function draw() {
+  background(204);
+  image(img, 0, 0);
+  image(img, 0, mouseY * -1);
+}</pre>
+<a contenteditable="false" data-primary="images" data-secondary="transparency" data-startref="i7t" data-type="indexterm">&nbsp;</a></section>
+
+<section data-type="sect2">
+<h2>Ejemplo 7-6: mostrando una imagen SVG</h2>
+<a contenteditable="false" data-primary="SVG image format" data-type="indexterm">&nbsp;</a>
+
+<figure><img alt="Ex 07 06" src="images/gspj_07in07.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var img;
+
+function preload() {
+  img = loadImage("network.svg");
+}
+
+function setup() {
+  createCanvas(480, 120);
+}
+
+function draw() {
+  background(0);
+  image(img, 0, 0);
+  image(img, mouseX, 0);
+}</pre>
+
+<div data-type="note">
+<p>Recuerda incluir la extensi&#xF3;n apropiada del archivo (<em>.gif</em>, <em>.jpg</em>, <em>.png</em>, o <em>.svg</em>) cuando cargas la imagen. Tambi&#xE9;n aseg&#xFA;rate de que el nombre de la imagen est&#xE9; escrito exactamente como aparece en el archivo, incluyendo<a contenteditable="false" data-primary="media" data-secondary="images" data-seealso="images" data-startref="m7i" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="images" data-startref="i7" data-type="indexterm">&nbsp;</a><span class="keep-together">may&#xFA;sculas y min&#xFA;sculas</span>.</p>
+</div>
+</section>
+</section>
+
+
+<section data-type="sect1">
+<h1>Asincronicidad</h1>
+
+<p>&#xbf;Por qu&#xE9;<a contenteditable="false" data-primary="media" data-secondary="and asynchronicity" data-secondary-sortas="asynchronicity" data-type="indexterm" id="m7a">&nbsp;</a><a contenteditable="false" data-primary="asynchronicity" data-type="indexterm" id="async7">&nbsp;</a>necesitamos cargar las im&#xE1;genes en<a contenteditable="false" data-primary="preload() function" data-type="indexterm">&nbsp;</a> <code>preload()</code>? &#xBF;Por qu&#xE9; no usamos<a contenteditable="false" data-primary="setup() function" data-type="indexterm">&nbsp;</a> <code>setup()</code>? Hasta este punto, hemos estado asumiendo que nuestros programas corren desde la parte superior a la inferior, con cada l&#xED;nea de c&#xF3;digo siendo ejecutada completamente antes de avanzar a la siguiente. Aunque esto es cierto generalmente, en el caso de algunas funciones como cargar im&#xE1;genes, tu navegador empezar&#xE1; el proceso de cargar la imagen, pero saltar&#xE1; a la siguiente l&#xED;nea antes de que la imagen haya terminado de cargarse. Esto recibe el nombre de <em>asincronicidad</em>, o de <em>funci&#xF3;n as&#xED;ncrona</em>. Esto es un poco inesperado al principio, pero permite que las p&#xE1;ginas carguen y corran m&#xE1;s r&#xE1;pido en la web.</p>
+
+<p>Para ver esto con mayor claridad, considera el siguiente ejemplo. Es id&#xE9;ntico a <a data-type="xref" href="#ex7-1_loadimage">Ejemplo 7-1</a>, excepto que usamos<a contenteditable="false" data-primary="loadImage() function" data-type="indexterm">&nbsp;</a> <code>loadImage()</code> dentro de <code>setup()</code> en vez de <code>preload()</code>.</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 7-7:demonstrando la asincronicidad</h2>
+
+<figure><img alt="Ex 07 07" src="images/gspj_07in08.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var img;
+
+function setup() {
+  createCanvas(480, 120);
+  img = loadImage("lunar.jpg");
+  noLoop();
+}
+
+function draw() {
+  background(204);
+  image(img, 0, 0);
+}</pre>
+
+<p>Cuando ejecutes este programa, te dar&#xE1;s cuenta que el lienzo para pintar est&#xE1; gris y que la imagen no est&#xE1; siendo mostrada. El bosquejo primero ejecuta la funci&#xF3;n <code>setup()</code>,  y luego ejecuta la funci&#xF3;n <code>draw()</code>. En la l&#xED;nea de <code>loadImage()</code> empieza a cargar la imagen, pero contin&#xFA;a con el resto de <code>setup()</code> y con <code>draw()</code>  antes de que la imagen est&#xE9; completamente cargada.&nbsp;La funci&#xF3;n <code>image()</code> no es capaz de dibujar una imagen que todav&#xED;a no est&#xE9; cargada.</p>
+
+<p>Para ayudar con este problema, p5.js posee la funci&#xF3;n<a contenteditable="false" data-primary="preload() function" data-type="indexterm">&nbsp;</a> <code>preload()</code>. A diferencia de <code>setup()</code>, <code>preload()</code>&nbsp;fuerza al programa a esperar hasta que todo est&#xE9; cargado antes de continuar. Es mejor hacer las llamadas para cargar archivos dentro de <code>preload()</code>, y hacer toda la configuraci&#xF3;n en <code>setup()</code>.</p>
+
+<p>De forma alternativa, en vez de usar <code>preload()</code>,  puedes usar algo llamado <em>funci&#xF3;n callback</em> (retrollamada). Una <a contenteditable="false" data-primary="callback function" data-type="indexterm">&nbsp;</a>funci&#xF3;n callback es una funci&#xF3;n que se pasa como argumento a una segunda funci&#xF3;n, y que se ejecuta despu&#xe9;s de que la segunda funcion ha terminado. El siguiente ejemplo ilustra esta t&#xe9;cnica.</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 7-8: cargar con callback</h2>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  loadImage("lunar.jpg", drawImage);
+  noLoop();
+}
+
+function draw() {
+  background(200);
+}
+
+function drawImage(img) {
+  image(img, 0, 0);
+}</pre>
+
+<p>En este ejemplo, a&#xF1;adimos un segundo argumento a <code>loadImage()</code>, que es la funci&#xF3;n que queremos que se ejecute despu&#xE9;s de que la carga finaliza. Una vez que la imagen ha cargado, la funci&#xF3;n <code>drawImage()</code> es llamada autom&#xE1;ticamente, con un argumento, la imagen que ha sido reci&#xe9;n cargada.</p>
+
+<p>No hay necesidad de crear una variable global para guardar la imagen. La imagen es pasada directamente a la funci&#xF3;n callback, con el nombre del par&#xE1;metro escogido en la<a contenteditable="false" data-primary="media" data-secondary="and asynchronicity" data-secondary-sortas="asynchronicity" data-startref="m7a" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="asynchronicity" data-startref="async7" data-type="indexterm">&nbsp;</a>definici&#xF3;n de la funci&#xF3;n.</p>
+</section>
+</section>
+
+<section data-type="sect1" id="fonts">
+<h1>Tipos de letra</h1>
+
+<p>p5.js puede<a contenteditable="false" data-primary="media" data-secondary="fonts" data-seealso="fonts" data-type="indexterm" id="m7f">&nbsp;</a><a contenteditable="false" data-primary="fonts" data-type="indexterm" id="f7">&nbsp;</a>mostrar texto en fuentes distintas que la por defecto. Puedes usar cualquier fuente que est&#xE9; en tu computador (son llamadas <a contenteditable="false" data-primary="system fonts" data-type="indexterm">&nbsp;</a><em>fuentes del sistema</em>). Ten en cuenta que si est&#xE1;s compartiendo esto en la web, otra gente necesitar&#xE1; a&#xF1;adir la fuente de sistema para poder ver el texto en la fuente que escogiste. Existe un n&#xFA;mero de fuentes que la mayor parte de los computadores y dispositivos tienen; estas incluyen "Arial," "Courier," "Courier New," "Georgia," "Helvetica," "Palatino," "Times New Roman," "Trebuchet MS," y "Verdana."</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 7-9: dibujando con tipos de letras</h2>
+
+<p>Puedes usar la funci&#xF3;n<a contenteditable="false" data-primary="textFont() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="fonts" data-secondary="drawing with" data-type="indexterm">&nbsp;</a><code>textFont()</code> para configurar la fuente actual. Puedes dibujar letras en la pantalla con la funci&#xF3;n<a contenteditable="false" data-primary="text() function" data-type="indexterm">&nbsp;</a> <code>text()</code> y puedes cambiar el tama&#xF1;o<a contenteditable="false" data-primary="textSize() function" data-type="indexterm">&nbsp;</a>con la funci&#xF3;n <code>textSize()</code>:</p>
+
+<figure><img alt="Ex 07 09" src="images/gspj_07in09.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  textFont("Arial");
+}
+
+function draw() {
+  background(102);
+  textSize(32);
+  text("one small step for man...", 25, 60);
+  textSize(16);
+  text("one small step for man...", 27, 90);
+}</pre>
+
+<p>El primer par&#xE1;metro de <code>text()</code> son los caracteres a ser dibujados en la pantalla. (Observa que los caracteres est&#xE1;n entre comillas). Los par&#xE1;metros segundo y tercero definen la ubicaci&#xF3;n horizontal y vertical. La ubicaci&#xF3;n es relativa a la base del texto (ver <a data-type="xref" href="#Fig_07_01">Figura 7-1</a>).</p>
+
+<figure id="Fig_07_01"><img alt="Fig 07 01" src="images/gspj_0701.png" />
+<figcaption><b>Figura 7-1. </b>Coordenadas de la tipograf&#xed;a</figcaption>
+</figure>
+</section>
+
+<section data-type="sect2" id="example-7-10-use-a-w">
+<h2>Ejemplo 7-10: usar una fuente de la web</h2>
+
+<p>Si<a contenteditable="false" data-primary="webfonts" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="fonts" data-secondary="webfonts" data-type="indexterm">&nbsp;</a>no quieres estar limitado a esta peque&#xF1;a lista de fuentes, puedes usar una de la web. Dos sitios web que son buenos recursos para encontrar fuentes web con licencias abiertas para usar con p5.js son <a href="http://www.google.com/fonts">GoogleFonts</a>&nbsp;y la&nbsp;<a href="http://openfontlibrary.org">Open Font Library</a>.</p>
+
+<p>Para usar una webfont en tu programa, deber&#xE1;s referenciarla en tu archivo <em>index.html</em>. Cuando escoges una fuente de cualquiera de estas bibliotecas mencionadas, te mostar&#xE1; una l&#xED;nea de c&#xF3;digo para a&#xF1;adir a tu archivo HTML. Cuando copias y pegas este c&#xF3;digo en cualquier parte dentro de la secci&#xF3;n <code>&lt;head&gt;</code> de tu HTML, tu archivo se ver&#xE1; parecido a esto:</p>
+
+<pre data-code-language="html" data-type="programlisting">
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type="text/javascript" src="../lib/p5.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="sketch.js"&gt;&lt;/script&gt;
+&lt;link href="http://fonts.googleapis.com/css?family=Source+Code<br />+Pro" rel="stylesheet" type="text/css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;&lt;/pre&gt;</pre>
+
+<p>Despu&#xe9;s de que hayas enlazado la fuente, puedes usarla con <code>textFont()</code> igual que las fuentes de sistema:</p>
+
+<figure><img alt="Ex 07 10" src="images/gspj_07in10.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  textFont("Source Code Pro");
+}
+
+function draw() {
+  background(102);
+  textSize(28);
+  text("one small step for man...", 25, 60);
+  textSize(16);
+  text("one small step for man...", 27, 90);
+}</pre>
+</section>
+
+<section data-type="sect2" id="example-7-11-load-a">
+<h2>Ejemplo 7-11: cargar una fuente personalizada</h2>
+
+<p>p5.js tambi&#xe9;n puede<a contenteditable="false" data-primary="fonts" data-secondary="loading custom" data-type="indexterm">&nbsp;</a>mostrar texto usando tipograf&#xed;as<a contenteditable="false" data-primary="TrueType (.ttf) fonts" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="OpenType (.otf) fonts" data-type="indexterm">&nbsp;</a>TrueType (<em>.ttf</em>) y OpenType (<em>.otf</em>). En esta introducci&#xf3;n, cargaremos la fuente &nbsp;<em>SourceCodePro-Regular.ttf</em>&nbsp;TrueType (incluida en la carpeta <em>media</em> que descargaste) desde la carpeta <em>sketch</em>.</p>
+
+<p>Estamos usando el mismo tipo de letra que usamos en el&nbsp;<a data-type="xref" href="#example-7-10-use-a-w">Ejemplo 7-10</a>, pero ahora el archivo est&#xe1; ubicado en la carpeta <em>sketch</em> en vez de ser cargado desde la web. El resultado del siguiente programa deber&#xed;a verse igual que el <a data-type="xref" href="#example-7-10-use-a-w">Ejemplo 7-10</a>. Aqu&#xed; est&#xe1;n los pasos que debes seguir para incluir una tipograf&#xed;a personalizada en tu programa:</p>
+
+<ol>
+	<li>
+	<p>Agrega la tipograf&#xed;a a tu carpeta del bosquejo.</p>
+	</li>
+	<li>
+	<p>Crea una variable para almacenar la tipograf&#xed;a.</p>
+	</li>
+	<li>
+	<p>Carga la tipograf&#xed;a en la variable con <code>loadFont()</code>.</p>
+	</li>
+	<li>
+	<p>Usa la funci&#xf3;n <code>textFont()</code> para definir la tipograf&#xed;a actual:</p>
+	</li>
+</ol>
+
+	<pre data-code-language="p5js" data-type="programlisting">
+var font;
+
+function preload() {
+  font = loadFont("SourceCodePro-Regular.ttf");
+}
+
+function setup() {
+  createCanvas(480, 120);
+  textFont(font);
+}
+
+function draw() {
+  background(102);
+  textSize(28);
+  text("one small step for man...", 25, 60);
+  textSize(16);
+  text("one small step for man...", 27, 90);
+}</pre>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 7-12: define el trazo y el relleno del texto</h2>
+
+<p><a contenteditable="false" data-primary="fonts" data-secondary="setting test stroke and fill" data-type="indexterm"></a><a contenteditable="false" data-primary="text" data-see="fonts" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="noStroke() function" data-type="indexterm"></a>Tal como las figuras, el texto es afectado por las funciones<a contenteditable="false" data-primary="stroke() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="fill() function" data-type="indexterm"></a> <code>stroke()</code> y <code>fill()</code>. El siguiente ejemplo resulta en un texto negro con un trazo blanco:</p>
+
+<figure><img alt="Ex 07 12" src="images/gspj_07in11.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  textFont("Source Code Pro");
+  fill(0);
+  stroke(255);
+}
+
+function draw() {
+  background(102);
+  textSize(28);
+  text("one small step for man...", 25, 60);
+  textSize(16);
+  text("one small step for man...", 27, 90);
+}</pre>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 7-13: dibuja el texto en un recuadro</h2>
+
+<p>Tambi&#xE9;n <a contenteditable="false" data-primary="fonts" data-secondary="drawing text in a box" data-type="indexterm">&nbsp;</a>puedes definir que el texto se dibuje dentro de un recuadro a&#xF1;adiendo los par&#xE1;metros cuarto y quinto para especificar el ancho y altura del recuadro:</p>
+
+<figure><img alt="Ex 07 13" src="images/gspj_07in12.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  textFont("Source Code Pro");
+  textSize(24);
+}
+
+function draw() {
+  background(102);
+  text("one small step for man...", 26, 24, 240, 100);
+}</pre>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 7-13: almacenar texto en una variable</h2>
+
+<p>En<a contenteditable="false" data-primary="variables" data-secondary="storing text in" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="fonts" data-secondary="storing text in a variable" data-type="indexterm">&nbsp;</a>el ejemplo anterior, las palabras dentro de la funci&#xf3;n <code>text()</code> hacen que el codigo sea dif&#xed;cil de leer. Podemos almacenar estas palabras en una variable para hacer que el c&#xf3;digo sea m&#xe1;s modular. Aqu&#xed; hay una nueva versi&#xf3;n del ejemplo anterior que usa una variable:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var quote = "one small step for man...";
+
+function setup() {
+  createCanvas(480, 120);
+  textFont("Source Code Pro");
+  textSize(24);
+}
+
+function draw() {
+  background(204);
+  text(quote, 26, 24, 240, 100);
+}</pre>
+
+<p>Existe un conjunto de funciones adicionales que afectan la forma en que las letras son mostradas en la pantalla. Son explicadas, con ejemplos, en la categor&#xed;a Tipograf&#xed;a <a contenteditable="false" data-primary="media" data-secondary="fonts" data-seealso="fonts" data-startref="m7f" data-type="indexterm">&nbsp;</a>de<a contenteditable="false" data-primary="fonts" data-startref="f7" data-type="indexterm">&nbsp;</a>la <em>Referencia de p5.js</em>.</p>
+</section>
+</section>
+
+<section data-type="sect1">
+<h1>Robot 5: medios</h1>
+
+<figure><img alt="NRobot Media" src="images/gspj_07in13.png" />
+<figcaption/>
+</figure>
+
+<p>A diferencia de <a contenteditable="false" data-primary="robot programs (examples)" data-secondary="loading images from SVG/PNG files" data-type="indexterm" id="rp7lifspf">&nbsp;</a>los robots creados con l&#xED;neas y rect&#xE1;ngulos dibujados en p5.js durante los cap&#xED;tulos anteriores, estos robots fueron creados con un programa de dibujo vectorial. Para algunas figuras, es m&#xE1;s f&#xE1;cil apuntar y hacer click con un software como Inkscape o Illustrator que definir las figuras con coordenadas en c&#xF3;digo.</p>
+
+<p>Existe un compromiso al seleccionar una t&#xE9;cnica de creaci&#xF3;n de im&#xE1;genes por sobre otra. Cuando defines figuras en p5.js, existe mayor flexibilidad para modificarlas mientras el programa est&#xE1; corriendo. Si las figuras est&#xE1;n definidas en otro lugar y luego cargadas a p5.js, los cambios est&#xE1;n limitados a la posici&#xF3;n, &#xE1;ngulo y tama&#xF1;o. Cuando cargas cada robot desde un archivo SVG, como este ejemplo muestra, las variaciones destacadas en el Robot 2 (ver <a data-type="xref" href="#robot2">Robot 2: variables</a>) son imposibles.</p>
+
+<p>Las im&#xE1;genes pueden ser cargadas en un programa para agregar visuales creadas en otros programas o capturadas con una c&#xE1;mara. Con esta imagen en el fondo, nuestros robots ahora est&#xE1;n buscando formas de vida en Noruega en el inicio del siglo 20.</p>
+
+<p>Los archivos SVG y PNG usados en este ejemplo pueden ser descargados desde <a href="http://p5js.org/learn/books/media.zip"><em class="hyperlink">http://p5js.org/learn/books/media.zip</em></a>:</p>
+
+<pre data-code-language="p5js" data-type="programlisting" class="pagebreak-before">
+var bot1;
+var bot2;
+var bot3;
+var landscape;
+
+var easing = 0.05;
+var offset = 0;
+
+// Precarga las im&#xe1;genes
+function preload() {
+  bot1 = loadImage("robot1.svg");
+  bot2 = loadImage("robot2.svg");
+  bot3 = loadImage("robot3.svg");
+  landscape = loadImage("alpine.png");
+}
+
+function setup() {
+  createCanvas(720, 480);
+}
+
+function draw() {
+  // Define la imagen "landscape" como fondo; esta imagen
+  // debe tener los mismos ancho y altura que el programa
+  background(landscape);
+
+  // Define el desfase izquierdo/derecho y aplica suavizado
+	// para hacer una transici&#xf3;n suave
+  var targetOffset = map(mouseY, 0, height, -40, 40);
+  offset += (targetOffset - offset) * easing;
+
+  // Dibuja el robot izquierdo
+  image(bot1, 85 + offset, 65);
+
+  // Dibuja el robot derecho m&#xe1;s peque&#xf1;o y con un desfase menor
+  var smallerOffset = offset * 0.7;
+  image(bot2, 510 + smallerOffset, 140, 78, 248);
+
+  // Dibuja el robot m&#xe1;s peque&#xf1;o, con un desfase menor
+  smallerOffset *= -0.5;
+  image(bot3, 410 + smallerOffset, 225, 39, 124);
+}</pre>
+<a contenteditable="false" data-primary="media" data-startref="m7" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="robot programs (examples)" data-secondary="loading images from SVG/PNG files" data-startref="rp7lifspf" data-type="indexterm">&nbsp;</a></section>
+</section>

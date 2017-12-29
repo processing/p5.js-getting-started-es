@@ -1,0 +1,375 @@
+<section data-type="chapter" id="translate" xmlns="http://www.w3.org/1999/xhtml">
+<h1 class="chapterhead">Trasladar, rotar, escalar</h1>
+
+<p class="lede">Una t&#xE9;cnica alternativa para posicionar y mover objetos en la pantalla es cambiar el sistema de coordenadas de la pantalla. Por ejemplo, puedes mover una figura 50 pixeles a la derecha, o puedes mover la ubicaci&#xF3;n de la coordenada (0,0) 50 pixeles a la derecha - el resultado visual en la pantalla es el mismo.</p>
+
+<p>Al modificar el sistema de coordenadas por defecto, podemos crear diferentes&nbsp;<a contenteditable="false" data-primary="transformations" data-type="indexterm">&nbsp;</a><em>transformaciones</em>&nbsp;incluyendo&nbsp;<em>traslaci&#xF3;n</em>,&nbsp;<em>rotaci&#xF3;n</em>, y <span class="keep-together"><em>escalamiento</em></span>.</p>
+
+<section data-type="sect1">
+<h1>Traslaci&#xF3;n</h1>
+
+<p>Trabajar<a contenteditable="false" data-primary="translating locations" data-type="indexterm" id="tl6">&nbsp;</a>con transformaciones puede ser dif&#xED;cil, pero la funci&#xF3;n&nbsp;<code>translate()</code>&nbsp;<a contenteditable="false" data-primary="translate() function" data-type="indexterm" id="tf6">&nbsp;</a>es la m&#xE1;s sencilla, as&#xED; que empezaremos con esta. Tal como la <a data-type="xref" href="#Fig_06_01">Figura 6-1</a> muestra, esta funci&#xF3;n puede trasladar el sistema de coordenadas hacia la izquierda, derecha, arriba y abajo.</p>
+
+<figure id="Fig_06_01"><img alt="Fig 06 01" src="images/gspj_0601.png" />
+<figcaption><b>Figura 6-1. </b>Trasladando las coordenadas</figcaption>
+</figure>
+
+<section data-type="sect2">
+<h2>Ejemplo 6-1: trasladando una posici&#xF3;n</h2>
+
+<p>En este ejemplo, observa que el rect&#xE1;ngulo est&#xE1; dibujado en la coordenada (0,0), pero est&#xE1; en otra posici&#xF3;n en el lienzo, porque es afectado por la funci&#xF3;n <code>translate()</code>:</p>
+
+<figure><img alt="Ex 06 01" src="images/gspj_06in02.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(120, 120);
+  background(204);
+}
+
+function draw() {
+  translate(mouseX, mouseY);
+  rect(0, 0, 30, 30);
+}</pre>
+
+<p>La funci&#xF3;n&nbsp;<code>translate()</code>&nbsp; define la coordenada (0,0) de la pantalla en la ubicaci&#xF3;n del rat&#xF3;n (<code>mouseX</code>&nbsp;y&nbsp;<code>mouseY</code>). Cada vez que el bloque &nbsp;<code>draw()</code>&nbsp;se repite, el&nbsp;<code>rect()</code>&nbsp;es dibujado en el nuevo origen,&nbsp;derivado de la posici&#xF3;n actual del rat&#xF3;n.&nbsp;</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 6-2: traslaciones m&#xFA;ltiples</h2>
+
+<p>Despu&#xE9;s de que la transformaci&#xF3;n es realizada, es aplicada a todas las funciones de dibujo a continuaci&#xF3;n. Observa lo que pasa cuando una segunda funci&#xF3;n <code>translate</code> fes a&#xF1;adida para controlar un segundo rect&#xE1;ngulo:</p>
+
+<figure><img alt="Ex 06 02" src="images/gspj_06in03.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(120, 120);
+  background(204);
+}
+
+function draw() {
+  translate(mouseX, mouseY);
+  rect(0, 0, 30, 30);
+  translate(35, 10);
+  rect(0, 0, 15, 15);
+}</pre>
+
+<p>Los valores para la funci&#xF3;n&nbsp;<code>translate()</code>&nbsp;se suman. El rect&#xE1;ngulo peque&#xF1;o es trasladado seg&#xFA;n&nbsp;<code>mouseX</code>&nbsp;+ 35 y&nbsp;<code>mouseY</code>&nbsp;+ 10. Las coordenadas <em>x</em> e <em>y</em> de ambos rect&#xE1;ngulos son (0,0), pero las funciones <code>translate()</code> los mueven a otras posiciones en el lienzo.</p>
+
+<p>Sin embargo, incluso cuando las transformaciones se acumulan dentro del bloque&nbsp;<code>draw()</code>, se anulan cada vez que la funci&#xF3;n <a contenteditable="false" data-primary="translate() function" data-startref="tf6" data-type="indexterm"></a>time&nbsp;<code>draw()</code>&nbsp;se ejecuta nuevamente desde el <a contenteditable="false" data-primary="translating locations" data-startref="tl6" data-type="indexterm"></a>principio.</p>
+</section>
+</section>
+
+<section data-type="sect1">
+<h1>Rotaci&#xF3;n</h1>
+
+<p>La funci&#xF3;n <code>rotate()</code> <a contenteditable="false" data-primary="rotate() function" data-type="indexterm">&nbsp;</a>rota el sistema de coordenadas. Tiene un par&#xE1;metro, que es el &#xE1;ngulo (en radianes) a rotar. Siempre rota relativo a (0,0), lo que se conoce como rotar en torno al <em>origen</em>. <a data-type="xref" href="#Fig_03_02">Figura 3-2</a> muestra los valores de &#xE1;ngulo en radianes. <a data-type="xref" href="#Fig_06_02">Figura 6-2</a> muestra la diferencia entre rotar con n&#xFA;meros positivos y negativos.</p>
+
+<figure id="Fig_06_02"><img alt="Fig 06 02" src="images/gspj_0602.png" />
+<figcaption><b>Figura 6-2. </b>Rotando las coordenadas</figcaption>
+</figure>
+
+<section data-type="sect2">
+<h2>Ejemplo 6-3: rotaci&#xF3;n de esquina</h2>
+
+<p>Para &nbsp;rotar una figura, primero define el &#xE1;ngulo de rotaci&#xF3;n con <code>rotate()</code>, luego dibuja la figura. En este bosquejo, el par&#xE1;metro para rotar (<code>mouseX / 100.0</code>) tendr&#xE1; un valor entre 0 y 1.2 para definir el &#xE1;ngulo de rotaci&#xF3;n porque <code>mouseX</code> tendr&#xE1; un valor entre 0 y 120, el ancho del lienzo seg&#xFA;n lo definido <a contenteditable="false" data-primary="createCanvas() function" data-type="indexterm">&nbsp;</a>en <code>createCanvas()</code>:</p>
+
+<figure><img alt="Ex 06 03" src="images/gspj_06in04.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(120, 120);
+  background(204);
+}
+
+function draw() {
+  rotate(mouseX / 100.0);
+  rect(40, 30, 160, 20);
+}</pre>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 6-4: rotaci&#xF3;n del centro</h2>
+
+<p>Para rotar &nbsp;una figura en torno a su propio centro, debe ser dibujada con la coordenada (0,0) en su centro. En este ejemplo, como la figura tiene un ancho de 160 y una altura de 20 seg&#xFA;n lo definido en la funci&#xF3;n <code>rect()</code>, es dibujada en la coordenada (-80, -10) para poner la coordenada (0,0) al centro de la figura:</p>
+
+<figure><img alt="Ex 06 04" src="images/gspj_06in05.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(120, 120);
+  background(204);
+}
+
+function draw() {
+  rotate(mouseX / 100.0);
+  rect(-80, -10, 160, 20);
+}</pre>
+
+<p>El anterior par de ejemplos muestra c&#xF3;mo rotar alrededor de la coordenada (0,0), &#xBF;pero qu&#xE9; otras posibilidades hay? Puedes usar las funciones <code>translate()</code> y <code>rotate()</code> para mayor control. Cuando son combinadas, el orden en que aparecen afecta el resultado. Si el sistema de coordenadas es trasladado y despu&#xE9;s rotado, es distinto que primero rotar y despu&#xE9;s mover el sistema de coordenadas.</p>
+</section>
+
+<section data-type="sect2" id="ex-6-5">
+<h2>Ejemplo 6-5: traslaci&#xF3;n, despu&#xE9;s rotaci&#xF3;n</h2>
+
+<p>Para girar una figura en torno a su centro a un lugar en la pantalla lejos del origen, primero usa la funci&#xF3;n <code>translate()</code> para <a contenteditable="false" data-primary="translate() function" data-type="indexterm" id="tf6x">&nbsp;</a>mover la figura a la ubicaci&#xF3;n donde quieres la figura, luego usa <code>rotate()</code>, y luego dibuja la figura con su centro en la coordenada (0,0):</p>
+
+<figure><img alt="Ex 06 05" src="images/gspj_06in06.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var angle = 0.0;
+
+function setup() {
+  createCanvas(120, 120);
+  background(204);
+}
+
+function draw() {
+  translate(mouseX, mouseY);
+  rotate(angle);
+  rect(-15, -15, 30, 30);
+  angle += 0.1;
+}</pre>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 6-6: rotaci&#xF3;n, despu&#xE9;s traslaci&#xF3;n</h2>
+
+<p>El siguiente ejemplo es id&#xE9;ntico a <a data-type="xref" href="#ex-6-5">Ejemplo 6-5</a>, excepto que <code>translate()</code> y <code>rotate()</code> ocurren en el orden inverso. La figura ahora rota alrededor de la esquina superior izquierda, con la distancia desde la esquina definida por <code>translate()</code>:</p>
+
+<figure><img alt="Ex 06 06" src="images/gspj_06in07.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var angle = 0.0;
+
+function setup() {
+  createCanvas(120, 120);
+  background(204);
+}
+
+function draw() {
+  rotate(angle);
+  translate(mouseX, mouseY);
+  rect(-15, -15, 30, 30);
+  angle += 0.1;
+}</pre>
+
+<div data-type="note">
+<p>Tambi&#xE9;n puedes usar las funciones <code>rectMode()</code>, <code>ellipseMode()</code> y <code>imageMode()</code> para hacer m&#xE1;s simple el dibujo de figuras desde su centro.&nbsp;Puedes leer sobre estas funciones en la <em>Referencia de p5.js</em>.</p>
+</div>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 6-7: un brazo articulado</h2>
+
+<p>En este ejemplo, hemos unido una serie de funciones <code>translate()</code> y <code>rotate()</code> para crear un brazo articulado. Cada funci&#xF3;n <code>translate()</code> mueve la posici&#xF3;n de las l&#xED;neas, y cada funci&#xF3;n <code>rotate()</code> a&#xF1;ade a la rotaci&#xF3;n previa para poder girar m&#xE1;s:</p>
+
+<figure><img alt="Ex 06 07" src="images/gspj_06in08.png" />
+<figcaption/>
+</figure>
+
+<pre class="pre" data-code-language="p5js" data-type="programlisting">
+var angle = 0.0;
+var angleDirection = 1;
+var speed = 0.005;
+
+function setup() {
+  createCanvas(120, 120);
+}
+
+function draw() {
+  background(204);
+  translate(20, 25);  // Mover a la posici&#xF3;n inicial
+  rotate(angle);
+  strokeWeight(12);
+  line(0, 0, 40, 0);
+  translate(40, 0);   //Mover a la siguiente articulaci&#xF3;n
+  rotate(angle * 2.0);
+  strokeWeight(6);
+  line(0, 0, 30, 0);
+  translate(30, 0);   // Mover a la siguiente articulaci&#xF3;n
+  rotate(angle * 2.5);
+  strokeWeight(3);
+  line(0, 0, 20, 0);
+
+  angle += speed * angleDirection;
+  if ((angle &gt; QUARTER_PI) || (angle &lt; 0)) {
+    angleDirection *= -1;
+  }
+}</pre>
+
+<p>La variable <code>angle</code> &nbsp;aumenta desde 0 hasta <code>QUARTER_PI</code> (un cuarto del valor de pi), luego disminuye hasta que es menor que cero, luego el ciclo se repite. El valor de la variable <code>angleDirection</code> &nbsp;est&#xE1; siempre entre 1 y -1 para hacer que el valor de <code>angle</code> correspondiente aumente o<a contenteditable="false" data-primary="translate() function" data-startref="tf6x" data-type="indexterm">&nbsp;</a>disminuya.</p>
+</section>
+</section>
+
+<section data-type="sect1">
+<h1>Escalar</h1>
+
+<p>La funci&#xF3;n <code>scale()</code> <a contenteditable="false" data-primary="scale() function" data-type="indexterm" id="sf6">&nbsp;</a>estira las coordenadas del lienzo. Como las coordenadas se expanden o se contraen cuando cambia la escala, todo lo que est&#xE1; dibujado en el lienzo aumenta o disminuye sus dimensiones. La cantidad de escalamiento se escribe en porcentajes decimales. Entonces, el par&#xE1;metro 1.5 en la funci&#xF3;n <code>scale()</code> corresponde a 150% y 3 a 300% (<a data-type="xref" href="#Fig_06_03">Figura 6-3</a>).</p>
+
+<figure id="Fig_06_03"><img alt="Fig 06 03" src="images/gspj_0603.png" />
+<figcaption><b>Figura 6-3. </b>Escalando las coordenadas</figcaption>
+</figure>
+
+<section data-type="sect2" id="ex-6-8">
+<h2>Ejemplo 6-8: escalamiento</h2>
+
+<p>Tal como <code>rotate()</code>, la funci&#xF3;n <code>scale()</code> transforma desde el origen. Entonces, tal como <code>rotate()</code>, para escalar una figura desde su centro, debemos trasladar su ubicaci&#xF3;n, escalar y luego dibujar con el centro en la coordenada (0,0):</p>
+
+<figure><img alt="Ex 06 08" src="images/gspj_06in09.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(120, 120);
+  background(204);
+}
+
+function draw() {
+  translate(mouseX, mouseY);
+  scale(mouseX / 60.0);
+  rect(-15, -15, 30, 30);
+}</pre>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 6-9: manteniendo consistentes los trazos</h2>
+
+<p>De las l&#xED;neas gruesas de <a data-type="xref" href="#ex-6-8">Ejemplo 6-8</a>, puedes ver c&#xF3;mo la funci&#xF3;n <code>scale()</code> afecta el grosor del trazado. Para mantener un grosor consistente &nbsp;de trazado a medida que la figura se escala, divide el trazado deseado por el valor escalar:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(120, 120);
+  background(204);
+}
+
+function draw() {
+  translate(mouseX, mouseY);
+  var scalar = mouseX / 60.0;
+  scale(scalar);
+  strokeWeight(1.0 / scalar);
+  rect(-15, -15, 30, 30);
+}</pre>
+<a contenteditable="false" data-primary="scale() function" data-startref="sf6" data-type="indexterm">&nbsp;</a></section>
+</section>
+
+<section data-type="sect1">
+<h1>Push y pop</h1>
+
+<p>Para aislar los<a contenteditable="false" data-primary="push() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="pop() function" data-type="indexterm">&nbsp;</a>efectos de las transformaciones para que no afecten otras funciones, usa las funciones <code>push()</code> y <code>pop()</code>. Cuando ejecutas <code>push()</code>, se almacena una copia del sistema de coordenadas actual y luego puedes restaurar ese sistema ejecutando <code>pop()</code>. Esto es &#xFA;til cuando necesitas transformar una figura, pero quieres afectar otras.</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 6-10: aislando transformaciones</h2>
+
+<p>En este ejemplo, el rect&#xE1;ngulo peque&#xF1;o siempre se dibuja en la misma posici&#xf3;n porque <code>translate(mouseX, mouseY)</code> es cancelado por <code>pop()</code>:</p>
+
+<figure><img alt="Ex 06 10" src="images/gspj_06in10.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(120, 120);
+  background(204);
+}
+
+function draw() {
+  push();
+  translate(mouseX, mouseY);
+  rect(0, 0, 30, 30);
+  pop();
+  translate(35, 10);
+  rect(0, 0, 15, 15);
+}</pre>
+
+<div data-type="note">
+<p>Las funciones <code>push()</code> y <code>pop()</code> siempre se usan de a pares. Por cada <code>push()</code>, tiene que haber un correspondiente <code>pop()</code>.</p>
+</div>
+</section>
+</section>
+
+<section data-type="sect1">
+<h1>Robot 4: trasladar, rotar, escalar</h1>
+
+<figure><img alt="Robot 4" src="images/gspj_06in11.png" />
+<figcaption/>
+</figure>
+
+<p>Las funciones <code>translate()</code>, <code>rotate()</code>, y <code>scale()</code> <a contenteditable="false" data-primary="robot programs (examples)" data-secondary="translate, rotate, and scale in" data-type="indexterm" id="rp6trs">&nbsp;</a>son utilizadas para modificar el bosquejo del robot. En relaci&#xF3;n a <a data-type="xref" href="#robot3">Robot 3: respuesta</a>, <code>translate()</code> es usado para hacer el c&#xF3;digo m&#xE1;s f&#xE1;cil de leer. Aqu&#xED;, observa como ya no es necesario sumar el valor de <code>x</code> a cada funci&#xF3;n de dibujo porque la funci&#xF3;n <code>translate()</code> mueve todo. Similarmente, la funci&#xF3;n <code>scale()</code> es usada para definir las dimensiones del robot completo. Cuando el rat&#xF3;n no est&#xE1; presionado, el tama&#xF1;o es de un 60% y cuando s&#xED; est&#xE1; presionado, es de un 100% en relaci&#xF3;n a las coordenadas originales. La funci&#xF3;n <code>rotate()</code> es usada dentro del bucle para dibujar una l&#xED;nea, rotarla un poco, luego dibujar una segunda l&#xED;nea, luego rotarla un poco m&#xE1;s, y as&#xED; hasta que el bucle ha dibujado 30 l&#xED;neas en forma de c&#xED;rculo para darle estilo al pelo de la cabeza del robot:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = 60;          // Coordenada x
+var y = 440;         // Coordenada y
+var radius = 45;       // Radio de la cabeza
+var bodyHeight = 180;  // Altura del cuerpo
+var neckHeight = 40;   // Altura del cuello
+
+var easing = 0.04;
+
+function setup() {
+  createCanvas(360, 480);
+  strokeWeight(2);
+  ellipseMode(RADIUS);
+}
+
+function draw() {
+
+  var neckY = -1 * (bodyHeight + neckHeight + radius);
+
+  background(204);
+
+  translate(mouseX, y);  // Mueve todo a (mouseX, y)
+
+  if (mouseIsPressed) {
+    scale(1.0);
+  } else {
+    scale(0.6);  // 60% de tamaño si el ratón está presionado
+  }
+
+  // Cuerpo
+  noStroke();
+  fill(102);
+  ellipse(0, -33, 33, 33);
+  fill(0);
+  rect(-45, -bodyHeight, 90, bodyHeight-33);
+
+  // Cuello
+  stroke(102);
+  line(12, -bodyHeight, 12, neckY);
+
+  // Pelo
+  push();
+  translate(12, neckY);
+  var angle = -PI/30.0;
+  for (var i = 0; i &lt;= 30; i++) {
+    line(80, 0, 0, 0);
+    rotate(angle);
+  }
+  pop();
+
+  // Cabeza
+  noStroke();
+  fill(0);
+  ellipse(12, neckY, radius, radius);
+  fill(255);
+  ellipse(24, neckY-6, 14, 14);
+  fill(0);
+  ellipse(24, neckY-6, 3, 3);
+
+}</pre>
+<a contenteditable="false" data-primary="robot programs (examples)" data-secondary="translate, rotate, and scale in" data-startref="rp6trs" data-type="indexterm">&nbsp;</a></section>
+</section>

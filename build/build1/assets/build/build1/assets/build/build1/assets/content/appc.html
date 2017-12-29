@@ -1,0 +1,32 @@
+<section data-type="appendix" id="variable_scope">
+<h1 class="chapterhead">Apéndice C: &#xc1;mbito de variable</h1>
+
+<p class="lede">La<a contenteditable="false" data-primary="variable scope rule" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="rule of variable scope" data-type="indexterm">&nbsp;</a>regla del &#xE1;mbito de variable se define simplemente como: una variable creada dentro de un bloque (c&#xF3;digo dentro de llaves: <code>{</code> y <code>}</code>) solamente existe dentro de ese bloque.</p>
+
+<p>Esto significa que una variable creada dentro de <code>setup()</code> solamente puede ser usada dentro del bloque <code>setup()</code>, y de la misma forma, una variable declarada dentro de <code>draw()</code> solamente puede ser usada dentro del bloque <code>draw()</code>. La excepci&#xF3;n a esta regla es una variable declarada fuera de <code>setup()</code> y <code>draw()</code>. Estas variables pueden ser usadas dentro de tanto <code>setup()</code> como <code>draw()</code> (o dentro de cualquier otra funci&#xF3;n que hayas creado). Piensa en el &#xE1;rea fuera de <code>setup()</code> y <code>draw()</code> como un bloque de c&#xF3;digo impl&#xED;cito. Estas variables reciben el nombre de <em>variables globales</em>, porque pueden ser usadas en cualquier parte dentro del programa. A una variable que solamente podemos usar dentro de un &#xfa;nico bloque la llamamos <em>variable local</em>. A continuaci&#xF3;n hay un par de ejemplos de c&#xF3;digo que explican con m&#xE1;s detalles el concepto. Primer ejemplo:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var i = 12;   // Declara variable global i y asigna el valor 12
+
+function setup() {
+  createCanvas(480, 320);
+  var i = 24; // Declara variable local i y asigna el valor 24
+  print(i); // Imprime 24 en la consola
+}
+
+function draw() {
+  print(i); // Imprime 12 en la consola
+}</pre>
+
+<p>Segundo ejemplo:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 320);
+  var i = 24; // Declara variable local i y asigna el valor 24
+}
+
+function draw() {
+  print(i); // ERROR! La variable i es local a setup()
+}</pre>
+</section>

@@ -1,0 +1,629 @@
+<section data-type="chapter" id="variables" xmlns="http://www.w3.org/1999/xhtml">
+<h1 class="chapterhead">Variables</h1>
+
+<p class="lede">Una <em>variable</em> <a contenteditable="false" data-primary="variables" data-type="indexterm" id="v4">&nbsp;</a>almacena en la memoria un valor para su uso posterior en un programa. Una variable puede ser usada muchas veces dentro de un mismo programa, y el valor puede ser f&#xE1;cilmente modificado mientras el programa est&#xE1; siendo ejecutado.</p>
+
+<section data-type="sect1">
+<h1>Primeras variables</h1>
+
+<p>La &nbsp;raz&#xF3;n principal por la que usamos variables es para evitar repetirnos en el c&#xF3;digo. Si est&#xE1;s escribiendo el mismo n&#xFA;mero una y otra vez, considera usar una variable para que tu c&#xF3;digo sea m&#xE1;s general y m&#xE1;s f&#xE1;cil de actualizar.</p>
+
+<section data-type="sect2" id="ex-4-1">
+<h2>Ejemplo 4-1: reusa los mismos valores</h2>
+
+<p>Por <a contenteditable="false" data-primary="variables" data-secondary="reusing identical values" data-type="indexterm">&nbsp;</a>ejemplo, cuando haces variables la coordenada <em>y</em>  y el di&#xE1;metro para los tres c&#xED;rculos de este ejemplo, se usan los mismos valores para cada elipse:</p>
+
+<figure><img alt="Ex 04 01" src="images/gspj_04in02.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var y = 60;
+var d = 80;
+
+function setup() {
+  createCanvas(480, 120);
+}
+
+function draw() {
+  background(204);
+  ellipse(75, y, d, d);   // Izquierda
+  ellipse(175, y, d, d);  // Centro
+  ellipse(275, y, d, d);  // Derecha
+}</pre>
+</section>
+
+<section data-type="sect2" id="ex-4-2">
+<h2>Ejemplo 4-2: modifica los valores</h2>
+
+<p>Simplemente<a contenteditable="false" data-primary="variables" data-secondary="changing values" data-type="indexterm">&nbsp;</a>modificando las variables <em>y</em> y <em>d</em> altera las tres elipses:</p>
+
+<figure><img alt="Ex 04 02" src="images/gspj_04in03.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var y = 100;
+var d = 130;
+
+function setup() {
+  createCanvas(480, 120);
+}
+
+function draw() {
+  background(204);
+  ellipse(75, y, d, d);   // Izquierda
+  ellipse(175, y, d, d);  // Centro
+  ellipse(275, y, d, d);  // Derecha
+}</pre>
+
+<p>Si no tuvieras variables, tendr&#xED;as que cambiar tres veces la coordenada <em>y</em> usada en el c&#xF3;digo y seis veces el di&#xE1;metro. Comparando los ejemplos <a href="#ex-4-1">4-1</a> y <a href="#ex-4-2">4-2</a>, observa c&#xF3;mo todas las l&#xED;neas son iguales, excepto las dos primeras l&#xED;neas con variables. Las variables te permiten separar las l&#xED;neas de c&#xF3;digo que cambian de las que no cambian, lo que hace que los programas sean f&#xE1;ciles de modificar. Por ejemplo, si pones las variables que controlan colores y tama&#xF1;os en un lugar, puedes explorar diferentes opciones visuales enfoc&#xE1;ndote en s&#xF3;lo unas pocas l&#xED;neas de c&#xF3;digo.</p>
+</section>
+</section>
+
+<section data-type="sect1">
+<h1>Hacer variables</h1>
+
+<p>Cuando<a contenteditable="false" data-primary="variables" data-secondary="creating" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="naming variables" data-type="indexterm">&nbsp;</a>haces tus propias variables, puedes determinar el <em>nombre&nbsp;</em>y el <em>valor</em>. T&#xFA; decides c&#xF3;mo se llama la variable. Escoge un nombre que sea indicativo de lo que est&#xE1; almacenado en la variable, pero hazlo consistente y no muy largo. Por ejemplo, el nombre de variable “radio” ser&#xE1; mucho m&#xE1;s claro que “r” cuando leas tu c&#xF3;digo.</p>
+
+<p>Las variables primero deben ser <em>declaradas</em>, <a contenteditable="false" data-primary="variables" data-secondary="declared" data-type="indexterm">&nbsp;</a>lo que reserva espacio en la memoria del computador para almacenar la informaci&#xF3;n. Cuando declaras una variable, usas la palabra <code>var</code>, para indicar que est&#xE1;s creando una nueva variable, seguida del nombre.&nbsp;Despu&#xE9;s de que el nombre es fijado, se le puede asignar un valor a la variable:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x;  // Declara la variable x
+x = 12; // Asigna un valor a x</pre>
+
+<p>Este c&#xF3;digo hace lo mismo, pero es m&#xE1;s corto:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = 12; // Declara la variable x y le asigna un valor</pre>
+
+<p>Los caracteres <code>var</code>&nbsp;en la l&#xED;nea de c&#xF3;digo que declara la variable, pero no son escritos de nuevo. Cada vez que se escribe <code>var</code>&nbsp;antes del nombre de una variable, el computador piensa que est&#xE1;s tratando de declarar una nueva variable. No puedes tener dos variables con el mismo nombre en la misma secci&#xF3;n del programa (<a data-type="xref" href="#variable_scope">Apéndice C</a>), ya que el programa podr&#xED;a comportarse extra&#xF1;amente:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x;       // Declara la variable x
+var x = 12;  // ¡ERROR! Ya existe una variable x</pre>
+
+<p>Puedes situar tus variables fuera<a contenteditable="false" data-primary="setup() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="draw() function" data-type="indexterm">&nbsp;</a>de <code>setup()</code> y <code>draw()</code>. Si creas una variable dentro de <code>setup()</code>, no puedes usarla dentro de <code>draw()</code>, as&#xED; que necesitas situar estas variables en otro lugar. Estas variables reciben el nombre de<a contenteditable="false" data-primary="global variables" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="variables" data-secondary="global" data-type="indexterm">&nbsp;</a><em>variables globales</em>, porque pueden ser usadas en cualquier parte ("globalmente") del programa.</p>
+</section>
+
+<section data-type="sect1">
+<h1>Variables de p5.js</h1>
+
+<p>p5.js posee una<a contenteditable="false" data-primary="variables" data-secondary="p5.js" data-type="indexterm" id="v4p5js">&nbsp;</a>serie de variables especiales para almacenar informaci&#xF3;n sobre el programa mientras se ejecuta. Por ejemplo, el ancho y la altura del lienzo se almacenan en las variables <code>width</code> y <code>height</code>. Estos valores son definidos por la funci&#xF3;n <code>createCanvas()</code>. Pueden ser usados para dibujar elementos relativos al tama&#xF1;o del lienzo, incluso si la l&#xED;nea de c&#xF3;digo <code>createCanvas()</code> es modificada.</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 4-3: ajusta el lienzo, observa lo que sucedes</h2>
+
+<p>En este ejemplo, modifica los par&#xE1;metros de createCanvas() para observar c&#xF3;mo funciona:</p>
+
+<figure><img alt="Ex 04 03" src="images/gspj_04in04.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+}
+
+function draw() {
+  background(204);
+  line(0, 0, width, height);  // L&#xED;nea desde (0,0) a (480, 120)
+  line(width, 0, 0, height);  // L&#xED;nea desde (480,0) a (0, 120)
+  ellipse(width/2, height/2, 60, 60);
+}</pre>
+
+<p>Existen tambi&#xE9;n variables especiales que mantienen registro del estado del rat&#xF3;n y de los valores del teclado, entre otras. Ser&#xE1;n discutidas<a contenteditable="false" data-primary="variables" data-secondary="p5.js" data-startref="v4p5js" data-type="indexterm">&nbsp;</a>en <a data-type="xref" href="#response">5/Respuesta</a>.</p>
+</section>
+</section>
+
+<section data-type="sect1">
+<h1>Un poco de matem&#xE1;ticas</h1>
+
+<p>La gente<a contenteditable="false" data-primary="arithmetic operations" data-type="indexterm" id="ao4">&nbsp;</a><a contenteditable="false" data-primary="math, and programming" data-type="indexterm" id="map4">&nbsp;</a>a menudo asume que las matem&#xE1;ticas y la programaci&#xF3;n son lo mismo. Aunque un poco de conocimiento de matem&#xE1;ticas puede ser &#xFA;til para ciertos tipos de programaci&#xF3;n, la aritm&#xE9;tica b&#xE1;sica alcanza para cubrir lo m&#xE1;s importante.</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 4-4: aritm&#xE9;tica b&#xE1;sica</h2>
+
+<figure><img alt="Ex 04 04" src="images/gspj_04in05.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = 25;
+var h = 20;
+var y = 25;
+
+function setup() {
+  createCanvas(480, 120);
+}
+
+function draw() {
+  background(204);
+  x = 20;
+  rect(x, y, 300, h);        // Superior
+  x = x + 100;
+  rect(x, y + h, 300, h);    // Central
+  x = x - 250;
+  rect(x, y + h*2, 300, h);  // Inferior
+}</pre>
+
+<p>En el c&#xF3;digo, s&#xED;mbolos como <code>+</code>, <code>−</code> y <code>*</code> son llamados<a contenteditable="false" data-primary="arithmetic operations" data-secondary="operators" data-type="indexterm" id="ao4o">&nbsp;</a><a contenteditable="false" data-primary="operators" data-type="indexterm" id="op4">&nbsp;</a><em>operadores</em>. Cuando se encuentran entre dos valores, crean una <em>expresi&#xF3;n</em>. Por ejemplo, 5 + 9 y 1024 - 512 son expresiones. Los operadores para operaciones matem&#xE1;ticas b&#xE1;sicas son:</p>
+
+<table>
+	<tbody>
+		<tr>
+			<td>
+			<p>+</p>
+			</td>
+			<td>
+			<p>Suma</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>−</p>
+			</td>
+			<td>
+			<p>Resta</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>*</p>
+			</td>
+			<td>
+			<p>Multiplicaci&#xF3;n</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>/</p>
+			</td>
+			<td>
+			<p>Divisi&#xF3;n</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>=</p>
+			</td>
+			<td>
+			<p>Asignaci&#xF3;n</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>JavaScript posee un conjunto de reglas para definir el orden de precedencia que los operadores tienen entre s&#xED;, lo que significa, cu&#xE1;les c&#xE1;lculos son efectuados en primer, segundo y tercer lugar, etc. Estas reglas definen el orden en el que el c&#xF3;digo se ejecuta. Un poco de conocimiento sobre esto es un gran avance hacia el entendimiento de c&#xF3;mo funciona una l&#xED;nea de c&#xF3;digo corta como esta:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = 4 + 4 * 5; // Se le asigna el valor 24 a x</pre>
+
+<p>La expresi&#xF3;n 4 * 5 es evaluada primero porque la multiplicaci&#xF3;n tiene la prioridad m&#xE1;s alta. Luego, se le suma 4 al producto <span class="keep-together">4 * 5</span>, resultando 24. Finalmente, como el <a contenteditable="false" data-primary="assignment operator" data-type="indexterm">&nbsp;</a><em>operador de asignaci&#xF3;n</em> (el signo <em>igual</em>) tiene la menor predecencia, el valor 24 es asignado a la variable <em>x</em>. Esto se puede aclarar con el uso de par&#xE9;ntesis, pero el resultado es el mismo:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = 4 + (4 * 5); // Se le asigna el valor 24 a x</pre>
+
+<p>Si quieres forzar que la suma ocurra primero, usa par&#xE9;ntesis. Como los par&#xE9;ntesis tienen mayor precedencia que la multiplicaci&#xF3;n, al cambiar los par&#xE9;ntesis de lugar se cambia el c&#xE1;lculo efectuado:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = (4 + 4) * 5; // Se le asigna el valor 40 a x</pre>
+
+<p>En clases de matem&#xE1;ticas se ense&#xF1;a un acr&#xF3;nimo para este orden: PEMDAS, <a contenteditable="false" data-primary="PEMDAS acronym" data-type="indexterm">&nbsp;</a>que significa Par&#xE9;ntesis, Exponentes, Multiplicaci&#xF3;n, Divisi&#xF3;n, Adici&#xF3;n, Substracci&#xF3;n, donde los par&#xE9;ntesis tienen la mayor prioridad y la substracci&#xF3;n la menor.<a contenteditable="false" data-primary="order of operations" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="arithmetic operations" data-secondary="order of" data-type="indexterm">&nbsp;</a>El orden completo de operaciones se encuentra en <a data-type="xref" href="#order_of_operations">Apéndice B</a>.</p>
+
+<p>Algunos c&#xE1;lculos son usados tan frecuentemente en programaci&#xF3;n que se han elaborado atajos, lo que es &#xFA;til para ahorrar tiempo al escribir. Por ejemplo, puedes sumar a o restar  una variable con un solo operador:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+x += 10; // Es equivalente a x = x + 10
+y −= 15; // Es equivalente a y = y - 15</pre>
+
+<p>Tambi&#xE9;n es com&#xFA;n sumar o restar 1 a una variable, as&#xED; que tambi&#xE9;n existe un atajo. Los operadores <code>++</code> y <code>−−</code> operators hacen esto:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+x++; // Es equivalente a x = x + 1
+y−−; // Es equivalente a y = y - 1</pre>
+<a contenteditable="false" data-primary="operators" data-startref="op4" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="math, and programming" data-startref="map4" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="arithmetic operations" data-secondary="operators" data-startref="ao4o" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="arithmetic operations" data-startref="ao4" data-type="indexterm">&nbsp;</a></section>
+</section>
+
+<section data-type="sect1" id="repetition">
+<h1>Repetici&#xF3;n</h1>
+
+<p>A medida<a contenteditable="false" data-primary="repetition" data-seealso="for loops" data-type="indexterm" id="rep4">&nbsp;</a><a contenteditable="false" data-primary="variables" data-secondary="and repetition" data-secondary-sortas="repetition" data-type="indexterm" id="v4rep">&nbsp;</a>que escribas m&#xE1;s programas, te dar&#xE1;s cuenta de que ocurren patrones al repetir l&#xED;neas de c&#xF3;digo con peque&#xF1;as modificaciones. Una estructura de c&#xF3;digo llamada bucle<a contenteditable="false" data-primary="for loops" data-type="indexterm" id="fl4">&nbsp;</a><code>for</code> hace posible que una l&#xED;nea de c&#xF3;digo se ejecute m&#xE1;s de una vez, condensando el tipo de repetici&#xF3;n a unas pocas l&#xED;neas de c&#xF3;digo. Esto hace que tus programas sean  m&#xE1;s modulares y f&#xE1;ciles de modificar.</p>
+
+<section data-type="sect2">
+<h2>Ejemplo 4-5: haz lo mismo una y otra vez</h2>
+
+<p>Este ejemplo tiene el tipo de patr&#xF3;n que puede ser simplificado con un bucle <code>for</code>:</p>
+
+<figure><img alt="Ex 04 05" src="images/gspj_04in06.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  strokeWeight(8);
+}
+
+function draw() {
+  background(204);
+  line(20, 40, 80, 80);
+  line(80, 40, 140, 80);
+  line(140, 40, 200, 80);
+  line(200, 40, 260, 80);
+  line(260, 40, 320, 80);
+  line(320, 40, 380, 80);
+  line(380, 40, 440, 80);
+}</pre>
+</section>
+
+<section data-type="sect2" id="ex-4-6">
+<h2>Ejemplo 4-6: usar un bucle for</h2>
+
+<p>Se puede lograr lo mismo con un bucle <code>for</code>, y con mucho menos c&#xF3;digo:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  strokeWeight(8);
+}
+
+function draw() {
+  background(204);
+  for (var i = 20; i &lt; 400; i += 60) {
+    line(i, 40, i + 60, 80);
+  }
+}</pre>
+
+<p>El bucle <code>for</code> es distinto en muchas maneras del c&#xF3;digo que hemos escrito hasta ahora. F&#xED;jate en las llaves, los caracteres <code>{</code> y <code>}</code>. El c&#xF3;digo entre las llaves se llama<a contenteditable="false" data-primary="block" data-type="indexterm">&nbsp;</a> <em>bloque</em>. Este es el c&#xF3;digo que ser&#xE1; repetido en cada iteraci&#xF3;n del bucle <code>for</code>.</p>
+
+<p>Dentro de los par&#xE9;ntesis hay tres declaraciones, separadas por punto y coma, que funcionan en conjunto para controlar cu&#xE1;ntas veces se ejecuta el c&#xF3;digo dentro del bloque. De izquierda a derecha, estas declaraciones son llamadas<a contenteditable="false" data-primary="initialization statement (init)" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="test statement" data-type="indexterm" id="ts4">&nbsp;</a>&nbsp;la <em>inicializaci&#xF3;n</em> (<code>inic</code>), la <em>prueba</em> (test), y el <em>refresco</em> (update):</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+for (inic; prueba; refresco) {
+  //instrucciones
+}</pre>
+
+<p><code>inic</code> t&#xED;picamente declara una variable nueva a ser usada en el bucle for y le asigna un valor. El nombre de variable <code>i</code> se usa frecuentemente, pero no tiene nada de especial. La <em>prueba</em> eval&#xFA;a el valor de esta variable, y el <em>refresco</em> cambia el valor de la variable. <a data-type="xref" href="#Fig_04_01">Figura 4-1</a> muestra el orden en el que el c&#xF3;digo se ejecuta y c&#xF3;mo se controla el c&#xF3;digo dentro del bloque.</p>
+
+<figure id="Fig_04_01"><img alt="Fig 04 01" src="images/gspj_0401.png" />
+<figcaption><b>Figura 4-1. </b>Diagrama de flujo de un bucle for</figcaption>
+</figure>
+
+<p>La instrucci&#xF3;n <em>prueba</em> requiere m&#xE1;s explicaci&#xF3;n. Siempre es una <em>expresi&#xF3;n de relaci&#xF3;n</em> que compara dos valores con un <a contenteditable="false" data-primary="relational operators" data-type="indexterm">&nbsp;</a><em>operador relacional</em>. En este ejemplo, la expresi&#xF3;n es "i &lt; 400" y el operador es el s&#xED;mbolo &lt; (menor que). Los operadores relacionales m&#xE1;s comunes<a contenteditable="false" data-primary="!= (not equal to) operator" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="&lt;= (less than or equal to) operator" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="&gt;= (greater than or equal to) operator" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="&gt; (greater than) operator" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="== (equal to) operator" data-type="indexterm"></a>son:<a contenteditable="false" data-primary="&lt; (less than) operator" data-type="indexterm">&nbsp;</a></p>
+
+<table>
+	<tbody>
+		<tr>
+			<td>
+			<p>&gt;</p>
+			</td>
+			<td>
+			<p>Mayor que</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>&lt;</p>
+			</td>
+			<td>
+			<p>Menor que</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>&gt;=</p>
+			</td>
+			<td>
+			<p>Mayor o igual que</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>&lt;=</p>
+			</td>
+			<td>
+			<p>Menor o igual que</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>==</p>
+			</td>
+			<td>
+			<p>Igual</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>!=</p>
+			</td>
+			<td>
+			<p>Distinto de</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Una expresi&#xF3;n relacional siempre evalua a <code>true</code> (verdadero) o <code>false</code> (falso). Por ejemplo, la expresi&#xF3;n 5 &gt; 3 es <code>true</code>. Preguntamos,  "&#xBF;es cinco mayor que tres?" Como la respuesta es "s&#xed;," decimos que la expresi&#xF3;n es <code>true</code>. Para la expresi&#xF3;n 5 &lt; 3, preguntamos, "&#xBF;es cinco menor que tres?" Como la respuesta es "no," decimos que la expresi&#xF3;n es <code>false</code>. Cuando la evaluaci&#xF3;n es <code>true</code>, se ejecuta el c&#xF3;digo dentro del bloque, y cuando es <code>false</code>, el c&#xF3;digo dentro del bloque no se ejecuta y el bucle <code>for</code><a contenteditable="false" data-primary="test statement" data-startref="ts4" data-type="indexterm">&nbsp;</a>termina.</p>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 4-7: entrenamiento de bucles for</h2>
+
+<p>El poder definitivo que entregan los bucles <code>for</code> es la habilidad de hacer cambios r&#xE1;pidos a tu c&#xF3;digo. Como el c&#xF3;digo dentro del bloque es ejecutado t&#xED;picamente m&#xFA;ltiples veces, un cambio al bloque es magnificado cuando el c&#xF3;digo es ejecutado. Al modificar <a data-type="xref" href="#ex-4-6">Ejemplo 4-6</a> ligeramente, podemos crear una variedad de patrones distintos:</p>
+
+<figure><img alt="Ex 04 07" src="images/gspj_04in07.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  strokeWeight(2);
+}
+<!--Page Break--><br class="pagebreak-after" />
+<!--Page Break--><br class="pagebreak-after" />
+<!--Page Break--><br class="pagebreak-after" />
+function draw() {
+  background(204);
+  for (var i = 20; i &lt; 400; i += 8) {
+    line(i, 40, i + 60, 80);
+  }
+}</pre>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 4-8: desplegando las l&#xED;neas</h2>
+<a contenteditable="false" data-primary="lines" data-secondary="fanning out" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="for loops" data-secondary="for fanning out lines" data-secondary-sortas="fanning" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="lines" data-secondary="fanning out with for loops" data-type="indexterm">&nbsp;</a>
+
+<figure><img alt="Ex 04 08" src="images/gspj_04in08.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  strokeWeight(2);
+}
+
+function draw() {
+  background(204);
+  for (var i = 20; i &lt; 400; i += 20) {
+    line(i, 0, i + i/2, 80);
+  }
+}</pre>
+</section>
+
+<section data-type="sect2">
+<h2>Ejemplo 4-9: modificando las l&#xED;neas</h2>
+<a contenteditable="false" data-primary="for loops" data-secondary="for kinking lines" data-secondary-sortas="kinking" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="lines" data-secondary="kinking with for loops" data-type="indexterm">&nbsp;</a>
+
+<figure><img alt="Ex 04 09" src="images/gspj_04in09.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  strokeWeight(2);
+}
+
+function draw() {
+  background(204);
+  for (var i = 20; i &lt; 400; i += 20) {
+    line(i, 0, i + i/2, 80);
+    line(i + i/2, 80, i*1.2, 120);
+  }
+}</pre>
+</section>
+
+<section data-type="sect2" id="ex-4-10">
+<h2>Ejemplo 4-10: anidando un bucle for dentro de otro</h2>
+
+<p>Cuando<a contenteditable="false" data-primary="embedded for loops" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="for loops" data-secondary="embedding within each other" data-type="indexterm">&nbsp;</a>un bucle <code>for</code> es anidado dentro de otro, el n&#xFA;mero de repeticiones se multiplica. Primero veamos un ejemplo corto y luego revisaremos sus partes en <a data-type="xref" href="#ex-4-11">Ejemplo 4-11</a>:</p>
+
+<figure><img alt="Ex 04 10" src="images/gspj_04in10.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  noStroke();
+}
+
+function draw() {
+  background(0);
+  for (var y = 0; y &lt;= height; y += 40) {
+    for (var x = 0; x &lt;= width; x += 40) {
+      fill(255, 140);
+      ellipse(x, y, 40, 40);
+    }
+  }
+}</pre>
+</section>
+
+<section data-type="sect2" id="ex-4-11">
+<h2>Ejemplo 4-11: filas y columnas</h2>
+
+<p>En este<a contenteditable="false" data-primary="columns and rows, creating with for loops" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="rows and columns, creating with for loops" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="for loops" data-secondary="creating rows and columns with" data-type="indexterm" id="fl4cracw">&nbsp;</a>ejemplo, los bucles <code>for</code> est&#xE1;n lado a lado, en vez de estar uno anidado dentro de otro. El resultado muestra que un bucle for est&#xE1; dibujando una columna de 4 c&#xED;rculos y el otro est&#xE1; dibujando una fila de 13 c&#xED;rculos:</p>
+
+<figure><img alt="Ex 04 11" src="images/gspj_04in11.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  noStroke();
+}
+
+function draw() {
+  background(0);
+  for (var y = 0; y &lt; height+45; y += 40) {
+    fill(255, 140);
+    ellipse(0, y, 40, 40);
+  }
+  for (var x = 0; x &lt; width+45; x += 40) {
+    fill(255, 140);
+    ellipse(x, 0, 40, 40);
+  }
+}</pre>
+
+<p>Cuando uno de estos bucles <code>for</code> es puesto dentro del otro, como en el <a data-type="xref" href="#ex-4-10">Ejemplo 4-10</a>, las 4 repeticiones del primer bucle son combinadas con las 13 del segundo, para as&#xED; ejecutar 52 veces (4×13 = 52) el c&#xF3;digo dentro del bloque combinado.</p>
+
+<p>El <a data-type="xref" href="#ex-4-10">Ejemplo 4-10</a> es una buena base para explorar muchos tipos de patrones visuales repetitivos. Los siguientes ejemplos muestran un par de maneras en que esto puede ser extendido, aunque esto es solamente una peque&#xF1;a muestra de lo que es<a contenteditable="false" data-primary="for loops" data-secondary="creating rows and columns with" data-startref="fl4cracw" data-type="indexterm">&nbsp;</a>posible.</p>
+</section>
+
+<section data-type="sect2" id="ex-4-12">
+<h2>Ejemplo 4-12: alfileres y l&#xED;neas</h2>
+
+<p>En este ejemplo, el <a contenteditable="false" data-primary="for loops" data-secondary="for pins and lines" data-secondary-sortas="pins" data-type="indexterm">&nbsp;</a>c&#xF3;digo dibuja una l&#xED;nea entre cada punto de la matriz y el centro de la pantalla:</p>
+
+<figure><img alt="Ex 04 12" src="images/gspj_04in12.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+  fill(255);
+  stroke(102);
+}
+
+function draw() {
+  background(0);
+  for (var y = 20; y &lt;= height-20; y += 10) {
+    for (var x = 20; x &lt;= width-20; x += 10) {
+      ellipse(x, y, 4, 4);
+      // Dibuja una l&#xED;nea al centro de la imagen
+      line(x, y, 240, 60);
+    }
+  }
+}
+</pre>
+</section>
+
+<section data-type="sect2" id="ex-4-13">
+<h2>Ejemplo 4-13: puntos semitono</h2>
+
+<p>En este ejemplo, las<a contenteditable="false" data-primary="for loops" data-secondary="for halftone dots" data-secondary-sortas="halftone" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="halftone dots, creating" data-type="indexterm">&nbsp;</a>elipses se reducen en tama&#xF1;o en cada nueva fila y son movidas hacia la derecha, sumando la coordenada <em>y</em> con la coordenada <em>x</em>:</p>
+
+<figure><img alt="Ex 04 13" src="images/gspj_04in13.png" />
+<figcaption/>
+</figure>
+
+<pre data-code-language="p5js" data-type="programlisting">
+function setup() {
+  createCanvas(480, 120);
+}
+
+function draw() {
+  background(0);
+  for (var y = 32; y &lt;= height; y += 8) {
+    for (var x = 12; x &lt;= width; x += 15) {
+      ellipse(x + y, y, 16 - y/10.0, 16 - y/10.0);
+    }
+  }
+}</pre>
+<a contenteditable="false" data-primary="variables" data-secondary="and repetition" data-secondary-sortas="repetition" data-startref="v4rep" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="repetition" data-seealso="for loops" data-startref="rep4" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="for loops" data-startref="fl4" data-type="indexterm"></a></section>
+</section>
+
+<section data-type="sect1" id="robot2">
+<h1>Robot 2: variables</h1>
+
+<figure><img alt="Robot 2" src="images/gspj_04in14.png" />
+<figcaption/>
+</figure>
+
+<p>Las <a contenteditable="false" data-primary="robot programs (examples)" data-secondary="modifying code with variables" data-type="indexterm" id="rp4mcwv">&nbsp;</a>variables introducidas en este programa hacen que el c&#xF3;digo se vea m&#xE1;s dif&#xED;cil que el de la Robot 1 (ver <a data-type="xref" href="#robot1">Robot 1: dibuja</a>), pero ahora es mucho m&#xE1;s simple hacer modificaciones, porque los n&#xFA;meros que dependen uno de otro est&#xE1;n en una misma ubicaci&#xF3;n. Por ejemplo, el dibujo del cuello est&#xE1; basado en la variable <code>neckHeight</code>. El grupo de variables al principio del c&#xF3;digo controla los aspectos del robot que queremos cambiar: ubicaci&#xF3;n, altura del cuerpo y altura del cuello. Puedes observar algunas de las posibles variaciones posibles en la figura; de izquierda a derecha, aqu&#xed;; est&#xE1;n los valores correspondientes:</p>
+
+<table class="smallerText">
+	<tbody>
+		<tr>
+			<td class="largerTd">
+			<pre class="pre smallerText">
+y = 390&nbsp;
+bodyHeight = 180&nbsp;
+neckHeight = 40
+</pre>
+			</td>
+			<td class="largerTd">
+			<pre class="pre smallerText">
+y = 460&nbsp;
+bodyHeight = 260&nbsp;
+neckHeight = 95
+</pre>
+			</td>
+			<td class="largerTd">
+			<pre class="pre smallerText">
+y = 310&nbsp;
+bodyHeight = 80&nbsp;
+neckHeight = 10
+</pre>
+			</td>
+			<td class="largerTd">
+			<pre class="pre smallerText">
+y = 420&nbsp;
+bodyHeight = 110&nbsp;
+neckHeight = 140
+</pre>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Cuando modifiques tu propio c&#xF3;digo para usar variables en vez de n&#xFA;meros, planea cuidadosamente los cambios y despu&#xE9;s realiza las modificaciones en incrementos graduales. Por ejemplo, cuando este programa fue escrito, cada variable fue creada a una a la vez para minimizar la complejidad de la transici&#xF3;n. Solamente despu&#xE9;s de que una variable fuera creada y el c&#xF3;digo era ejecutado para asegurar que funcionara correctamente, se a&#xF1;ad&#xED;a una nueva variable:</p>
+
+<pre data-code-language="p5js" data-type="programlisting">
+var x = 60;            // Coordenada x
+var y = 420;           // Coordenada y
+var bodyHeight = 110;  // Altura del cuerpo
+var neckHeight = 140;  // Altura del cuello
+var radius = 45;
+var ny = y - bodyHeight - neckHeight - radius;  // y del cuello
+
+function setup() {
+  createCanvas(170, 480);
+  strokeWeight(2);
+  ellipseMode(RADIUS);
+}
+
+function draw() {
+  background(204);
+
+  // Cuello
+  stroke(102);
+  line(x+2, y-bodyHeight, x+2, ny);
+  line(x+12, y-bodyHeight, x+12, ny);
+  line(x+22, y-bodyHeight, x+22, ny);
+
+  // Antenas
+  line(x+12, ny, x-18, ny-43);
+  line(x+12, ny, x+42, ny-99);
+  line(x+12, ny, x+78, ny+15);
+
+  // Cuerpo
+  noStroke();
+  fill(102);
+  ellipse(x, y-33, 33, 33);
+  fill(0);
+  rect(x-45, y-bodyHeight, 90, bodyHeight-33);
+  fill(102);
+  rect(x-45, y-bodyHeight+17, 90, 6);
+
+  // Cabeza
+  fill(0);
+  ellipse(x+12, ny, radius, radius);
+  fill(255);
+  ellipse(x+24, ny-6, 14, 14);
+  fill(0);
+  ellipse(x+24, ny-6, 3, 3);
+  fill(153);
+  ellipse(x, ny-8, 5, 5);
+  ellipse(x+30, ny-26, 4, 4);
+  ellipse(x+41, ny+6, 3, 3);
+}</pre>
+<a contenteditable="false" data-primary="variables" data-startref="v4" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="robot programs (examples)" data-secondary="modifying code with variables" data-startref="rp4mcwv" data-type="indexterm">&nbsp;</a></section>
+</section>

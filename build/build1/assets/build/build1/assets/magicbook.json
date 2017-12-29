@@ -1,0 +1,55 @@
+{
+  "title" : "Getting Started with p5js: ES",
+  "destination" : "build/:build",
+  "files" : [
+      "content/copyright.html",
+      "content/toc.html",
+      "content/ch00-preface_opener.html",
+      "content/ch00-preface.html",
+      "content/ch01_opener.html",
+      "content/ch01-hello.html",
+      "content/ch02_opener.html",
+      "content/ch02-starting-to-code.html",
+      "content/ch03_opener.html",
+      "content/ch03-draw.html",
+      "content/ch04_opener.html",
+      "content/ch04-variables.html",
+      "content/ch05_opener.html",
+      "content/ch05-response.html",
+      "content/ch06_opener.html",
+      "content/ch06-translate.html",
+      "content/ch07_opener.html",
+      "content/ch07-media.html",
+      "content/ch08_opener.html",
+      "content/ch08-motion.html",
+      "content/ch09_opener.html",
+      "content/ch09-functions.html",
+      "content/ch10_opener.html",
+      "content/ch10-objects.html",
+      "content/ch11_opener.html",
+      "content/ch11-arrays.html",
+      "content/ch12_opener.html",
+      "content/ch12-data.html",
+      "content/ch13_opener.html",
+      "content/ch13-extend.html",
+      "content/appa.html",
+      "content/appb.html",
+      "content/appc.html",
+      "content/appc_closing.html",
+      "content/ix.html",
+      "content/author_bio.html",
+      "content/colo.html"
+  ],
+  "images" : {
+          "files" : "**/*.*"
+  },
+  "builds" : [
+    {
+      "format" : "pdf",
+      "layout" : "layouts/pdf.html",
+      "stylesheets" : {
+        "files" : ["stylesheets/pdf.scss"]
+      }
+    }
+  ]
+}
