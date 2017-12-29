@@ -9,3 +9,5 @@ fonts/
 *.svg
 
 *.ttf
+
+node_modules/
