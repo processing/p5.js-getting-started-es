@@ -89,7 +89,7 @@
           "book/spanish/content/colo.html"
       ],
       "stylesheets" : {
-        "files" : ["book/stylesheets/pdf-es.scss"]
+        "files" : ["book/stylesheets/pdf.scss"]
           },
       "images" : {
           "files" : "book/**/*.*"
