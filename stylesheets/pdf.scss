@@ -61,9 +61,8 @@ h1 {
     line-height: 12.5pt;
 }
 
-.chapterhead {  //  ADD <h1 class="chapterhead">
-    //page-break-before: always;
-    string-set: chaptitle content(); //**********
+.chapterhead {
+    string-set: chaptitle content();
     padding-bottom: 4em;
     font-size: 18pt;
     line-height: 12.5pt;
@@ -190,9 +189,3 @@ nav[data-type="toc"] a[href]::after {
   content: " [Page " target-counter(attr(href), page) "]"
 }
 
-//TIPS:
-//magicbook build --config=book/spanish/magicbook.json
-//
-//ADD <h1 class="chapterhead">
-//
-//<!--Page Break--><br class="pagebreak-after" />
