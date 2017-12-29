@@ -1,0 +1,164 @@
+@charset "UTF-8";
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  color: #333; }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Bold.eot');
+  src: url('Roboto-Bold.eot?#iefix') format("embedded-opentype"), url('Roboto-Bold.woff') format("woff"), url('Roboto-Bold.ttf') format("truetype"), url('Roboto-Bold.svg#robotobold') format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Roboto'; }
+
+@page {
+  size: 6in 9in;
+  margin-top: 0.625in;
+  margin-bottom: 0.875in; }
+
+@page :left {
+  margin-left: 0.75in;
+  margin-right: 1in;
+  @bottom-left {
+    content: counter(page) "       Introducción a p5.js";
+    text-align: left;
+    font-family: "TheSerif", serif;
+    font-style: "HP5 Plain";
+    font-size: 7pt; } }
+
+@page :right {
+  margin-left: 1in;
+  margin-right: 0.75in;
+  @bottom-right {
+    content: string(chaptitle) "      " counter(page);
+    text-align: right;
+    font-family: "TheSerif", serif;
+    font-style: "HP5 Plain";
+    font-size: 7pt; } }
+
+body {
+  margin: 0 auto;
+  max-width: 800px;
+  font-family: "TheSerif", serif;
+  font-style: "HP5 Plain";
+  font-size: 9pt;
+  line-height: 12.5pt;
+  color: #000000;
+  background-color: #ffffff; }
+
+.lede {
+  font-size: 12pt;
+  line-height: 16pt; }
+
+.codeLede {
+  font-size: 11.5pt;
+  line-height: 16pt; }
+
+h1 {
+  font-family: "TheSerif", serif;
+  font-style: "HP5 Plain";
+  font-size: 12pt;
+  line-height: 12.5pt; }
+
+.chapterhead {
+  string-set: chaptitle content();
+  padding-bottom: 4em;
+  font-size: 18pt;
+  line-height: 12.5pt; }
+
+h2 {
+  font-family: "TheSerif", serif;
+  font-style: "HP7 Bold";
+  font-size: 9pt;
+  line-height: 12.5pt; }
+
+code {
+  font-family: "TheSansMono", monospace;
+  font-style: "w3Light";
+  font-size: 8.5pt;
+  line-height: 12.5pt; }
+
+pre {
+  font-family: "TheSansMono", monospace;
+  font-style: "w3Light";
+  font-size: 8.5pt;
+  line-height: 12.5pt; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+a {
+  color: darkblue;
+  text-decoration: none; }
+
+table {
+  border: 1px solid black;
+  border-collapse: collapse; }
+
+th, td {
+  text-align: left;
+  max-height: 1.5em;
+  padding: 0em 0.5em 0em 0.5em;
+  border: 0.5px solid black; }
+
+.largerTd {
+  max-height: 4.5em; }
+
+.largerTr {
+  height: 3em; }
+
+.smallerText {
+  font-size: 7pt;
+  line-height: 9pt; }
+
+.addBorder {
+  border: 1px solid;
+  border-color: #666666; }
+
+div#frontmatter {
+  page: frontmatter; }
+
+div#contents {
+  counter-reset: page 1; }
+
+div[data-type="note"],
+div[data-type="tip"],
+div[data-type="exercise"],
+div[data-type="example"],
+img,
+table,
+.codesplit,
+.half-width,
+.half-width-right {
+  page-break-inside: avoid; }
+
+h2, h3, h4, h5,
+h2 + p,
+h2 + p + a,
+h4 + p,
+h4 + p + a {
+  page-break-after: avoid; }
+
+section[data-type="chapter"],
+section[data-type="acknowledgments"],
+section[data-type="dedication"],
+section[data-type="credits"],
+section[data-type="introduction"],
+section[data-type="preface"],
+section[data-type="appendix"],
+section[data-type="titlepage"],
+section[data-type="copyright-page"],
+section[data-type="toc"] {
+  page-break-before: always; }
+
+.pagebreak-before {
+  page-break-before: always; }
+
+.pagebreak-after {
+  page-break-after: always; }
+
+nav[data-type="toc"] a[href]::after {
+  content: " [Page " target-counter(attr(href), page) "]"; }

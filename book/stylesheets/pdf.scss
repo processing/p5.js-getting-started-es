@@ -11,8 +11,8 @@
 @page :left {
     margin-left: 0.75in;
     margin-right: 1in;
-    @bottom-left { 
-        content: counter(page) " \00a0\00a0\00a0\00a0\00a0\00a0 Getting Started with p5.js";
+    @bottom-left {
+        content: counter(page) " \00a0\00a0\00a0\00a0\00a0\00a0 Introducción a p5.js";
         text-align: left;
         font-family: "TheSerif", serif;
         font-style: "HP5 Plain";
@@ -23,7 +23,7 @@
 @page :right {
     margin-left: 1in;
     margin-right: 0.75in;
-    @bottom-right { 
+    @bottom-right {
         content: string(chaptitle) "\00a0\00a0\00a0\00a0\00a0\00a0" counter(page);
         text-align: right;
         font-family: "TheSerif", serif;
@@ -61,7 +61,7 @@ h1 {
     line-height: 12.5pt;
 }
 
-.chapterhead {  //  ADD <h1 class="chapterhead">    
+.chapterhead {  //  ADD <h1 class="chapterhead">
     //page-break-before: always;
     string-set: chaptitle content(); //**********
     padding-bottom: 4em;
@@ -193,6 +193,6 @@ nav[data-type="toc"] a[href]::after {
 //TIPS:
 //magicbook build --config=book/spanish/magicbook.json
 //
-//ADD <h1 class="chapterhead">   
+//ADD <h1 class="chapterhead">
 //
 //<!--Page Break--><br class="pagebreak-after" />
