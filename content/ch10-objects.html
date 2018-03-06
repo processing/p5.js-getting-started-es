@@ -283,19 +283,20 @@ function Robot(img, tempX, tempY) {
   // Define los valores iniciales de las propiedades
   this.xpos = tempX;
   this.ypos = tempY;
-  this.angle = random(0, TWO_PI);
+  this.angulo = random(0, TWO_PI);
   this.botImage = img;
-  this.ydesplazo = 0.0;
+  this.ydesplazamiento = 0.0;
 
   // Actualiza las propiedades
   this.actualizar = function() {
-    this.angle += 0.05;
-    this.ydesplazamiento = sin(this.angle) * 20;
+    this.angulo += 0.05;
+    this.ydesplazamiento = sin(this.angulo) * 20;
   }
 
-  // Dibuja el robot en la pantallla
+  // Dibuja el robot en la pantalla
   this.mostrar = function() {
-    image(this.botImage, this.xpos, this.ypos + this.ydesplazamiento);
+    image(this.botImage, this.xpos, 
+          this.ypos + this.ydesplazamiento);
   }
 }</pre>
 <a contenteditable="false" data-primary="objects" data-startref="o10" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="robot programs (examples)" data-secondary="objects" data-startref="rp10o" data-type="indexterm">&nbsp;</a></section>

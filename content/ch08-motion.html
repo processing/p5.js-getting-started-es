@@ -99,7 +99,7 @@ function setup() {
 function draw() {
   background(0);
   x += velocidad;  // Aumenta el valor de x
-  if (x &gt; width + radio) {  // Si la figura está fuera de la pantalla
+  if (x &gt; width + radio) {  <!--// Si la figura está fuera de la pantalla-->
     x = -radio;  // Mueve la figura al borde izquierdo
   }
   arc(x, 60, radio, radio, 0.52, 5.76);
