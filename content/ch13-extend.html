@@ -136,7 +136,8 @@ function setup() {
 
 function draw() {
   background(0);
-  // Mapea el valor de mouseX entre 20 Hz y 440 Hz para la frecuencia
+  // Mapea el valor de mouseX entre 20 Hz y 440 Hz
+  // para la frecuencia
   var hertz = map(mouseX, 0, width, 20.0, 440.0);
   sinusoide.freq(hertz);
   // Dibuja una onda para visualizar la frecuencia del sonido

@@ -316,7 +316,8 @@ function Film(f) {
   this.calificacion = f.rating;
 
   this.mostrar = function(x, y) {
-    var calificacionGris = map(this.calificacion, 6.5, 8.1, 102, 255);
+    var calificacionGris = map(this.calificacion,
+                               6.5, 8.1, 102, 255);
     push();
     translate(x, y);
     rotate(-QUARTER_PI);
