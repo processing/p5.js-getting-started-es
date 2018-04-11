@@ -136,7 +136,7 @@ zip,state,city,lat,lng
 35007,AL,Keystone,33.236868,-86.812861
 </pre>
 
-<p>El encabezado hace m&#xE1;s f&#xE1;cil leer el c&#xF3;digo - por ejemplo, la segunda l&#xED;nea del archivo establece que el c&#xF3;digo zip de Acmar, Alabama es 35004 y define la latitud de la ciudad como 33.584132 y la longitud como -86.51557. En total, el archivo tiene un largo de 29.741 l&#xED;neas y define la ubicaci&#xF3;n y los c&#xF3;digos zip de 29.740 ciudades en Estados Unidos. El siguiente ejemplo carga estos datos dentro la funci&#xF3;n <code>preload()</code>y luego los dibuja en la pantalla con un bucle <code>for</code> dentro de <code>draw()</code>. La funci&#xF3;n <code>setXY()</code> <a contenteditable="false" data-primary="setXY() function" data-type="indexterm">&nbsp;</a>convierte la latitud y la longitud de un archivo en una elipse en la pantalla:</p>
+<p>El encabezado hace m&#xE1;s f&#xE1;cil leer el c&#xF3;digo - por ejemplo, la segunda l&#xED;nea del archivo establece que el c&#xF3;digo zip de Acmar, Alabama es 35004 y define la latitud de la ciudad como 33.584132 y la longitud como -86.51557. En total, el archivo tiene un largo de 29.741 l&#xED;neas y define la ubicaci&#xF3;n y los c&#xF3;digos zip de 29.740 ciudades en Estados Unidos. El siguiente ejemplo carga estos datos dentro la funci&#xF3;n <code>preload()</code>y luego los dibuja en la pantalla con un bucle <code>for</code> dentro de <code>draw()</code>. La funci&#xF3;n <code>definirXY()</code> <a contenteditable="false" data-primary="setXY() function" data-type="indexterm">&nbsp;</a>convierte la latitud y la longitud de un archivo en una elipse en la pantalla:</p>
 
 <figure><img alt="Ex 12 03" src="images/gspj_12in03.png" />
 <figcaption/>
@@ -261,7 +261,7 @@ function setup() {
 <section data-type="sect2">
 <h2>Ejemplo 12-5: visualiza datos a partir de un archivo JSON</h2>
 
-<p>Tambi&#xE9;n podemos trabajar con un archivo JSON que contiene m&#xE1;s de una pel&#xED;cula. Aqu&#xED;, el archivo de datos comenzado en el ejemplo previo ha sido actualizado para incluir todas las pel&#xED;culas del director entre 1960 y 1966. El nombre de cada pel&#xED;cula es posicionado en orden en la pantalla seg&#xFA;n el a&#xF1;o de lanzamiento y es asignado un valor en la escala de grises seg&#xFA;n su calificaci&#xF3;n.</p>
+<p>Tambi&#xE9;n podemos trabajar con un archivo JSON que contenga m&#xE1;s de una pel&#xED;cula. Aqu&#xED;, el archivo de datos comenzado en el ejemplo previo ha sido actualizado para incluir todas las pel&#xED;culas del director entre 1960 y 1966. El nombre de cada pel&#xED;cula es posicionado en orden en la pantalla seg&#xFA;n el a&#xF1;o de lanzamiento y es asignado un valor en la escala de grises seg&#xFA;n su calificaci&#xF3;n.</p>
 
 <p>Existen varias diferencias entre este ejemplo y el <a data-type="xref" href="#ex-12-4">Ejemplo 12-4</a>. La m&#xE1;s importante es la manera en que el archivo JSON es cargado en los objetos <code>Pelicula</code>. El archivo JSON es cargado dentro de <code>preload()</code>, poblando la variable <code>datosPelicula</code> con un arreglo que tiene la misma estructura que los datos en el archivo. En <code>setup()</code>, se usa un bucle <code>for</code> para iterar a trav&#xE9;s del arreglo de datos de las pel&#xED;culas y crear un objeto basado en cada elemento en el arreglo, usando el constructor <code>Pelicula</code> definido aqu&#xED;. El constructor accede a porciones de la informaci&#xF3;n y las asigna a propiedades dentro de cada objeto. El constructor <code>Pelicula</code> tambi&#xE9;n define un m&#xE9;todo para mostrar el nombre de la pel&#xED;cula:</p>
 
@@ -424,11 +424,11 @@ function obtenerTemp(datos) {
   var lista = datos.list;
   var item = lista[0];
   var principal = item.main;
-  var temperature = principal.temp;
-  return temperature;
+  var temperatura = principal.temp;
+  return temperatura;
 }</pre>
 
-<p>Los datos del archivo JSON son cargados en <code>preload()</code> y son pasados a la funci&#xF3;n <code>obtenerTemp()</code> dentro de <code>setup()</code>. Luego, por el formato del archivo JSON, una serie de variables es usada para ir m&#xE1;s y m&#xE1;s profundo dentro de la estructura de los datos para finalmente llegar al n&#xFA;mero que deseamos. Este n&#xFA;mero es almacenado en la variable <span class="keep-together"><code>temperature</code></span> y luego es retornada por la funci&#xF3;n para ser asignada a la variable <code>temp</code> en <code>setup()</code> donde es impresa en la consola.</p>
+<p>Los datos del archivo JSON son cargados en <code>preload()</code> y son pasados a la funci&#xF3;n <code>obtenerTemp()</code> dentro de <code>setup()</code>. Luego, por el formato del archivo JSON, una serie de variables es usada para ir m&#xE1;s y m&#xE1;s profundo dentro de la estructura de los datos para finalmente llegar al n&#xFA;mero que deseamos. Este n&#xFA;mero es almacenado en la variable <span class="keep-together"><code>temperatura</code></span> y luego es retornada por la funci&#xF3;n para ser asignada a la variable <code>temp</code> en <code>setup()</code> donde es impresa en la consola.</p>
 </section>
 
 <section data-type="sect2" class="pagebreak-before">
@@ -534,7 +534,7 @@ function setup() {
 }
 </pre>
 
-<p>Una variaci&#xF3;n m&#xE1;s concisa (y flexible) de este bosquejo usa arreglos como un enfoque m&#xE1;s avanzado:</p>
+<p>Una variaci&#xF3;n m&#xE1;s concisa (y flexible) de este bosquejo usando arreglos:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 var numeroTiposRobot = 3;

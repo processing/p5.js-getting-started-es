@@ -1,9 +1,9 @@
 <section data-type="chapter" id="extend" xmlns="http://www.w3.org/1999/xhtml">
 <h1 class="chapterhead">Extensi&#xF3;n</h1>
 
-<p class="lede">Este libro se enfoca en usar p5.js para realizar gr&#xE1;ficas interactivas, porque eso es lo principal que p5.js hace. Sin embargo, este software puede realizar mucho m&#xE1;s que esto, y est&#xE1; siendo extendido a&#xfa;n m&#xE1;s a cada momento.</p>
+<p class="lede">Este libro se enfoca en usar p5.js para realizar gr&#xE1;ficas interactivas, porque eso es lo principal que p5.js hace. Sin embargo, este software puede realizar mucho m&#xE1;s y est&#xE1; siendo extendido a&#xfa;n m&#xE1;s todo el tiempo.</p>
 
-<p>Una <em> biblioteca</em> de p5.js es un<a contenteditable="false" data-primary="libraries" data-type="indexterm" id="lib13">&nbsp;</a>&nbsp;conjunto de c&#xF3;digo que extiende el software m&#xE1;s all&#xE1; de sus funciones principales. Las bibliotecas han sido importantes para el crecimiento de este proyecto, porque le permite a los desarrolladores a&#xF1;adir nuevas funciones r&#xE1;pidamente. Como proyectos autocontenidos y m&#xE1;s peque&#xF1;os, las bibliotecas son m&#xE1;s f&#xE1;ciles de manejar que si sus caracter&#xED;sticas estuvieran integradas al software principal.</p>
+<p>Una <em> biblioteca</em> de p5.js es un<a contenteditable="false" data-primary="libraries" data-type="indexterm" id="lib13">&nbsp;</a>conjunto de c&#xF3;digo que extiende el software m&#xE1;s all&#xE1; de sus funciones principales. Las bibliotecas han sido importantes para el crecimiento de este proyecto, porque le permite a los desarrolladores a&#xF1;adir nuevas funciones r&#xE1;pidamente. Como proyectos autocontenidos y m&#xE1;s peque&#xF1;os, las bibliotecas son m&#xE1;s f&#xE1;ciles de manejar que si sus caracter&#xED;sticas estuvieran integradas al software principal.</p>
 
 <p>El archivo <em>.zip</em> completo de p5.js incluye las bibliotecas p5.dom y p5.sound. Tambi&#xE9;n puedes descargar otras bibliotecas desde <a href="http://p5js.org/es/libraries/"><em class="hyperlink">http://p5js.org/es/libraries/</em></a>. Para usar una de estas bibliotecas, primero aseg&#xFA;rate de que est&#xE1; dentro del directorio que contiene tus archivos HTML y JavaScript. En segundo lugar, a&#xF1;ade una l&#xED;nea de c&#xF3;digo a tu archivo HTML para indicar que la biblioteca ser&#xE1; usada en el bosquejo actual. Esta l&#xED;nea deber&#xED;a verse as&#xED;:</p>
 
@@ -59,7 +59,7 @@ function draw() {
   }
 }</pre>
 
-<p>El sonido es reproducido cada vez que se ejecuta el m&#xE9;todo <code>play()</code>. Este ejemplo funciona bien porque el sonido solamente se reproduce cuando el valor de la variable <code>x</code> est&#xE1; dentro de los bordes de la pantalla. Si el sonido fuera reproducido en cada ejecuci&#xF3;n de <code>draw()</code>, el sonido se reiniciar&#xED;a 60 veces por segundo y no tendr&#xED;a tiempo de terminar de reproducirse. El resultado ser&#xED;a un sonido distorsionando r&#xE1;pidamente. Para reproducir un archivo m&#xE1;s largo mientras se ejecuta un programa, llama a los m&#xE9;todos <code>play()</code> o <code>loop()</code> del sonido dentro de <code>setup()</code> para que as&#xED; el sonido se accione una sola vez.</p>
+<p>El sonido es reproducido cada vez que se ejecuta el m&#xE9;todo <code>play()</code>. Este ejemplo funciona bien porque el sonido solamente se reproduce cuando el valor de la variable <code>x</code> est&#xE1; dentro de los bordes de la pantalla. Si el sonido fuera reproducido en cada ejecuci&#xF3;n de <code>draw()</code>, el sonido se reiniciar&#xED;a 60 veces por segundo y no tendr&#xED;a tiempo de terminar de reproducirse. El resultado ser&#xED;a un sonido distorsionando r&#xE1;pidamente. Para reproducir un archivo m&#xE1;s largo mientras se ejecuta un programa, llama a los m&#xE9;todos <code>play()</code> o <code>loop()</code> del sonido dentro de <code>setup()</code> para que as&#xED; el sonido se ejecute una sola vez.</p>
 
 <div data-type="note">
 <p>El objeto <code>p5.SoundFile</code> posee muchos m&#xE9;todos para controlar c&#xF3;mo un sonido es reproducido. Los m&#xE1;s esenciales son <code>play()</code> para reproducir la muestra una sola vez, <code>loop()</code> para reproducirlo de principio a fin una y otra vez, <code>stop()</code> para detener la reproducci&#xF3;n, y <code>jump()</code> para saltar a un momento espec&#xED;fico<a contenteditable="false" data-primary="p5.sound audio library" data-secondary="playing samples" data-startref="p5sal13ps" data-type="indexterm">&nbsp;</a>dentro del archivo.</p>
@@ -108,7 +108,7 @@ function draw() {
 }
 </pre>
 
-<p>Hay dos partes que est&#xE1;n obteniendo la amplitud (volumen) del micr&#xF3;fono conectado. El objeto <code>p5.AudioIn</code> es usado para obtener la se&#xF1;al del micr&#xF3;fono y el objeto <code>p5.Amplitude</code> es usado para medir la se&#xF1;al.</p>
+<p>Hay dos secciones que est&#xE1;n obteniendo la amplitud (volumen) del micr&#xF3;fono conectado. El objeto <code>p5.AudioIn</code> es usado para obtener la se&#xF1;al del micr&#xF3;fono y el objeto <code>p5.Amplitude</code> es usado para medir la se&#xF1;al.</p>
 
 <p>Las variables para almacenar ambos objetos est&#xE1; definidas en la parte superior del c&#xF3;digo y creadas dentro de <code>setup()</code>. Despu&#xE9;s del objeto <code>p5.Amplitude</code> (en este programa se llama <code>amp</code>), el objeto <code>p5.AudioIn</code>, llamado <code>mic</code>, es conectado al objeto <code>amp</code> on el m&#xE9;todo <code>setInput()</code>. Despu&#xE9;s de eso, el m&#xE9;todo <code>getLevel()</code> del objeto <code>amp</code> puede ser ejecutado en cualquier momento para leer la amplitud de los datos de micr&#xF3;fono dentro del programa. En este ejemplo, esto es realizado en cada ejecuci&#xf3;n de <code>draw()</code> y el valor es usado para definir el tama&#xF1;o del c&#xED;rculo.</p>
 
@@ -150,21 +150,21 @@ function draw() {
 }
 </pre>
 
-<p>El objeto <code>sine</code>, creado a partir del constructor <code>p5.SinOsc</code>, es definido al principio del c&#xF3;digo y luego creado dentro de <code>setup()</code>. El m&#xE9;todo <code>start()</code> causa que la onda empiece a generar sonido. Dentro de <code>draw()</code>, el m&#xE9;todo <code>freq()</code>  define continuamente la frecuencia de la onda, bas&#xE1;ndose en la posici&#xF3;n izquierda y derecha del<a contenteditable="false" data-primary="p5.sound audio library" data-secondary="creating sine waves" data-startref="p5sal13csw" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="p5.sound audio library" data-startref="p5sal13" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="sine wave frequencies" data-startref="swf13" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="libraries" data-secondary="p5.sound audio library" data-startref="lib13pdsal" data-type="indexterm">&nbsp;</a>rat&#xF3;n.</p>
+<p>El objeto <code>sinusoide</code>, creado a partir del constructor <code>p5.SinOsc</code>, es definido al principio del c&#xF3;digo y luego creado dentro de <code>setup()</code>. El m&#xE9;todo <code>start()</code> causa que la onda empiece a generar sonido. Dentro de <code>draw()</code>, el m&#xE9;todo <code>freq()</code>  define continuamente la frecuencia de la onda, bas&#xE1;ndose en la posici&#xF3;n izquierda y derecha del<a contenteditable="false" data-primary="p5.sound audio library" data-secondary="creating sine waves" data-startref="p5sal13csw" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="p5.sound audio library" data-startref="p5sal13" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="sine wave frequencies" data-startref="swf13" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="libraries" data-secondary="p5.sound audio library" data-startref="lib13pdsal" data-type="indexterm">&nbsp;</a>rat&#xF3;n.</p>
 </section>
 </section>
 
 <section data-type="sect1">
 <h1>p5.dom</h1>
 
-<p>La<a contenteditable="false" data-primary="p5.dom library" data-type="indexterm" id="p5doml13">&nbsp;</a><a contenteditable="false" data-primary="libraries" data-secondary="p5.dom library" data-type="indexterm" id="l13p5doml">&nbsp;</a>biblioteca p5.dom posee la habilidad de crear e interactuar con <a contenteditable="false" data-primary="HTML elements, external" data-see="p5.dom library" data-type="indexterm">&nbsp;</a>elementos HTML fuera del lienzo gr&#xE1;fico.<a contenteditable="false" data-primary="Document Object Model (DOM) library" data-see="revisar biblioteca p5.dom" data-type="indexterm">&nbsp;</a><em>DOM</em> proviene de <em>Document Object Model</em>, que se refiere a un conjunto de m&#xE9;todos para interactuar program&#xE1;ticamente con la p&#xE1;gina HTML. Los siguientes ejemplos presentan unas pocas funciones clave. Revisa la <em>Referencia de p5.js</em> para ver muchos m&#xE1;s elementos que pueden ser creados y funciones que pueden ser llamadas: <a href="http://p5js.org/es/reference/#/libraries/p5.dom"><em class="hyperlink">http://p5js.org/es/reference/#/libraries/p5.dom</em></a>.</p>
+<p>La<a contenteditable="false" data-primary="p5.dom library" data-type="indexterm" id="p5doml13">&nbsp;</a><a contenteditable="false" data-primary="libraries" data-secondary="p5.dom library" data-type="indexterm" id="l13p5doml">&nbsp;</a>biblioteca p5.dom posee la habilidad de crear e interactuar con <a contenteditable="false" data-primary="HTML elements, external" data-see="p5.dom library" data-type="indexterm">&nbsp;</a>elementos HTML fuera del lienzo gr&#xE1;fico.<a contenteditable="false" data-primary="Document Object Model (DOM) library" data-see="revisar biblioteca p5.dom" data-type="indexterm">&nbsp;</a><em>DOM</em> proviene de <em>Document Object Model</em>, que se refiere a un conjunto de m&#xE9;todos para interactuar program&#xE1;ticamente con la p&#xE1;gina HTML. Los siguientes ejemplos introducen unas pocas funciones clave. Revisa la <em>Referencia de p5.js</em> para conocer m&#xE1;s elementos que pueden ser creados y funciones que pueden ser llamadas: <a href="http://p5js.org/es/reference/#/libraries/p5.dom"><em class="hyperlink">http://p5js.org/es/reference/#/libraries/p5.dom</em></a>.</p>
 
 <p>Tal como <code>createCanvas()</code> crea un lienzo gr&#xE1;fico en la p&#xE1;gina, p5.dom incluye un n&#xFA;mero de otros m&#xE9;todos <code>create</code> para a&#xF1;adir otros elementos HTML a la p&#xE1;gina. Entre los ejemplos se incluyen video, enlaces URL, cuadros para ingresar texto y barras deslizadoras.</p>
 
 <section data-type="sect2">
-<h2>Example 13-4: accede a la webcam</h2>
+<h2>Example 13-4: accede a la webc&#xE1;m</h2>
 
-<p><code>createCapture()</code><a contenteditable="false" data-primary="p5.dom library" data-secondary="webcam access" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="webcam" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="createCapture() function" data-type="indexterm">&nbsp;</a>accede a la webcam de tu computador y crea un elemento HTML que muestra su audio y video. Una vez que el elemento de captura es creado, puede ser dibujado en el lienzo y manipulado:</p>
+<p><code>createCapture()</code><a contenteditable="false" data-primary="p5.dom library" data-secondary="webcam access" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="webcam" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="createCapture() function" data-type="indexterm">&nbsp;</a>accede a la c&#xE1;mara de tu computador y crea un elemento HTML que muestra su audio y video. Una vez que el elemento de captura es creado, puede ser dibujado en el lienzo y manipulado:</p>
 
 <figure class="left-align"><img alt="Ex 13 04" src="images/gspj_13in04.png" />
 <figcaption/>
@@ -180,7 +180,7 @@ function setup() {
 }
 
 function draw() {
-  var relacionDeAspecto = capture.height/capture.width;
+  var relacionDeAspecto = captura.height/capture.width;
   var h = width * relacionDeAspecto;
   image(captura, 0, 0, width, h);
   filter(INVERT);

@@ -6,7 +6,7 @@
 <section data-type="sect1">
 <h1>De variables a arreglos</h1>
 
-<p><span style="letter-spacing: 0.01em; line-height: 1.3em;">Cuando <a contenteditable="false" data-primary="variables" data-secondary="arrays versus" data-type="indexterm" id="v11av">&nbsp;</a><a contenteditable="false" data-primary="arrays" data-secondary="variables versus" data-type="indexterm" id="a11vv"></a>un programa necesita</span><span style="letter-spacing: 0.01em; line-height: 1.3em;"> mantener registro de una o dos cosas, no es necesario crear un arreglo. De hecho, usar un arreglo podria hacer que el programa sea m&#xe1;s complicado de lo necesario. Sin embargo, cuando un programa posee muchos elementos (por ejemplo, un campo de estrellas en un juego sobre el espacio o m&#xFA;ltiples puntos de datos en una visualizaci&#xF3;n), los arreglos hacen que el c&#xF3;digo sea m&#xE1;s f&#xE1;cil de escribir..</span></p>
+<p><span style="letter-spacing: 0.01em; line-height: 1.3em;">Cuando <a contenteditable="false" data-primary="variables" data-secondary="arrays versus" data-type="indexterm" id="v11av">&nbsp;</a><a contenteditable="false" data-primary="arrays" data-secondary="variables versus" data-type="indexterm" id="a11vv"></a>un programa necesita</span><span style="letter-spacing: 0.01em; line-height: 1.3em;"> mantener registro de una o dos cosas, no es necesario crear un arreglo. De hecho, usar un arreglo podr&#xed;a hacer que el programa sea m&#xe1;s complicado de lo necesario. Sin embargo, cuando un programa posee muchos elementos (por ejemplo, un campo de estrellas en un juego sobre el espacio o m&#xFA;ltiples puntos de datos en una visualizaci&#xF3;n), los arreglos hacen que el c&#xF3;digo sea m&#xE1;s f&#xE1;cil de escribir..</span></p>
 
 <section data-type="sect2" id="ex-11-1">
 <h2>Ejemplo 11-1: Muchas variables</h2>
@@ -161,7 +161,7 @@ function setup() {
 </section>
 
 <section class="pagebreak-before" data-type="sect2">
-<h2>Ejemplo 11-5: asigna valores en un arreglo en una pasada</h2>
+<h2>Ejemplo 11-5: asigna valores en un arreglo de una sola vez</h2>
 
 <p>Tambi&#xE9;n puedes asignar valores a un arreglo cuando es creado, cuando todo es parte de la misma instrucci&#xF3;n:</p>
 
@@ -409,7 +409,6 @@ function setup() {
 
 function draw() {
   background(204);
-  // Actualiza y muestra cada bot en el arreglo
   for (var i = 0; i &lt; bots.length; i++) {
     bots[i].actualizar();
     bots[i].mostrar();

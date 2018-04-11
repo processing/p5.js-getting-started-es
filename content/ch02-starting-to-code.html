@@ -44,9 +44,9 @@ function draw() {
   // put drawing code here
 }</pre>
 
-<p>El c&#xF3;digo plantilla contiene dos bloques, o funciones, <code>setup()</code> y <code>draw()</code>. <a contenteditable="false" data-primary="setup() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="draw() function" data-type="indexterm">&nbsp;</a>Puedes poner tu c&#xF3;digo en cualquiera de los dos lugares, y cada lugar tiene un prop&#xF3;sito espec&#xED;fico.</p>
+<p>El c&#xF3;digo plantilla contiene dos bloques, o funciones, <code>setup()</code> y <code>draw()</code>.<a contenteditable="false" data-primary="setup() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="draw() function" data-type="indexterm">&nbsp;</a>Puedes escribir tu c&#xF3;digo en cualquiera de los dos lugares, y cada lugar tiene un prop&#xF3;sito espec&#xED;fico.</p>
 
-<p>Cualquier c&#xF3;digo que est&#xE9; involucrado en la definici&#xF3;n del estado incial de tu programa corresponde al bloque <code>setup()</code>. Por ahora, lo dejaremos vac&#xED;o, pero m&#xE1;s adelante en el libro, a&#xF1;adir&#xE1;s c&#xF3;digo aqu&#xED; para especificar el tama&#xF1;o de tu lienzo para tus gr&#xE1;ficas, el grosor de tu trazado o la velocidad de tu programa.</p>
+<p>Cualquier c&#xF3;digo que est&#xE9; involucrado en la definici&#xF3;n del estado inicial de tu programa corresponde al bloque <code>setup()</code>. Por ahora, lo dejaremos vac&#xED;o, pero m&#xE1;s adelante en el libro, a&#xF1;adir&#xE1;s c&#xF3;digo aqu&#xED; para especificar el tama&#xF1;o del lienzo para tus gr&#xE1;ficas, el grosor de tu trazado o la velocidad de tu programa.</p>
 
 <p>Cualquier c&#xF3;digo involucrado en realmente dibujar contenido en la pantalla (definir el color de fondo, dibujar figuras, texto o im&#xE1;genes) ser&#xE1; puesto dentro del bloque <code>draw()</code>. Es aqu&#xED; donde empezar&#xE1;s a escribir tus primeras l&#xED;neas de c&#xF3;digo.</p>
 
@@ -108,18 +108,18 @@ function draw() {
   ellipse(mouseX, mouseY, 80, 80);
 }</pre>
 
-<p class="pagebreak-before">Este programa crea un lienzo para gr&#xE1;ficas que tiene un ancho de 480 pixeles y una altura de 120 pixeles, y luego empieza a dibujar c&#xED;rculos blancos en la posici&#xF3;n del rat&#xF3;n. Cuando presionas un bot&#xF3;n del rat&#xF3;n, el color del c&#xED;rculo cambia a negro. Explicaremos despu&#xE9;s y en detalle m&#xE1;s de los elementos de este programa. Por ahora, ejecuta el c&#xF3;digo, mueve el rat&#xF3;n y haz click para&nbsp;<a contenteditable="false" data-primary="circles" data-secondary="drawing" data-startref="c2d" data-type="indexterm">&nbsp;</a>  experimentarlo.</p>
+<p class="pagebreak-before">Este programa crea un lienzo para gr&#xE1;ficas que tiene un ancho de 480 pixeles y una altura de 120 pixeles, y luego empieza a dibujar c&#xED;rculos blancos en la posici&#xF3;n del rat&#xF3;n. Cuando presionas un bot&#xF3;n del rat&#xF3;n, el color del c&#xED;rculo cambia a negro. Explicaremos despu&#xE9;s y en detalle m&#xE1;s de los elementos de este programa. Por ahora, ejecuta el c&#xF3;digo, mueve el rat&#xF3;n y haz click para&nbsp;<a contenteditable="false" data-primary="circles" data-secondary="drawing" data-startref="c2d" data-type="indexterm"></a>  experimentarlo.</p>
 </section>
 </section>
 
 <section data-type="sect1">
 <h1>La consola</h1>
 
-<p>El <a contenteditable="false" data-primary="console" data-type="indexterm" id="cons2">&nbsp;</a>navegador tiene incluido una <em>consola</em> que puede ser muy &#xFA;til para <a contenteditable="false" data-primary="debugging" data-type="indexterm">&nbsp;</a>corregir errores en los programas. Cada navegador tiene una manera distinta de abrir la consola. Aqu&#xED; est&#xE1;n las instrucciones sobre c&#xF3;mo hacerlo en los navegadores m&#xE1;s t&#xED;picos:</p>
+<p>El <a contenteditable="false" data-primary="console" data-type="indexterm" id="cons2">&nbsp;</a>navegador tiene incluido una <em>consola</em> que puede ser muy &#xFA;til para<a contenteditable="false" data-primary="debugging" data-type="indexterm">&nbsp;</a>corregir errores en los programas. Cada navegador tiene una manera distinta de abrir la consola. Aqu&#xED; est&#xE1;n las instrucciones sobre c&#xF3;mo hacerlo en los navegadores m&#xE1;s t&#xED;picos:</p>
 
 <ul>
 	<li>Para abrir la consola en Chrome, selecciona en el men&#xFA; superior Ver → Opciones para desarrolladores → Consola de JavaScript.</li>
-	<li>En Firefox, en el men&#xFA; superior selecciona Herramientas → Desarrollado Web → Consola Web.</li>
+	<li>En Firefox, en el men&#xFA; superior selecciona Herramientas → Desarrollador Web → Consola Web.</li>
 	<li>Si usas Safari, necesitar&#xE1;s habilitar la funcionalidad antes de que puedas usarla. Desde el men&#xFA; superior, selecciona Preferencias, luego haz click en la pesta&#xF1;a Avanzado y activa la casilla con el texto "Mostrar el men&#xfa; Desarrollo en la barra de men&#xfa;s." Tras hacer esto, podr&#xE1;s seleccionar Desarrollo → Mostrar consola de JavaScript.</li>
 	<!-- <li>En Internet Explorer, abre F12 Developer Tools, luego selecciona la Console tool.</li> -->
 </ul>
@@ -153,19 +153,19 @@ function draw() {
 <p>Siempre es una buena idea grabar frecuentemente tus bosquejos. Mientras vas probando cosas nuevas, graba tu bosquejo con diferentes nombres, (Archivo→Guardar como), para que as&#xED; siempre puedas volver a versiones anteriores.  Esto es especialmente &#xFA;til si algo&nbsp;<a contenteditable="false" data-primary="new project" data-startref="np2" data-type="indexterm">&nbsp;</a>falla.</p>
 
 <div data-type="note">
-<p>Un error com&#xFA;n es estar editando un proyecto pero estar viendo otro en el navegador, haciendo que no puedas ver los cambios que has realizado. Si te das cuenta que tu programa se ve igual a pesar de haber hecho cambios a tu c&#xF3;digo, revisa que est&#xE1;s viendo el archivo <em>index.html</em> correcto.</p>
+<p>Un error com&#xFA;n es estar editando un proyecto pero estar viendo otro en el navegador, haciendo que no puedas ver los cambios que has realizado. Si te das cuenta que tu programa se ve igual a pesar de haber hecho cambios en tu c&#xF3;digo, revisa que est&#xE1;s viendo el archivo <em>index.html</em> correcto.</p>
 </div>
 </section>
 
 <section data-type="sect1">
 <h1>Ejemplos y referencia</h1>
 
-<p>Aprender <a contenteditable="false" data-primary="Reference page" data-type="indexterm"></a><a contenteditable="false" data-primary="Examples page" data-type="indexterm"></a>a programar con p5.js involucra explorar mucho c&#xF3;digo: ejecutarlo, alterarlo, romperlo y mejorarlo hasta que lo hayas reconfigurado en algo novedoso.  Con esto en mente, el sitio web de p5.js tiene docenas de ejemplos que demuestran diferentes caracter&#xED;sticas de la biblioteca. Visita la <a href="http://p5js.org/es/examples">p&#xe1;gina de Ejemplos</a> para verlos. Puedes jugar con ellos editanto el c&#xF3;digo en la p&#xE1;gina y luego haciendo click en "Ejecutar." Los ejemplos est&#xE1;n agrupados en distintas categor&#xED;as seg&#xFA;n su funci&#xF3;n, como forma, color, e imagen. Encuentra un tema que te interese en la lista y prueba un ejemplo.</p>
+<p>Aprender <a contenteditable="false" data-primary="Reference page" data-type="indexterm"></a><a contenteditable="false" data-primary="Examples page" data-type="indexterm"></a>a programar con p5.js involucra explorar mucho c&#xF3;digo: ejecutarlo, alterarlo, romperlo y mejorarlo hasta que lo hayas reconfigurado y hecho algo novedoso.  Con esto en mente, el sitio web de p5.js tiene docenas de ejemplos que demuestran diferentes caracter&#xED;sticas de la biblioteca. Visita la <a href="http://p5js.org/es/examples">p&#xe1;gina de Ejemplos</a> para verlos. Puedes jugar con ellos editanto el c&#xF3;digo en la p&#xE1;gina y luego haciendo click en "Ejecutar." Los ejemplos est&#xE1;n agrupados en distintas categor&#xED;as seg&#xFA;n su funci&#xF3;n, como forma, color, e imagen. Encuentra un tema que te interese en la lista y prueba un ejemplo.</p>
 
 <p>Si ves una parte del programa con la que no est&#xE1;s familiarizado o sobre la que quieres aprender su funcionalidad, visita la <a href="http://p5js.org/es/reference/"><em>Referencia de p5.js</em></a>.</p>
 
-<p>La <em>Referencia de p5.js</em> explica cada elemento de c&#xF3;digo con una descripci&#xF3;n y ejemplos. Los programas de la <em>Referencia</em> son mucho m&#xE1;s cortos (usualmente cuatro o cinco l&#xED;neas) y m&#xE1;s f&#xE1;ciles de seguir que los ejemplos de la p&#xE1;gina Aprende. Ten en cuenta que estos ejemplos usualmente omiten <code>setup()</code> y <code>draw()</code> por simplicidad, pero estas l&#xED;neas de c&#xF3;digo que ves deber&#xE1;n ser puestas dentro de uno de estos bloques para poder ser ejecutadas. Recomendamos mantener la p&#xE1;gina de <em>Referencia</em> abierta mientras est&#xE9;s leyendo este libro y mientras est&#xE9;s programando. Puede ser navegada por tema o usando la barra de b&#xFA;squeda en la parte superior de la p&#xE1;gina.</p>
+<p>La <em>Referencia de p5.js</em> explica cada elemento de c&#xF3;digo con una descripci&#xF3;n y ejemplos. Los programas de la <em>Referencia</em> son mucho m&#xE1;s cortos (usualmente cuatro o cinco l&#xED;neas) y m&#xE1;s f&#xE1;ciles de seguir que los ejemplos de la <a href="https://p5js.org/es/learn/">p&#xE1;gina Aprender</a>. Ten en cuenta que estos ejemplos por simplicidad usualmente omiten <code>setup()</code> y <code>draw()</code>, pero estas l&#xED;neas de c&#xF3;digo que ves deber&#xE1;n ubicarse dentro de uno de estos bloques para poder ser ejecutadas. Recomendamos mantener la p&#xE1;gina de <em>Referencia</em> abierta mientras est&#xE9;s leyendo este libro y mientras est&#xE9;s programando. Puede ser navegada por tema o usando la barra de b&#xFA;squeda en la parte superior de la p&#xE1;gina.</p>
 
-<p>La <em>Referencia</em> fue escrita pensando en el principiante; esperamos que sea clara y facil de entender. Estamos muy agradecidos de las personas que han encontrado errores y los han se&#xF1;alado. Si crees que puedes mejorar una entrada en la referencia o que has encontrado alg&#xFA;n error, por favor haznos saber esto haciendo click en el enlace en la parte inferior de cada <a contenteditable="false" data-primary="coding basics" data-startref="cb2" data-type="indexterm">&nbsp;</a>p&#xE1;gina de referencia.</p>
+<p>La <em>Referencia</em> fue escrita pensando en el principiante; esperamos que sea clara y facil de entender. Estamos muy agradecidos de las personas que han encontrado errores y los han se&#xF1;alado. Si crees que puedes mejorar una entrada en la referencia o que has encontrado alg&#xFA;n error, por favor haznos saber esto haciendo click en el enlace en la parte inferior de cada<a contenteditable="false" data-primary="coding basics" data-startref="cb2" data-type="indexterm">&nbsp;</a>p&#xE1;gina de referencia.</p>
 </section>
 </section>

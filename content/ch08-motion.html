@@ -9,7 +9,7 @@
 <p>Para<a contenteditable="false" data-primary="animation" data-secondary="frames/frame rates" data-type="indexterm" id="a8fr">&nbsp;</a><a contenteditable="false" data-primary="frames" data-type="indexterm">&nbsp;</a>crear un movimiento fluido, p5.js trata de ejecutar el c&#xF3;digo dentro de<a contenteditable="false" data-primary="draw() function" data-type="indexterm">&nbsp;</a> <code>draw()</code> a una tasa de 60 cuadros por segundo. Un <em>cuadro</em> es una ejecuci&#xF3;n de la funci&#xF3;n <code>draw()</code> y la <em>tasa de cuadros</em> equivale a cu&#xE1;ntos cuadros son dibujados por segundo. Entonces, un programa que dibuja 60 cuadros por segundo ejecuta todo el c&#xF3;digo dentro de la funci&#xF3;n <code>draw()</code> 60 veces por segundo.</p>
 
 <section data-type="sect2" id="ex-8-1">
-<h2>Ejemplo 8-1: ve la tasa de cuadros</h2>
+<h2>Ejemplo 8-1: revisa la tasa de cuadros</h2>
 
 <p>Para confirmar la<a contenteditable="false" data-primary="frame rates" data-type="indexterm" id="fr8">&nbsp;</a>tasa de cuadros, podemos usar la consola del navegador que aprendimos a usar en <a data-type="xref" href="#hello">1/Hola</a>. La funci&#xF3;n&nbsp;<code>frameRate()</code>&nbsp;<a contenteditable="false" data-primary="frameRate() function" data-type="indexterm">&nbsp;</a>indica la velocidad actual de tu programa.&nbsp;Abre la consola,&nbsp;ejecuta este programa y revisa los valores que imprime:</p>
 
@@ -135,17 +135,17 @@ function setup() {
 function draw() {
   background(0);
   x += velocidad * direccion;
-  if ((x &gt; width - radio) || (x &lt; radius)) {
+  if ((x &gt; width - radio) || (x &lt; radio)) {
     direccion = -direccion; // Cambiar dirección
   }
-  if (direction == 1) {
+  if (direccion == 1) {
     arc(x, 60, radio, radio, 0.52, 5.76); // Hacia la derecha
   } else {
     arc(x, 60, radio, radio, 3.67, 8.9); // Hacia la izquierda
   }
 }</pre>
 
-<p>Cuando la figura llega a un borde, este c&#xF3;digo invierte la direcci&#xF3;n de la figura, cambiando el signo de la variable <code>direction</code>. Por ejemplo, si la variable <code>direction</code> es positiva cuando la figura llega a un borde, el c&#xF3;digo la invierte a <a contenteditable="false" data-primary="animation" data-secondary="speed and direction" data-startref="a8sd" data-type="indexterm">&nbsp;</a>negativa.</p>
+<p>Cuando la figura llega a un borde, este c&#xF3;digo invierte la direcci&#xF3;n de la figura, cambiando el signo de la variable <code>direccion</code>. Por ejemplo, si la variable <code>direccion</code> es positiva cuando la figura llega a un borde, el c&#xF3;digo la invierte a<a contenteditable="false" data-primary="animation" data-secondary="speed and direction" data-startref="a8sd" data-type="indexterm">&nbsp;</a>negativa.</p>
 </section>
 </section>
 
@@ -286,12 +286,12 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 8-10: el tiempo pasa</h2>
 
-<p>Puedes ver c&#xF3;mo el tiempo pasa cuando ejecutas este programa::</p>
+<p>Puedes ver c&#xF3;mo el tiempo pasa cuando ejecutas este programa:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 function draw() {
-  var timer = millis();
-  print(timer);
+  var temporizador = millis();
+  print(temporizador);
 }</pre>
 </section>
 

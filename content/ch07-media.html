@@ -244,7 +244,7 @@ function draw() {
 
 <p>Cuando ejecutes este programa, te dar&#xE1;s cuenta que el lienzo para pintar est&#xE1; gris y que la imagen no est&#xE1; siendo mostrada. El bosquejo primero ejecuta la funci&#xF3;n <code>setup()</code>,  y luego ejecuta la funci&#xF3;n <code>draw()</code>. En la l&#xED;nea de <code>loadImage()</code> empieza a cargar la imagen, pero contin&#xFA;a con el resto de <code>setup()</code> y con <code>draw()</code>  antes de que la imagen est&#xE9; completamente cargada.&nbsp;La funci&#xF3;n <code>image()</code> no es capaz de dibujar una imagen que todav&#xED;a no est&#xE9; cargada.</p>
 
-<p>Para ayudar con este problema, p5.js posee la funci&#xF3;n<a contenteditable="false" data-primary="preload() function" data-type="indexterm">&nbsp;</a> <code>preload()</code>. A diferencia de <code>setup()</code>, <code>preload()</code>&nbsp;fuerza al programa a esperar hasta que todo est&#xE9; cargado antes de continuar. Es mejor hacer las llamadas para cargar archivos dentro de <code>preload()</code>, y hacer toda la configuraci&#xF3;n en <code>setup()</code>.</p>
+<p>Para solucionar con este problema, p5.js posee la funci&#xF3;n<a contenteditable="false" data-primary="preload() function" data-type="indexterm">&nbsp;</a> <code>preload()</code>. A diferencia de <code>setup()</code>, <code>preload()</code>&nbsp;fuerza al programa a esperar hasta que todo est&#xE9; cargado antes de continuar. Es mejor ejecutar las instrucciones para cargar archivos dentro de <code>preload()</code>, y hacer toda la configuraci&#xF3;n en <code>setup()</code>.</p>
 
 <p>De forma alternativa, en vez de usar <code>preload()</code>,  puedes usar algo llamado <em>funci&#xF3;n callback</em> (retrollamada). Una <a contenteditable="false" data-primary="callback function" data-type="indexterm">&nbsp;</a>funci&#xF3;n callback es una funci&#xF3;n que se pasa como argumento a una segunda funci&#xF3;n, y que se ejecuta despu&#xe9;s de que la segunda funcion ha terminado. El siguiente ejemplo ilustra esta t&#xe9;cnica.</p>
 </section>
@@ -255,7 +255,7 @@ function draw() {
 <pre data-code-language="p5js" data-type="programlisting">
 function setup() {
   createCanvas(480, 120);
-  loadImage("lunar.jpg", drawImage);
+  loadImage("lunar.jpg", dibujarImagen);
   noLoop();
 }
 
@@ -263,7 +263,7 @@ function draw() {
   background(200);
 }
 
-function drawImage(img) {
+function dibujarImagen(img) {
   image(img, 0, 0);
 }</pre>
 
@@ -276,7 +276,7 @@ function drawImage(img) {
 <section data-type="sect1" id="fonts">
 <h1>Tipos de letra</h1>
 
-<p>p5.js puede<a contenteditable="false" data-primary="media" data-secondary="fonts" data-seealso="fonts" data-type="indexterm" id="m7f">&nbsp;</a><a contenteditable="false" data-primary="fonts" data-type="indexterm" id="f7">&nbsp;</a>mostrar texto en fuentes distintas que la por defecto. Puedes usar cualquier fuente que est&#xE9; en tu computador (son llamadas <a contenteditable="false" data-primary="system fonts" data-type="indexterm">&nbsp;</a><em>fuentes del sistema</em>). Ten en cuenta que si est&#xE1;s compartiendo esto en la web, otra gente necesitar&#xE1; a&#xF1;adir la fuente de sistema para poder ver el texto en la fuente que escogiste. Existe un n&#xFA;mero de fuentes que la mayor parte de los computadores y dispositivos tienen; estas incluyen "Arial," "Courier," "Courier New," "Georgia," "Helvetica," "Palatino," "Times New Roman," "Trebuchet MS," y "Verdana."</p>
+<p>p5.js puede<a contenteditable="false" data-primary="media" data-secondary="fonts" data-seealso="fonts" data-type="indexterm" id="m7f">&nbsp;</a><a contenteditable="false" data-primary="fonts" data-type="indexterm" id="f7">&nbsp;</a>mostrar texto en fuentes distintas que la por defecto. Puedes usar cualquier fuente que est&#xE9; en tu computador (llamadas <a contenteditable="false" data-primary="system fonts" data-type="indexterm">&nbsp;</a><em>fuentes del sistema</em>). Ten en cuenta que si est&#xE1;s compartiendo esto en la web, otra gente necesitar&#xE1; a&#xF1;adir la fuente de sistema para poder ver el texto en la fuente que escogiste. Existe un n&#xFA;mero de fuentes que la mayor parte de los computadores y dispositivos tienen; estas incluyen "Arial," "Courier," "Courier New," "Georgia," "Helvetica," "Palatino," "Times New Roman," "Trebuchet MS," y "Verdana."</p>
 
 <section data-type="sect2">
 <h2>Ejemplo 7-9: dibujando con tipos de letras</h2>
@@ -444,7 +444,7 @@ function draw() {
 <p>En<a contenteditable="false" data-primary="variables" data-secondary="storing text in" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="fonts" data-secondary="storing text in a variable" data-type="indexterm">&nbsp;</a>el ejemplo anterior, las palabras dentro de la funci&#xf3;n <code>text()</code> hacen que el codigo sea dif&#xed;cil de leer. Podemos almacenar estas palabras en una variable para hacer que el c&#xf3;digo sea m&#xe1;s modular. Aqu&#xed; hay una nueva versi&#xf3;n del ejemplo anterior que usa una variable:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
-var quote = "one small step for man...";
+var cita = "one small step for man...";
 
 function setup() {
   createCanvas(480, 120);
@@ -454,7 +454,7 @@ function setup() {
 
 function draw() {
   background(204);
-  text(quote, 26, 24, 240, 100);
+  text(cita, 26, 24, 240, 100);
 }</pre>
 
 <p>Existe un conjunto de funciones adicionales que afectan la forma en que las letras son mostradas en la pantalla. Son explicadas, con ejemplos, en la categor&#xed;a Tipograf&#xed;a <a contenteditable="false" data-primary="media" data-secondary="fonts" data-seealso="fonts" data-startref="m7f" data-type="indexterm">&nbsp;</a>de<a contenteditable="false" data-primary="fonts" data-startref="f7" data-type="indexterm">&nbsp;</a>la <em>Referencia de p5.js</em>.</p>
@@ -480,10 +480,10 @@ function draw() {
 var bot1;
 var bot2;
 var bot3;
-var landscape;
+var landscape; //fondo
 
-var easing = 0.05;
-var offset = 0;
+var easing = 0.05; //suavizado
+var offset = 0; //desfase
 
 // Precarga las im&#xe1;genes
 function preload() {

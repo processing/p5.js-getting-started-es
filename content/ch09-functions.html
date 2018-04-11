@@ -15,7 +15,7 @@
 <section data-type="sect2" id="ex-9-1">
 <h2>Ejemplo 9-1: lanza los dados</h2>
 
-<p>Este comportamiento es ilustrado con la funci&#xF3;n <code>rollDice()</code> escrita para este ejemplo. Cuando el programa empieza, ejecuta el c&#xF3;digo en <code>setup()</code> y luego se detiene. El programa toma un desv&#xED;o y ejecuta el c&#xF3;digo dentro de <code>rollDice()</code> cada vez que aparece:</p>
+<p>Este comportamiento es ilustrado con la funci&#xF3;n <code>lanzarDado()</code> escrita para este ejemplo. Cuando el programa empieza, ejecuta el c&#xF3;digo en <code>setup()</code> y luego se detiene. El programa toma un desv&#xED;o y ejecuta el c&#xF3;digo dentro de <code>lanzarDado()</code> cada vez que aparece:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 function setup() {
@@ -62,7 +62,7 @@ function setup() {
   print("Listo.");
 }</pre>
 
-<p>La funci&#xF3;n <code>lanzarDado()</code> en el <a data-type="xref" href="#ex-9-1">Ejemplo 9-1</a> hace que el c&#xF3;digo sea m&#xE1;s f&#xE1;cil de leer y mantener. El programa es m&#xE1;s claro, porque el nombre de la funci&#xF3;n claramente determina su prop&#xF3;sito. En este ejemplo, podemos ver la funci&#xF3;n <code>random()</code> en <code>setup()</code>, pero su uso no es tan obvio. El n&#xFA;mero de lados en un dado es m&#xE1;s claro con una funci&#xF3;n: cuando el c&#xF3;digo dice <code>lanzarDado(6)</code>, es obvio que est&#xE1; simulando el lanzamiento de un dado de seis caras. Adem&#xE1;s, el <a data-type="xref" href="#ex-9-1">Ejemplo 9-1</a> es f&#xE1;cil de mantener, porque la informaci&#xF3;n no est&#xE1; repetida. La frase <code>Lanzando...</code> se repite tres veces en este caso. Si quieres cambiar el texto a algo distinto, tienes que actualizar el c&#xF3;digo en tres lugares, en vez de hacer una sola edici&#xF3;n dentro de la funci&#xF3;n <code>rollDice()</code>. Adem&#xE1;s, como ver&#xE1;s en el <a data-type="xref" href="#ex-9-5">Ejemplo 9-5</a>, una funci&#xF3;n puede hacer un programa mucho m&#xE1;s corto (y por lo tanto m&#xE1;s f&#xE1;cil de mantener y leer), lo que ayuda a reducir el potencial n&#xFA;mero de<a contenteditable="false" data-primary="functions" data-secondary="basics of" data-startref="f9bo" data-type="indexterm">&nbsp;</a>errores.</p>
+<p>La funci&#xF3;n <code>lanzarDado()</code> en el <a data-type="xref" href="#ex-9-1">Ejemplo 9-1</a> hace que el c&#xF3;digo sea m&#xE1;s f&#xE1;cil de leer y mantener. El programa es m&#xE1;s claro, porque el nombre de la funci&#xF3;n claramente determina su prop&#xF3;sito. En este ejemplo, podemos ver la funci&#xF3;n <code>random()</code> en <code>setup()</code>, pero su uso no es tan obvio. El n&#xFA;mero de lados en un dado es m&#xE1;s claro con una funci&#xF3;n: cuando el c&#xF3;digo dice <code>lanzarDado(6)</code>, es obvio que est&#xE1; simulando el lanzamiento de un dado de seis caras. Adem&#xE1;s, el <a data-type="xref" href="#ex-9-1">Ejemplo 9-1</a> es f&#xE1;cil de mantener, porque la informaci&#xF3;n no est&#xE1; repetida. La frase <code>Lanzando...</code> se repite tres veces en este caso. Si quieres cambiar el texto a algo distinto, tienes que actualizar el c&#xF3;digo en tres lugares, en vez de hacer una sola edici&#xF3;n dentro de la funci&#xF3;n <code>lanzarDado()</code>. Adem&#xE1;s, como ver&#xE1;s en el <a data-type="xref" href="#ex-9-5">Ejemplo 9-5</a>, una funci&#xF3;n puede hacer un programa mucho m&#xE1;s corto (y por lo tanto m&#xE1;s f&#xE1;cil de mantener y leer), lo que ayuda a reducir el potencial n&#xFA;mero de<a contenteditable="false" data-primary="functions" data-secondary="basics of" data-startref="f9bo" data-type="indexterm">&nbsp;</a>errores.</p>
 </section>
 </section>
 
@@ -112,7 +112,7 @@ function draw() {
 <section data-type="sect2" id="ex-9-4">
 <h2>Ejemplo 9-4: dos son compa&#xF1;&#xED;a</h2>
 
-<p>El c&#xF3;digo del <a data-type="xref" href="#ex-9-3">Ejemplo 9-3</a> adimos una segunda, el largo del c&#xF3;digo es casi el doble:</p>
+<p>El c&#xF3;digo del <a data-type="xref" href="#ex-9-3">Ejemplo 9-3</a> agregamos una segunda lechuza, el largo del c&#xF3;digo es casi el doble:</p>
 
 <figure><img alt="Ex 09 04" src="images/gspj_09in03.png" />
 <figcaption/>
@@ -157,7 +157,7 @@ function draw() {
   quad(0, -58, 4, -51, 0, -44, -4, -51); // Pico
 }</pre>
 
-<p>El programa crece de 21 l&#xED;neas de c&#xF3;digo a 34, el c&#xF3;digo para dibujar la primera lechuza fue copiado y pegado en el programa y una funci&#xF3;n <code>translate()</code> fue insertada para moverla 70 pixeles a la derecha. Esto es una manera tediosa e ineficiente de dibujar la segunda lechuza, sin mencionar el dolor de cabeza que ser&#xE1; a&#xF1;adir una tercera lechuza con este m&#xE9;todo. Duplicar el c&#xF3;digo es innecesario, porque este es el tipo de situaci&#xF3;n donde una funci&#xF3;n puede llegar al rescate.</p>
+<p>El programa aumenta de 21 l&#xED;neas de c&#xF3;digo a 34, el c&#xF3;digo para dibujar la primera lechuza fue copiado y pegado en el programa y una funci&#xF3;n <code>translate()</code> fue insertada para moverla 70 pixeles a la derecha. Esto es una manera tediosa e ineficiente de dibujar la segunda lechuza, sin mencionar el dolor de cabeza que ser&#xE1; a&#xF1;adir una tercera lechuza con este m&#xE9;todo. Duplicar el c&#xF3;digo es innecesario, porque este es el tipo de situaci&#xF3;n donde una funci&#xF3;n puede llegar al rescate.</p>
 </section>
 
 <section data-type="sect2" id="ex-9-5">
@@ -198,7 +198,7 @@ function lechuza(x, y) {
   pop();
 }</pre>
 
-<p>Puedes ver por las ilustraciones de este ejemplo y del <a data-type="xref" href="#ex-9-4">Ejemplo 9-4</a> que tienen el mismo resultado, pero que este ejemplo es m&#xE1;s corto, porque el c&#xF3;digo para dibujar la lechuza aparece solamente una vez, dentro de la funci&#xF3;n llamada <code>lechuza()</code>. Este c&#xF3;digo es ejecutado dos veces, porque es llamado dos veces dentro de <code>draw()</code>. La lechuza es dibujada en dos ubicaciones distintas porque los par&#xE1;metros pasados a la funci&#xF3;n determinan las coordenadas <em>x</em> e <em>y</em>.</p>
+<p>Puedes ver por las ilustraciones de este ejemplo y del <a data-type="xref" href="#ex-9-4">Ejemplo 9-4</a> que tienen el mismo resultado, pero que este ejemplo es m&#xE1;s corto, porque el c&#xF3;digo para dibujar la lechuza aparece solamente una vez, dentro de la funci&#xF3;n llamada <code>lechuza()</code>. Este c&#xF3;digo es ejecutado dos veces, porque es llamado dos veces dentro de <code>draw()</code>. La lechuza es dibujada en dos ubicaciones distintas porque los par&#xE1;metros ingresados en la funci&#xF3;n determinan las coordenadas <em>x</em> e <em>y</em>.</p>
 
 <p>Los par&#xE1;metros son una parte importante de las funciones, porque proveen flexibilidad. Vimos otro ejemplo de esto en la funci&#xF3;n <code>lanzarDado()</code>; el par&#xE1;metro &#xFA;nico <code>numeroLados</code> hizo posible simular un dado de 6 caras, uno de 20 y cualquier otro n&#xFA;mero de caras.  Esto es parecido al caso de otras funciones de p5.js. Por ejemplo, los par&#xE1;metros de la funci&#xF3;n <code>line()</code> permiten dibujar una l&#xED;nea de un pixel a otro en el lienzo. Sin los par&#xE1;metros, la funci&#xF3;n solo ser&#xED;a capaz de dibujar una l&#xED;nea desde un punto fijo a otro fijo.</p>
 
@@ -296,7 +296,7 @@ point(random(width), random(height));</pre>
 <section data-type="sect2">
 <h2>Ejemplo 9-8: retorna un valor</h2>
 
-<p>Para hacer que una funci&#xF3;n retorne un valor, especifica el dato a ser pasado de vuelta con la palabra clave <code>return</code>. En este ejemplo se incluye una funci&#xF3;n llamada <code>pesoMarte()</code> que calcula el peso de una persona u objeto en nuestro planeta vecino Marte:</p>
+<p>Para hacer que una funci&#xF3;n retorne un valor, especifica el dato a ser retornado con la palabra clave <code>return</code>. En este ejemplo se incluye una funci&#xF3;n llamada <code>pesoMarte()</code> que calcula el peso de una persona u objeto en nuestro planeta vecino Marte:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 function setup() {
@@ -305,7 +305,7 @@ function setup() {
   print(pesoMarte);
 }
 
-function calculateMars(p) {
+function calcularMarte(p) {
   var pesoNuevo = p * 0.38;
   return pesoNuevo;
 }</pre>
@@ -342,7 +342,7 @@ function draw() {
 
 function dibujarRobot(x, y, alturaCuerpo, alturaCuello) {
 
-  var radius = 45;
+  var radius = 45; //radio
   var ny = y - alturaCuerpo - alturaCuello - radius;
 
   // Cuello

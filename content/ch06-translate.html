@@ -40,7 +40,7 @@ function draw() {
 <section data-type="sect2">
 <h2>Ejemplo 6-2: traslaciones m&#xFA;ltiples</h2>
 
-<p>Despu&#xE9;s de que la transformaci&#xF3;n es realizada, es aplicada a todas las funciones de dibujo a continuaci&#xF3;n. Observa lo que pasa cuando una segunda funci&#xF3;n <code>translate</code> fes a&#xF1;adida para controlar un segundo rect&#xE1;ngulo:</p>
+<p>Despu&#xE9;s de que la transformaci&#xF3;n es realizada, es aplicada a todas las funciones de dibujo a continuaci&#xF3;n. Observa lo que pasa cuando una segunda funci&#xF3;n <code>translate</code> es a&#xF1;adida para controlar un segundo rect&#xE1;ngulo:</p>
 
 <figure><img alt="Ex 06 02" src="images/gspj_06in03.png" />
 <figcaption/>
@@ -128,7 +128,7 @@ function draw() {
 </figure>
 
 <pre data-code-language="p5js" data-type="programlisting">
-var angle = 0.0;
+var angulo = 0.0;
 
 function setup() {
   createCanvas(120, 120);
@@ -137,9 +137,9 @@ function setup() {
 
 function draw() {
   translate(mouseX, mouseY);
-  rotate(angle);
+  rotate(angulo);
   rect(-15, -15, 30, 30);
-  angle += 0.1;
+  angulo += 0.1;
 }</pre>
 </section>
 
@@ -153,7 +153,7 @@ function draw() {
 </figure>
 
 <pre data-code-language="p5js" data-type="programlisting">
-var angle = 0.0;
+var angulo = 0.0;
 
 function setup() {
   createCanvas(120, 120);
@@ -161,10 +161,10 @@ function setup() {
 }
 
 function draw() {
-  rotate(angle);
+  rotate(angulo);
   translate(mouseX, mouseY);
   rect(-15, -15, 30, 30);
-  angle += 0.1;
+  angulo += 0.1;
 }</pre>
 
 <div data-type="note">
@@ -182,9 +182,9 @@ function draw() {
 </figure>
 
 <pre class="pre" data-code-language="p5js" data-type="programlisting">
-var angle = 0.0;
-var angleDirection = 1;
-var speed = 0.005;
+var angulo = 0.0;
+var anguloDireccion = 1;
+var velocidad = 0.005;
 
 function setup() {
   createCanvas(120, 120);
@@ -193,25 +193,25 @@ function setup() {
 function draw() {
   background(204);
   translate(20, 25);  // Mover a la posici&#xF3;n inicial
-  rotate(angle);
+  rotate(angulo);
   strokeWeight(12);
   line(0, 0, 40, 0);
   translate(40, 0);   //Mover a la siguiente articulaci&#xF3;n
-  rotate(angle * 2.0);
+  rotate(angulo * 2.0);
   strokeWeight(6);
   line(0, 0, 30, 0);
   translate(30, 0);   // Mover a la siguiente articulaci&#xF3;n
-  rotate(angle * 2.5);
+  rotate(angulo * 2.5);
   strokeWeight(3);
   line(0, 0, 20, 0);
 
-  angle += speed * angleDirection;
-  if ((angle &gt; QUARTER_PI) || (angle &lt; 0)) {
-    angleDirection *= -1;
+  angulo += velocidad * anguloDireccion;
+  if ((angulo &gt; QUARTER_PI) || (angulo &lt; 0)) {
+    anguloDireccion *= -1;
   }
 }</pre>
 
-<p>La variable <code>angle</code> &nbsp;aumenta desde 0 hasta <code>QUARTER_PI</code> (un cuarto del valor de pi), luego disminuye hasta que es menor que cero, luego el ciclo se repite. El valor de la variable <code>angleDirection</code> &nbsp;est&#xE1; siempre entre 1 y -1 para hacer que el valor de <code>angle</code> correspondiente aumente o<a contenteditable="false" data-primary="translate() function" data-startref="tf6x" data-type="indexterm">&nbsp;</a>disminuya.</p>
+<p>La variable <code>angulo</code> &nbsp;aumenta desde 0 hasta <code>QUARTER_PI</code> (un cuarto del valor de pi), luego disminuye hasta que es menor que cero, luego el ciclo se repite. El valor de la variable <code>anguloDireccion</code> &nbsp;est&#xE1; siempre entre 1 y -1 para hacer que el valor de <code>angulo</code> correspondiente aumente o<a contenteditable="false" data-primary="translate() function" data-startref="tf6x" data-type="indexterm">&nbsp;</a>disminuya.</p>
 </section>
 </section>
 
@@ -270,7 +270,7 @@ function draw() {
 <section data-type="sect1">
 <h1>Push y pop</h1>
 
-<p>Para aislar los<a contenteditable="false" data-primary="push() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="pop() function" data-type="indexterm">&nbsp;</a>efectos de las transformaciones para que no afecten otras funciones, usa las funciones <code>push()</code> y <code>pop()</code>. Cuando ejecutas <code>push()</code>, se almacena una copia del sistema de coordenadas actual y luego puedes restaurar ese sistema ejecutando <code>pop()</code>. Esto es &#xFA;til cuando necesitas transformar una figura, pero quieres afectar otras.</p>
+<p>Para aislar los<a contenteditable="false" data-primary="push() function" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="pop() function" data-type="indexterm">&nbsp;</a>efectos de las transformaciones para que no afecten otras funciones, usa las funciones <code>push()</code> y <code>pop()</code>. Cuando ejecutas <code>push()</code>, se almacena una copia del sistema de coordenadas actual y luego puedes restaurar ese sistema ejecutando <code>pop()</code>. Esto es &#xFA;til cuando necesitas transformar una figura, pero no quieres afectar otras.</p>
 
 <section data-type="sect2">
 <h2>Ejemplo 6-10: aislando transformaciones</h2>
@@ -318,7 +318,7 @@ var radius = 45;       // Radio de la cabeza
 var bodyHeight = 180;  // Altura del cuerpo
 var neckHeight = 40;   // Altura del cuello
 
-var easing = 0.04;
+var easing = 0.04; //suavizado
 
 function setup() {
   createCanvas(360, 480);
@@ -354,7 +354,7 @@ function draw() {
   // Pelo
   push();
   translate(12, neckY);
-  var angle = -PI/30.0;
+  var angle = -PI/30.0; //angulo
   for (var i = 0; i &lt;= 30; i++) {
     line(80, 0, 0, 0);
     rotate(angle);

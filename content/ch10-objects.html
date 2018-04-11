@@ -144,7 +144,7 @@ function JitterBug(tempX, tempY, tempDiametro) {
 <section data-type="sect1">
 <h1>Crea objetos</h1>
 
-<p>Ahora <a contenteditable="false" data-primary="objects" data-secondary="creating" data-type="indexterm" id="o10c">&nbsp;</a>que has definido una funci&#xF3;n constructor, para usarla en un programa debes crear un instancia de objeto con ese constructor. Existen dos pasos para crear un objeto:</p>
+<p>Ahora<a contenteditable="false" data-primary="objects" data-secondary="creating" data-type="indexterm" id="o10c">&nbsp;</a>que has definido una funci&#xF3;n constructor, para usarla en un programa debes crear un instancia de objeto con ese constructor. Existen dos pasos para crear un objeto:</p>
 
 <ol>
 	<li>
@@ -245,7 +245,7 @@ function draw() {
 <figcaption/>
 </figure>
 
-<p>Un <a contenteditable="false" data-primary="robot programs (examples)" data-secondary="objects" data-type="indexterm" id="rp10o">&nbsp;</a>objeto en software puede combinar m&#xE9;todos (funciones) y propiedades (variables) en una unidad. La funci&#xF3;n constructor <code>Robot</code> en este ejemplo define todos los objetos robot que ser&#xE1;n creados a partir de ella. Cada objeto <code>Robot</code> posee su propio conjunto de propiedades para almacenar una posici&#xF3;n y la ilustraci&#xF3;n que dibujar&#xE1; en la pantalla. Cada uno tiene m&#xE9;todos para actualizar la posici&#xF3;n y mostrar la ilustraci&#xF3;n.</p>
+<p>Un <a contenteditable="false" data-primary="robot programs (examples)" data-secondary="objects" data-type="indexterm" id="rp10o">&nbsp;</a>objeto en software puede combinar m&#xE9;todos (funciones) y propiedades (variables) en una unidad. La funci&#xF3;n constructor <code>Robot</code> en este ejemplo define todos los objetos robot que ser&#xE1;n creados a partir de ella. Cada objeto <code>Robot</code> posee su propio conjunto de propiedades para almacenar una posici&#xF3;n y la ilustraci&#xF3;n que dibujar&#xE1; en la pantalla. Cada uno posee m&#xE9;todos para actualizar la posici&#xF3;n y mostrar la ilustraci&#xF3;n.</p>
 
 <p>Los par&#xE1;metros de <code>bot1</code> y <code>bot2</code> en <code>setup()</code> definen las coordenadas <em>x</em> e <em>y</em> y el archivo <em>.svg</em> que ser&#xE1; usado para dibujar el robot. Los par&#xE1;metros <code>tempX</code> y <code>tempY</code>  son pasados al constructor y asignados a las propiedades <code>xpos</code> y <code>ypos</code>. El par&#xE1;metro <code>imgPath</code> es usado para cargar la ilustraci&#xF3;n asociada. Los objetos (<code>bot1</code> y <code>bot2</code>) dibujan en su propia ubicaci&#xF3;n con una ilustraci&#xF3;n distinta porque cada uno tienen valores distintos pasados a los objetos a trav&#xE9;s de sus constructores:</p>
 
@@ -295,7 +295,7 @@ function Robot(img, tempX, tempY) {
 
   // Dibuja el robot en la pantalla
   this.mostrar = function() {
-    image(this.botImage, this.xpos, 
+    image(this.botImage, this.xpos,
           this.ypos + this.ydesplazamiento);
   }
 }</pre>
