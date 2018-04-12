@@ -9,8 +9,8 @@
 }
 
 @page :left {
-    margin-left: 0.75in;
-    margin-right: 1in;
+    margin-left: 0.5625in; //0.75in;
+    margin-right: 1.1875in; //1in;
     @bottom-left {
         content: counter(page) " \00a0\00a0\00a0\00a0\00a0\00a0 Introducción a p5.js";
         text-align: left;
@@ -21,8 +21,8 @@
 }
 
 @page :right {
-    margin-left: 1in;
-    margin-right: 0.75in;
+    margin-left: 1.1875in; //1in;
+    margin-right: 0.5625in; //0.75in;
     @bottom-right {
         content: string(chaptitle) "\00a0\00a0\00a0\00a0\00a0\00a0" counter(page);
         text-align: right;
@@ -65,7 +65,7 @@ h1 {
     string-set: chaptitle content();
     padding-bottom: 4em;
     font-size: 18pt;
-    line-height: 12.5pt;
+    line-height: 18.5pt; //12.5pt;
 }
 
 h2 {
