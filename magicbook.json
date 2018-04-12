@@ -2,6 +2,7 @@
   "title" : "Getting Started with p5js: ES",
   "destination" : "build/:build",
   "files" : [
+      "content/cover.html",
       "content/copyright.html",
       "content/toc.html",
       "content/ch00-preface_opener.html",
