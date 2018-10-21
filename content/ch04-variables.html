@@ -211,7 +211,7 @@ var x = (4 + 4) * 5; // Se le asigna el valor 40 a x</pre>
 
 <p>En clases de matem&#xE1;ticas se ense&#xF1;a un acr&#xF3;nimo para este orden: PEMDAS, <a contenteditable="false" data-primary="PEMDAS acronym" data-type="indexterm">&nbsp;</a>que significa Par&#xE9;ntesis, Exponentes, Multiplicaci&#xF3;n, Divisi&#xF3;n, Adici&#xF3;n, Substracci&#xF3;n, donde los par&#xE9;ntesis tienen la mayor prioridad y la substracci&#xF3;n la menor.<a contenteditable="false" data-primary="order of operations" data-type="indexterm">&nbsp;</a><a contenteditable="false" data-primary="arithmetic operations" data-secondary="order of" data-type="indexterm">&nbsp;</a>El orden completo de operaciones se encuentra en el <a data-type="xref" href="#order_of_operations">Apéndice B</a>.</p>
 
-<p>Algunos c&#xE1;lculos son usados tan frecuentemente en programaci&#xF3;n que se han elaborado atajos, lo que es &#xFA;til para ahorrar tiempo al escribir. Por ejemplo, puedes sumar a o restar  una variable con un solo operador:</p>
+<p>Algunos c&#xE1;lculos son usados tan frecuentemente en programaci&#xF3;n que se han elaborado atajos, lo que es &#xFA;til para ahorrar tiempo al escribir. Por ejemplo, puedes sumar o restar a una variable con un solo operador:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 x += 10; // Es equivalente a x = x + 10
@@ -537,7 +537,7 @@ function draw() {
 <figcaption/>
 </figure>
 
-<p>Las <a contenteditable="false" data-primary="robot programs (examples)" data-secondary="modifying code with variables" data-type="indexterm" id="rp4mcwv">&nbsp;</a>variables introducidas en este programa hacen que el c&#xF3;digo se vea m&#xE1;s dif&#xED;cil que el de la Robot 1 (ver <a data-type="xref" href="#robot1">Robot 1: dibuja</a>), pero ahora es mucho m&#xE1;s simple hacer modificaciones, porque los n&#xFA;meros que dependen uno de otro est&#xE1;n en una misma ubicaci&#xF3;n. Por ejemplo, el dibujo del cuello est&#xE1; basado en la variable <code>neckHeight</code>. El grupo de variables al principio del c&#xF3;digo controla los aspectos del robot que queremos cambiar: ubicaci&#xF3;n, altura del cuerpo y altura del cuello. Puedes observar algunas de las posibles variaciones posibles en la figura; de izquierda a derecha, aqu&#xed;; est&#xE1;n los valores correspondientes:</p>
+<p>Las <a contenteditable="false" data-primary="robot programs (examples)" data-secondary="modifying code with variables" data-type="indexterm" id="rp4mcwv">&nbsp;</a>variables introducidas en este programa hacen que el c&#xF3;digo se vea m&#xE1;s dif&#xED;cil que el de la Robot 1 (ver <a data-type="xref" href="#robot1">Robot 1: dibuja</a>), pero ahora es mucho m&#xE1;s simple hacer modificaciones, porque los n&#xFA;meros que dependen uno de otro est&#xE1;n en una misma ubicaci&#xF3;n. Por ejemplo, el dibujo del cuello est&#xE1; basado en la variable <code>neckHeight</code>. El grupo de variables al principio del c&#xF3;digo controla los aspectos del robot que queremos cambiar: ubicaci&#xF3;n, altura del cuerpo y altura del cuello. Puedes observar algunas de las posibles variaciones en la figura; de izquierda a derecha, aqu&#xed; est&#xE1;n los valores correspondientes:</p>
 
 <table class="smallerText">
 	<tbody>
@@ -574,7 +574,7 @@ neckHeight = 140
 	</tbody>
 </table>
 
-<p>Cuando modifiques tu propio c&#xF3;digo para usar variables en vez de n&#xFA;meros, planea cuidadosamente los cambios y despu&#xE9;s realiza las modificaciones en incrementos graduales. Por ejemplo, cuando este programa fue escrito, cada variable fue creada a una a la vez para minimizar la complejidad de la transici&#xF3;n. Solamente despu&#xE9;s de que una variable fuera creada y el c&#xF3;digo era ejecutado para asegurar que funcionara correctamente, se a&#xF1;ad&#xED;a una nueva variable:</p>
+<p>Cuando modifiques tu propio c&#xF3;digo para usar variables en vez de n&#xFA;meros, planea cuidadosamente los cambios y despu&#xE9;s realiza las modificaciones en incrementos graduales. Por ejemplo, cuando este programa fue escrito, cada variable fue creada una a la vez para minimizar la complejidad de la transici&#xF3;n. Solamente despu&#xE9;s de que una variable fuera creada y el c&#xF3;digo fuera ejecutado para asegurar que funcionara correctamente, se a&#xF1;ad&#xED;a una nueva variable:</p>
 
 <pre data-code-language="p5js" data-type="programlisting">
 var x = 60;            // Coordenada x
