@@ -251,7 +251,7 @@ function draw() {
   var objetivoX = mouseX;
   x += (objetivoX - x) * suavizado;
   var objetivoY = mouseY;
-  y += (objetivoX - y) * suavizado;
+  y += (objetivoY - y) * suavizado;
   var peso = dist(x, y, px, py);
   strokeWeight(peso);
   line(x, y, px, py);
